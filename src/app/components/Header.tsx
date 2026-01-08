@@ -60,7 +60,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <img src="/src/assets/logo.png" alt="EDUNEX Logo" className="h-10 w-auto" />
+            <img src="/logo.jpg" alt="EDUNEX Logo" className="h-14 w-auto" />
           </motion.div>
 
           {/* Desktop Navigation */}

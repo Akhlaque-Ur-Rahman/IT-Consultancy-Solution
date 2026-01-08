@@ -43,7 +43,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <img src="/src/assets/logo.png" alt="EDUNEX Logo" className="h-10 w-auto" />
+            <img src="/logo.jpg" alt="EDUNEX Logo" className="h-14 w-auto" />
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Enterprise-grade IT consulting, software development, and business solutions for scaling organizations.
             </p>
