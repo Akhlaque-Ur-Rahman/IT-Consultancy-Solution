@@ -75,8 +75,9 @@ export function CompliancePage({ onNavigate }: CompliancePageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -4 }}
-              className="bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-all duration-300"
+              className="group relative overflow-hidden bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-all duration-300"
             >
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
               {/* Header */}
               <div className="flex items-start justify-between mb-6">
                 <div className="flex-1">

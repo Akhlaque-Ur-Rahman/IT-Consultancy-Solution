@@ -186,7 +186,8 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
 
               {/* Features Card */}
               <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-colors duration-300">
+                <div className="group relative overflow-hidden bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-colors duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
                   <h4 className="text-xl font-semibold text-white mb-6">
                     Features Included
                   </h4>

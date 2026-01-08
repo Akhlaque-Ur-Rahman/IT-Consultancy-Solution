@@ -69,7 +69,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
             {blogPosts.map((post, index) => (
               <motion.div
                 key={post.id}
-                className="bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-all duration-300 cursor-pointer group"
+                className="group relative bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-all duration-300 cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -105,6 +105,8 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                     Read More →
                   </Button>
                 </div>
+                {/* Animation */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
               </motion.div>
             ))}
           </div>
@@ -123,7 +125,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
             {whitepapers.map((paper, index) => (
               <motion.div
                 key={index}
-                className="bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-all duration-300 group"
+                className="group relative overflow-hidden bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -147,6 +149,8 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                     Download
                   </Button>
                 </div>
+                {/* Animation */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
               </motion.div>
             ))}
           </div>
@@ -175,7 +179,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-[#121212] rounded-xl border border-[#262626] px-6 overflow-hidden hover:border-[#f59e0b]/30 transition-colors"
+                  className="group relative overflow-hidden bg-[#121212] rounded-xl border border-[#262626] px-6 hover:border-[#f59e0b]/30 transition-colors"
                 >
                   <AccordionTrigger className="hover:no-underline py-6">
                     <div className="text-left">
@@ -185,6 +189,8 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                   <AccordionContent className="pb-6 text-gray-400 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
+                  {/* Animation */}
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
                 </AccordionItem>
               ))}
             </Accordion>

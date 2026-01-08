@@ -94,7 +94,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           <motion.div
-            className="bg-[#121212] border border-[#262626] rounded-2xl p-10 group hover:border-[#f59e0b]/50 transition-colors duration-300"
+            className="group relative overflow-hidden bg-[#121212] border border-[#262626] rounded-2xl p-10 hover:border-[#f59e0b]/50 transition-colors duration-300"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -108,10 +108,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               To empower businesses with cutting-edge technology solutions and expert guidance, 
               enabling them to scale efficiently, compete effectively, and achieve sustainable growth.
             </p>
+            {/* Animation */}
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
           </motion.div>
 
           <motion.div
-            className="bg-[#121212] border border-[#262626] rounded-2xl p-10 group hover:border-[#f59e0b]/50 transition-colors duration-300"
+            className="group relative overflow-hidden bg-[#121212] border border-[#262626] rounded-2xl p-10 hover:border-[#f59e0b]/50 transition-colors duration-300"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -125,6 +127,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               To be India's most trusted IT consulting partner, known for delivering exceptional 
               value, fostering innovation, and creating lasting impact for businesses of all sizes.
             </p>
+            {/* Animation */}
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
           </motion.div>
         </div>
 
@@ -174,7 +178,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
-                className="bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-colors duration-300"
+                className="group relative overflow-hidden bg-[#121212] rounded-2xl border border-[#262626] hover:border-[#f59e0b]/50 transition-colors duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -192,6 +196,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                   <p className="text-sm text-[#f59e0b] font-medium mb-3">{member.role}</p>
                   <p className="text-sm text-gray-400">{member.bio}</p>
                 </div>
+                {/* Animation */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
               </motion.div>
             ))}
           </div>
@@ -217,7 +223,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             {openRoles.map((role, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-6 rounded-xl border border-[#262626] hover:border-[#f59e0b] hover:bg-[#1a1a1a] transition-all duration-200"
+                className="group relative overflow-hidden flex items-center justify-between p-6 rounded-xl border border-[#262626] hover:border-[#f59e0b] hover:bg-[#1a1a1a] transition-all duration-200"
               >
                 <div>
                   <h4 className="font-semibold text-white mb-1">{role.title}</h4>
@@ -232,6 +238,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 >
                   Apply Now
                 </Button>
+                {/* Animation */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
               </div>
             ))}
           </div>
