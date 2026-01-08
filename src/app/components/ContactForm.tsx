@@ -135,7 +135,7 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             required
                             className="mt-2"
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 70708 09208"
                           />
                         </div>
 

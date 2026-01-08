@@ -95,7 +95,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                   type="tel"
                   required
                   className="w-full px-4 py-3 rounded-lg border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition-all placeholder:text-gray-600"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 70708 09208"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
@@ -145,9 +145,9 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
               <div className="space-y-6">
                 {[
-                  { icon: Phone, text: '+91 98765 43210', label: 'Call Us' },
-                  { icon: Mail, text: 'contact@techconsultpro.com', label: 'Email Us' },
-                  { icon: MapPin, text: 'Tech Park, Bangalore, India', label: 'Visit Us' },
+                  { icon: Phone, text: '+91 70708 09208', label: 'Call Us' },
+                  { icon: Mail, text: 'support@edunesservices.in', label: 'Email Us' },
+                  { icon: MapPin, text: 'Ward 15, Phulwari Sharif, Patna, Bihar 801505', label: 'Visit Us' },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
@@ -198,7 +198,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           transition={{ duration: 0.6 }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.003615568345!2d77.5937!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37!2d85.06!3d25.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6b155555%3A0x5eb35e389475e7!2sPhulwari+Sharif%2C+Patna%2C+Bihar+801505!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

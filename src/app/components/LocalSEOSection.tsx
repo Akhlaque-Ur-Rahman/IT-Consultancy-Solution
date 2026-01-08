@@ -7,21 +7,21 @@ interface LocalSEOSectionProps {
 
 export function LocalSEOSection({ onNavigate }: LocalSEOSectionProps) {
   const serviceAreas = [
-    { city: 'Gurugram', state: 'Haryana' },
-    { city: 'Delhi', state: 'Delhi NCR' },
-    { city: 'Noida', state: 'Uttar Pradesh' },
-    { city: 'Ghaziabad', state: 'Uttar Pradesh' },
-    { city: 'Faridabad', state: 'Haryana' },
-    { city: 'Mumbai', state: 'Maharashtra' },
-    { city: 'Bangalore', state: 'Karnataka' },
-    { city: 'Hyderabad', state: 'Telangana' },
+    { city: 'Phulwari Sharif', state: 'Patna' },
+    { city: 'Danapur', state: 'Patna' },
+    { city: 'Kankarbagh', state: 'Patna' },
+    { city: 'Boring Road', state: 'Patna' },
+    { city: 'Bailey Road', state: 'Patna' },
+    { city: 'Patliputra', state: 'Patna' },
+    { city: 'Rajendra Nagar', state: 'Patna' },
+    { city: 'Gandhi Maidan', state: 'Patna' },
   ];
 
   const localTrust = [
-    { icon: Building2, value: '500+', label: 'Indian Clients' },
+    { icon: Building2, value: '500+', label: 'Happy Clients' },
     { icon: Users, value: '15+', label: 'Years Experience' },
     { icon: Award, value: 'ISO', label: 'Certified' },
-    { icon: MapPin, value: '8+', label: 'Cities Served' },
+    { icon: MapPin, value: '10+', label: 'Local Areas' },
   ];
 
   return (
@@ -36,10 +36,10 @@ export function LocalSEOSection({ onNavigate }: LocalSEOSectionProps) {
           transition={{ duration: 0.4 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Trusted IT Consulting Partner Across India
+            Trusted IT Consulting Partner in Patna
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Delivering enterprise-grade IT solutions, software development, and business consulting services to organizations across major Indian cities
+            Delivering enterprise-grade IT solutions, software development, and business consulting services to organizations across Patna and Bihar
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ export function LocalSEOSection({ onNavigate }: LocalSEOSectionProps) {
         {/* Service Areas */}
         <div className="bg-[#121212] border border-[#262626] rounded-lg p-8">
           <h3 className="text-xl font-semibold text-[#f59e0b] mb-6 text-center">
-            Our Service Areas
+            Our Service Areas in Patna
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {serviceAreas.map((area, index) => (
@@ -93,14 +93,14 @@ export function LocalSEOSection({ onNavigate }: LocalSEOSectionProps) {
         <div className="mt-12 prose prose-invert max-w-none">
           <div className="bg-[#121212] border border-[#262626] rounded-lg p-8">
             <h3 className="text-lg font-semibold text-white mb-4">
-              Leading IT Consulting Company in India
+              Leading IT Consulting Company in Patna, Bihar
             </h3>
             <div className="text-sm text-gray-400 leading-relaxed space-y-3">
               <p>
-                EDUNEX is a premier IT consulting and software development company serving businesses across India. With over 15 years of experience, we specialize in delivering enterprise-grade web and mobile application development, CRM/ERP implementation, digital marketing, UI/UX design, e-commerce solutions, and comprehensive business compliance services.
+                EDUNEX is a premier IT consulting and software development company serving businesses across Patna. With over 15 years of experience, we specialize in delivering enterprise-grade web and mobile application development, CRM/ERP implementation, digital marketing, UI/UX design, e-commerce solutions, and comprehensive business compliance services.
               </p>
               <p>
-                Our team of certified developers, designers, and consultants work with organizations in Gurugram, Delhi NCR, Mumbai, Bangalore, Hyderabad, and other major Indian cities to transform their digital infrastructure and drive business growth through technology innovation.
+                Our team of certified developers, designers, and consultants work with organizations in Phulwari Sharif, Danapur, Kankarbagh, and other major areas of Patna to transform their digital infrastructure and drive business growth through technology innovation.
               </p>
               <p>
                 Whether you need custom software development, cloud migration, digital transformation consulting, or ongoing IT support, EDUNEX provides tailored solutions that align with your business objectives and budget requirements.

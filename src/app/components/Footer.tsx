@@ -50,15 +50,15 @@ export function Footer({ onNavigate }: FooterProps) {
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-[#f59e0b]" />
-                <span>Business Park, Cyber City, Gurugram, Haryana 122002, India</span>
+                <span>Ward 15, Phulwari Sharif, Patna, Bihar 801505</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-400">
                 <Phone className="w-4 h-4 flex-shrink-0 text-[#f59e0b]" />
-                <span>+91 98765 43210</span>
+                <span>+91 70708 09208</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-400">
                 <Mail className="w-4 h-4 flex-shrink-0 text-[#f59e0b]" />
-                <span>contact@edunex.tech</span>
+                <span>support@edunesservices.in</span>
               </div>
             </div>
           </div>
