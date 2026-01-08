@@ -25,7 +25,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
     : services.filter(s => s.category === selectedCategory);
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-gradient-to-br from-[#f9fafb] to-white">
+    <div className="pt-32 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -34,13 +34,13 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#14b8a6]/10 border border-[#14b8a6]/20 mb-4">
-            <span className="text-sm font-medium text-[#0f766e]">Complete Service Portfolio</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
+            <span className="text-sm font-medium text-[#f59e0b]">Complete Service Portfolio</span>
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-white mb-4">
             Our Services
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             End-to-end IT consulting and business solutions to accelerate your digital transformation journey
           </p>
         </motion.div>
@@ -52,7 +52,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <div className="flex items-center gap-2 text-gray-600">
+          <div className="flex items-center gap-2 text-gray-400">
             <Filter className="w-4 h-4" />
             <span className="text-sm font-medium">Filter:</span>
           </div>
@@ -62,8 +62,8 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                 selectedCategory === category.id
-                  ? 'bg-[#1a3a5c] text-white shadow-lg scale-105'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-[#14b8a6] hover:text-[#14b8a6]'
+                  ? 'bg-[#f59e0b] text-black shadow-[0_0_15px_rgba(245,158,11,0.4)] scale-105 font-semibold'
+                  : 'bg-[#121212] text-gray-400 border border-[#262626] hover:border-[#f59e0b]/50 hover:text-[#f59e0b]'
               }`}
             >
               {category.label}
@@ -98,21 +98,21 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
 
         {/* Bottom CTA */}
         <motion.div
-          className="mt-20 bg-gradient-to-br from-[#1a3a5c] to-[#0f2642] rounded-3xl p-12 text-center text-white"
+          className="mt-20 bg-[#121212] border border-[#262626] rounded-3xl p-12 text-center text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-4">
+          <h3 className="text-3xl font-bold mb-4 text-white">
             Don't See What You're Looking For?
           </h3>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             We offer custom solutions tailored to your unique requirements. Let's discuss your project.
           </p>
           <button
             onClick={() => onNavigate('contact')}
-            className="px-8 py-4 bg-[#f97316] hover:bg-[#ea580c] text-white rounded-lg font-medium transition-colors"
+            className="px-8 py-4 bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black rounded-lg font-semibold transition-all duration-200"
           >
             Get in Touch
           </button>

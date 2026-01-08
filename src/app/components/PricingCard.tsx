@@ -36,7 +36,7 @@ export function PricingCard({
     >
       {/* Popular Badge */}
       {highlighted && (
-        <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white text-sm font-medium flex items-center gap-1 shadow-lg z-10">
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#f59e0b] text-black text-sm font-bold flex items-center gap-1 shadow-[0_0_15px_rgba(245,158,11,0.5)] z-10">
           <Star className="w-4 h-4 fill-current" />
           Most Popular
         </div>
@@ -45,24 +45,20 @@ export function PricingCard({
       <div
         className={`relative h-full rounded-2xl p-8 transition-all duration-300 ${
           highlighted
-            ? 'bg-gradient-to-br from-[#1a3a5c] to-[#0f2642] text-white shadow-2xl scale-105'
-            : 'bg-white border-2 border-gray-200 hover:border-[#14b8a6] hover:shadow-xl'
+            ? 'bg-gradient-to-br from-[#262626] to-[#1a1a1a] border border-[#f59e0b] shadow-[0_0_30px_rgba(245,158,11,0.15)] scale-105'
+            : 'bg-[#121212] border border-[#262626] hover:border-[#f59e0b]/50 hover:shadow-xl'
         }`}
       >
         {/* Header */}
         <div className="mb-8">
           <h3
             className={`text-2xl font-bold mb-1 ${
-              highlighted ? 'text-white' : 'text-gray-900'
+              highlighted ? 'text-[#f59e0b]' : 'text-white'
             }`}
           >
             {name}
           </h3>
-          <p
-            className={`text-sm ${
-              highlighted ? 'text-white/70' : 'text-gray-500'
-            }`}
-          >
+          <p className="text-sm text-gray-400">
             {nameHindi}
           </p>
         </div>
@@ -70,28 +66,16 @@ export function PricingCard({
         {/* Price */}
         <div className="mb-6">
           <div className="flex items-baseline gap-2">
-            <span
-              className={`text-5xl font-bold ${
-                highlighted ? 'text-white' : 'text-gray-900'
-              }`}
-            >
+            <span className="text-5xl font-bold text-white">
               {price}
             </span>
             {duration !== 'Contact us' && (
-              <span
-                className={`text-sm ${
-                  highlighted ? 'text-white/70' : 'text-gray-500'
-                }`}
-              >
+              <span className="text-sm text-gray-400">
                 {duration}
               </span>
             )}
           </div>
-          <p
-            className={`mt-2 text-sm ${
-              highlighted ? 'text-white/80' : 'text-gray-600'
-            }`}
-          >
+          <p className="mt-2 text-sm text-gray-400">
             {description}
           </p>
         </div>
@@ -100,24 +84,10 @@ export function PricingCard({
         <ul className="space-y-4 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-3">
-              <div
-                className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                  highlighted
-                    ? 'bg-white/20'
-                    : 'bg-[#14b8a6]/10'
-                }`}
-              >
-                <Check
-                  className={`w-3 h-3 ${
-                    highlighted ? 'text-white' : 'text-[#14b8a6]'
-                  }`}
-                />
+              <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 bg-[#f59e0b]/10">
+                <Check className="w-3 h-3 text-[#f59e0b]" />
               </div>
-              <span
-                className={`text-sm ${
-                  highlighted ? 'text-white/90' : 'text-gray-600'
-                }`}
-              >
+              <span className="text-sm text-gray-300">
                 {feature}
               </span>
             </li>
@@ -129,8 +99,8 @@ export function PricingCard({
           onClick={onCTA}
           className={`w-full py-6 ${
             highlighted
-              ? 'bg-white text-[#1a3a5c] hover:bg-gray-100'
-              : 'bg-[#f97316] text-white hover:bg-[#ea580c]'
+              ? 'bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]'
+              : 'bg-[#262626] text-white hover:bg-[#333] hover:text-[#f59e0b]'
           }`}
         >
           {price === 'Custom' ? 'Contact Sales' : 'Get Started'}

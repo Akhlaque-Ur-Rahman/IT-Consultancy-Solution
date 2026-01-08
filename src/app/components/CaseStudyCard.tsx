@@ -8,7 +8,7 @@ interface CaseStudyCardProps {
   client: string;
   industry: string;
   image: string;
-  impact: Record<string, string>;
+  impact: Record<string, string | undefined>;
   onClick?: () => void;
 }
 

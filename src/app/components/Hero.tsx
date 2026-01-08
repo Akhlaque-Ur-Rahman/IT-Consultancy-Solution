@@ -8,15 +8,15 @@ interface HeroProps {
 
 export function Hero({ onNavigate }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-16 md:pt-20">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#f59e0b] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#f59e0b] rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-[#f59e0b] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-[#f59e0b] rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-6 py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-[1400px] mx-auto px-4 md:px-6 py-12 md:py-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -25,20 +25,20 @@ export function Hero({ onNavigate }: HeroProps) {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse"></div>
-              <span className="text-sm font-medium text-[#f59e0b]">
+              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#f59e0b] animate-pulse"></div>
+              <span className="text-xs md:text-sm font-medium text-[#f59e0b]">
                 Trusted by 500+ Enterprises
               </span>
             </motion.div>
 
             {/* Main Headline - SEO H1 */}
             <motion.h1
-              className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}

@@ -57,17 +57,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <TrustCarousel logos={clientLogos} />
 
       {/* SEO Section: Main Services - H2 */}
-      <section className="py-20 bg-black">
-        <div className="max-w-[1400px] mx-auto px-6">
+      <section className="py-12 md:py-20 bg-black">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6">
           {/* Section Header */}
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
               Comprehensive IT Consulting &amp; Software Development Services
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">

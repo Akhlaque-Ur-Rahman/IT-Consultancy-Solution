@@ -40,7 +40,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   ];
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-gradient-to-br from-[#f9fafb] to-white">
+    <div className="pt-32 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -49,10 +49,10 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-white mb-4">
             About TechConsult Pro
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Empowering businesses through technology, innovation, and expert guidance since 2015
           </p>
         </motion.div>
@@ -66,8 +66,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <div className="space-y-4 text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
+            <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
                 Founded in 2015, TechConsult Pro began with a simple mission: to help businesses navigate 
                 the complexities of digital transformation with confidence and clarity.
@@ -82,11 +82,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               </p>
             </div>
           </div>
-          <div className="relative h-96 rounded-2xl overflow-hidden">
+          <div className="relative h-96 rounded-2xl overflow-hidden border border-[#262626]">
             <ImageWithFallback
               src="https://source.unsplash.com/800x600/?office,technology,team"
               alt="Team at work"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
             />
           </div>
         </motion.div>
@@ -94,30 +94,34 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           <motion.div
-            className="bg-gradient-to-br from-[#1a3a5c] to-[#0f2642] rounded-2xl p-10 text-white"
+            className="bg-[#121212] border border-[#262626] rounded-2xl p-10 group hover:border-[#f59e0b]/50 transition-colors duration-300"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Target className="w-12 h-12 mb-6" />
-            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="text-white/90">
+            <div className="w-16 h-16 rounded-full bg-[#f59e0b]/10 flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-[#f59e0b]" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+            <p className="text-gray-400 leading-relaxed">
               To empower businesses with cutting-edge technology solutions and expert guidance, 
               enabling them to scale efficiently, compete effectively, and achieve sustainable growth.
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-[#14b8a6] to-[#0f766e] rounded-2xl p-10 text-white"
+            className="bg-[#121212] border border-[#262626] rounded-2xl p-10 group hover:border-[#f59e0b]/50 transition-colors duration-300"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Eye className="w-12 h-12 mb-6" />
-            <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-            <p className="text-white/90">
+             <div className="w-16 h-16 rounded-full bg-[#f59e0b]/10 flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 text-[#f59e0b]" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+            <p className="text-gray-400 leading-relaxed">
               To be India's most trusted IT consulting partner, known for delivering exceptional 
               value, fostering innovation, and creating lasting impact for businesses of all sizes.
             </p>
@@ -132,22 +136,22 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Our Values</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="text-center"
+                className="text-center group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#14b8a6] to-[#0f766e] flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-full bg-[#121212] border border-[#262626] group-hover:border-[#f59e0b] flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                  <value.icon className="w-8 h-8 text-[#f59e0b]" />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h4>
-                <p className="text-gray-600 text-sm">{value.description}</p>
+                <h4 className="text-xl font-semibold text-white mb-2">{value.title}</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -161,8 +165,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Leadership Team</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">Leadership Team</h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
             Meet the experienced professionals leading our mission to deliver excellence
           </p>
           
@@ -170,23 +174,23 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
-                className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-colors duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <div className="relative h-64 bg-gray-100">
+                <div className="relative h-64 bg-[#0a0a0a]">
                   <ImageWithFallback
                     src={`https://source.unsplash.com/400x600/?${encodeURIComponent(member.image)}`}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100"
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h4>
-                  <p className="text-sm text-[#14b8a6] font-medium mb-3">{member.role}</p>
-                  <p className="text-sm text-gray-600">{member.bio}</p>
+                  <h4 className="text-xl font-semibold text-white mb-1">{member.name}</h4>
+                  <p className="text-sm text-[#f59e0b] font-medium mb-3">{member.role}</p>
+                  <p className="text-sm text-gray-400">{member.bio}</p>
                 </div>
               </motion.div>
             ))}
@@ -195,16 +199,16 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
         {/* Careers Section */}
         <motion.div
-          className="bg-white rounded-3xl border-2 border-gray-200 p-12"
+          className="bg-[#121212] rounded-3xl border border-[#262626] p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-12">
-            <Briefcase className="w-12 h-12 text-[#14b8a6] mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Join Our Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <Briefcase className="w-12 h-12 text-[#f59e0b] mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-white mb-4">Join Our Team</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
               We're always looking for talented individuals who are passionate about technology and innovation
             </p>
           </div>
@@ -213,18 +217,18 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             {openRoles.map((role, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-6 rounded-xl border border-gray-200 hover:border-[#14b8a6] hover:bg-gray-50 transition-all duration-200"
+                className="flex items-center justify-between p-6 rounded-xl border border-[#262626] hover:border-[#f59e0b] hover:bg-[#1a1a1a] transition-all duration-200"
               >
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">{role.title}</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-white mb-1">{role.title}</h4>
+                  <p className="text-sm text-gray-400">
                     {role.department} • {role.location}
                   </p>
                 </div>
                 <Button
                   onClick={() => onNavigate('contact')}
                   variant="outline"
-                  className="border-[#14b8a6] text-[#14b8a6] hover:bg-[#14b8a6] hover:text-white"
+                  className="border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black bg-transparent"
                 >
                   Apply Now
                 </Button>
@@ -235,7 +239,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           <div className="text-center">
             <Button
               onClick={() => onNavigate('contact')}
-              className="bg-[#1a3a5c] hover:bg-[#0f2642] text-white px-8"
+              className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] px-8 py-6"
             >
               <Mail className="mr-2 w-4 h-4" />
               Send Us Your Resume

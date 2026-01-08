@@ -107,7 +107,7 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
   ];
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-gradient-to-br from-[#f9fafb] to-white">
+    <div className="pt-32 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -116,14 +116,14 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#14b8a6]/10 border border-[#14b8a6]/20 mb-4">
-            <Zap className="w-4 h-4 text-[#0f766e]" />
-            <span className="text-sm font-medium text-[#0f766e]">Enterprise Solutions</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
+            <Zap className="w-4 h-4 text-[#f59e0b]" />
+            <span className="text-sm font-medium text-[#f59e0b]">Enterprise Solutions</span>
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-white mb-4">
             Products & Solutions
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Powerful, scalable business solutions designed to streamline operations and drive growth
           </p>
         </motion.div>
@@ -143,40 +143,40 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
             >
               {/* Content */}
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1a3a5c] to-[#14b8a6] flex items-center justify-center mb-6">
-                  <solution.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-2xl bg-[#121212] border border-[#262626] flex items-center justify-center mb-6">
+                  <solution.icon className="w-8 h-8 text-[#f59e0b]" />
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-3xl font-bold text-white mb-2">
                   {solution.name}
                 </h2>
-                <p className="text-[#14b8a6] font-medium mb-4">{solution.tagline}</p>
-                <p className="text-gray-600 text-lg mb-6">{solution.description}</p>
+                <p className="text-[#f59e0b] font-medium mb-4">{solution.tagline}</p>
+                <p className="text-gray-400 text-lg mb-6">{solution.description}</p>
 
                 {/* Benefits */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3">
+                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
                     Key Benefits
                   </h4>
                   <div className="grid grid-cols-2 gap-3">
                     {solution.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-[#14b8a6] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">{benefit}</span>
+                        <Check className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-300">{benefit}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Pricing & CTA */}
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
+                <div className="flex items-center gap-4 pt-6 border-t border-[#262626]">
                   <div>
                     <p className="text-sm text-gray-500">Starting at</p>
-                    <p className="text-2xl font-bold text-gray-900">{solution.pricing}</p>
+                    <p className="text-2xl font-bold text-white">{solution.pricing}</p>
                   </div>
                   <Button
                     onClick={() => onNavigate('contact')}
-                    className="ml-auto bg-[#f97316] hover:bg-[#ea580c] text-white px-8"
+                    className="ml-auto bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black px-8 font-semibold"
                   >
                     Request Demo
                     <ArrowRight className="ml-2 w-4 h-4" />
@@ -186,17 +186,17 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
 
               {/* Features Card */}
               <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-xl transition-shadow duration-300">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-6">
+                <div className="bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-colors duration-300">
+                  <h4 className="text-xl font-semibold text-white mb-6">
                     Features Included
                   </h4>
                   <div className="space-y-4">
                     {solution.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-[#14b8a6]/10 flex items-center justify-center flex-shrink-0">
-                          <Check className="w-4 h-4 text-[#14b8a6]" />
+                        <div className="w-6 h-6 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
+                          <Check className="w-4 h-4 text-[#f59e0b]" />
                         </div>
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -208,21 +208,21 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
 
         {/* Hyperlocal Platform Section */}
         <motion.div
-          className="mt-20 bg-gradient-to-br from-[#1a3a5c] via-[#0f2642] to-[#0a1628] rounded-3xl p-12 text-white overflow-hidden relative"
+          className="mt-20 bg-[#121212] border border-[#262626] rounded-3xl p-12 text-white overflow-hidden relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#14b8a6] rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#f59e0b] rounded-full blur-3xl"></div>
           </div>
 
           <div className="relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold mb-4">Hyperlocal Platform</h2>
-                <p className="text-xl text-white/80 mb-6">
+                <h2 className="text-4xl font-bold mb-4 text-white">Hyperlocal Platform</h2>
+                <p className="text-xl text-gray-400 mb-6">
                   Connect local businesses with customers through location-based services
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -235,22 +235,22 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
                     'Analytics dashboard',
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-[#14b8a6]" />
-                      <span className="text-white/90">{feature}</span>
+                      <Check className="w-5 h-5 text-[#f59e0b]" />
+                      <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="flex gap-4">
                   <Button
                     onClick={() => onNavigate('contact')}
-                    className="bg-[#f97316] hover:bg-[#ea580c] text-white px-8"
+                    className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8"
                   >
                     Request Demo
                   </Button>
                   <Button
                     onClick={() => onNavigate('case-studies')}
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#1a3a5c] px-8"
+                    className="border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black px-8 bg-transparent"
                   >
                     View Case Study
                   </Button>
@@ -266,10 +266,10 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
                 ].map((stat, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+                    className="bg-[#0a0a0a] border border-[#262626] rounded-xl p-6 text-center"
                   >
-                    <p className="text-3xl font-bold text-white mb-2">{stat.value}</p>
-                    <p className="text-white/70 text-sm">{stat.label}</p>
+                    <p className="text-3xl font-bold text-[#f59e0b] mb-2">{stat.value}</p>
+                    <p className="text-gray-400 text-sm">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -285,15 +285,15 @@ export function SolutionsPage({ onNavigate }: SolutionsPageProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+          <h3 className="text-3xl font-bold text-white mb-4">
             Need a Custom Solution?
           </h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             We build bespoke software tailored to your unique business requirements
           </p>
           <Button
             onClick={() => onNavigate('contact')}
-            className="bg-[#1a3a5c] hover:bg-[#0f2642] text-white px-10 py-6 text-lg"
+            className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-10 py-6 text-lg"
           >
             Discuss Your Requirements
           </Button>
