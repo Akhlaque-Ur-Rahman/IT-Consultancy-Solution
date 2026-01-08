@@ -60,12 +60,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">
-                EDUNEX
-              </span>
-              <span className="text-xl font-mono text-[#f59e0b]">&lt;/&gt;</span>
-            </div>
+            <img src="/src/assets/logo.png" alt="EDUNEX Logo" className="h-10 w-auto" />
           </motion.div>
 
           {/* Desktop Navigation */}

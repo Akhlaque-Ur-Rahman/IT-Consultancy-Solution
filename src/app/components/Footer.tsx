@@ -43,12 +43,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">
-                EDUNEX
-              </span>
-              <span className="text-lg font-mono text-[#f59e0b]">&lt;/&gt;</span>
-            </div>
+            <img src="/src/assets/logo.png" alt="EDUNEX Logo" className="h-10 w-auto" />
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Enterprise-grade IT consulting, software development, and business solutions for scaling organizations.
             </p>
