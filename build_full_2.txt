@@ -1,0 +1,445 @@
+﻿
+> it-consulting-website@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+node.exe : 
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" "C:
+\Users\ikhla\AppData\
+Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (:String   
+ ) [], RemoteExce    
+ption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+> Build error 
+occurred
+Error: Turbopack 
+build failed with 5 
+errors:
+./src/components/Case
+StudyCard.tsx:3:10
+Ecmascript file had 
+an error
+[0m [90m 1 |[39m 
+[36mimport[39m { 
+motion[33m,[39m use
+MotionValue[33m,[39
+m useTransform } 
+[36mfrom[39m [32m'
+motion/react'[39m[3
+3m;[39m
+ [90m 2 |[39m 
+[36mimport[39m { [
+33mArrowRight[39m[3
+3m,[39m 
+[33mTrendingUp[39m 
+} [36mfrom[39m [32
+m'lucide-react'[39m
+[33m;[39m
+[31m[1m>[22m[39m
+[90m 3 |[39m 
+[36mimport[39m { 
+useState } 
+[36mfrom[39m [32m'
+react'[39m[33m;[39
+m
+ [90m   |[39m      
+    [31m[1m^[22m[
+39m[31m[1m^[22m[3
+9m[31m[1m^[22m[39
+m[31m[1m^[22m[39m
+[31m[1m^[22m[39m
+[31m[1m^[22m[39m[
+31m[1m^[22m[39m[3
+1m[1m^[22m[39m
+ [90m 4 |[39m 
+[36mimport[39m { [
+33mImageWithFallback
+[39m } 
+[36mfrom[39m [32m'
+./figma/ImageWithFall
+back'[39m[33m;[39m
+ [90m 5 |[39m
+ [90m 6 |[39m 
+[36minterface[39m 
+[33mCaseStudyCardProp
+s[39m {[0m
+
+You're importing a 
+component that needs 
+`useState`. This 
+React Hook only 
+works in a Client 
+Component. To fix, 
+mark the file (or 
+its parent) with the 
+`"use client"` 
+directive.
+
+ Learn more: https://
+nextjs.org/docs/app/a
+pi-reference/directiv
+es/use-client
+
+
+
+Import traces:
+  Server Component:
+    ./src/components/
+CaseStudyCard.tsx
+    
+./src/app/page.tsx
+
+  Client Component 
+Browser:
+    ./src/components/
+CaseStudyCard.tsx 
+[Client Component 
+Browser]
+    ./src/app/case-st
+udies/page.tsx 
+[Client Component 
+Browser]
+    ./src/app/case-st
+udies/page.tsx 
+[Server Component]
+
+  Client Component 
+SSR:
+    ./src/components/
+CaseStudyCard.tsx 
+[Client Component 
+SSR]
+    ./src/app/case-st
+udies/page.tsx 
+[Client Component 
+SSR]
+    ./src/app/case-st
+udies/page.tsx 
+[Server Component]
+
+
+./src/components/FAQS
+ection.tsx:1:10
+Ecmascript file had 
+an error
+[0m[31m[1m>[22m[
+39m[90m 1 |[39m 
+[36mimport[39m { 
+useState } 
+[36mfrom[39m [32m'
+react'[39m[33m;[39
+m
+ [90m   |[39m      
+    [31m[1m^[22m[
+39m[31m[1m^[22m[3
+9m[31m[1m^[22m[39
+m[31m[1m^[22m[39m
+[31m[1m^[22m[39m
+[31m[1m^[22m[39m[
+31m[1m^[22m[39m[3
+1m[1m^[22m[39m
+ [90m 2 |[39m 
+[36mimport[39m { 
+motion[33m,[39m [3
+3mAnimatePresence[39
+m } [36mfrom[39m [
+32m'motion/react'[39
+m[33m;[39m
+ [90m 3 |[39m 
+[36mimport[39m { [
+33mChevronDown[39m 
+} [36mfrom[39m [32
+m'lucide-react'[39m
+[33m;[39m
+ [90m 4 |[39m[0m
+
+You're importing a 
+component that needs 
+`useState`. This 
+React Hook only 
+works in a Client 
+Component. To fix, 
+mark the file (or 
+its parent) with the 
+`"use client"` 
+directive.
+
+ Learn more: https://
+nextjs.org/docs/app/a
+pi-reference/directiv
+es/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/
+FAQSection.tsx
+    
+./src/app/page.tsx
+
+
+./src/components/Metr
+icsCounter.tsx:2:10
+Ecmascript file had 
+an error
+[0m [90m 1 |[39m 
+[36mimport[39m { 
+motion[33m,[39m 
+useInView[33m,[39m 
+useMotionValue[33m,
+[39m useSpring } 
+[36mfrom[39m [32m'
+motion/react'[39m[3
+3m;[39m
+[31m[1m>[22m[39m
+[90m 2 |[39m 
+[36mimport[39m { 
+useEffect[33m,[39m 
+useRef } 
+[36mfrom[39m [32m'
+react'[39m[33m;[39
+m
+ [90m   |[39m      
+    [31m[1m^[22m[
+39m[31m[1m^[22m[3
+9m[31m[1m^[22m[39
+m[31m[1m^[22m[39m
+[31m[1m^[22m[39m
+[31m[1m^[22m[39m[
+31m[1m^[22m[39m[3
+1m[1m^[22m[39m[31
+m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m 
+[36minterface[39m 
+[33mMetricProps[39m 
+{
+ [90m 5 |[39m   
+label[33m:[39m 
+string[33m;[39m[0m
+
+You're importing a 
+component that needs 
+`useEffect`. This 
+React Hook only 
+works in a Client 
+Component. To fix, 
+mark the file (or 
+its parent) with the 
+`"use client"` 
+directive.
+
+ Learn more: https://
+nextjs.org/docs/app/a
+pi-reference/directiv
+es/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/
+MetricsCounter.tsx
+    
+./src/app/page.tsx
+
+
+./src/components/Metr
+icsCounter.tsx:2:21
+Ecmascript file had 
+an error
+[0m [90m 1 |[39m 
+[36mimport[39m { 
+motion[33m,[39m 
+useInView[33m,[39m 
+useMotionValue[33m,
+[39m useSpring } 
+[36mfrom[39m [32m'
+motion/react'[39m[3
+3m;[39m
+[31m[1m>[22m[39m
+[90m 2 |[39m 
+[36mimport[39m { 
+useEffect[33m,[39m 
+useRef } 
+[36mfrom[39m [32m'
+react'[39m[33m;[39
+m
+ [90m   |[39m      
+               [31m
+[1m^[22m[39m[31m[
+1m^[22m[39m[31m[1
+m^[22m[39m[31m[1m
+^[22m[39m[31m[1m^
+[22m[39m[31m[1m^
+[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m 
+[36minterface[39m 
+[33mMetricProps[39m 
+{
+ [90m 5 |[39m   
+label[33m:[39m 
+string[33m;[39m[0m
+
+You're importing a 
+component that needs 
+`useRef`. This React 
+Hook only works in a 
+Client Component. To 
+fix, mark the file 
+(or its parent) with 
+the `"use client"` 
+directive.
+
+ Learn more: https://
+nextjs.org/docs/app/a
+pi-reference/directiv
+es/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/
+MetricsCounter.tsx
+    
+./src/app/page.tsx
+
+
+./src/components/figm
+a/ImageWithFallback.t
+sx:1:17
+Ecmascript file had 
+an error
+[0m[31m[1m>[22m[
+39m[90m 1 |[39m 
+[36mimport[39m [33
+mReact[39m[33m,[39
+m { useState } 
+[36mfrom[39m 
+[32m'react'[39m
+ [90m   |[39m      
+           [31m[1m^
+[22m[39m[31m[1m^
+[22m[39m[31m[1m^[
+22m[39m[31m[1m^[2
+2m[39m[31m[1m^[22
+m[39m[31m[1m^[22m
+[39m[31m[1m^[22m
+[39m[31m[1m^[22m[
+39m
+ [90m 2 |[39m
+ [90m 3 |[39m 
+[36mconst[39m [33m
+ERROR_IMG_SRC[39m 
+[33m=[39m
+ [90m 4 |[39m   [3
+2m'data:image/svg+xml
+;base64,PHN2ZyB3aWR0a
+D0iODgiIGhlaWdodD0iOD
+giIHhtbG5zPSJodHRwOi8
+vd3d3LnczLm9yZy8yMDAw
+L3N2ZyIgc3Ryb2tlPSIjM
+DAwIiBzdHJva2UtbGluZW
+pvaW49InJvdW5kIiBvcGF
+jaXR5PSIuMyIgZmlsbD0i
+bm9uZSIgc3Ryb2tlLXdpZ
+HRoPSIzLjciPjxyZWN0IH
+g9IjE2IiB5PSIxNiIgd2l
+kdGg9IjU2IiBoZWlnaHQ9
+IjU2IiByeD0iNiIvPjxwY
+XRoIGQ9Im0xNiA1OCAxNi
+0xOCAzMiAzMiIvPjxjaXJ
+jbGUgY3g9IjUzIiBjeT0i
+MzUiIHI9IjciLz48L3N2Z
+z4KCg=='[39m[0m
+
+You're importing a 
+component that needs 
+`useState`. This 
+React Hook only 
+works in a Client 
+Component. To fix, 
+mark the file (or 
+its parent) with the 
+`"use client"` 
+directive.
+
+ Learn more: https://
+nextjs.org/docs/app/a
+pi-reference/directiv
+es/use-client
+
+
+
+Import traces:
+  Client Component 
+Browser:
+    ./src/components/
+figma/ImageWithFallba
+ck.tsx [Client 
+Component Browser]
+    ./src/app/case-st
+udies/page.tsx 
+[Client Component 
+Browser]
+    ./src/app/case-st
+udies/page.tsx 
+[Server Component]
+
+  Client Component 
+SSR:
+    ./src/components/
+figma/ImageWithFallba
+ck.tsx [Client 
+Component SSR]
+    ./src/app/case-st
+udies/page.tsx 
+[Client Component 
+SSR]
+    ./src/app/case-st
+udies/page.tsx 
+[Server Component]
+
+  Server Component:
+    ./src/components/
+figma/ImageWithFallba
+ck.tsx
+    ./src/components/
+CaseStudyCard.tsx
+    
+./src/app/page.tsx
+
+
+    at <unknown> (./s
+rc/components/CaseStu
+dyCard.tsx:3:10)
+    at <unknown> (./s
+rc/components/FAQSect
+ion.tsx:1:10)
+    at <unknown> (./s
+rc/components/Metrics
+Counter.tsx:2:10)
+    at <unknown> (./s
+rc/components/Metrics
+Counter.tsx:2:21)
+    at <unknown> (./s
+rc/components/figma/I
+mageWithFallback.tsx:
+1:17)
