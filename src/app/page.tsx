@@ -1,4 +1,4 @@
-import { Hero } from '@/components/Hero';
+import { HeroModern } from '@/components/HeroModern';
 import { ServiceCard } from '@/components/ServiceCard';
 import { TrustCarousel } from '@/components/TrustCarousel';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
@@ -58,7 +58,7 @@ export default function HomePage() {
   return (
     <div className="bg-black">
       {/* SEO: H1 is in Hero component */}
-      <Hero />
+      <HeroModern />
 
       {/* Trust Signals - Client Logos */}
       <TrustCarousel logos={clientLogos} />
