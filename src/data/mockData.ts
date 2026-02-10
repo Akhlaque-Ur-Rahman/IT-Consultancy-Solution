@@ -200,14 +200,14 @@ export const testimonials = [
 ];
 
 export const clientLogos = [
-  'TCS',
-  'Wipro',
-  'Infosys',
-  'HCL',
-  'Tech Mahindra',
-  'Cognizant',
-  'Capgemini',
-  'Accenture',
+  'Apollo Hospitals',
+  'HDFC Bank',
+  'Flipkart',
+  'Delhivery',
+  'Byju\'s',
+  'Tata Motors',
+  'Nykaa',
+  'Reliance Retail',
 ];
 
 export const complianceServices = [

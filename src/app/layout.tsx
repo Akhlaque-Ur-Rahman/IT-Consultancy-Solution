@@ -1,15 +1,33 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/index.css';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { ConsultationCTA } from '@/components/ConsultationCTA';
+import Shell from '@/components/Shell';
+import SmoothScroll from '@/components/SmoothScroll';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'IT Consulting Website Design',
-  description: 'Enterprise IT Consulting & Software Development',
+  title: {
+    default: 'EDUNEX - IT Consulting & Software Development',
+    template: '%s | EDUNEX'
+  },
+  description: 'EDUNEX delivers enterprise-grade technology solutions including web and mobile app development, CRM/ERP systems, and digital marketing.',
+  keywords: ['IT Consulting', 'Software Development', 'Web Development', 'Mobile Apps', 'Digital Marketing', 'Business Compliance', 'CRM', 'ERP'],
+  authors: [{ name: 'EDUNEX Team' }],
+  creator: 'EDUNEX',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://edunex.com', // Placeholder URL
+    title: 'EDUNEX - IT Consulting & Software Development',
+    description: 'Enterprise-grade technology solutions for digital transformation.',
+    siteName: 'EDUNEX',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EDUNEX - IT Consulting & Software Development',
+    description: 'Enterprise-grade technology solutions for digital transformation.',
+  },
 };
 
 export default function RootLayout({
@@ -20,12 +38,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased bg-black text-white`}>
-        <Header />
-        <main className="min-h-screen pt-20">
-          {children}
-        </main>
-        <Footer />
-        <ConsultationCTA />
+        <SmoothScroll />
+        <Shell>{children}</Shell>
       </body>
     </html>
   );

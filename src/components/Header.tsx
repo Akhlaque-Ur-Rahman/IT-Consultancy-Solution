@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown, Search } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { GooeyNav } from './ui/gooey-nav';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -70,63 +70,9 @@ export function Header() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navigationItems.map((item) => (
-              <div
-                key={item.href}
-                className="relative"
-                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.href)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                {item.hasDropdown ? (
-                  <Link
-                    href={item.href}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-1 ${
-                      isActive(item.href)
-                        ? 'text-[#f59e0b] bg-[#1a1a1a]'
-                        : 'text-gray-300 hover:text-[#f59e0b] hover:bg-[#1a1a1a]'
-                    }`}
-                  >
-                    {item.label}
-                    <ChevronDown className="w-4 h-4" />
-                  </Link>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-1 ${
-                      isActive(item.href)
-                        ? 'text-[#f59e0b] bg-[#1a1a1a]'
-                        : 'text-gray-300 hover:text-[#f59e0b] hover:bg-[#1a1a1a]'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-
-                {/* Dropdown Menu */}
-                {item.hasDropdown && activeDropdown === item.href && (
-                  <motion.div
-                    className="absolute top-full left-0 mt-2 w-64 bg-[#121212] rounded-lg shadow-2xl border border-[#262626] py-2 overflow-hidden"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item.dropdownItems?.map((dropdownItem, idx) => (
-                      <Link
-                        key={idx}
-                        href={dropdownItem.href}
-                        onClick={() => setActiveDropdown(null)}
-                        className="block w-full px-4 py-2.5 text-left text-sm text-gray-300 hover:bg-[#1a1a1a] hover:text-[#f59e0b] transition-colors"
-                      >
-                        {dropdownItem.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </div>
-            ))}
-          </nav>
+          <div className="hidden lg:block">
+            <GooeyNav items={navigationItems} currentPath={pathname} />
+          </div>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3">
