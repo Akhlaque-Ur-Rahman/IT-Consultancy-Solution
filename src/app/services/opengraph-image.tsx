@@ -3,8 +3,7 @@ import { getOGImage } from "@/lib/og-image";
 
 export const runtime = "edge";
 
-// Image metadata
-export const alt = "EDUNEX - IT Consulting & Software Development";
+export const alt = "Our Services | EDUNEX";
 export const size = {
   width: 1200,
   height: 630,
@@ -13,7 +12,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  return new ImageResponse(getOGImage(), {
+  return new ImageResponse(getOGImage("SERVICES"), {
     ...size,
   });
 }

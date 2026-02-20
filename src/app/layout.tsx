@@ -7,6 +7,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://edunexservices.in"),
   title: {
     default: "EDUNEX - IT Consulting & Software Development",
     template: "%s | EDUNEX",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://edunex.com", // Placeholder URL
+    url: "https://edunexservices.in",
     title: "EDUNEX - IT Consulting & Software Development",
     description:
       "Enterprise-grade technology solutions for digital transformation.",
