@@ -1,36 +1,54 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import Link from 'next/link';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Youtube,
+} from "lucide-react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   const quickLinks = [
-    { label: 'About Us', href: '/about', id: 'about-us' },
-    { label: 'Services', href: '/services', id: 'services' },
-    { label: 'Case Studies', href: '/case-studies', id: 'case-studies' },
-    { label: 'Careers', href: '/about', id: 'careers' },
+    { label: "About Us", href: "/about", id: "about-us" },
+    { label: "Services", href: "/services", id: "services" },
+    { label: "Case Studies", href: "/case-studies", id: "case-studies" },
+    { label: "Careers", href: "/about", id: "careers" },
   ];
 
   const services = [
-    { label: 'Web Development', href: '/services?category=development', id: 'web-dev' },
-    { label: 'CRM/ERP Solutions', href: '/solutions', id: 'crm-erp' },
-    { label: 'Digital Marketing', href: '/services?category=marketing', id: 'digital-marketing' },
-    { label: 'Compliance Services', href: '/compliance', id: 'compliance' },
+    {
+      label: "Web Development",
+      href: "/services?category=development",
+      id: "web-dev",
+    },
+    { label: "CRM/ERP Solutions", href: "/solutions", id: "crm-erp" },
+    {
+      label: "Digital Marketing",
+      href: "/services?category=marketing",
+      id: "digital-marketing",
+    },
+    { label: "Compliance Services", href: "/compliance", id: "compliance" },
   ];
 
   const resources = [
-    { label: 'Blog', href: '/resources', id: 'blog' },
-    { label: 'Whitepapers', href: '/resources', id: 'whitepapers' },
-    { label: 'FAQs', href: '/resources', id: 'faqs' },
-    { label: 'Support', href: '/contact', id: 'support' },
+    { label: "Blog", href: "/resources", id: "blog" },
+    { label: "Whitepapers", href: "/resources", id: "whitepapers" },
+    { label: "FAQs", href: "/resources", id: "faqs" },
+    { label: "Support", href: "/contact", id: "support" },
   ];
 
   const socialLinks = [
-    { icon: Facebook, label: 'Facebook', url: '#' },
-    { icon: Twitter, label: 'Twitter', url: '#' },
-    { icon: Linkedin, label: 'LinkedIn', url: '#' },
-    { icon: Instagram, label: 'Instagram', url: '#' },
-    { icon: Youtube, label: 'YouTube', url: '#' },
+    { icon: Facebook, label: "Facebook", url: "#" },
+    { icon: Twitter, label: "Twitter", url: "#" },
+    { icon: Linkedin, label: "LinkedIn", url: "#" },
+    { icon: Instagram, label: "Instagram", url: "#" },
+    { icon: Youtube, label: "YouTube", url: "#" },
   ];
 
   return (
@@ -40,9 +58,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <img src="/logo.jpg" alt="EDUNEX Logo" className="h-14 w-auto" />
+            <Image
+              src="/logo.jpg"
+              alt="EDUNEX Logo"
+              className="h-14 w-auto object-contain"
+              width={200}
+              height={56}
+            />
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Enterprise-grade IT consulting, software development, and business solutions for scaling organizations.
+              Enterprise-grade IT consulting, software development, and business
+              solutions for scaling organizations.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm text-gray-400">
@@ -62,7 +87,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">
+              Quick Links
+            </h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.id}>
@@ -79,7 +106,9 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">Services</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">
+              Services
+            </h4>
             <ul className="space-y-2.5">
               {services.map((service) => (
                 <li key={service.id}>
@@ -96,7 +125,9 @@ export function Footer() {
 
           {/* Resources & Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">Resources</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">
+              Resources
+            </h4>
             <ul className="space-y-2.5 mb-6">
               {resources.map((resource) => (
                 <li key={resource.id}>
@@ -109,8 +140,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            
-            <h4 className="text-sm font-semibold mb-3">Subscribe to Newsletter</h4>
+
+            <h4 className="text-sm font-semibold mb-3">
+              Subscribe to Newsletter
+            </h4>
             <div className="flex gap-2">
               <Input
                 type="email"
@@ -142,18 +175,26 @@ export function Footer() {
                 );
               })}
             </div>
-            
+
             <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
               <span className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#f59e0b]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                <svg
+                  className="w-4 h-4 text-[#f59e0b]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
                 ISO 9001:2015 Certified
               </span>
               <span>•</span>
               <span className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#f59e0b]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                <svg
+                  className="w-4 h-4 text-[#f59e0b]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
                 </svg>
                 GDPR Compliant
               </span>
@@ -170,9 +211,15 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <p>© 2026 EDUNEX. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <button className="hover:text-[#f59e0b] transition-colors">Privacy Policy</button>
-              <button className="hover:text-[#f59e0b] transition-colors">Terms of Service</button>
-              <button className="hover:text-[#f59e0b] transition-colors">Cookie Policy</button>
+              <button className="hover:text-[#f59e0b] transition-colors">
+                Privacy Policy
+              </button>
+              <button className="hover:text-[#f59e0b] transition-colors">
+                Terms of Service
+              </button>
+              <button className="hover:text-[#f59e0b] transition-colors">
+                Cookie Policy
+              </button>
             </div>
           </div>
         </div>

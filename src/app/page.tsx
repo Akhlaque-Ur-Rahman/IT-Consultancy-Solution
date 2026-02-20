@@ -301,7 +301,7 @@ export default function HomePage() {
             alternateName: "EDUNEX IT Consulting",
             description:
               "Enterprise IT consulting, software development, CRM/ERP implementation, digital marketing, and business compliance services",
-            url: "https://edunex.tech",
+            url: "https://edunexservices.in",
             telephone: "+91-70708-09208",
             email: "support@edunesservices.in",
             address: {
@@ -314,6 +314,11 @@ export default function HomePage() {
             },
             areaServed: ["Phulwari Sharif", "Patna", "Bihar", "India"],
             priceRange: "₹₹₹",
+            sameAs: [
+              "https://www.facebook.com/edunexservices",
+              "https://www.linkedin.com/company/edunexservices",
+              "https://www.instagram.com/edunexservices",
+            ],
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "4.9",

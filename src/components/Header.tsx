@@ -1,12 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { GooeyNav } from './ui/gooey-nav';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Menu, X } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { GooeyNav } from "./ui/gooey-nav";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,40 +18,45 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navigationItems = [
-    { label: 'Home', href: '/' },
-    { 
-      label: 'Services', 
-      href: '/services',
+    { label: "Home", href: "/" },
+    {
+      label: "Services",
+      href: "/services",
       hasDropdown: true,
       dropdownItems: [
-        { label: 'Web & App Development', href: '/services?category=development' },
-        { label: 'CRM/ERP Solutions', href: '/solutions' },
-        { label: 'Digital Marketing', href: '/services?category=marketing' },
-        { label: 'UI/UX Design', href: '/services?category=design' },
-        { label: 'All Services', href: '/services' },
-      ]
+        {
+          label: "Web & App Development",
+          href: "/services?category=development",
+        },
+        { label: "CRM/ERP Solutions", href: "/solutions" },
+        { label: "Digital Marketing", href: "/services?category=marketing" },
+        { label: "UI/UX Design", href: "/services?category=design" },
+        { label: "All Services", href: "/services" },
+      ],
     },
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Compliance', href: '/compliance' },
-    { label: 'About', href: '/about' },
-    { label: 'Resources', href: '/resources' },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Compliance", href: "/compliance" },
+    { label: "About", href: "/about" },
+    { label: "Resources", href: "/resources" },
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
+    if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-[#262626]' : 'bg-black/80 backdrop-blur-sm'
+        isScrolled
+          ? "bg-black/95 backdrop-blur-md border-b border-[#262626]"
+          : "bg-black/80 backdrop-blur-sm"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -65,7 +71,14 @@ export function Header() {
             whileTap={{ scale: 0.98 }}
           >
             <Link href="/">
-              <img src="/logo.jpg" alt="EDUNEX Logo" className="h-14 w-auto" />
+              <Image
+                src="/logo.jpg"
+                alt="EDUNEX Logo"
+                className="h-14 w-auto object-contain"
+                width={200}
+                height={56}
+                priority
+              />
             </Link>
           </motion.div>
 
@@ -77,9 +90,7 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3">
             <Link href="/contact">
-              <Button
-                className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-semibold px-6 transition-all duration-200"
-              >
+              <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-semibold px-6 transition-all duration-200">
                 Get Started
               </Button>
             </Link>
@@ -90,7 +101,11 @@ export function Header() {
             className="lg:hidden p-2 text-gray-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -100,7 +115,7 @@ export function Header() {
             <motion.div
               className="lg:hidden py-4 border-t border-[#262626]"
               initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
+              animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
@@ -112,17 +127,18 @@ export function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`px-4 py-3 rounded-md text-left text-sm font-medium transition-colors ${
                       isActive(item.href)
-                        ? 'text-[#f59e0b] bg-[#1a1a1a]'
-                        : 'text-gray-300 hover:bg-[#1a1a1a] hover:text-[#f59e0b]'
+                        ? "text-[#f59e0b] bg-[#1a1a1a]"
+                        : "text-gray-300 hover:bg-[#1a1a1a] hover:text-[#f59e0b]"
                     }`}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button
-                    className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold mt-2"
-                  >
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold mt-2">
                     Get Started
                   </Button>
                 </Link>
