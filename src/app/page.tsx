@@ -1,57 +1,71 @@
-import { HeroModern } from '@/components/HeroModern';
-import { ServiceCard } from '@/components/ServiceCard';
-import { TrustCarousel } from '@/components/TrustCarousel';
-import { CaseStudyCard } from '@/components/CaseStudyCard';
-import { MetricsCounter } from '@/components/MetricsCounter';
-import { LocalSEOSection } from '@/components/LocalSEOSection';
-import { GMBStyleReviews } from '@/components/GMBStyleReviews';
-import { FAQSection } from '@/components/FAQSection';
+import { HeroModern } from "@/components/HeroModern";
+import { ServiceCard } from "@/components/ServiceCard";
+import { TrustCarousel } from "@/components/TrustCarousel";
+import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { MetricsCounter } from "@/components/MetricsCounter";
+import { LocalSEOSection } from "@/components/LocalSEOSection";
+import { GMBStyleReviews } from "@/components/GMBStyleReviews";
+import { FAQSection } from "@/components/FAQSection";
 
-import { services, clientLogos, caseStudies, metrics, faqs, gmbReviews } from '@/data/mockData';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { ArrowRight, Code, Database, TrendingUp, Shield } from 'lucide-react';
-import type { Metadata } from 'next';
+import {
+  services,
+  clientLogos,
+  caseStudies,
+  metrics,
+  faqs,
+  gmbReviews,
+} from "@/data/mockData";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Home | EDUNEX - IT Consulting & Software Development',
-  description: 'EDUNEX delivers enterprise-grade technology solutions including web and mobile app development, CRM/ERP systems, and digital marketing.',
+  title: "EDUNEX - IT Consulting & Enterprise Software Solutions",
+  description:
+    "Transform your business with EDUNEX. Expert IT consulting, custom software development, ERP/CRM solutions, and digital marketing services.",
 };
 
 export default function HomePage() {
   // SEO-optimized service categories
-  const primaryServices = services.filter(s => 
-    ['web-app-dev', 'crm-erp', 'digital-marketing', 'compliance'].includes(s.id)
+  const primaryServices = services.filter((s) =>
+    ["web-app-dev", "crm-erp", "digital-marketing", "compliance"].includes(
+      s.id,
+    ),
   );
 
   const serviceCategories = [
     {
-      id: 'it-consulting',
+      id: "it-consulting",
       icon: Code,
-      title: 'IT Consulting & Strategy',
-      description: 'Enterprise technology consulting for digital transformation and business growth',
-      href: '/services?category=consulting',
+      title: "IT Consulting & Strategy",
+      description:
+        "Enterprise technology consulting for digital transformation and business growth",
+      href: "/services?category=consulting",
     },
     {
-      id: 'software-dev',
+      id: "software-dev",
       icon: Database,
-      title: 'Software Development',
-      description: 'Custom web, mobile, and enterprise application development services',
-      href: '/services?category=development',
+      title: "Software Development",
+      description:
+        "Custom web, mobile, and enterprise application development services",
+      href: "/services?category=development",
     },
     {
-      id: 'digital-marketing',
+      id: "digital-marketing",
       icon: TrendingUp,
-      title: 'Digital Marketing',
-      description: 'SEO, social media marketing, and performance-driven digital strategies',
-      href: '/services?category=marketing',
+      title: "Digital Marketing",
+      description:
+        "SEO, social media marketing, and performance-driven digital strategies",
+      href: "/services?category=marketing",
     },
     {
-      id: 'compliance',
+      id: "compliance",
       icon: Shield,
-      title: 'Business & Legal Compliance',
-      description: 'Company registration, GST, trademark, and complete compliance management',
-      href: '/compliance',
+      title: "Business & Legal Compliance",
+      description:
+        "Company registration, GST, trademark, and complete compliance management",
+      href: "/compliance",
     },
   ];
 
@@ -67,14 +81,15 @@ export default function HomePage() {
       <section className="py-12 md:py-20 bg-black">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6">
           {/* Section Header */}
-          <div
-            className="text-center mb-10 md:mb-16"
-          >
+          <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
               Comprehensive IT Consulting &amp; Software Development Services
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              EDUNEX delivers enterprise-grade technology solutions including web and mobile app development, CRM/ERP systems, digital marketing, UI/UX design, e-commerce platforms, and complete business compliance services for organizations across India
+              EDUNEX delivers enterprise-grade technology solutions including
+              web and mobile app development, CRM/ERP systems, digital
+              marketing, UI/UX design, e-commerce platforms, and complete
+              business compliance services for organizations across India
             </p>
           </div>
 
@@ -89,9 +104,7 @@ export default function HomePage() {
                   passHref
                   legacyBehavior={false}
                 >
-                  <div
-                    className="bg-[#121212] border border-[#262626] rounded-lg p-6 hover:border-[#f59e0b]/50 transition-all duration-200 group cursor-pointer h-full"
-                  >
+                  <div className="bg-[#121212] border border-[#262626] rounded-lg p-6 hover:border-[#f59e0b]/50 transition-all duration-200 group cursor-pointer h-full">
                     <Icon className="w-12 h-12 text-[#f59e0b] mb-4 group-hover:scale-110 transition-transform" />
                     <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#f59e0b] transition-colors">
                       {category.title}
@@ -108,11 +121,7 @@ export default function HomePage() {
           {/* Detailed Service Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {primaryServices.map((service, index) => (
-              <Link 
-                key={service.id} 
-                href="/services" 
-                className="block h-full"
-              >
+              <Link key={service.id} href="/services" className="block h-full">
                 <ServiceCard
                   icon={service.icon}
                   title={service.title}
@@ -125,33 +134,40 @@ export default function HomePage() {
           </div>
 
           {/* SEO Content Block */}
-          <div
-            className="mt-16 bg-[#121212] border border-[#262626] rounded-lg p-8"
-          >
+          <div className="mt-16 bg-[#121212] border border-[#262626] rounded-lg p-8">
             <h3 className="text-xl font-semibold text-[#f59e0b] mb-4">
               Why Choose EDUNEX for IT Consulting and Software Development?
             </h3>
             <div className="text-sm text-gray-400 leading-relaxed space-y-3">
               <p>
-                EDUNEX is a leading IT consulting and software development company serving businesses across India. With over 15 years of experience, we specialize in delivering custom web applications, mobile apps (iOS and Android), enterprise CRM/ERP systems, e-commerce platforms, and digital transformation solutions tailored to your business needs.
+                EDUNEX is a leading IT consulting and software development
+                company serving businesses across India. With over 15 years of
+                experience, we specialize in delivering custom web applications,
+                mobile apps (iOS and Android), enterprise CRM/ERP systems,
+                e-commerce platforms, and digital transformation solutions
+                tailored to your business needs.
               </p>
               <p>
-                Our team of certified developers, UI/UX designers, digital marketing experts, and compliance professionals work collaboratively to transform your digital infrastructure. We follow industry best practices, agile methodologies, and maintain ISO 9001:2015 certification to ensure quality delivery.
+                Our team of certified developers, UI/UX designers, digital
+                marketing experts, and compliance professionals work
+                collaboratively to transform your digital infrastructure. We
+                follow industry best practices, agile methodologies, and
+                maintain ISO 9001:2015 certification to ensure quality delivery.
               </p>
               <p>
-                Whether you're a startup looking for a minimal viable product (MVP) or an established enterprise requiring complex system integration, EDUNEX provides end-to-end technology solutions with transparent pricing, dedicated project managers, and ongoing support.
+                Whether you're a startup looking for a minimal viable product
+                (MVP) or an established enterprise requiring complex system
+                integration, EDUNEX provides end-to-end technology solutions
+                with transparent pricing, dedicated project managers, and
+                ongoing support.
               </p>
             </div>
           </div>
 
           {/* CTA */}
-          <div
-            className="text-center mt-12"
-          >
+          <div className="text-center mt-12">
             <Link href="/services">
-              <Button
-                className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-6 text-base transition-all duration-200 group"
-              >
+              <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-6 text-base transition-all duration-200 group">
                 View All Services
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -167,24 +183,30 @@ export default function HomePage() {
       <section className="py-20 bg-[#0a0a0a] border-t border-[#262626]">
         <div className="max-w-[1400px] mx-auto px-6">
           {/* Section Header */}
-          <div
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
-              <span className="text-sm font-medium text-[#f59e0b]">Success Stories</span>
+              <span className="text-sm font-medium text-[#f59e0b]">
+                Success Stories
+              </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               Real Results from Our IT Consulting Projects
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-              Discover how EDUNEX has helped businesses across India transform their operations through custom software development, digital marketing, and enterprise solutions
+              Discover how EDUNEX has helped businesses across India transform
+              their operations through custom software development, digital
+              marketing, and enterprise solutions
             </p>
           </div>
 
           {/* Case Study Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((caseStudy) => (
-              <Link key={caseStudy.id} href="/case-studies" className="block h-full">
+              <Link
+                key={caseStudy.id}
+                href="/case-studies"
+                className="block h-full"
+              >
                 <CaseStudyCard
                   title={caseStudy.title}
                   client={caseStudy.client}
@@ -197,13 +219,9 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <div
-            className="text-center mt-12"
-          >
+          <div className="text-center mt-12">
             <Link href="/case-studies">
-              <Button
-                className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-6 text-base transition-all duration-200 group"
-              >
+              <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-6 text-base transition-all duration-200 group">
                 View All Case Studies
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -219,7 +237,7 @@ export default function HomePage() {
       <LocalSEOSection />
 
       {/* FAQ Section - Schema.org */}
-      <FAQSection 
+      <FAQSection
         faqs={faqs}
         title="Frequently Asked Questions About Our IT Services"
         description="Get answers to common questions about our software development, consulting, and business services"
@@ -233,19 +251,18 @@ export default function HomePage() {
         </div>
 
         <div className="relative max-w-[1400px] mx-auto px-6 text-center">
-          <div
-          >
+          <div>
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
               Ready to Transform Your Business with Technology?
             </h2>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Schedule a free consultation with our IT experts to discuss your project requirements, budget, and timeline. Get a detailed proposal with transparent pricing and delivery milestones.
+              Schedule a free consultation with our IT experts to discuss your
+              project requirements, budget, and timeline. Get a detailed
+              proposal with transparent pricing and delivery milestones.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
-                <Button
-                  className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-7 text-lg transition-all duration-200"
-                >
+                <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-7 text-lg transition-all duration-200">
                   Schedule Free Consultation
                 </Button>
               </Link>
@@ -258,7 +275,7 @@ export default function HomePage() {
                 </Button>
               </Link>
             </div>
-            
+
             {/* Trust Signals */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
               <span>✓ 500+ Projects Delivered</span>
@@ -280,29 +297,36 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "EDUNEX",
-            "alternateName": "EDUNEX IT Consulting",
-            "description": "Enterprise IT consulting, software development, CRM/ERP implementation, digital marketing, and business compliance services",
-            "url": "https://edunex.tech",
-            "telephone": "+91-70708-09208",
-            "email": "support@edunesservices.in",
-            "address": {
+            name: "EDUNEX",
+            alternateName: "EDUNEX IT Consulting",
+            description:
+              "Enterprise IT consulting, software development, CRM/ERP implementation, digital marketing, and business compliance services",
+            url: "https://edunex.tech",
+            telephone: "+91-70708-09208",
+            email: "support@edunesservices.in",
+            address: {
               "@type": "PostalAddress",
-              "streetAddress": "Ward 15, Phulwari Sharif",
-              "addressLocality": "Patna",
-              "addressRegion": "Bihar",
-              "postalCode": "801505",
-              "addressCountry": "IN"
+              streetAddress: "Ward 15, Phulwari Sharif",
+              addressLocality: "Patna",
+              addressRegion: "Bihar",
+              postalCode: "801505",
+              addressCountry: "IN",
             },
-            "areaServed": ["Phulwari Sharif", "Patna", "Bihar", "India"],
-            "priceRange": "₹₹₹",
-            "aggregateRating": {
+            areaServed: ["Phulwari Sharif", "Patna", "Bihar", "India"],
+            priceRange: "₹₹₹",
+            aggregateRating: {
               "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "150"
+              ratingValue: "4.9",
+              reviewCount: "150",
             },
-            "serviceType": ["IT Consulting", "Software Development", "CRM/ERP Implementation", "Digital Marketing", "Business Compliance"]
-          })
+            serviceType: [
+              "IT Consulting",
+              "Software Development",
+              "CRM/ERP Implementation",
+              "Digital Marketing",
+              "Business Compliance",
+            ],
+          }),
         }}
       />
     </div>

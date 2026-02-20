@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ConsultationCTA } from '@/components/ConsultationCTA';
+import GoToTopButton from '@/components/GoToTopButton';
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -32,6 +33,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <main className="min-h-screen pt-20">{children}</main>
+      <GoToTopButton />
       <Footer />
       <ConsultationCTA />
     </>

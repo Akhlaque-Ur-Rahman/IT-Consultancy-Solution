@@ -1,107 +1,111 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { Check, ArrowRight, Zap, Shield, Users, BarChart3 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { motion } from "motion/react";
+import { Check, ArrowRight, Zap, Shield, Users, BarChart3 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function SolutionsPage() {
   const solutions = [
     {
-      id: 'crm',
+      id: "crm",
       icon: Users,
-      name: 'Custom CRM',
-      tagline: 'Manage customer relationships effectively',
-      description: 'A complete customer relationship management system tailored to your business processes',
+      name: "Custom CRM",
+      tagline: "Manage customer relationships effectively",
+      description:
+        "A complete customer relationship management system tailored to your business processes",
       features: [
-        'Contact & Lead Management',
-        'Sales Pipeline Tracking',
-        'Email & SMS Integration',
-        'Custom Workflows',
-        'Advanced Analytics & Reports',
-        'Mobile Apps (iOS & Android)',
-        'Third-party Integrations',
-        'Role-based Access Control',
+        "Contact & Lead Management",
+        "Sales Pipeline Tracking",
+        "Email & SMS Integration",
+        "Custom Workflows",
+        "Advanced Analytics & Reports",
+        "Mobile Apps (iOS & Android)",
+        "Third-party Integrations",
+        "Role-based Access Control",
       ],
       benefits: [
-        'Increase sales productivity by 35%',
-        'Improve customer retention by 28%',
-        'Reduce response time by 60%',
-        'Automate repetitive tasks',
+        "Increase sales productivity by 35%",
+        "Improve customer retention by 28%",
+        "Reduce response time by 60%",
+        "Automate repetitive tasks",
       ],
-      pricing: 'Starting ₹1,49,999',
+      pricing: "Starting ₹1,49,999",
     },
     {
-      id: 'erp',
+      id: "erp",
       icon: BarChart3,
-      name: 'Enterprise ERP',
-      tagline: 'Unified business management platform',
-      description: 'Integrate all your business processes into one powerful system',
+      name: "Enterprise ERP",
+      tagline: "Unified business management platform",
+      description:
+        "Integrate all your business processes into one powerful system",
       features: [
-        'Inventory Management',
-        'Financial Accounting',
-        'HR & Payroll',
-        'Supply Chain Management',
-        'Production Planning',
-        'Multi-location Support',
-        'Real-time Dashboards',
-        'Custom Module Development',
+        "Inventory Management",
+        "Financial Accounting",
+        "HR & Payroll",
+        "Supply Chain Management",
+        "Production Planning",
+        "Multi-location Support",
+        "Real-time Dashboards",
+        "Custom Module Development",
       ],
       benefits: [
-        'Reduce operational costs by 25%',
-        'Improve data accuracy by 95%',
-        'Streamline processes across departments',
-        'Make data-driven decisions faster',
+        "Reduce operational costs by 25%",
+        "Improve data accuracy by 95%",
+        "Streamline processes across departments",
+        "Make data-driven decisions faster",
       ],
-      pricing: 'Starting ₹2,99,999',
+      pricing: "Starting ₹2,99,999",
     },
     {
-      id: 'billing',
+      id: "billing",
       icon: Zap,
-      name: 'Billing & Invoicing',
-      tagline: 'Automated billing made simple',
-      description: 'Streamline your billing process with our intelligent invoicing system',
+      name: "Billing & Invoicing",
+      tagline: "Automated billing made simple",
+      description:
+        "Streamline your billing process with our intelligent invoicing system",
       features: [
-        'Automated Invoice Generation',
-        'Recurring Billing',
-        'Payment Gateway Integration',
-        'GST Compliance',
-        'Expense Tracking',
-        'Multi-currency Support',
-        'Client Portal',
-        'Automated Reminders',
+        "Automated Invoice Generation",
+        "Recurring Billing",
+        "Payment Gateway Integration",
+        "GST Compliance",
+        "Expense Tracking",
+        "Multi-currency Support",
+        "Client Portal",
+        "Automated Reminders",
       ],
       benefits: [
-        'Reduce billing errors by 90%',
-        'Get paid 40% faster',
-        'Save 15 hours per week',
-        'Improve cash flow management',
+        "Reduce billing errors by 90%",
+        "Get paid 40% faster",
+        "Save 15 hours per week",
+        "Improve cash flow management",
       ],
-      pricing: 'Starting ₹49,999',
+      pricing: "Starting ₹49,999",
     },
     {
-      id: 'ivr',
+      id: "ivr",
       icon: Shield,
-      name: 'IVR System',
-      tagline: 'Intelligent call management',
-      description: 'Interactive Voice Response system for seamless customer communication',
+      name: "IVR System",
+      tagline: "Intelligent call management",
+      description:
+        "Interactive Voice Response system for seamless customer communication",
       features: [
-        'Multi-level IVR Menu',
-        'Call Routing & Queuing',
-        'Voicemail & Recording',
-        'CRM Integration',
-        'Multi-language Support',
-        'Real-time Analytics',
-        'Auto Attendant',
-        'Call Transfer & Conference',
+        "Multi-level IVR Menu",
+        "Call Routing & Queuing",
+        "Voicemail & Recording",
+        "CRM Integration",
+        "Multi-language Support",
+        "Real-time Analytics",
+        "Auto Attendant",
+        "Call Transfer & Conference",
       ],
       benefits: [
-        'Reduce call handling time by 45%',
-        'Handle 3x more calls',
-        'Improve customer satisfaction',
-        '24/7 automated support',
+        "Reduce call handling time by 45%",
+        "Handle 3x more calls",
+        "Improve customer satisfaction",
+        "24/7 automated support",
       ],
-      pricing: 'Starting ₹99,999',
+      pricing: "Starting ₹99,999",
     },
   ];
 
@@ -117,13 +121,16 @@ export default function SolutionsPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
             <Zap className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-sm font-medium text-[#f59e0b]">Enterprise Solutions</span>
+            <span className="text-sm font-medium text-[#f59e0b]">
+              Enterprise Solutions
+            </span>
           </div>
           <h1 className="text-5xl font-bold text-white mb-4">
             Products & Solutions
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Powerful, scalable business solutions designed to streamline operations and drive growth
+            Powerful, scalable business solutions designed to streamline
+            operations and drive growth
           </p>
         </motion.div>
 
@@ -133,7 +140,7 @@ export default function SolutionsPage() {
             <motion.div
               key={solution.id}
               className={`grid lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +148,7 @@ export default function SolutionsPage() {
               transition={{ duration: 0.6 }}
             >
               {/* Content */}
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="w-16 h-16 rounded-2xl bg-[#121212] border border-[#262626] flex items-center justify-center mb-6">
                   <solution.icon className="w-8 h-8 text-[#f59e0b]" />
                 </div>
@@ -149,8 +156,12 @@ export default function SolutionsPage() {
                 <h2 className="text-3xl font-bold text-white mb-2">
                   {solution.name}
                 </h2>
-                <p className="text-[#f59e0b] font-medium mb-4">{solution.tagline}</p>
-                <p className="text-gray-400 text-lg mb-6">{solution.description}</p>
+                <p className="text-[#f59e0b] font-medium mb-4">
+                  {solution.tagline}
+                </p>
+                <p className="text-gray-400 text-lg mb-6">
+                  {solution.description}
+                </p>
 
                 {/* Benefits */}
                 <div className="mb-6">
@@ -171,12 +182,12 @@ export default function SolutionsPage() {
                 <div className="flex items-center gap-4 pt-6 border-t border-[#262626]">
                   <div>
                     <p className="text-sm text-gray-500">Starting at</p>
-                    <p className="text-2xl font-bold text-white">{solution.pricing}</p>
+                    <p className="text-2xl font-bold text-white">
+                      {solution.pricing}
+                    </p>
                   </div>
                   <Link href="/contact">
-                    <Button
-                      className="ml-auto bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black px-8 font-semibold"
-                    >
+                    <Button className="ml-auto bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black px-8 font-semibold">
                       Request Demo
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -185,7 +196,7 @@ export default function SolutionsPage() {
               </div>
 
               {/* Features Card */}
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+              <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="group relative overflow-hidden bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-colors duration-300">
                   <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
                   <h4 className="text-xl font-semibold text-white mb-6">
@@ -222,18 +233,21 @@ export default function SolutionsPage() {
           <div className="relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold mb-4 text-white">Hyperlocal Platform</h2>
+                <h2 className="text-4xl font-bold mb-4 text-white">
+                  Hyperlocal Platform
+                </h2>
                 <p className="text-xl text-gray-400 mb-6">
-                  Connect local businesses with customers through location-based services
+                  Connect local businesses with customers through location-based
+                  services
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    'Real-time geolocation tracking',
-                    'Multi-vendor marketplace',
-                    'Automated order routing',
-                    'In-app chat & notifications',
-                    'Payment gateway integration',
-                    'Analytics dashboard',
+                    "Real-time geolocation tracking",
+                    "Multi-vendor marketplace",
+                    "Automated order routing",
+                    "In-app chat & notifications",
+                    "Payment gateway integration",
+                    "Analytics dashboard",
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-[#f59e0b]" />
@@ -243,9 +257,7 @@ export default function SolutionsPage() {
                 </ul>
                 <div className="flex gap-4">
                   <Link href="/contact">
-                    <Button
-                      className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8"
-                    >
+                    <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8">
                       Request Demo
                     </Button>
                   </Link>
@@ -262,16 +274,18 @@ export default function SolutionsPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: 'Delivery Partners', value: '500+' },
-                  { label: 'Daily Orders', value: '10K+' },
-                  { label: 'Cities Covered', value: '25+' },
-                  { label: 'Avg Rating', value: '4.8★' },
+                  { label: "Delivery Partners", value: "500+" },
+                  { label: "Daily Orders", value: "10K+" },
+                  { label: "Cities Covered", value: "25+" },
+                  { label: "Avg Rating", value: "4.8★" },
                 ].map((stat, idx) => (
                   <div
                     key={idx}
                     className="bg-[#0a0a0a] border border-[#262626] rounded-xl p-6 text-center"
                   >
-                    <p className="text-3xl font-bold text-[#f59e0b] mb-2">{stat.value}</p>
+                    <p className="text-3xl font-bold text-[#f59e0b] mb-2">
+                      {stat.value}
+                    </p>
                     <p className="text-gray-400 text-sm">{stat.label}</p>
                   </div>
                 ))}
@@ -292,12 +306,11 @@ export default function SolutionsPage() {
             Need a Custom Solution?
           </h3>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            We build bespoke software tailored to your unique business requirements
+            We build bespoke software tailored to your unique business
+            requirements
           </p>
           <Link href="/contact">
-            <Button
-              className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-10 py-6 text-lg"
-            >
+            <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-10 py-6 text-lg">
               Discuss Your Requirements
             </Button>
           </Link>

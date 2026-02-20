@@ -1,10 +1,18 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { complianceServices } from '@/data/mockData';
-import { Check, ArrowRight, FileText, Shield, Clock, IndianRupee } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { motion } from "motion/react";
+import { complianceServices } from "@/data/mockData";
+import {
+  Check,
+  ArrowRight,
+  FileText,
+  Shield,
+  Clock,
+  IndianRupee,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import type { Metadata } from "next";
 
 export default function CompliancePage() {
   return (
@@ -19,13 +27,16 @@ export default function CompliancePage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
             <Shield className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-sm font-medium text-[#f59e0b]">Legal & Compliance Services</span>
+            <span className="text-sm font-medium text-[#f59e0b]">
+              Legal & Compliance Services
+            </span>
           </div>
           <h1 className="text-5xl font-bold text-white mb-4">
             Business Registration & Compliance
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Navigate the complexities of business registration, tax compliance, and legal requirements with expert guidance
+            Navigate the complexities of business registration, tax compliance,
+            and legal requirements with expert guidance
           </p>
         </motion.div>
 
@@ -42,18 +53,20 @@ export default function CompliancePage() {
             </h3>
             <div className="grid md:grid-cols-5 gap-4">
               {[
-                { step: 1, label: 'Consultation', icon: '📋' },
-                { step: 2, label: 'Documentation', icon: '📄' },
-                { step: 3, label: 'Filing', icon: '🔄' },
-                { step: 4, label: 'Approval', icon: '✓' },
-                { step: 5, label: 'Support', icon: '🤝' },
+                { step: 1, label: "Consultation", icon: "📋" },
+                { step: 2, label: "Documentation", icon: "📄" },
+                { step: 3, label: "Filing", icon: "🔄" },
+                { step: 4, label: "Approval", icon: "✓" },
+                { step: 5, label: "Support", icon: "🤝" },
               ].map((item, index) => (
                 <div key={item.step} className="relative">
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 flex items-center justify-center text-2xl mb-3 text-white">
                       {item.icon}
                     </div>
-                    <p className="text-sm font-semibold text-white">{item.label}</p>
+                    <p className="text-sm font-semibold text-white">
+                      {item.label}
+                    </p>
                     <p className="text-xs text-gray-500">Step {item.step}</p>
                   </div>
                   {index < 4 && (
@@ -83,7 +96,9 @@ export default function CompliancePage() {
                   <h3 className="text-2xl font-bold text-white mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#f59e0b] italic mb-1">{service.titleHindi}</p>
+                  <p className="text-sm text-[#f59e0b] italic mb-1">
+                    {service.titleHindi}
+                  </p>
                   <p className="text-gray-400">{service.description}</p>
                 </div>
                 <div className="ml-4">
@@ -93,12 +108,19 @@ export default function CompliancePage() {
 
               {/* Steps */}
               <div className="mb-6">
-                <p className="text-sm font-semibold text-gray-500 mb-3">Process Steps:</p>
+                <p className="text-sm font-semibold text-gray-500 mb-3">
+                  Process Steps:
+                </p>
                 <div className="grid grid-cols-2 gap-2">
                   {service.steps.map((step, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-400">
+                    <div
+                      key={idx}
+                      className="flex items-center gap-2 text-sm text-gray-400"
+                    >
                       <div className="w-6 h-6 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs font-semibold text-[#f59e0b]">{idx + 1}</span>
+                        <span className="text-xs font-semibold text-[#f59e0b]">
+                          {idx + 1}
+                        </span>
                       </div>
                       <span>{step}</span>
                     </div>
@@ -112,25 +134,27 @@ export default function CompliancePage() {
                   <Clock className="w-4 h-4 text-gray-500" />
                   <div>
                     <p className="text-xs text-gray-500">Timeline</p>
-                    <p className="text-sm font-semibold text-white">{service.timeline}</p>
+                    <p className="text-sm font-semibold text-white">
+                      {service.timeline}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <IndianRupee className="w-4 h-4 text-gray-500" />
                   <div>
                     <p className="text-xs text-gray-500">Pricing</p>
-                    <p className="text-sm font-semibold text-white">{service.price}</p>
+                    <p className="text-sm font-semibold text-white">
+                      {service.price}
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* CTA */}
               <Link href="/contact">
-                <Button
-                    className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-semibold"
-                >
-                    Get Started
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                <Button className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-semibold">
+                  Get Started
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
             </motion.div>
@@ -152,25 +176,30 @@ export default function CompliancePage() {
             {[
               {
                 icon: Shield,
-                title: '100% Compliant',
-                description: 'Stay fully compliant with all legal and regulatory requirements',
+                title: "100% Compliant",
+                description:
+                  "Stay fully compliant with all legal and regulatory requirements",
               },
               {
                 icon: Clock,
-                title: 'Fast Processing',
-                description: 'Quick turnaround times with expert handling of all paperwork',
+                title: "Fast Processing",
+                description:
+                  "Quick turnaround times with expert handling of all paperwork",
               },
               {
                 icon: FileText,
-                title: 'End-to-End Support',
-                description: 'From initial consultation to post-filing assistance',
+                title: "End-to-End Support",
+                description:
+                  "From initial consultation to post-filing assistance",
               },
             ].map((item, index) => (
               <div key={index} className="text-center group">
                 <div className="w-16 h-16 rounded-full bg-[#1a1a1a] border border-[#262626] group-hover:border-[#f59e0b] flex items-center justify-center mx-auto mb-4 transition-colors">
                   <item.icon className="w-8 h-8 text-[#f59e0b]" />
                 </div>
-                <h4 className="text-xl font-semibold mb-2 text-white">{item.title}</h4>
+                <h4 className="text-xl font-semibold mb-2 text-white">
+                  {item.title}
+                </h4>
                 <p className="text-gray-400">{item.description}</p>
               </div>
             ))}

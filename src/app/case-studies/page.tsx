@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { caseStudies } from '@/data/mockData';
-import { CaseStudyCard } from '@/components/CaseStudyCard';
-import { Download, TrendingUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
-import Link from 'next/link';
+import { motion } from "motion/react";
+import { caseStudies } from "@/data/mockData";
+import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { Download, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
+import Link from "next/link";
 
 export default function CaseStudiesPage() {
   return (
@@ -21,13 +21,14 @@ export default function CaseStudiesPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
             <TrendingUp className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-sm font-medium text-[#f59e0b]">Success Stories</span>
+            <span className="text-sm font-medium text-[#f59e0b]">
+              Success Stories
+            </span>
           </div>
-          <h1 className="text-5xl font-bold text-white mb-4">
-            Case Studies
-          </h1>
+          <h1 className="text-5xl font-bold text-white mb-4">Case Studies</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Real-world examples of how we've helped businesses achieve measurable success through technology
+            Real-world examples of how we've helped businesses achieve
+            measurable success through technology
           </p>
         </motion.div>
 
@@ -63,7 +64,9 @@ export default function CaseStudiesPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#121212] to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="text-sm font-medium mb-2 text-[#f59e0b]">{caseStudies[0].industry}</p>
+                <p className="text-sm font-medium mb-2 text-[#f59e0b]">
+                  {caseStudies[0].industry}
+                </p>
                 <h3 className="text-3xl font-bold">{caseStudies[0].client}</h3>
               </div>
             </div>
@@ -114,10 +117,15 @@ export default function CaseStudiesPage() {
                 </h4>
                 <div className="grid grid-cols-2 gap-4">
                   {Object.entries(caseStudies[0].impact).map(([key, value]) => (
-                    <div key={key} className="p-4 rounded-lg bg-[#0a0a0a] border border-[#262626]">
-                      <p className="text-3xl font-bold text-white mb-1">{value}</p>
+                    <div
+                      key={key}
+                      className="p-4 rounded-lg bg-[#0a0a0a] border border-[#262626]"
+                    >
+                      <p className="text-3xl font-bold text-white mb-1">
+                        {value}
+                      </p>
                       <p className="text-xs text-gray-500 capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}
+                        {key.replace(/([A-Z])/g, " $1").trim()}
                       </p>
                     </div>
                   ))}
@@ -130,8 +138,12 @@ export default function CaseStudiesPage() {
                   "{caseStudies[0].testimonial}"
                 </p>
                 <div>
-                  <p className="font-semibold text-white">{caseStudies[0].testimonialAuthor}</p>
-                  <p className="text-sm text-gray-500">{caseStudies[0].testimonialRole}</p>
+                  <p className="font-semibold text-white">
+                    {caseStudies[0].testimonialAuthor}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {caseStudies[0].testimonialRole}
+                  </p>
                 </div>
               </div>
 
@@ -159,9 +171,7 @@ export default function CaseStudiesPage() {
             Let's create measurable impact for your business together
           </p>
           <Link href="/contact">
-            <Button
-              className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8 py-6 text-lg"
-            >
+            <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8 py-6 text-lg">
               Start Your Project
             </Button>
           </Link>
