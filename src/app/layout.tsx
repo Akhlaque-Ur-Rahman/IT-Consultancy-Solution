@@ -40,6 +40,14 @@ export const metadata: Metadata = {
       "Enterprise-grade technology solutions for digital transformation.",
     images: ["/logo.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/favicon.png" }],
+    shortcut: [{ url: "/favicon.png" }],
+  },
 };
 
 export default function RootLayout({
