@@ -6,6 +6,7 @@ import { Target, Eye, Award, Users, Briefcase, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export default function AboutPage() {
   const values = [
