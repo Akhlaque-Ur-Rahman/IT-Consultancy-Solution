@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Business Compliance Services - GST, Tax & Legal",
+  title: "Compliance",
   description:
-    "Complete business compliance solutions in India. Expert assistance with Company Registration, GST filing, Trademark, and Legal documentation.",
+    "Business registration, GST & tax compliance, trademarks, and legal support services.",
 };
 
 export default function ComplianceLayout({
@@ -11,5 +11,5 @@ export default function ComplianceLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }

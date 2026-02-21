@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-
+ 
 export const metadata: Metadata = {
-  title: "About EDUNEX - Leading IT Consulting Firm in India",
+  title: "About EDUNEX",
   description:
-    "Learn about EDUNEX's mission to drive digital transformation. We provide top-tier IT consulting and software solutions for global businesses.",
+    "Our story, mission, values, and the team behind EDUNEX’s enterprise solutions.",
 };
-
+ 
 export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enterprise Solutions - CRM, ERP & Billing Software",
+  title: "Solutions",
   description:
-    "Scalable enterprise software solutions by EDUNEX. Custom CRM, ERP systems, and automated billing platforms to streamline your operations.",
+    "Custom CRM, ERP, and tailored software solutions designed for your business workflows.",
 };
 
 export default function SolutionsLayout({
@@ -11,5 +11,5 @@ export default function SolutionsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }

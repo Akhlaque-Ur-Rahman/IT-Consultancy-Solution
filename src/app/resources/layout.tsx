@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resources - Tech Insights, Blogs & Whitepapers",
+  title: "Resources",
   description:
-    "Stay updated with the latest in technology. Access EDUNEX's blogs, whitepapers, and guides on Digital Transformation and IT trends.",
+    "Articles, guides, FAQs, and downloads to support your digital initiatives.",
 };
 
 export default function ResourcesLayout({
@@ -11,5 +11,5 @@ export default function ResourcesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IT Services - Web Development, App Dev & Marketing",
+  title: "Our Services",
   description:
-    "Explore our comprehensive IT services: Custom Web Development, Mobile Apps, Digital Marketing, and strategic IT Consulting for growth.",
+    "Explore EDUNEX’s complete portfolio: development, CRM/ERP, marketing, UI/UX, and compliance.",
 };
 
 export default function ServicesLayout({
@@ -11,5 +11,5 @@ export default function ServicesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact EDUNEX - Schedule a Free Consultation",
+  title: "Contact EDUNEX",
   description:
-    "Get in touch with EDUNEX for your IT needs. Schedule a free consultation for software development, consulting, or digital marketing services.",
+    "Contact EDUNEX for consulting, development, CRM/ERP, and marketing solutions.",
 };
 
 export default function ContactLayout({
@@ -11,5 +11,5 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }

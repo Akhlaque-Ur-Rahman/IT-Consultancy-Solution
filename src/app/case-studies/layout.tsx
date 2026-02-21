@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies - Real Results & Success Stories",
+  title: "Case Studies",
   description:
-    "Discover how EDUNEX helps businesses succeed. Improved efficiency, ROI, and digital transformation success stories from our clients.",
+    "Explore case studies showcasing measurable results across industries with EDUNEX.",
 };
 
 export default function CaseStudiesLayout({
@@ -11,5 +11,5 @@ export default function CaseStudiesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return children;
 }
