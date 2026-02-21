@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/index.css";
 import Shell from "@/components/Shell";
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.edunexservices.in"),
@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased bg-black text-white`}>
-        <SmoothScroll />
+        <SmoothScrollWrapper />
         <Shell>{children}</Shell>
       </body>
     </html>

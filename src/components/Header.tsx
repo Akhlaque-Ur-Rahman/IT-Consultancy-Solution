@@ -71,14 +71,13 @@ export function Header() {
             whileTap={{ scale: 0.98 }}
           >
             <Link href="/">
-              <Image
-                src="/logo.jpg"
-                alt="EDUNEX Logo"
-                className="h-14 w-auto object-contain"
-                width={200}
-                height={56}
-                priority
-              />
+                <Image
+                  src="/logo.jpg"
+                  alt="EDUNEX Logo"
+                  className="h-14 w-auto object-contain"
+                  width={200}
+                  height={56}
+                />
             </Link>
           </motion.div>
 

@@ -1,9 +1,5 @@
-/* Enterprise IT Consulting Typography - Inter Font Family */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Fonts are provided by next/font/google in the server layout.
+  Remove remote @import to avoid duplicate font requests from CSS. */
 
-/* Apply Inter as the primary font */
-* {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* If you need additional font-fallback rules, keep them local and
+  avoid referencing fonts.googleapis.com here. */
