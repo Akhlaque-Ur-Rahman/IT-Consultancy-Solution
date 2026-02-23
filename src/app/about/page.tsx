@@ -52,7 +52,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-black">
+    <div className="pt-8 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -63,8 +63,10 @@ export default function AboutPage() {
         >
           <h1 className="text-5xl font-bold text-white mb-4">About EDUNEX</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Empowering businesses through technology, innovation, and expert
-            guidance since 2015
+            EDUNEX is a technology consulting and software development firm
+            delivering web, mobile, CRM, and ERP solutions to growing
+            businesses. We focus on structured execution, scalable architecture,
+            and long-term operational reliability.
           </p>
         </motion.div>
 
@@ -86,8 +88,8 @@ export default function AboutPage() {
               </p>
               <p>
                 What started as a small team of passionate developers and
-                consultants has grown into a full-service IT consulting firm
-                serving 250+ clients across India and beyond.
+                consultants has grown into a structured IT consulting firm
+                serving 65+ clients across the region.
               </p>
               <p>
                 Today, we combine deep technical expertise with business acumen
@@ -98,7 +100,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-96 rounded-2xl overflow-hidden border border-[#262626]">
             <ImageWithFallback
-              src="https://source.unsplash.com/800x600/?office,technology,team"
+              src="https://source.unsplash.com/800x600/?modern-corporate-office-team-collaboration"
               alt="Team at work"
               className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
             />

@@ -1,6 +1,6 @@
-'use client';
-import { motion } from 'motion/react';
-import { Star, Quote } from 'lucide-react';
+"use client";
+import { motion } from "motion/react";
+import { Star, Quote } from "lucide-react";
 
 interface Review {
   id: string;
@@ -12,12 +12,16 @@ interface Review {
   avatar?: string;
 }
 
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+
 interface GMBStyleReviewsProps {
   reviews: Review[];
 }
 
 export function GMBStyleReviews({ reviews }: GMBStyleReviewsProps) {
-  const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
+  const avgRating = (
+    reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
+  ).toFixed(1);
 
   return (
     <section className="py-20 bg-[#0a0a0a] border-t border-[#262626]">
@@ -44,7 +48,9 @@ export function GMBStyleReviews({ reviews }: GMBStyleReviewsProps) {
             </div>
             <span className="text-2xl font-bold text-white">{avgRating}</span>
           </div>
-          <p className="text-gray-400">Based on {reviews.length}+ client reviews</p>
+          <p className="text-gray-400">
+            Based on {reviews.length}+ client reviews
+          </p>
         </motion.div>
 
         {/* Reviews Grid */}
@@ -61,12 +67,26 @@ export function GMBStyleReviews({ reviews }: GMBStyleReviewsProps) {
               {/* Review Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center text-black font-bold">
-                    {review.author.charAt(0)}
-                  </div>
+                  {review.avatar ? (
+                    <div className="w-12 h-12 rounded-full overflow-hidden border border-[#262626] flex-shrink-0">
+                      <ImageWithFallback
+                        src={`https://source.unsplash.com/100x100/?${encodeURIComponent(review.avatar)}`}
+                        alt={review.author}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center text-black font-bold flex-shrink-0">
+                      {review.author.charAt(0)}
+                    </div>
+                  )}
                   <div>
-                    <div className="font-semibold text-white">{review.author}</div>
-                    <div className="text-sm text-gray-400">{review.company}</div>
+                    <div className="font-semibold text-white">
+                      {review.author}
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      {review.company}
+                    </div>
                   </div>
                 </div>
                 <Quote className="w-6 h-6 text-[#f59e0b]/30 group-hover:text-[#f59e0b]/50 transition-colors" />
@@ -80,8 +100,8 @@ export function GMBStyleReviews({ reviews }: GMBStyleReviewsProps) {
                       key={star}
                       className={`w-4 h-4 ${
                         star <= review.rating
-                          ? 'fill-[#f59e0b] text-[#f59e0b]'
-                          : 'text-gray-600'
+                          ? "fill-[#f59e0b] text-[#f59e0b]"
+                          : "text-gray-600"
                       }`}
                     />
                   ))}
@@ -100,15 +120,23 @@ export function GMBStyleReviews({ reviews }: GMBStyleReviewsProps) {
         {/* Trust Badges */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
           <span className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-[#f59e0b]" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            <svg
+              className="w-5 h-5 text-[#f59e0b]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
             </svg>
             Verified Reviews
           </span>
           <span>•</span>
           <span className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-[#f59e0b]" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            <svg
+              className="w-5 h-5 text-[#f59e0b]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
             </svg>
             Trusted Partner
           </span>

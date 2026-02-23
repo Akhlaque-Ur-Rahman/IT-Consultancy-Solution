@@ -1,24 +1,38 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, Send, CheckCircle } from 'lucide-react';
-import { Button } from './ui/button';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { X, Send, CheckCircle } from "lucide-react";
+import { Button } from "./ui/button";
 
 interface ContactFormProps {
   isOpen: boolean;
   onClose: () => void;
+  prefilledService?: string;
 }
 
-export function ContactForm({ isOpen, onClose }: ContactFormProps) {
+export function ContactForm({
+  isOpen,
+  onClose,
+  prefilledService = "",
+}: ContactFormProps) {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Use prefilledService for initial state
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: prefilledService || "",
+    message: "",
   });
+
+  // Update service if prefilledService changes
+  useEffect(() => {
+    if (prefilledService) {
+      setFormData((prev) => ({ ...prev, service: prefilledService }));
+    }
+  }, [prefilledService]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,24 +42,32 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
       setIsSubmitted(false);
       setStep(1);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        message: '',
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: "",
       });
     }, 2000);
   };
 
-  const services = [
-    'Web & App Development',
-    'CRM/ERP Solutions',
-    'Digital Marketing',
-    'UI/UX Design',
-    'E-commerce',
-    'Compliance Services',
-    'Other',
+  const servicesList = [
+    { label: "Web & App Development", slug: "web-app-development" },
+    { label: "CRM/ERP/Billing Solutions", slug: "crm-erp-solutions" },
+    { label: "Digital Marketing", slug: "digital-marketing-services" },
+    { label: "UI/UX Design", slug: "ui-ux-design" },
+    { label: "E-commerce Solutions", slug: "ecommerce-solutions" },
+    { label: "Lead Management", slug: "lead-management-systems" },
+    { label: "IVR Solutions", slug: "ivr-calling-solutions" },
+    { label: "Hyperlocal Platforms", slug: "hyperlocal-platform-dev" },
+    { label: "SEO & Optimization", slug: "seo-optimization-expert" },
+    { label: "Animation & Graphics", slug: "animation-graphics-design" },
+    {
+      label: "Business Registration & Compliance",
+      slug: "business-registration-compliance",
+    },
+    { label: "Other", slug: "other" },
   ];
 
   return (
@@ -73,17 +95,20 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
               {/* Header */}
               <div className="sticky top-0 bg-[#121212] border-b border-[#262626] px-8 py-6 flex items-center justify-between z-10">
                 <div>
-                  <h2 className="text-2xl font-bold text-white">Request a Demo</h2>
+                  <h2 className="text-2xl font-bold text-white">
+                    Request a Demo
+                  </h2>
                   <p className="text-sm text-gray-400 mt-1">
                     Fill out the form and we'll get back to you within 24 hours
                   </p>
                 </div>
-                <button
+                <motion.button
+                  whileTap={{ scale: 0.9 }}
                   onClick={onClose}
                   className="p-2 hover:bg-[#1a1a1a] rounded-lg transition-colors group"
                 >
                   <X className="w-6 h-6 text-gray-400 group-hover:text-white" />
-                </button>
+                </motion.button>
               </div>
 
               {/* Form Content */}
@@ -99,11 +124,18 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
                         className="space-y-6"
                       >
                         <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                          <label
+                            htmlFor="name"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Full Name *
+                          </label>
                           <input
                             id="name"
                             value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            onChange={(e) =>
+                              setFormData({ ...formData, name: e.target.value })
+                            }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
                             placeholder="Enter your full name"
@@ -111,12 +143,22 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
                         </div>
 
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Email Address *
+                          </label>
                           <input
                             id="email"
                             type="email"
                             value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                email: e.target.value,
+                              })
+                            }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
                             placeholder="your.email@company.com"
@@ -124,12 +166,22 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
                         </div>
 
                         <div>
-                          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">Phone Number *</label>
+                          <label
+                            htmlFor="phone"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Phone Number *
+                          </label>
                           <input
                             id="phone"
                             type="tel"
                             value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                phone: e.target.value,
+                              })
+                            }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
                             placeholder="+91 70708 09208"
@@ -137,11 +189,21 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
                         </div>
 
                         <div>
-                          <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                          <label
+                            htmlFor="company"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Company Name
+                          </label>
                           <input
                             id="company"
                             value={formData.company}
-                            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                company: e.target.value,
+                              })
+                            }
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
                             placeholder="Your company name"
                           />
@@ -166,29 +228,55 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
                         className="space-y-6"
                       >
                         <div>
-                          <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">Service Interested In *</label>
+                          <label
+                            htmlFor="service"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Service Interested In *
+                          </label>
                           <select
                             id="service"
                             value={formData.service}
-                            onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                service: e.target.value,
+                              })
+                            }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent transition-all"
                           >
-                            <option value="" className="bg-[#121212]">Select a service</option>
-                            {services.map((service) => (
-                              <option key={service} value={service} className="bg-[#121212]">
-                                {service}
+                            <option value="" className="bg-[#121212]">
+                              Select a service
+                            </option>
+                            {servicesList.map((service) => (
+                              <option
+                                key={service.slug}
+                                value={service.slug}
+                                className="bg-[#121212]"
+                              >
+                                {service.label}
                               </option>
                             ))}
                           </select>
                         </div>
 
                         <div>
-                          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Tell Us About Your Project *</label>
+                          <label
+                            htmlFor="message"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Tell Us About Your Project *
+                          </label>
                           <textarea
                             id="message"
                             value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                message: e.target.value,
+                              })
+                            }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all resize-none"
                             rows={6}
@@ -239,12 +327,18 @@ export function ContactForm({ isOpen, onClose }: ContactFormProps) {
               {!isSubmitted && (
                 <div className="px-8 pb-6">
                   <div className="flex items-center gap-2">
-                    <div className={`flex-1 h-2 rounded-full ${step >= 1 ? 'bg-[#f59e0b]' : 'bg-[#262626]'}`}></div>
-                    <div className={`flex-1 h-2 rounded-full ${step >= 2 ? 'bg-[#f59e0b]' : 'bg-[#262626]'}`}></div>
+                    <div
+                      className={`flex-1 h-2 rounded-full ${step >= 1 ? "bg-[#f59e0b]" : "bg-[#262626]"}`}
+                    ></div>
+                    <div
+                      className={`flex-1 h-2 rounded-full ${step >= 2 ? "bg-[#f59e0b]" : "bg-[#262626]"}`}
+                    ></div>
                   </div>
                   <div className="flex justify-between mt-2">
                     <span className="text-xs text-gray-500">Basic Info</span>
-                    <span className="text-xs text-gray-500">Project Details</span>
+                    <span className="text-xs text-gray-500">
+                      Project Details
+                    </span>
                   </div>
                 </div>
               )}

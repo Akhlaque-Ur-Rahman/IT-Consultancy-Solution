@@ -11,12 +11,12 @@ export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { id: "all", label: "All Services", labelHindi: "सभी सेवाएँ" },
-    { id: "development", label: "Development", labelHindi: "विकास" },
-    { id: "solutions", label: "Solutions", labelHindi: "समाधान" },
-    { id: "marketing", label: "Marketing", labelHindi: "मार्केटिंग" },
-    { id: "design", label: "Design", labelHindi: "डिज़ाइन" },
-    { id: "compliance", label: "Compliance", labelHindi: "अनुपालन" },
+    { id: "all", label: "All Services" },
+    { id: "development", label: "Development" },
+    { id: "solutions", label: "Solutions" },
+    { id: "marketing", label: "Marketing" },
+    { id: "design", label: "Design" },
+    { id: "compliance", label: "Compliance" },
   ];
 
   const filteredServices =
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       : services.filter((s) => s.category === selectedCategory);
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-black">
+    <div className="pt-8 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -68,9 +68,6 @@ export default function ServicesPage() {
               }`}
             >
               {category.label}
-              <span className="ml-2 text-xs opacity-70">
-                {category.labelHindi}
-              </span>
             </button>
           ))}
         </motion.div>
@@ -78,7 +75,11 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" layout>
           {filteredServices.map((service, index) => (
-            <Link key={service.id} href="/contact" className="block h-full">
+            <Link
+              key={service.id}
+              href={`/services/${service.slug}`}
+              className="block h-full"
+            >
               <ServiceCard
                 icon={service.icon}
                 title={service.title}

@@ -1,7 +1,7 @@
-'use client';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ChevronDown } from "lucide-react";
 
 interface FAQ {
   question: string;
@@ -14,7 +14,11 @@ interface FAQSectionProps {
   description?: string;
 }
 
-export function FAQSection({ faqs, title = "Frequently Asked Questions", description }: FAQSectionProps) {
+export function FAQSection({
+  faqs,
+  title = "Frequently Asked Questions",
+  description,
+}: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -53,8 +57,10 @@ export function FAQSection({ faqs, title = "Frequently Asked Questions", descrip
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
             >
-              <button
+              <motion.button
                 onClick={() => toggleFAQ(index)}
+                whileHover={{ x: 4 }}
+                whileTap={{ scale: 0.995 }}
                 className="w-full px-6 py-5 flex items-center justify-between text-left group"
               >
                 <h3 className="text-base font-semibold text-white pr-8 group-hover:text-[#f59e0b] transition-colors">
@@ -62,16 +68,16 @@ export function FAQSection({ faqs, title = "Frequently Asked Questions", descrip
                 </h3>
                 <ChevronDown
                   className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${
-                    openIndex === index ? 'rotate-180 text-[#f59e0b]' : ''
+                    openIndex === index ? "rotate-180 text-[#f59e0b]" : ""
                   }`}
                 />
-              </button>
-              
+              </motion.button>
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
+                    animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
@@ -93,15 +99,15 @@ export function FAQSection({ faqs, title = "Frequently Asked Questions", descrip
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": faqs.map(faq => ({
+              mainEntity: faqs.map((faq) => ({
                 "@type": "Question",
-                "name": faq.question,
-                "acceptedAnswer": {
+                name: faq.question,
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": faq.answer
-                }
-              }))
-            })
+                  text: faq.answer,
+                },
+              })),
+            }),
           }}
         />
       </div>

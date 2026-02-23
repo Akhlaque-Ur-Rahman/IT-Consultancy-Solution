@@ -25,9 +25,9 @@ export default function SolutionsPage() {
         "Role-based Access Control",
       ],
       benefits: [
-        "Increase sales productivity by 35%",
-        "Improve customer retention by 28%",
-        "Reduce response time by 60%",
+        "Increase sales productivity by 22%",
+        "Improve customer retention by 18%",
+        "Reduce response time by 35%",
         "Automate repetitive tasks",
       ],
       pricing: "Starting ₹1,49,999",
@@ -50,8 +50,8 @@ export default function SolutionsPage() {
         "Custom Module Development",
       ],
       benefits: [
-        "Reduce operational costs by 25%",
-        "Improve data accuracy by 95%",
+        "Reduce operational costs by 15%",
+        "Improve data accuracy by 25%",
         "Streamline processes across departments",
         "Make data-driven decisions faster",
       ],
@@ -75,9 +75,9 @@ export default function SolutionsPage() {
         "Automated Reminders",
       ],
       benefits: [
-        "Reduce billing errors by 90%",
-        "Get paid 40% faster",
-        "Save 15 hours per week",
+        "Reduce billing errors by 28%",
+        "Get paid 19% faster",
+        "Save 8 hours per week",
         "Improve cash flow management",
       ],
       pricing: "Starting ₹49,999",
@@ -100,8 +100,8 @@ export default function SolutionsPage() {
         "Call Transfer & Conference",
       ],
       benefits: [
-        "Reduce call handling time by 45%",
-        "Handle 3x more calls",
+        "Reduce call handling time by 25%",
+        "Handle 30% more calls",
         "Improve customer satisfaction",
         "24/7 automated support",
       ],
@@ -110,7 +110,7 @@ export default function SolutionsPage() {
   ];
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-black">
+    <div className="pt-8 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -274,10 +274,10 @@ export default function SolutionsPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Delivery Partners", value: "500+" },
-                  { label: "Daily Orders", value: "10K+" },
-                  { label: "Cities Covered", value: "25+" },
-                  { label: "Avg Rating", value: "4.8★" },
+                  { label: "Regional Partners", value: "65+" },
+                  { label: "Orders Tracked", value: "1K+" },
+                  { label: "Cities Covered", value: "5+" },
+                  { label: "Avg Rating", value: "4.6★" },
                 ].map((stat, idx) => (
                   <div
                     key={idx}

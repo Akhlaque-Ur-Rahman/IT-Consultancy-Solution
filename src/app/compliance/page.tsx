@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 
 export default function CompliancePage() {
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-black">
+    <div className="pt-8 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
@@ -96,9 +96,6 @@ export default function CompliancePage() {
                   <h3 className="text-2xl font-bold text-white mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#f59e0b] italic mb-1">
-                    {service.titleHindi}
-                  </p>
                   <p className="text-gray-400">{service.description}</p>
                 </div>
                 <div className="ml-4">

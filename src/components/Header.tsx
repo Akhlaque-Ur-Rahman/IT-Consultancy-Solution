@@ -43,7 +43,7 @@ export function Header() {
     { label: "Case Studies", href: "/case-studies" },
     { label: "Compliance", href: "/compliance" },
     { label: "About", href: "/about" },
-    { label: "Resources", href: "/resources" },
+    { label: "Blog", href: "/blog" },
   ];
 
   const isActive = (href: string) => {
@@ -71,13 +71,13 @@ export function Header() {
             whileTap={{ scale: 0.98 }}
           >
             <Link href="/">
-                <Image
-                  src="/logo.jpg"
-                  alt="EDUNEX Logo"
-                  className="h-14 w-auto object-contain"
-                  width={200}
-                  height={56}
-                />
+              <Image
+                src="/logo.jpg"
+                alt="EDUNEX Logo"
+                className="h-14 w-auto object-contain"
+                width={200}
+                height={56}
+              />
             </Link>
           </motion.div>
 
@@ -119,19 +119,27 @@ export function Header() {
               transition={{ duration: 0.3 }}
             >
               <nav className="flex flex-col gap-2">
-                {navigationItems.map((item) => (
-                  <Link
+                {navigationItems.map((item, i) => (
+                  <motion.div
                     key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`px-4 py-3 rounded-md text-left text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? "text-[#f59e0b] bg-[#1a1a1a]"
-                        : "text-gray-300 hover:bg-[#1a1a1a] hover:text-[#f59e0b]"
-                    }`}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ x: 4 }}
                   >
-                    {item.label}
-                  </Link>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block px-4 py-3 rounded-md text-left text-sm font-medium transition-colors ${
+                        isActive(item.href)
+                          ? "text-[#f59e0b] bg-[#1a1a1a]"
+                          : "text-gray-300 hover:bg-[#1a1a1a] hover:text-[#f59e0b]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 ))}
                 <Link
                   href="/contact"

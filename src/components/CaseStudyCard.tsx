@@ -1,8 +1,8 @@
-'use client';
-import { motion, useMotionValue, useTransform } from 'motion/react';
-import { ArrowRight, TrendingUp } from 'lucide-react';
-import { useState } from 'react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+"use client";
+import { motion, useMotionValue, useTransform } from "motion/react";
+import { ArrowRight, TrendingUp } from "lucide-react";
+import { useState } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface CaseStudyCardProps {
   title: string;
@@ -12,20 +12,32 @@ interface CaseStudyCardProps {
   impact: Record<string, string | undefined>;
 }
 
-export function CaseStudyCard({ title, client, industry, image, impact }: CaseStudyCardProps) {
+export function CaseStudyCard({
+  title,
+  client,
+  industry,
+  image,
+  impact,
+}: CaseStudyCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8 }}
+      whileTap={{ scale: 0.98 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.3 }}
+      transition={{
+        duration: 0.4,
+        ease: [0.2, 0.9, 0.2, 1],
+        y: { duration: 0.3 },
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="relative h-full cursor-pointer group"
     >
-      <div className="relative h-full bg-[#121212] rounded-lg overflow-hidden border border-[#262626] hover:border-[#f59e0b]/50 transition-all duration-200">
+      <div className="relative h-full bg-[#121212] rounded-xl overflow-hidden border border-[#262626] transition-all duration-300 hover:border-[#f59e0b]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
         {/* Image */}
         <div className="relative h-56 overflow-hidden bg-[#0a0a0a]">
           <ImageWithFallback
@@ -35,7 +47,7 @@ export function CaseStudyCard({ title, client, industry, image, impact }: CaseSt
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-          
+
           {/* Industry Badge */}
           <div className="absolute top-4 left-4 px-3 py-1.5 rounded-md bg-[#f59e0b]/90 backdrop-blur-sm text-xs font-medium text-black">
             {industry}
@@ -46,18 +58,29 @@ export function CaseStudyCard({ title, client, industry, image, impact }: CaseSt
         <div className="p-6">
           {/* Client */}
           <p className="text-sm font-medium text-[#f59e0b] mb-2">{client}</p>
-          
+
           {/* Title */}
-          <h3 className="text-lg font-semibold text-white mb-4 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">{title}</h3>
+          <h3 className="text-lg font-semibold text-white mb-4 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">
+            {title}
+          </h3>
 
           {/* Impact Metrics */}
           <div className="grid grid-cols-2 gap-3 mb-4">
-            {Object.entries(impact).slice(0, 4).map(([key, value]) => (
-              <div key={key} className="p-3 rounded-md bg-[#0a0a0a] border border-[#262626]">
-                <p className="text-xl font-bold text-[#f59e0b] mb-1">{value}</p>
-                <p className="text-xs text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
-              </div>
-            ))}
+            {Object.entries(impact)
+              .slice(0, 4)
+              .map(([key, value]) => (
+                <div
+                  key={key}
+                  className="p-3 rounded-md bg-[#0a0a0a] border border-[#262626]"
+                >
+                  <p className="text-xl font-bold text-[#f59e0b] mb-1">
+                    {value}
+                  </p>
+                  <p className="text-xs text-gray-500 capitalize">
+                    {key.replace(/([A-Z])/g, " $1").trim()}
+                  </p>
+                </div>
+              ))}
           </div>
 
           {/* CTA */}

@@ -278,13 +278,13 @@ export default function HomePage() {
 
             {/* Trust Signals */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
-              <span>✓ 500+ Projects Delivered</span>
+              <span>✓ 90+ Projects Delivered</span>
               <span>•</span>
-              <span>✓ 15+ Years Experience</span>
+              <span>✓ 10+ Years Experience</span>
               <span>•</span>
-              <span>✓ ISO 9001:2015 Certified</span>
+              <span>✓ Reliable Infrastructure</span>
               <span>•</span>
-              <span>✓ 99.9% Uptime Guarantee</span>
+              <span>✓ Performance Monitoring</span>
             </div>
           </div>
         </div>
@@ -321,8 +321,8 @@ export default function HomePage() {
             ],
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "150",
+              ratingValue: "4.8",
+              reviewCount: "65",
             },
             serviceType: [
               "IT Consulting",

@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
-import { ContactForm } from './ContactForm';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
+import { ContactForm } from "./ContactForm";
 
-export function ConsultationCTA() {
+export function ConsultationCTA({
+  defaultService = "",
+}: {
+  defaultService?: string;
+}) {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   return (
@@ -26,6 +30,7 @@ export function ConsultationCTA() {
       <ContactForm
         isOpen={isContactFormOpen}
         onClose={() => setIsContactFormOpen(false)}
+        prefilledService={defaultService}
       />
     </>
   );

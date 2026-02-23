@@ -1,7 +1,7 @@
-'use client';
-import { motion } from 'motion/react';
-import { ArrowRight, LucideIcon } from 'lucide-react';
-import * as Icons from 'lucide-react';
+"use client";
+import { motion } from "motion/react";
+import { ArrowRight, LucideIcon } from "lucide-react";
+import * as Icons from "lucide-react";
 
 interface ServiceCardProps {
   icon: string;
@@ -11,7 +11,13 @@ interface ServiceCardProps {
   delay?: number;
 }
 
-export function ServiceCard({ icon, title, description, features, delay = 0 }: ServiceCardProps) {
+export function ServiceCard({
+  icon,
+  title,
+  description,
+  features,
+  delay = 0,
+}: ServiceCardProps) {
   // Dynamically get the icon component
   const IconComponent = (Icons as any)[icon] as LucideIcon;
 
@@ -19,11 +25,17 @@ export function ServiceCard({ icon, title, description, features, delay = 0 }: S
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.3, delay, ease: [0.2, 0.9, 0.2, 1] }}
+      transition={{
+        duration: 0.4,
+        delay,
+        ease: [0.2, 0.9, 0.2, 1],
+        y: { duration: 0.3 },
+      }}
       className="group relative h-full"
     >
-      <div className="relative h-full bg-[#121212] rounded-lg border border-[#262626] p-6 transition-all duration-200 hover:border-[#f59e0b]/50 cursor-pointer overflow-hidden">
+      <div className="relative h-full bg-[#121212] rounded-xl border border-[#262626] p-6 transition-all duration-300 hover:border-[#f59e0b]/40 cursor-pointer overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
         {/* Subtle Gold Glow on Hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
 
@@ -47,7 +59,10 @@ export function ServiceCard({ icon, title, description, features, delay = 0 }: S
           {/* Features */}
           <ul className="space-y-1.5 mb-4">
             {features.slice(0, 3).map((feature, idx) => (
-              <li key={idx} className="flex items-center gap-2 text-xs text-gray-500">
+              <li
+                key={idx}
+                className="flex items-center gap-2 text-xs text-gray-500"
+              >
                 <div className="w-1 h-1 rounded-full bg-[#f59e0b] flex-shrink-0"></div>
                 <span>{feature}</span>
               </li>
@@ -55,9 +70,7 @@ export function ServiceCard({ icon, title, description, features, delay = 0 }: S
           </ul>
 
           {/* CTA */}
-          <button
-            className="flex items-center gap-2 text-xs font-medium text-gray-400 group-hover:text-[#f59e0b] transition-colors"
-          >
+          <button className="flex items-center gap-2 text-xs font-medium text-gray-400 group-hover:text-[#f59e0b] transition-colors">
             Learn More
             <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
           </button>

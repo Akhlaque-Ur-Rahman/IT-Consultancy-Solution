@@ -1,13 +1,26 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  User,
+  Briefcase,
+  MessageSquare,
+  ArrowRight,
+  CheckCircle,
+  ChevronLeft,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { pricingPlans } from "@/data/mockData";
-import { PricingCard } from "@/components/PricingCard";
 
-export default function ContactPage() {
+function ContactFormContent() {
+  const searchParams = useSearchParams();
+  const [step, setStep] = useState(1);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,22 +29,32 @@ export default function ContactPage() {
     message: "",
   });
 
+  useEffect(() => {
+    const serviceParam = searchParams?.get("service");
+    if (serviceParam) {
+      const normalized = serviceParam.toLowerCase().trim();
+      setFormData((prev) => ({ ...prev, service: normalized }));
+    }
+  }, [searchParams]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you would typically send the data to a backend
-    alert("Message sent successfully!");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "consulting",
-      message: "",
-    });
+    if (step === 1) {
+      setStep(2);
+      return;
+    }
+
+    setIsSubmitted(true);
+    // Mimic API call
+    setTimeout(() => {
+      // Logic after submission (e.g. redirect or stay on success)
+    }, 3000);
   };
 
+  const handleBack = () => setStep(1);
+
   return (
-    <div className="pt-24 md:pt-32 pb-20 min-h-screen bg-black">
+    <div className="pt-8 pb-20 min-h-screen bg-black">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -56,108 +79,278 @@ export default function ContactPage() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
-          {/* Contact Form */}
+          {/* Contact Form Container */}
           <motion.div
-            className="bg-[#121212] rounded-3xl p-8 md:p-10 shadow-xl border border-[#262626]"
+            className="bg-[#121212] rounded-3xl overflow-hidden shadow-2xl border border-[#262626] relative"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">
-              Send us a Message
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-300">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition-all placeholder:text-gray-600"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                  />
+            {/* Form Header / Progress */}
+            {!isSubmitted && (
+              <div className="bg-[#1a1a1a] px-8 py-6 border-b border-[#262626] flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-white">
+                    {step === 1
+                      ? "Step 1: Contact Details"
+                      : "Step 2: Project Info"}
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-1">
+                    {step === 1
+                      ? "Start with your interest"
+                      : "Tell us what you need"}
+                  </p>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-300">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition-all placeholder:text-gray-600"
-                    placeholder="john@company.com"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                <div className="flex gap-2">
+                  <div
+                    className={`w-10 h-1.5 rounded-full transition-colors ${
+                      step >= 1 ? "bg-[#f59e0b]" : "bg-[#262626]"
+                    }`}
+                  />
+                  <div
+                    className={`w-10 h-1.5 rounded-full transition-colors ${
+                      step >= 2 ? "bg-[#f59e0b]" : "bg-[#262626]"
+                    }`}
                   />
                 </div>
               </div>
+            )}
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition-all placeholder:text-gray-600"
-                  placeholder="+91 70708 09208"
-                  value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                />
-              </div>
+            <div className="p-8 md:p-10">
+              <AnimatePresence mode="wait">
+                {isSubmitted ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-[#f59e0b]/10 flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-10 h-10 text-[#f59e0b]" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-3">
+                      Message Sent!
+                    </h3>
+                    <p className="text-gray-400 max-w-xs mx-auto mb-8">
+                      Thank you for reaching out. Our team will review your
+                      request and get back to you within 24 hours.
+                    </p>
+                    <Button
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setStep(1);
+                        setFormData({
+                          name: "",
+                          email: "",
+                          phone: "",
+                          service: "consulting",
+                          message: "",
+                        });
+                      }}
+                      variant="outline"
+                      className="border-[#262626] text-gray-300 hover:bg-[#1a1a1a]"
+                    >
+                      Send Another Message
+                    </Button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <AnimatePresence mode="wait">
+                      {step === 1 ? (
+                        <motion.div
+                          key="step1"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.3 }}
+                          className="space-y-6"
+                        >
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-300">
+                              Full Name
+                            </label>
+                            <div className="relative group">
+                              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                              <input
+                                type="text"
+                                required
+                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                placeholder="John Doe"
+                                value={formData.name}
+                                onChange={(e) =>
+                                  setFormData({
+                                    ...formData,
+                                    name: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                          </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">
-                  Service Interest
-                </label>
-                <select
-                  className="w-full px-4 py-3 rounded-lg border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition-all"
-                  value={formData.service}
-                  onChange={(e) =>
-                    setFormData({ ...formData, service: e.target.value })
-                  }
-                >
-                  <option value="consulting">IT Consulting</option>
-                  <option value="development">Software Development</option>
-                  <option value="compliance">Business Compliance</option>
-                  <option value="marketing">Digital Marketing</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-300">
+                              Email Address
+                            </label>
+                            <div className="relative group">
+                              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                              <input
+                                type="email"
+                                required
+                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                placeholder="john@company.com"
+                                value={formData.email}
+                                onChange={(e) =>
+                                  setFormData({
+                                    ...formData,
+                                    email: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                          </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition-all placeholder:text-gray-600"
-                  placeholder="Tell us about your project requirements..."
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                ></textarea>
-              </div>
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-300">
+                              Service Interest
+                            </label>
+                            <div className="relative group">
+                              <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                              <select
+                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all appearance-none cursor-pointer"
+                                value={formData.service}
+                                onChange={(e) =>
+                                  setFormData({
+                                    ...formData,
+                                    service: e.target.value,
+                                  })
+                                }
+                              >
+                                <option value="consulting">
+                                  IT Consulting
+                                </option>
+                                <option value="web-app-development">
+                                  Web & App Development
+                                </option>
+                                <option value="crm-erp-solutions">
+                                  CRM/ERP/Billing Solutions
+                                </option>
+                                <option value="digital-marketing-services">
+                                  Digital Marketing
+                                </option>
+                                <option value="ui-ux-design">
+                                  UI/UX Design
+                                </option>
+                                <option value="ecommerce-solutions">
+                                  E-commerce Solutions
+                                </option>
+                                <option value="lead-management-systems">
+                                  Lead Management
+                                </option>
+                                <option value="ivr-calling-solutions">
+                                  IVR Solutions
+                                </option>
+                                <option value="hyperlocal-platform-dev">
+                                  Hyperlocal Platforms
+                                </option>
+                                <option value="seo-optimization-expert">
+                                  SEO & Optimization
+                                </option>
+                                <option value="animation-graphics-design">
+                                  Animation & Graphics
+                                </option>
+                                <option value="business-registration-compliance">
+                                  Business Registration & Compliance
+                                </option>
+                                <option value="other">Other</option>
+                              </select>
+                            </div>
+                          </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-bold py-6 text-lg transition-all duration-300 transform hover:-translate-y-1"
-              >
-                Send Message
-                <Send className="ml-2 w-5 h-5" />
-              </Button>
-            </form>
+                          <Button
+                            type="submit"
+                            className="w-full bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-14 text-lg rounded-xl transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] group"
+                          >
+                            Next Step
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="step2"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.3 }}
+                          className="space-y-6"
+                        >
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-300">
+                              Phone Number
+                            </label>
+                            <div className="relative group">
+                              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                              <input
+                                type="tel"
+                                required
+                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                placeholder="+91 70708 09208"
+                                value={formData.phone}
+                                onChange={(e) =>
+                                  setFormData({
+                                    ...formData,
+                                    phone: e.target.value,
+                                  })
+                                }
+                              />
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-300">
+                              Message
+                            </label>
+                            <div className="relative group">
+                              <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                              <textarea
+                                rows={6}
+                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600 resize-none"
+                                placeholder="Tell us about your project requirements..."
+                                value={formData.message}
+                                onChange={(e) =>
+                                  setFormData({
+                                    ...formData,
+                                    message: e.target.value,
+                                  })
+                                }
+                              ></textarea>
+                            </div>
+                          </div>
+
+                          <div className="flex gap-4">
+                            <Button
+                              type="button"
+                              onClick={handleBack}
+                              variant="outline"
+                              className="bg-transparent border-[#262626] text-gray-400 hover:bg-[#1a1a1a] hover:text-white h-14 rounded-xl px-8"
+                            >
+                              <ChevronLeft className="mr-2 w-5 h-5" />
+                              Back
+                            </Button>
+                            <Button
+                              type="submit"
+                              className="flex-1 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-bold h-14 text-lg rounded-xl transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] group"
+                            >
+                              Send Message
+                              <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                            </Button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </form>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
 
           {/* Contact Info */}
@@ -199,7 +392,7 @@ export default function ContactPage() {
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-[#1a1a1a] to-[#black] rounded-3xl p-8 text-white border border-[#262626] relative overflow-hidden"
+              className="bg-gradient-to-br from-[#1a1a1a] to-black rounded-3xl p-8 text-white border border-[#262626] relative overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -228,56 +421,50 @@ export default function ContactPage() {
         </div>
 
         {/* Map Section */}
-        <motion.div
-          className="rounded-3xl overflow-hidden h-96 shadow-xl border border-[#262626] mb-20 grayscale hover:grayscale-0 transition-all duration-500"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37!2d85.06!3d25.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed577f6b155555%3A0x5eb35e389475e7!2sPhulwari+Sharif%2C+Patna%2C+Bihar+801505!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </motion.div>
-
-        {/* Pricing Section */}
-        <div id="pricing" className="mb-20">
+        <div className="mb-20">
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="flex items-center gap-2 mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Transparent Pricing
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Choose a plan that fits your business needs. No hidden charges.
-            </p>
+            <MapPin className="w-5 h-5 text-[#f59e0b]" />
+            <h3 className="text-xl font-bold text-white">Our Location</h3>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <PricingCard
-                key={plan.name}
-                {...plan}
-                onCTA={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                  setFormData((prev) => ({ ...prev, service: plan.name }));
-                }}
-                delay={index * 0.1}
-              />
-            ))}
-          </div>
+          <motion.div
+            className="rounded-3xl overflow-hidden h-96 shadow-xl border border-[#262626] bg-[#0a0a0a]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <iframe
+              src="https://maps.google.com/maps?q=Ward%2015%2C%20Phulwari%20Sharif%2C%20Patna%2C%20Bihar%20801505&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            ></iframe>
+          </motion.div>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-black flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-[#f59e0b] border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      }
+    >
+      <ContactFormContent />
+    </Suspense>
   );
 }

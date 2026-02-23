@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import {
   Mail,
   Phone,
@@ -92,14 +93,18 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
-                <li key={link.id}>
+                <motion.li
+                  key={link.id}
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-colors duration-200"
+                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-all duration-200 block"
                   >
                     {link.label}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -111,14 +116,18 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {services.map((service) => (
-                <li key={service.id}>
+                <motion.li
+                  key={service.id}
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <Link
                     href={service.href}
-                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-colors duration-200"
+                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-all duration-200 block"
                   >
                     {service.label}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -130,14 +139,18 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 mb-6">
               {resources.map((resource) => (
-                <li key={resource.id}>
+                <motion.li
+                  key={resource.id}
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <Link
                     href={resource.href}
-                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-colors duration-200"
+                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-all duration-200 block"
                   >
                     {resource.label}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
 
@@ -164,14 +177,16 @@ export function Footer() {
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
-                  <a
+                  <motion.a
                     key={social.label}
                     href={social.url}
-                    className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-[#f59e0b] border border-[#262626] hover:border-[#f59e0b] flex items-center justify-center transition-all duration-200 hover:scale-110 group"
+                    whileHover={{ scale: 1.1, backgroundColor: "#f59e0b" }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#262626] hover:border-[#f59e0b] flex items-center justify-center transition-all duration-200 group"
                     aria-label={social.label}
                   >
                     <Icon className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
-                  </a>
+                  </motion.a>
                 );
               })}
             </div>

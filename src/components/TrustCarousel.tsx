@@ -1,5 +1,5 @@
-'use client';
-import { motion } from 'motion/react';
+"use client";
+import { motion } from "motion/react";
 
 interface TrustCarouselProps {
   logos: string[];
@@ -49,10 +49,17 @@ export function TrustCarousel({ logos }: TrustCarouselProps) {
                 className="flex-shrink-0 w-48 h-20 flex items-center justify-center"
               >
                 <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-40 h-16 rounded-lg bg-[#121212] border border-[#262626] hover:border-[#f59e0b]/50 transition-all duration-200 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] group">
-                    <span className="text-lg font-bold text-gray-600 group-hover:text-[#f59e0b] transition-colors">
-                      {logo}
-                    </span>
+                  <div className="inline-flex items-center justify-center w-44 h-16 rounded-xl bg-[#121212] border border-[#262626] hover:border-[#f59e0b]/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] group px-4">
+                    {logo.startsWith("<svg") ? (
+                      <div
+                        className="w-full h-full flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity"
+                        dangerouslySetInnerHTML={{ __html: logo }}
+                      />
+                    ) : (
+                      <span className="text-sm font-bold text-gray-400 group-hover:text-[#f59e0b] transition-colors tracking-tight">
+                        {logo}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
