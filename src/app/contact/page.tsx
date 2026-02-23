@@ -422,33 +422,23 @@ function ContactFormContent() {
 
         {/* Map Section */}
         <div className="mb-20">
-          <motion.div
-            className="flex items-center gap-2 mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
+          <div className="flex items-center gap-2 mb-6">
             <MapPin className="w-5 h-5 text-[#f59e0b]" />
             <h3 className="text-xl font-bold text-white">Our Location</h3>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="rounded-3xl overflow-hidden h-96 shadow-xl border border-[#262626] bg-[#0a0a0a]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="rounded-3xl overflow-hidden h-96 shadow-xl border border-[#262626] bg-[#0a0a0a] relative">
             <iframe
               src="https://maps.google.com/maps?q=Ward%2015%2C%20Phulwari%20Sharif%2C%20Patna%2C%20Bihar%20801505&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              style={{ border: 0, position: "relative", zIndex: 10 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Office Location"
             ></iframe>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
