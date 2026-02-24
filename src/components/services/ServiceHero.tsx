@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface ServiceHeroProps {
   badge: string;
-  title: string;
+  title: React.ReactNode;
   description: string;
   benefits: string[];
   serviceTitle?: string;
@@ -53,12 +53,8 @@ export const ServiceHero = ({
               </span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
-              {title.split(" ").map((word, i) => (
-                <span key={i} className={i % 3 === 2 ? "text-[#f59e0b]" : ""}>
-                  {word}{" "}
-                </span>
-              ))}
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-10 leading-[1.1] tracking-tight">
+              {title}
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">

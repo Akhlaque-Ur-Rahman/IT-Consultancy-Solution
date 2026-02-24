@@ -8,13 +8,13 @@ export default function HeroModernClient({
   onlyTyping?: boolean;
 }) {
   const phrases = [
-    "Web-App Development",
-    "Mobile App Development",
-    "CRM/ERP Implementation",
-    "Digital Marketing",
-    "UI/UX Design",
-    "E‑commerce Solutions",
-    "Compliance Services",
+    "Eliminating Technical Debt",
+    "Optimizing Business Workflows",
+    "Accelerating Market Entry",
+    "Automating Complex Compliance",
+    "Scaling Digital Infrastructure",
+    "Securing Enterprise Assets",
+    "Maximizing Operational ROI",
   ];
   const [idx, setIdx] = useState(0);
   const [chars, setChars] = useState(0);

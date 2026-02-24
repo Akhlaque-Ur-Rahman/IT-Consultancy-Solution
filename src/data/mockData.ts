@@ -7,53 +7,55 @@ export const services = [
     type: 'engineering',
     icon: 'Code',
     title: 'Web & App Development',
-    description: 'Custom web and mobile applications built with cutting-edge technologies.',
+    description: 'Beautiful websites and mobile apps that work fast on every device.',
     category: 'development',
     features: ['React & Node.js', 'iOS & Android', 'Progressive Web Apps', 'API Development'],
-    outcomeHeadline: 'Scalable Digital Solutions Built for the Modern Enterprise',
-    keyBenefits: ['Enterprise-grade Security', 'Cloud-native Architecture', 'High Performance'],
+    outcomeHeadline: 'Build a <span className="text-[#f59e0b]">Professional Website</span> That Works as Hard as You Do',
+    keyBenefits: ['Fast & Easy to Use', 'Works on All Devices', 'Safe & Secure'],
     deliverables: [
-      { title: 'Custom Web Apps', desc: 'React & Next.js powerhouses', icon: 'Globe' },
-      { title: 'Mobile Solutions', desc: 'Native-feel cross-platform apps', icon: 'Smartphone' },
-      { title: 'Back-end APIs', desc: 'Robust Node.js & Go services', icon: 'Server' }
+      { title: 'Custom Websites', desc: 'Beautiful sites for any business', icon: 'Globe' },
+      { title: 'Mobile Apps', desc: 'Your business in your customers pockets', icon: 'Smartphone' },
+      { title: 'Smart Systems', desc: 'Tools that automate your work', icon: 'Server' }
     ],
     processSteps: [
-      { title: 'Discovery', desc: 'Defining requirements and tech stack' },
-      { title: 'Architecture', desc: 'Designing for scale and performance' },
-      { title: 'Development', desc: 'Agile sprints with daily updates' },
-      { title: 'QA & Launch', desc: 'Rigorous testing and deployment' }
+      { title: 'Talking & Planning', desc: 'We listen to what your business needs' },
+      { title: 'Designing', desc: 'Creating the look and feel you love' },
+      { title: 'Building', desc: 'Real-time updates as we create your site' },
+      { title: 'Launch', desc: 'Testing everything before you go live' }
     ],
     faqs: [
-      { q: 'Which tech stack do you use?', a: 'We primarily use React, Next.js, Node.js, and PostgreSQL.' },
-      { q: 'Do you provide maintenance?', a: 'Yes, we offer ongoing SLA-based support.' }
+      { q: 'What tools do you use?', a: 'We use the latest technology like React and Next.js to make sure your website is super fast and ready for the future.' },
+      { q: 'Can you help me after the site is live?', a: 'Yes, we stay with you to handle any updates, security, or changes you need.' },
+      { q: 'Will it work on mobile phones?', a: 'Absolutely. Every website we build is "Mobile-First," meaning it looks great on any screen.' },
+      { q: 'How do we track progress?', a: 'We give you a simple weekly report so you always know exactly what we are working on.' }
     ],
     typeSpecificData: {
-      performance: '99.9% Uptime SLA',
-      security: 'ISO 27001 Compliant',
-      stack: ['Next.js', 'Supabase', 'Docker', 'AWS']
+      performance: 'Fastest Loading Speeds',
+      security: 'Built-in Protection',
+      stack: ['Next.js', 'React', 'Mobile Optimized']
     },
     results: [
       {
-        label: "Market Reach",
+        label: "More Visitors",
         value: "2.5x",
-        suffix: "Growth in Traffic",
-        desc: "Scaled their core platform to handle regional spikes during expansion phases."
+        suffix: "Traffic Boost",
+        desc: "Helped a local business double their daily website visitors."
       },
       {
-        label: "Build Speed",
+        label: "Faster Launch",
         value: "-45%",
-        suffix: "Time-to-Market",
-        desc: "Reduced deployment cycles through optimized CI/CD and atomic design."
+        suffix: "Time Saved",
+        desc: "Got a new startup online in half the usual time."
       }
     ],
     testimonial: {
-      quote: "EDUNEX didn't just write code; they transformed how we think about our digital product. The scalability we have now is exactly what we needed for our 2026 expansion.",
-      author: "Founder, Patna TechHub"
+      quote: "EDUNEX made the whole process so simple. They didn't use confusing tech words and built exactly what I needed to grow my business.",
+      author: "Founder, local startup"
     },
-    resultsTitle: "Engineering Impact We've Delivered",
-    ctaBadge: "Build Your Next Product",
-    ctaTitle: "Ready to Ship Your Vision?",
-    ctaDescription: "Let's connect to discuss your technical roadmap and how our engineering squad can accelerate your launch."
+    resultsTitle: "Real Growth We've Delivered",
+    ctaBadge: "Launch Your Website",
+    ctaTitle: "Ready to Start Building?",
+    ctaDescription: "Let's chat about your idea. No jargon, just a clear plan to get your business online."
   },
   {
     id: 'crm-erp',
@@ -61,53 +63,56 @@ export const services = [
     type: 'engineering',
     icon: 'Database',
     title: 'CRM/ERP/Billing Solutions',
-    description: 'Enterprise-grade business management systems tailored to your workflow.',
+    description: 'Simple software to manage your office, billing, and staff without the paper mess.',
     category: 'solutions',
     features: ['Custom CRM', 'ERP Systems', 'Billing Automation', 'Office Management'],
-    outcomeHeadline: 'Unified Business Operations with Tailored ERP Systems',
-    keyBenefits: ['Centralized Data', 'Automated Workflows', 'Business Intelligence'],
+    outcomeHeadline: 'Manage Your Whole Business in <span className="text-[#f59e0b]">One Simple Screen</span>',
+    keyBenefits: ['Everything in One Place', 'No More Manual Errors', 'Save Hours Every Day'],
     deliverables: [
-      { title: 'Custom CRM', desc: 'Sales pipeline management', icon: 'Users' },
-      { title: 'ERP Suites', desc: 'Integrated resource planning', icon: 'Database' },
-      { title: 'Billing Engines', desc: 'Automated invoicing & payments', icon: 'Receipt' }
+      { title: 'Customer Records', desc: 'Never lose a lead again', icon: 'Users' },
+      { title: 'Office Software', desc: 'Built for how you work', icon: 'Database' },
+      { title: 'Automatic Billing', desc: 'Invoices sent in seconds', icon: 'Receipt' }
     ],
     processSteps: [
-      { title: 'Audit', desc: 'Mapping existing business workflows' },
-      { title: 'Blueprint', desc: 'Defining module requirements' },
-      { title: 'Build', desc: 'Iterative development & integration' },
-      { title: 'Migration', desc: 'Safe data transition & training' }
+      { title: 'Audit', desc: 'We study how you work today' },
+      { title: 'Blueprint', desc: 'Designing a simpler system for you' },
+      { title: 'Build', desc: 'Step-by-step creation with your feedback' },
+      { title: 'Training', desc: 'We teach your team everything' }
     ],
     faqs: [
-      { q: 'Can you migrate our old data?', a: 'Yes, we handle complex data migrations with high integrity.' }
+      { q: 'Can we use our old data?', a: 'Yes, we move all your old files and papers into the new digital system safely.' },
+      { q: 'Can I check it from home?', a: 'Yes, as long as you have internet, you can manage your office from anywhere.' },
+      { q: 'Is it hard to learn?', a: 'No, we design it to be very simple, just like using a basic app on your phone.' },
+      { q: 'Can it connect to Tally?', a: 'Yes, it works perfectly with Tally, WhatsApp, and other tools you already use.' }
     ],
     typeSpecificData: {
-      stack: ['Java Spring', 'React', 'PostgreSQL', 'Redis'],
-      performance: 'Elastic architecture supports millions of records',
-      security: 'End-to-end Column-level Encryption',
-      integrations: ['SAP', 'Tally', 'Quickbooks']
+      stack: ['Safe & Reliable Backend', 'Easy Frontend'],
+      performance: 'Fast even with thousands of files',
+      security: 'End-to-end Data Privacy',
+      integrations: ['Tally', 'WhatsApp', 'Email']
     },
     results: [
       {
-        label: "Op Efficiency",
+        label: "Time Saved",
         value: "35%",
-        suffix: "Faster Processing",
-        desc: "Automated core billing cycles for a regional distributor, eliminating human error."
+        suffix: "Faster Work",
+        desc: "Helped a local distributor handle billing in minutes instead of hours."
       },
       {
-        label: "Data Accuracy",
+        label: "Accuracy",
         value: "100%",
-        suffix: "Sanitized Records",
-        desc: "Successfully migrated 500k+ legacy records to the new unified ERP system."
+        suffix: "No More Errors",
+        desc: "Successfully moved over 5 lakh rows of paper data to digital."
       }
     ],
     testimonial: {
-      quote: "The custom ERP tailored specifically to our regional supply chain has been a game-changer. We finally have a single source of truth for our operations.",
-      author: "Director, Bihar Agri-Trade"
+      quote: "The software they built for us is so easy. My staff learned it in a day, and we finally know exactly what's happening in our business.",
+      author: "Manager, local warehouse"
     },
-    resultsTitle: "Operational Excellence in Practice",
-    ctaBadge: "Optimize Your Ops",
-    ctaTitle: "Stop Fighting Your Tools.",
-    ctaDescription: "Get a custom ERP assessment and see how we can unify your workflows into a single high-performance dashboard."
+    resultsTitle: "Results from Better Management",
+    ctaBadge: "Simplify Your Work",
+    ctaTitle: "Tired of Paperwork?",
+    ctaDescription: "Let's build a simpler system for your office. Tell us how you work, and we'll handle the rest."
   },
   {
     id: 'digital-marketing',
@@ -115,51 +120,54 @@ export const services = [
     type: 'marketing',
     icon: 'TrendingUp',
     title: 'Digital & Social Media Marketing',
-    description: 'Data-driven marketing strategies to amplify your brand presence.',
+    description: 'Get more phone calls and sales with simple, effective local marketing.',
     category: 'marketing',
     features: ['SEO & SEM', 'Social Media Campaigns', 'Content Marketing', 'Analytics'],
-    outcomeHeadline: 'Precision-Targeted Marketing for Exponential Growth',
-    keyBenefits: ['Guaranteed ROI', 'Data-Driven Insights', 'Omnichannel Presence'],
+    outcomeHeadline: 'Get More Customers and <span className="text-[#f59e0b]">Grow Your Sales</span> Every Month',
+    keyBenefits: ['More Phone Calls', 'Higher Local Rankings', 'Clear Monthly Reports'],
     deliverables: [
-      { title: 'Performance SEO', desc: 'Dominating search rankings', icon: 'Search' },
-      { title: 'Paid Social', desc: 'Targeted lead generation', icon: 'Target' },
-      { title: 'Brand Storytelling', desc: 'Compelling content creation', icon: 'PenTool' }
+      { title: 'Google Ranking', desc: 'Be the first thing people see', icon: 'Search' },
+      { title: 'Facebook Ads', desc: 'Reach local people easily', icon: 'Target' },
+      { title: 'Content Posts', desc: 'Tell your story simply', icon: 'PenTool' }
     ],
     processSteps: [
-      { title: 'Analysis', desc: 'Competitor and market research' },
-      { title: 'Strategy', desc: 'Defining channels and budgets' },
-      { title: 'Execution', desc: 'Campaign launch and management' },
-      { title: 'Optimization', desc: 'A/B testing and performance tuning' }
+      { title: 'Research', desc: 'Seeing what your competitors do' },
+      { title: 'Plan', desc: 'Choosing where to spend your budget' },
+      { title: 'Action', desc: 'Running ads and posting content' },
+      { title: 'Check', desc: 'Tuning for more leads every week' }
     ],
     faqs: [
-      { q: 'How do you track ROI?', a: 'Via unified dashboards tracking every conversion point.' }
+      { q: 'How do I know if it is working?', a: 'We send you a simple report every month showing exactly how many new calls and leads you got.' },
+      { q: 'Do you handle Facebook?', a: 'Yes, we manage your Facebook, Instagram, and Google accounts so you don&apos;t have to.' },
+      { q: 'Is it expensive?', a: 'We work with your budget and focus on getting you the best value for every rupee spent.' },
+      { q: 'Can it help a small shop?', a: 'Yes, we specialize in helping local businesses get noticed by people in their neighborhood.' }
     ],
     typeSpecificData: {
-      channels: ['Meta Ads', 'Google Search', 'LinkedIn'],
-      reporting: 'Real-time interactive dashboards'
+      channels: ['Facebook Ads', 'Google Search', 'Instagram'],
+      reporting: 'Easy-to-Read Reports'
     },
     results: [
       {
-        label: "Lead Volume",
+        label: "New Leads",
         value: "4x",
-        suffix: "Qualified Leads",
-        desc: "Optimized regional search targeting to capture high-intent business queries."
+        suffix: "More Enquiries",
+        desc: "Helped a local client get 4 times more calls from their Google ads."
       },
       {
-        label: "Ad Spend",
+        label: "Cost Saved",
         value: "-22%",
-        suffix: "Cost per Acquisition",
-        desc: "Refined audience segments to eliminate wasteful spend on low-converting demographics."
+        suffix: "Ad Efficiency",
+        desc: "Reduced wasteful spending on ads that weren't bringing in customers."
       }
     ],
     testimonial: {
-      quote: "Our lead flow didn't just increase; the quality improved drastically. They understand the regional market nuances better than any national agency we've tried.",
-      author: "Marketing Head, Magadh Retail"
+      quote: "We used to waste so much money on ads that didn't work. Now, we get regular enquiries from people who actually want to buy.",
+      author: "Business Owner, local retail shop"
     },
-    resultsTitle: "Growth Metrics We've Achieved",
-    ctaBadge: "Scale Your Revenue",
-    ctaTitle: "Ready for Consistent Growth?",
-    ctaDescription: "Stop guessing and start scaling with a data-driven marketing strategy tailored for the regional business landscape."
+    resultsTitle: "Growth We've Achieved",
+    ctaBadge: "Grow Your Sales",
+    ctaTitle: "Ready to Get More Customers?",
+    ctaDescription: "Stop guessing and start growing with a simple marketing plan that works for your local area."
   },
   {
     id: 'ui-ux',
@@ -167,29 +175,49 @@ export const services = [
     type: 'design',
     icon: 'Palette',
     title: 'UI/UX Design',
-    description: 'Beautiful, user-centric designs that drive engagement and conversion.',
+    description: 'Professional designs that make your business look premium and trust-worthy.',
     category: 'design',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    outcomeHeadline: 'High-Converting Experiences Designed for Humans',
-    keyBenefits: ['Enhanced Engagement', 'Reduced Churn', 'Stronger Brand Affinity'],
+    outcomeHeadline: 'Design That Makes Your Customers Say <span className="text-[#f59e0b]">"Wow"</span>',
+    keyBenefits: ['Easy to Use', 'Looks Premium', 'Keeps People Coming Back'],
     deliverables: [
-      { title: 'User Research', desc: 'Data-backed design insights', icon: 'Users' },
-      { title: 'Interface Design', desc: 'High-fidelity UI components', icon: 'Layout' },
-      { title: 'Prototyping', desc: 'Interactive user flows', icon: 'Play' }
+      { title: 'Research', desc: 'Understanding what your customers like', icon: 'Users' },
+      { title: 'App Design', desc: 'Beautiful screens that work perfectly', icon: 'Layout' },
+      { title: 'Prototypes', desc: 'See how it works before we build it', icon: 'Play' }
     ],
     processSteps: [
-      { title: 'Empathize', desc: 'Understanding user needs' },
-      { title: 'Ideate', desc: 'Rapid wireframing & conceptualization' },
-      { title: 'Prototype', desc: 'Building high-fidelity mockups' },
-      { title: 'Valdiate', desc: 'Usability testing & refinement' }
+      { title: 'Listening', desc: 'Learning about your brand' },
+      { title: 'Sketching', desc: 'Drawing the first ideas' },
+      { title: 'Designing', desc: 'Adding colors and style' },
+      { title: 'Testing', desc: 'Making sure it is easy for everyone' }
     ],
     faqs: [
-      { q: 'Which tools do you use?', a: 'We primarily use Figma, Adobe CC, and Framer.' }
+      { q: 'Which tools do you use?', a: 'We use professional tools like Figma and Adobe to create world-class designs.' },
+      { q: 'Can you redesign my old app?', a: 'Yes, we can take your existing app and give it a modern, premium look.' },
+      { q: 'How long does design take?', a: 'A full design usually takes 2-4 weeks depending on how many screens you need.' },
+      { q: 'Do you help with logos?', a: 'Yes, we also design logos and brand styles to match your new look.' }
     ],
     typeSpecificData: {
-      gallery: ['Project A', 'Project B', 'Project C'],
-      philosophy: 'Minimalist & Content-First focus'
-    }
+      gallery: ['Modern Designs', 'Clean Layouts', 'Bold Colors'],
+      philosophy: 'Simple & User-First'
+    },
+    resultsTitle: "Designs That Got People Talking",
+    results: [
+      {
+        label: "Easy to Use",
+        value: "+40%",
+        suffix: "Happier Users",
+        desc: "Redesigned a local app, making it much simpler for people to use every day."
+      },
+      {
+        label: "Sales",
+        value: "+25%",
+        suffix: "More Orders",
+        desc: "Simplified a checkout screen to help more people finish their purchase."
+      }
+    ],
+    ctaTitle: "Want a Beautiful App?",
+    ctaDescription: "Let's create a design that your customers will love using every day."
   },
   {
     id: 'ecommerce',
@@ -197,30 +225,50 @@ export const services = [
     type: 'engineering',
     icon: 'ShoppingCart',
     title: 'E-commerce Solutions',
-    description: 'End-to-end e-commerce platforms with payment integration and analytics.',
+    description: 'Full-featured online stores to sell your products across India easily.',
     category: 'development',
     features: ['Multi-vendor', 'Payment Gateway', 'Inventory Management', 'Analytics'],
-    outcomeHeadline: 'Accelerated Online Sales with High-Performance Stores',
-    keyBenefits: ['Conversion Optimization', 'Seamless Payments', 'Inventory Automation'],
+    outcomeHeadline: 'Sell More Online with a <span className="text-[#f59e0b]">Powerful e-Commerce Store</span>',
+    keyBenefits: ['Sell 24/7', 'Safe Payments', 'Easy to Manage Orders'],
     deliverables: [
-      { title: 'Custom Stores', desc: 'Tailored shopping experiences', icon: 'ShoppingBag' },
-      { title: 'Multi-vendor Hubs', desc: 'Marketplace platform builds', icon: 'Layout' },
-      { title: 'Payment Gateways', desc: 'Secure checkout integrations', icon: 'CreditCard' }
+      { title: 'Custom Stores', desc: 'Your own online shop', icon: 'ShoppingBag' },
+      { title: 'Marketplaces', desc: 'Let others sell on your site', icon: 'Layout' },
+      { title: 'Payments', desc: 'Safe & secure checkout', icon: 'CreditCard' }
     ],
     processSteps: [
-      { title: 'Cataloging', desc: 'Defining product structures' },
-      { title: 'Engine Build', desc: 'Complex cart & tax logic' },
-      { title: 'Integration', desc: 'Linking ERP & Logistics' },
-      { title: 'Hardening', desc: 'Security & load testing' }
+      { title: 'Planning', desc: 'Organizing your products' },
+      { title: 'Setup', desc: 'Building the cart and payments' },
+      { title: 'Testing', desc: 'Checking taxes and shipping' },
+      { title: 'Live', desc: 'Launching your store' }
     ],
     faqs: [
-      { q: 'Do you support Shopify?', a: 'Yes, both custom and Shopify/WooCommerce.' }
+      { q: 'Can I move from Shopify?', a: 'Yes, we can move all your products and customers to a new, faster store.' },
+      { q: 'Will it work on phones?', a: 'Yes, most people shop on phones, so we make sure it works perfectly there.' },
+      { q: 'Which payments do you support?', a: 'We add Razorpay, Stripe, and even Cash on Delivery for your customers.' },
+      { q: 'Can I manage it myself?', a: 'Yes, we give you a simple dashboard to add products and see your sales.' }
     ],
     typeSpecificData: {
-      stack: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
-      performance: 'Supports 10k+ concurrent checkouts',
-      security: 'PCI-DSS Compliant builds'
-    }
+      stack: ['Fast Storefront', 'Secure Payments'],
+      performance: 'Handles thousands of shoppers',
+      security: 'PCI-DSS Safe'
+    },
+    resultsTitle: "Selling Success Stories",
+    results: [
+      {
+        label: "Online Sales",
+        value: "+60%",
+        suffix: "Sales Growth",
+        desc: "Helped a local retail shop start selling across India successfully."
+      },
+      {
+        label: "Payments",
+        value: "Safe",
+        suffix: "100% Secure",
+        desc: "Simplified the payment process so customers feel safe buying online."
+      }
+    ],
+    ctaTitle: "Ready to Start Selling?",
+    ctaDescription: "Launch your own online store and reach customers across the country."
   },
   {
     id: 'lead-management',
@@ -228,30 +276,50 @@ export const services = [
     type: 'engineering',
     icon: 'Users',
     title: 'Lead Management',
-    description: 'Intelligent systems to capture, nurture, and convert leads efficiently.',
+    description: 'Smart systems to track your customers and never miss a single new enquiry.',
     category: 'solutions',
     features: ['Lead Tracking', 'Automation', 'CRM Integration', 'Reporting'],
-    outcomeHeadline: 'Maximized Lead Conversion with Intelligent Automation',
-    keyBenefits: ['0% Response Delay', 'Automated Nurturing', 'Attribution Tracking'],
+    outcomeHeadline: 'Never Lose a Customer Again with <span className="text-[#f59e0b]">Smart Lead Tracking</span>',
+    keyBenefits: ['Instant Alerts', 'Automatic Follow-ups', 'Know Where Leads Come From'],
     deliverables: [
-      { title: 'Lead Scoring', desc: 'AI-driven priority systems', icon: 'Target' },
-      { title: 'Capture Hubs', desc: 'Multi-channel entry points', icon: 'Inbound' },
-      { title: 'Automation Bots', desc: 'Speed-to-lead responses', icon: 'MessageSquare' }
+      { title: 'Lead Scoring', desc: 'Know which customers are ready to buy', icon: 'Target' },
+      { title: 'Capture Hubs', desc: 'Get leads from FB, Google, and Web', icon: 'Inbound' },
+      { title: 'Auto-Bots', desc: 'Reply to customers in seconds', icon: 'MessageSquare' }
     ],
     processSteps: [
-      { title: 'Flow Audit', desc: 'Auditing current lead leaks' },
-      { title: 'Logic Build', desc: 'Setting up nurturing rules' },
-      { title: 'Integration', desc: 'Syncing with CRM & Sales' },
-      { title: 'Monitoring', desc: 'Weekly conversion tuning' }
+      { title: 'Audit', desc: 'Finding where you lose customers today' },
+      { title: 'Logic', desc: 'Setting up automatic replies' },
+      { title: 'Sync', desc: 'Connecting to your phone & computer' },
+      { title: 'Monitor', desc: 'Checking results every week' }
     ],
     faqs: [
-      { q: 'Can it integrate with WhatsApp?', a: 'Yes, full WhatsApp API integration included.' }
+      { q: 'Can it work with WhatsApp?', a: 'Yes, your team gets an instant WhatsApp alert whenever a new lead comes in.' },
+      { q: 'Is it hard to use?', a: 'No, you get a simple list of people to call, and the app handles the rest.' },
+      { q: 'Can I see reports?', a: 'Yes, you can see which ads are bringing you the most customers.' },
+      { q: 'Does it send emails?', a: 'Yes, it can send automatic "Thank You" emails and follow-ups for you.' }
     ],
     typeSpecificData: {
-      stack: ['Node.js', 'MongoDB', 'Redis', 'Twilio'],
-      performance: 'Average < 5min speed-to-lead',
-      security: 'ISO 27001 Data Handling'
-    }
+      stack: ['Modern Tracking Tech'],
+      performance: 'Leads delivered in < 5 mins',
+      security: 'Safe & Private Data'
+    },
+    resultsTitle: "Winning More Customers",
+    results: [
+      {
+        label: "Response Time",
+        value: "-90%",
+        suffix: "Faster Replies",
+        desc: "Helped a business reply to customers in seconds instead of hours."
+      },
+      {
+        label: "Conversions",
+        value: "+50%",
+        suffix: "More Sales",
+        desc: "Ensured every single lead was followed up on, increasing total sales."
+      }
+    ],
+    ctaTitle: "Stop Losing Good Leads.",
+    ctaDescription: "Get a simple system to track and close more customers today."
   },
   {
     id: 'ivr',
@@ -259,30 +327,50 @@ export const services = [
     type: 'engineering',
     icon: 'Phone',
     title: 'IVR Solutions',
-    description: 'Interactive Voice Response systems for seamless customer communication.',
+    description: 'Automatic business phone system that answers your customers 24/7.',
     category: 'solutions',
     features: ['Multi-language', 'Call Routing', 'Analytics', 'Integration'],
-    outcomeHeadline: 'Professional 24/7 Voice Response systems',
-    keyBenefits: ['Reduced Wait Times', 'Professional Brand Image', 'Multi-Language Support'],
+    outcomeHeadline: 'Professional <span className="text-[#f59e0b]">24/7 Phone Answering</span> for Your Business',
+    keyBenefits: ['No Missed Calls', 'Professional Welcome', 'Hindi & English Support'],
     deliverables: [
-      { title: 'Cloud PBX', desc: 'Enterprise-grade telephony', icon: 'Cloud' },
-      { title: 'Smart Routing', desc: 'Intent-based call transfers', icon: 'CallFlow' },
-      { title: 'Speech-to-Text', desc: 'Automated transcription', icon: 'Mic' }
+      { title: 'Cloud Phone', desc: 'No hardware needed', icon: 'Cloud' },
+      { title: 'Smart Menus', desc: "Press 1 for Sales, 2 for Support", icon: 'CallFlow' },
+      { title: 'Recordings', desc: 'Listen to every call later', icon: 'Mic' }
     ],
     processSteps: [
-      { title: 'Scripts', desc: 'Voice menu & text design' },
-      { title: 'Cloud Setup', desc: 'SIP & Trunking configuration' },
-      { title: 'Testing', desc: 'Load & stress voice testing' },
-      { title: 'Live', desc: 'Controlled rollout & training' }
+      { title: 'Setup', desc: 'Choosing your new business number' },
+      { title: 'Script', desc: 'Recording your welcome message' },
+      { title: 'Test', desc: 'Making sure calls go to the right person' },
+      { title: 'Live', desc: 'Your phone system is ready' }
     ],
     faqs: [
-      { q: 'Is it cloud-hosted?', a: 'Yes, 100% cloud-hosted with 99.9% availability.' }
+      { q: 'Do I need special phones?', a: 'No, everything works on your existing mobile phones using the cloud.' },
+      { q: 'Can we have Hindi menus?', a: 'Yes, we can record messages in Hindi, English, and local languages.' },
+      { q: 'Is it expensive?', a: 'No, it is very affordable and costs much less than a traditional office phone system.' },
+      { q: 'Can I record calls?', a: 'Yes, all incoming and outgoing calls are recorded for you to check later.' }
     ],
     typeSpecificData: {
-      stack: ['Python', 'Asterisk', 'WebRTC', 'AWS'],
-      performance: '100+ concurrent calls',
-      security: 'Automatic cloud call recording'
-    }
+      stack: ['Reliable Cloud Calling'],
+      performance: 'Handles 100+ calls at once',
+      security: 'Safe Cloud Recording'
+    },
+    resultsTitle: "Professional Calling Results",
+    results: [
+      {
+        label: "Missed Calls",
+        value: "0",
+        suffix: "Zero Lost Calls",
+        desc: "Ensured no customer call was ever missed, day or night."
+      },
+      {
+        label: "Brand Image",
+        value: "Top",
+        suffix: "Highly Professional",
+        desc: "Gave a small office the professional phone system of a big company."
+      }
+    ],
+    ctaTitle: "Want a Professional Number?",
+    ctaDescription: "Get a business phone system that works 24/7 for you."
   },
   {
     id: 'hyperlocal',
@@ -290,30 +378,50 @@ export const services = [
     type: 'engineering',
     icon: 'MapPin',
     title: 'Hyperlocal Platforms',
-    description: 'Location-based services connecting businesses with local customers.',
+    description: 'Apps to manage local deliveries and track your riders in real-time.',
     category: 'development',
     features: ['Geolocation', 'Real-time Tracking', 'Multi-vendor', 'Mobile Apps'],
-    outcomeHeadline: 'Seamless Local Deliveries & Service Marketplaces',
-    keyBenefits: ['GPS Accuracy', 'Vendor Management', 'Real-time Tracking'],
+    outcomeHeadline: 'Connect Your Business with <span className="text-[#f59e0b]">Local Customers</span> Instantly',
+    keyBenefits: ['Real-time Tracking', 'Accept Orders Nearby', 'Easy for Delivery Boys'],
     deliverables: [
-      { title: 'Driver Apps', desc: 'Real-time routing & tasks', icon: 'Navigation' },
-      { title: 'Vendor Panels', desc: 'Local inventory management', icon: 'Store' },
-      { title: 'Analytics', desc: 'Heatmaps & zone reporting', icon: 'Map' }
+      { title: 'Driver App', desc: 'Real-time GPS for your team', icon: 'Navigation' },
+      { title: 'Shop Panel', desc: 'Manage local orders easily', icon: 'Store' },
+      { title: 'Heatmaps', desc: 'See where your orders come from', icon: 'Map' }
     ],
     processSteps: [
-      { title: 'Zone Mapping', desc: 'Defining geo-fencing rules' },
-      { title: 'Dev', desc: 'Real-time maps integration' },
-      { title: 'Tests', desc: 'Outdoor field tracking tests' },
-      { title: 'Scale', desc: 'Cluster-based deployment' }
+      { title: 'Mapping', desc: 'Defining your delivery zones' },
+      { title: 'Building', desc: 'Creating the apps for you and your staff' },
+      { title: 'Testing', desc: 'Field tests on real roads' },
+      { title: 'Scale', desc: 'Expanding to more areas' }
     ],
     faqs: [
-      { q: 'Can we use Google Maps?', a: 'Yes, we integrate with Google Maps or Mapbox.' }
+      { q: 'Can we use Google Maps?', a: 'Yes, we integrate with Google Maps so you can see exactly where your riders are.' },
+      { q: 'Is there an app for riders?', a: 'Yes, we build a special app for your delivery team to see their tasks.' },
+      { q: 'Can I set delivery areas?', a: 'Yes, you can choose exactly which neighborhoods you want to serve.' },
+      { q: 'Do you support live tracking?', a: 'Yes, both you and your customers can see the live location of orders.' }
     ],
     typeSpecificData: {
-      stack: ['Flutter', 'Node.js', 'Google Maps', 'PostGIS'],
-      performance: 'Real-time WS-based tracking',
-      security: 'Geo-fencing & Polygon triggers'
-    }
+      stack: ['Real-time Maps Tech'],
+      performance: 'Smooth Live Tracking',
+      security: 'Private Location Data'
+    },
+    resultsTitle: "Local Success Stories",
+    results: [
+      {
+        label: "Delivery Speed",
+        value: "-25%",
+        suffix: "Faster Service",
+        desc: "Optimized routes to help a local shop deliver items faster."
+      },
+      {
+        label: "New Area",
+        value: "3",
+        suffix: "City Expansions",
+        desc: "Helped a pharmacy expand its delivery to 3 new neighborhoods."
+      }
+    ],
+    ctaTitle: "Want to Serve Your Neighborhood?",
+    ctaDescription: "Build your own local delivery platform and reach more customers nearby."
   },
   {
     id: 'seo',
@@ -321,30 +429,49 @@ export const services = [
     type: 'marketing',
     icon: 'Search',
     title: 'SEO & Website Optimization',
-    description: 'Rank higher on search engines with our proven SEO strategies.',
+    description: 'Help people in your city find your business first when they search on Google.',
     category: 'marketing',
     features: ['On-page SEO', 'Technical SEO', 'Link Building', 'Performance'],
-    outcomeHeadline: 'Sustained Organic Visibility & Traffic Authority',
-    keyBenefits: ['Zero Ad Spend', 'Stable Monthly Growth', 'High-Trust Traffic'],
+    outcomeHeadline: 'Be the <span className="text-[#f59e0b]">First Result</span> People See on Google',
+    keyBenefits: ['More Free Traffic', 'Better Local Ranking', 'Stay Ahead of Competitors'],
     deliverables: [
-      { title: 'Technical SEO', desc: 'Fixing core web vitals', icon: 'Tools' },
-      { title: 'Content Engine', desc: 'Keyword-targeted authority', icon: 'FileText' },
-      { title: 'Backlink Ops', desc: 'High-authority PR links', icon: 'Link' }
+      { title: 'Technical SEO', desc: 'Making your site super fast', icon: 'Tools' },
+      { title: 'Content Engine', desc: 'Articles that attract customers', icon: 'FileText' },
+      { title: 'Link Building', desc: 'Getting other sites to talk about you', icon: 'Link' }
     ],
     processSteps: [
-      { title: 'Deep Audit', desc: 'Competitor gap analysis' },
-      { title: 'Keyword Fix', desc: 'Mapping high-intent terms' },
-      { title: 'Execution', desc: 'On-page & Off-page sprints' },
-      { title: 'Review', desc: 'GSC & Rankings review' }
+      { title: 'Audit', desc: 'Checking why your site is hidden today' },
+      { title: 'Keywords', desc: 'Finding what your customers search for' },
+      { title: 'Update', desc: 'Making your pages Google-friendly' },
+      { title: 'Report', desc: 'Monthly rankings and progress' }
     ],
     faqs: [
-       { q: 'When will I see results?', a: 'Typically 3-6 months for sustainable organic growth.' }
+      { q: 'How long to rank #1?', a: 'SEO is a slow process, but you will usually start seeing growth in 3-6 months.' },
+      { q: 'Do you handle technical stuff?', a: 'Yes, we fix all the behind-the-scenes errors that stop Google from showing your site.' },
+      { q: 'Will it help local sales?', a: 'Yes, we focus on Local SEO to make sure people in your city find you first.' },
+      { q: 'Do you provide reports?', a: 'Yes, we send a simple monthly report showing your new positions on Google.' }
     ],
     typeSpecificData: {
-      channels: ['Google Search', 'Bing', 'Local Directories'],
-      reporting: 'Weekly keyword ranking & GSC audit reports',
-      audit: '200+ point technical checklist'
-    }
+      channels: ['Google', 'Bing', 'Local Maps'],
+      reporting: 'Monthly Ranking Checks'
+    },
+    resultsTitle: "SEO Growth Stories",
+    results: [
+      {
+        label: "Free Traffic",
+        value: "+150%",
+        suffix: "Organic Growth",
+        desc: "Helped a business get double the visitors without spending on ads."
+      },
+      {
+        label: "Keywords",
+        value: "Top 3",
+        suffix: "Google Ranking",
+        desc: "Got a local service provider to the first page for their primary keywords."
+      }
+    ],
+    ctaTitle: "Want to Rank Higher?",
+    ctaDescription: "Get more free customers with a professional SEO plan for your business."
   },
   {
     id: 'animation',
@@ -352,30 +479,49 @@ export const services = [
     type: 'design',
     icon: 'Sparkles',
     title: 'Animation & Graphics',
-    description: 'Stunning visual content that captures attention and tells your story.',
+    description: 'Cool videos and animations that explain your business in 60 seconds.',
     category: 'design',
     features: ['Motion Graphics', '2D/3D Animation', 'Explainer Videos', 'Brand Assets'],
-    outcomeHeadline: 'Cinematic Storytelling for Your Digital Brand',
-    keyBenefits: ['Max Engagement', 'Complex Ideas Simplified', 'Premium Brand Perception'],
+    outcomeHeadline: 'Tell Your Story with <span className="text-[#f59e0b]">Amazing Video & Animation</span>',
+    keyBenefits: ['Grab Attention', 'Explain Ideas Easily', 'Premium Look'],
     deliverables: [
-      { title: 'Explainer Videos', desc: '2D & 3D product stories', icon: 'Video' },
-      { title: 'Motion Brand', desc: 'Animated identity assets', icon: 'Layers' },
-      { title: 'Social Content', desc: 'Eye-catching social ads', icon: 'Instagram' }
+      { title: 'Explainers', desc: 'Videos that show how your product works', icon: 'Video' },
+      { title: 'Animated Logos', desc: 'Make your brand feel alive', icon: 'Layers' },
+      { title: 'Social Ads', desc: 'Eye-catching videos for Instagram', icon: 'Instagram' }
     ],
     processSteps: [
-      { title: 'Scripting', desc: 'Message & Narrative build' },
-      { title: 'Storyboard', desc: 'Visual flow visualization' },
-      { title: 'Animation', desc: 'The creative heavy lifting' },
-      { title: 'VFX & Audio', desc: 'Polishing with final assets' }
+      { title: 'Script', desc: 'Writing the story' },
+      { title: 'Style', desc: 'Choosing colors and characters' },
+      { title: 'Animate', desc: 'Making the drawings move' },
+      { title: 'Audio', desc: 'Adding music and voiceover' }
     ],
     faqs: [
-      { q: 'Do you provide VO?', a: 'Yes, we provide professional voiceover services.' }
+      { q: 'Do you include voiceovers?', a: 'Yes, we provide professional voices in Hindi, English, and other languages.' },
+      { q: 'How long does it take?', a: 'A simple video usually takes 2 weeks from start to finish.' },
+      { q: 'Do I own the video?', a: 'Yes, you get full ownership and the original files for your business.' },
+      { q: 'Can you animate my logo?', a: 'Yes, we can turn your static logo into a smooth, professional animation.' }
     ],
     typeSpecificData: {
-      gallery: ['Motion Reel 2025', 'Product Explainer A', 'Brand Animation B'],
-      philosophy: 'Kinetic Storytelling focus',
-      renders: '4K High-detail rendering'
-    }
+      gallery: ['Latest Reels', 'Product Demos', 'Social Ads'],
+      philosophy: 'Clear & Engaging Visuals'
+    },
+    resultsTitle: "Visual Success",
+    results: [
+      {
+        label: "Views",
+        value: "5x",
+        suffix: "Engagement Boost",
+        desc: "Helped a client get 5 times more views on their social media ads."
+      },
+      {
+        label: "Clarity",
+        value: "100%",
+        suffix: "Better Understanding",
+        desc: "Simplified a complex service so customers could understand it in 60 seconds."
+      }
+    ],
+    ctaTitle: "Need a Video?",
+    ctaDescription: "Let's create an animation that explains your business perfectly."
   },
   {
     id: 'compliance',
@@ -383,29 +529,49 @@ export const services = [
     type: 'compliance',
     icon: 'FileText',
     title: 'Business Registration & Compliance',
-    description: 'Complete legal and compliance services for your business operations.',
+    description: 'Handling your firm registration, GST, and legal paperwork correctly.',
     category: 'compliance',
     features: ['Company Registration', 'GST & Tax', 'Trademark', 'Legal Contracts'],
-    outcomeHeadline: 'Hassle-Free Legal & Regulatory Foundation for Your SME',
-    keyBenefits: ['100% Legal Safety', 'Zero Late Penalties', 'Expert Consulting'],
+    outcomeHeadline: 'We Handle Your <span className="text-[#f59e0b]">Taxes & Registration</span> So You Don&apos;t Have To',
+    keyBenefits: ['100% Legal & Safe', 'No Late Fees', 'Honest Advice'],
     deliverables: [
-      { title: 'Incorporation', desc: 'LLP/Pvt Ltd/Firm registry', icon: 'Briefcase' },
-      { title: 'Tax Compliance', desc: 'GST/TDS monthly filings', icon: 'FileText' },
-      { title: 'IP Protection', desc: 'Trademarks & Copyrights', icon: 'Shield' }
+      { title: 'New Firm', desc: 'Proprietor, LLP, or Pvt Ltd setup', icon: 'Briefcase' },
+      { title: 'GST Filing', desc: 'Monthly taxes handled for you', icon: 'FileText' },
+      { title: 'Trademark', desc: 'Protect your brand name', icon: 'Shield' }
     ],
     processSteps: [
-      { title: 'Checklist', desc: 'Required document gathering' },
-      { title: 'Filing', desc: 'Government portal submission' },
-      { title: 'Support', desc: 'Handling queries & scrutiny' },
-      { title: 'Handover', desc: 'Certificates & compliance kits' }
+      { title: 'Documents', desc: 'We tell you exactly what papers are needed' },
+      { title: 'Filing', desc: 'We submit everything to the government' },
+      { title: 'Progress', desc: 'We handle all questions and follow-ups' },
+      { title: 'Handover', desc: 'You get your certificates and documents' }
     ],
     faqs: [
-      { q: 'How long does it take?', a: 'Typically 7-21 days depending on entity type.' }
+      { q: 'How long does it take?', a: 'Firm registration usually takes 7-15 days depending on the type.' },
+      { q: 'Do you handle GST filing?', a: 'Yes, we can handle your monthly GST returns so you never miss a deadline.' },
+      { q: 'What papers do I need?', a: 'Usually just PAN, Aadhaar, and address proof. We give you a simple checklist.' },
+      { q: 'Do you help with ITR?', a: 'Yes, we also file Income Tax Returns for business owners and employees.' }
     ],
     typeSpecificData: {
-      renewal: 'Automatic compliance reminders',
-      consultancy: 'Monthly regulatory updates'
-    }
+      renewal: 'Automatic Reminders',
+      consultancy: 'Free Legal Advice'
+    },
+    resultsTitle: "Compliance Results",
+    results: [
+      {
+        label: "Businesses Setup",
+        value: "200+",
+        suffix: "New Firms",
+        desc: "Successfully registered over 200 new businesses in the last year."
+      },
+      {
+        label: "Penalties",
+        value: "₹0",
+        suffix: "Zero Lates",
+        desc: "Ensured our clients never paid a single late fee for GST filing."
+      }
+    ],
+    ctaTitle: "Need Business Help?",
+    ctaDescription: "Let's get your business registered and compliant without any headache."
   },
 ];
 
@@ -553,41 +719,41 @@ export const clientLogos = [
 export const complianceServices = [
   {
     id: 'firm-registration',
-    title: 'Firm/Proprietor Registration',
-    description: 'Complete business entity registration services',
-    steps: ['Document Preparation', 'Government Filing', 'Certificate Issuance', 'Bank Account Setup'],
+    title: 'New Firm Registration',
+    description: 'Everything you need to officially start your business in Patna.',
+    steps: ['Check Your Papers', 'Government Filing', 'Get Your Certificate', 'Open Bank Account'],
     timeline: '7-10 days',
     price: 'Starting ₹5,999',
   },
   {
     id: 'gst-compliance',
-    title: 'GST & Tax Compliance',
-    description: 'End-to-end GST registration and filing services',
-    steps: ['GST Registration', 'Monthly Returns', 'Annual Filing', 'Tax Planning'],
+    title: 'GST & Monthly Filing',
+    description: 'We handle your GST registration and monthly returns so you stay stress-free.',
+    steps: ['GST Number Login', 'Monthly Returns', 'Annual Summary', 'Easy Tax Plan'],
     timeline: '3-5 days',
     price: 'Starting ₹2,999/month',
   },
   {
     id: 'trademark',
-    title: 'Trademark Registration',
-    description: 'Protect your brand with trademark registration',
-    steps: ['Search & Analysis', 'Application Filing', 'Examination Support', 'Registration'],
+    title: 'Trademark (Brand Protection)',
+    description: 'Protect your brand name and logo from being copied by others.',
+    steps: ['Name Search', 'Apply for Brand', 'Handle Questions', 'Permanent Seal'],
     timeline: '8-12 months',
     price: 'Starting ₹8,999',
   },
   {
     id: 'contracts',
-    title: 'Legal Contracts & Agreements',
-    description: 'MOU, MOA, AOA, and custom contract drafting',
-    steps: ['Requirement Analysis', 'Drafting', 'Legal Review', 'Execution Support'],
+    title: 'Legal Papers & Agreements',
+    description: 'Clear, simple legal documents for your partners, staff, and office.',
+    steps: ['Requirement Check', 'Simple Drafting', 'Official Review', 'Final Signing'],
     timeline: '3-7 days',
     price: 'Starting ₹4,999',
   },
   {
     id: 'itr',
-    title: 'Income Tax Returns (ITR)',
-    description: 'Professional ITR filing services',
-    steps: ['Document Collection', 'Return Preparation', 'Filing', 'Acknowledgment'],
+    title: 'Income Tax (ITR) Filing',
+    description: 'Professional income tax filing for business owners and individuals.',
+    steps: ['Collect Vouchers', 'Check Your Tax', 'Swift Filing', 'Receipt Given'],
     timeline: '2-3 days',
     price: 'Starting ₹999',
   },
@@ -650,71 +816,71 @@ export const pricingPlans = [
 export const blogPosts = [
   {
     id: 1,
-    slug: 'digital-transformation-trends-2026',
-    title: 'Digital Transformation in 2026: Key Trends for Regional Businesses',
+    slug: 'digital-growth-patna-2026',
+    title: 'How Patna Businesses are Growing in 2026',
     category: 'Technology',
     date: 'January 5, 2026',
     readTime: '5 min read',
-    excerpt: 'Explore the top technology trends shaping businesses in 2026, from AI-driven analytics to cloud-first strategies for regional enterprises.',
+    excerpt: 'Simple steps to take your local shop or agency online. From choosing the right website to handling regional growth.',
     image: 'technology-abstract-digital-network-dark',
     author: 'Arjun Malhotra',
     authorRole: 'CEO',
-    tags: ['Digital Transformation', 'AI', 'Cloud', 'Business Strategy'],
+    tags: ['Patna Business', 'Growth', 'Local SEO'],
     content: `
-      <h2>The Shift Towards Digital Maturity</h2>
-      <p>As we enter 2026, digital transformation is no longer a luxury but a necessity for regional businesses. Structured execution and scalable architecture are the foundations of modern enterprise growth.</p>
-      <h3>1. AI-Driven Decision Making</h3>
-      <p>Small and mid-sized enterprises (SMEs) are now leveraging AI to optimize supply chains and personalize customer experiences. Data accuracy is key to making informed decisions.</p>
-      <h3>2. Cloud-First Infrastructure</h3>
-      <p>Moving away from legacy systems to reliable cloud infrastructure ensures high availability and operational continuity.</p>
-      <h3>3. Cybersecurity for Growing Firms</h3>
-      <p>With increased digital presence comes the need for robust security protocols to protect sensitive business data.</p>
+      <h2>The Shift in Bihar's Business Market</h2>
+      <p>In 2026, every successful business in Patna—from retail shops on Boring Road to agencies in Kankarbagh—is using technology to find more customers. But you don't need a million-dollar system; you just need tools that work.</p>
+      <h3>1. Why Local SEO Matters for You</h3>
+      <p>When someone in Patna searches for "Best Hardware Shop" or "Top Consultant," your business should be the first one they see. We help you win the local search game.</p>
+      <h3>2. WhatsApp: Your Best Sales Tool</h3>
+      <p>Most of your customers are on WhatsApp. We show you how to connect your website directly to your phone so you never miss a sale.</p>
+      <h3>3. Simple Over Complex</h3>
+      <p>Don't get distracted by fancy tech words. Focus on a website that loads fast on poor mobile signals and looks great on every phone.</p>
     `,
   },
   {
     id: 2,
-    slug: 'gst-compliance-guide-sme',
-    title: 'GST Compliance: A Complete Guide for Regional SMEs',
+    slug: 'gst-filing-made-easy-bihar',
+    title: 'Tax & GST: A Simple Guide for Bihar Businesses',
     category: 'Compliance',
-    date: 'January 3, 2026',
+    date: 'January 13, 2026',
     readTime: '8 min read',
-    excerpt: 'Everything small and medium businesses need to know about GST registration, filing, and ongoing compliance management in the current regulatory landscape.',
+    excerpt: 'Stop worrying about tax notices. Learn the basic GST rules every SME in Patna should know to stay safe and compliant.',
     image: 'business-paperwork-official-documents',
     author: 'Neha Kapoor',
     authorRole: 'Head of Compliance',
-    tags: ['GST', 'Compliance', 'Tax', 'SME'],
+    tags: ['GST', 'Bihar Tax', 'SME'],
     content: `
-      <h2>Navigating the GST Landscape</h2>
-      <p>Compliance is the backbone of a stable business. For SMEs, staying compliant with GST regulations ensures smooth operations and builds trust with partners.</p>
-      <h3>Understanding Registration Requirements</h3>
-      <p>Regional businesses must identify their eligibility and maintain accurate documentation for a seamless registration process.</p>
-      <h3>Monthly and Annual Filing</h3>
-      <p>Timely filing of returns is crucial to avoid penalties and maintain a healthy compliance score.</p>
-      <h3>Tax Planning and Ethics</h3>
-      <p>Strategic tax planning within the legal framework helps in optimizing cash flows for growing enterprises.</p>
+      <h2>Stay Safe with Honest Compliance</h2>
+      <p>We know that handling taxes can be scary for many business owners. In Bihar, staying 100% compliant isn't just about following the law—it's about building a stable foundation for your growth.</p>
+      <h3>Understanding GST Registration</h3>
+      <p>Do you actually need a GST number? We break down the limits and benefits for regional small businesses.</p>
+      <h3>Monthly Filing Without the Stress</h3>
+      <p>Learn how to keep your documents organized so that filing your monthly returns takes minutes, not days.</p>
+      <h3>Avoiding Common Mistakes</h3>
+      <p>We've seen local firms lose money due to simple filing errors. Here's how to make sure you're getting all your input tax credits correctly.</p>
     `,
   },
   {
     id: 3,
-    slug: 'scalable-ecommerce-platform-development',
-    title: 'Building Scalable E-commerce Platforms for Regional Growth',
-    category: 'Development',
-    date: 'December 28, 2025',
+    slug: 'billing-software-success-patna-retail',
+    title: 'Why Thousands of Patna Retailers are Moving to Custom Billing',
+    category: 'Solutions',
+    date: 'February 2, 2026',
     readTime: '6 min read',
-    excerpt: 'Best practices for creating e-commerce platforms that scale with your business growth, focusing on performance, UX, and security.',
+    excerpt: 'Paper bills are slow and prone to errors. See how custom billing software is helping local shops manage stock and save time.',
     image: 'ecommerce-laptop-shopping-lifestyle',
     author: 'Priya Desai',
     authorRole: 'CTO',
-    tags: ['E-commerce', 'Web Development', 'React', 'Growth'],
+    tags: ['Billing Software', 'Retail', 'Patna'],
     content: `
-      <h2>The Foundation of Online Retail</h2>
-      <p>A successful e-commerce platform requires more than just a storefront. It needs a scalable backend, intuitive UI, and secure payment processing.</p>
-      <h3>Optimizing for Performance</h3>
-      <p>Fast load times are critical for conversion. In the regional market, ensuring your site performs well even on slower connections is a competitive advantage.</p>
-      <h3>Custom vs. Template Solutions</h3>
-      <p>While templates offer a quick start, custom solutions provide the flexibility needed to match unique business workflows and branding.</p>
-      <h3>Mobile-First Approach</h3>
-      <p>With the majority of users shopping via mobile devices, responsive design and app integration are no longer optional.</p>
+      <h2>The End of the Paper Bill Era</h2>
+      <p>Retailers across Patna are discovering that a computer bill doesn't just look professional—it saves hours of manual work every week.</p>
+      <h3>Fast Checkout, Happy Customers</h3>
+      <p>Reduce wait times at your counter with barcode scanning and instant QR payment links.</p>
+      <h3>Know Your Stock in Real-Time</h3>
+      <p>Never run out of your best-selling items again. Your software will tell you exactly what to reorder and when.</p>
+      <h3>Manage Multiple Shops</h3>
+      <p>Even if you're not at the shop, you can see every sale from your smartphone. Total control, anywhere in Bihar.</p>
     `,
   },
   {

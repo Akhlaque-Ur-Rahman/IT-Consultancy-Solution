@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | EDUNEX - Insights on Digital Transformation & Regional Growth",
+  title: "Bihar Business Blog — Tech Insights for Local Success",
   description:
-    "Explore the latest insights, technology trends, and business strategies for regional enterprises and growing businesses.",
+    "Practical technology tips, GST guides, and growth strategies specifically for business owners in Patna and across Bihar.",
   keywords:
-    "IT Blog, Digital Transformation, Regional Business Bihar, Software Development Insights",
+    "Patna Business, Bihar Technology, Local SEO Bihar, GST Filing Patna, SDM Bihar",
 };
 
 export default function BlogLayout({

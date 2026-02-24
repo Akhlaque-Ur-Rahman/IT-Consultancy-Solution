@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
- 
+
 export const metadata: Metadata = {
-  title: "About EDUNEX",
+  title: "Meet the Team — Simple Tech for Patna Business Success",
   description:
-    "Our story, mission, values, and the team behind EDUNEX’s enterprise solutions.",
+    "Learn why Patna business owners trust EDUNEX for honest technology, expert advice, and reliable software since 2012.",
 };
- 
+
 export default function AboutLayout({
   children,
 }: {

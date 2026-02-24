@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact EDUNEX",
+  title: "Let's Talk — Free Tech Advice for your Patna Project",
   description:
-    "Contact EDUNEX for consulting, development, CRM/ERP, and marketing solutions.",
+    "Have a question or ready to build? Contact our Patna team for honest advice on your next website or app project.",
 };
 
 export default function ContactLayout({

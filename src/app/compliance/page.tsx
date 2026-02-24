@@ -32,11 +32,12 @@ export default function CompliancePage() {
             </span>
           </div>
           <h1 className="text-5xl font-bold text-white mb-4">
-            Business Registration & Compliance
+            Step-by-Step <span className="text-[#f59e0b]">Business Setup</span>{" "}
+            & Support
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Navigate the complexities of business registration, tax compliance,
-            and legal requirements with expert guidance
+            We handle the government paperwork, GST, and tax filings so you can
+            focus on running your shop or office.
           </p>
         </motion.div>
 
@@ -49,7 +50,7 @@ export default function CompliancePage() {
         >
           <div className="bg-[#121212] rounded-2xl border border-[#262626] p-8">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">
-              Your Path to Complete Compliance
+              Your Path to Starting Your Business
             </h3>
             <div className="grid md:grid-cols-5 gap-4">
               {[
@@ -167,27 +168,27 @@ export default function CompliancePage() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-bold mb-8 text-center text-white">
-            Why Choose Our Compliance Services?
+            Why Trusted by Patna Business Owners?
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 icon: Shield,
-                title: "100% Compliant",
+                title: "100% Legal & Safe",
                 description:
-                  "Stay fully compliant with all legal and regulatory requirements",
+                  "Stay fully compliant with all regular regional laws and tax rules.",
               },
               {
                 icon: Clock,
-                title: "Fast Processing",
+                title: "Save Your Time",
                 description:
-                  "Quick turnaround times with expert handling of all paperwork",
+                  "No more running to government offices. We handle it all for you.",
               },
               {
                 icon: FileText,
-                title: "End-to-End Support",
+                title: "Complete Support",
                 description:
-                  "From initial consultation to post-filing assistance",
+                  "From initial setup to monthly tax returns and billing advice.",
               },
             ].map((item, index) => (
               <div key={index} className="text-center group">

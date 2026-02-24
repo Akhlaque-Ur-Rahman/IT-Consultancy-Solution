@@ -51,7 +51,9 @@ export default async function ServicePage({ params }: Props) {
       {/* 1. Conversion Hero */}
       <ServiceHero
         badge={service.category}
-        title={service.outcomeHeadline}
+        title={
+          <span dangerouslySetInnerHTML={{ __html: service.outcomeHeadline }} />
+        }
         description={service.description}
         benefits={service.keyBenefits}
         serviceTitle={service.slug}
@@ -82,7 +84,11 @@ export default async function ServicePage({ params }: Props) {
 
       {/* 6. Measurable Results */}
       <ServiceResults
-        title={(service as any).resultsTitle}
+        title={
+          <span
+            dangerouslySetInnerHTML={{ __html: (service as any).resultsTitle }}
+          />
+        }
         results={(service as any).results}
         testimonial={(service as any).testimonial}
       />
@@ -107,7 +113,11 @@ export default async function ServicePage({ params }: Props) {
       {/* 9. Final CTA Section */}
       <ServiceCTA
         badge={(service as any).ctaBadge}
-        title={(service as any).ctaTitle}
+        title={
+          <span
+            dangerouslySetInnerHTML={{ __html: (service as any).ctaTitle }}
+          />
+        }
         description={(service as any).ctaDescription}
         serviceTitle={service.slug}
       />

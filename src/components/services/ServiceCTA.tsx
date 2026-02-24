@@ -6,7 +6,7 @@ import Link from "next/link";
 
 interface ServiceCTAProps {
   badge?: string;
-  title?: string;
+  title?: React.ReactNode;
   description?: string;
   serviceTitle?: string;
 }

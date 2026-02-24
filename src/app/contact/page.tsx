@@ -14,6 +14,9 @@ import {
   ArrowRight,
   CheckCircle,
   ChevronLeft,
+  ShieldCheck,
+  Lock,
+  Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -37,18 +40,46 @@ function ContactFormContent() {
     }
   }, [searchParams]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (step === 1) {
       setStep(2);
       return;
     }
 
-    setIsSubmitted(true);
-    // Mimic API call
-    setTimeout(() => {
-      // Logic after submission (e.g. redirect or stay on success)
-    }, 3000);
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          ...formData,
+          from_name: "EDUNEX Contact Page",
+          subject: `Contact Lead: ${formData.service}`,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitted(true);
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("error");
+    }
   };
 
   const handleBack = () => setStep(1);
@@ -70,11 +101,12 @@ function ContactFormContent() {
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Start Your Digital Transformation
+            Let&apos;s Talk About Your{" "}
+            <span className="text-[#f59e0b]">Next Project</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Ready to scale your business? Our team of experts is here to help
-            you achieve your goals.
+            Have a question? Or ready to start building? We&apos;re here to help
+            you every step of the way.
           </p>
         </motion.div>
 
@@ -92,26 +124,29 @@ function ContactFormContent() {
                 <div>
                   <h2 className="text-xl font-bold text-white">
                     {step === 1
-                      ? "Step 1: Contact Details"
-                      : "Step 2: Project Info"}
+                      ? "Step 1: Your Details"
+                      : "Step 2: How can we help?"}
                   </h2>
                   <p className="text-sm text-gray-400 mt-1">
                     {step === 1
-                      ? "Start with your interest"
-                      : "Tell us what you need"}
+                      ? "Tell us how to reach you"
+                      : "Tell us what you're looking for"}
                   </p>
                 </div>
-                <div className="flex gap-2">
-                  <div
-                    className={`w-10 h-1.5 rounded-full transition-colors ${
-                      step >= 1 ? "bg-[#f59e0b]" : "bg-[#262626]"
-                    }`}
-                  />
-                  <div
-                    className={`w-10 h-1.5 rounded-full transition-colors ${
-                      step >= 2 ? "bg-[#f59e0b]" : "bg-[#262626]"
-                    }`}
-                  />
+                <div className="flex flex-col items-end gap-2">
+                  <div className="flex gap-1.5">
+                    {[1, 2].map((i) => (
+                      <div
+                        key={i}
+                        className={`h-1.5 rounded-full transition-all duration-500 ${
+                          step >= i ? "w-8 bg-[#f59e0b]" : "w-4 bg-[#262626]"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                    Step {step} of 2
+                  </span>
                 </div>
               </div>
             )}
@@ -132,8 +167,9 @@ function ContactFormContent() {
                       Message Sent!
                     </h3>
                     <p className="text-gray-400 max-w-xs mx-auto mb-8">
-                      Thank you for reaching out. Our team will review your
-                      request and get back to you within 24 hours.
+                      Thank you for reaching out. We&apos;ve received your
+                      message and one of our experts will call you within 24
+                      hours.
                     </p>
                     <Button
                       onClick={() => {
@@ -146,6 +182,7 @@ function ContactFormContent() {
                           service: "consulting",
                           message: "",
                         });
+                        setStatus("idle");
                       }}
                       variant="outline"
                       className="border-[#262626] text-gray-300 hover:bg-[#1a1a1a]"
@@ -154,202 +191,243 @@ function ContactFormContent() {
                     </Button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <AnimatePresence mode="wait">
-                      {step === 1 ? (
-                        <motion.div
-                          key="step1"
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -20 }}
-                          transition={{ duration: 0.3 }}
-                          className="space-y-6"
-                        >
-                          <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-300">
-                              Full Name
-                            </label>
-                            <div className="relative group">
-                              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
-                              <input
-                                type="text"
-                                required
-                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
-                                placeholder="John Doe"
-                                value={formData.name}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    name: e.target.value,
-                                  })
-                                }
-                              />
-                            </div>
-                          </div>
-
-                          <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-300">
-                              Email Address
-                            </label>
-                            <div className="relative group">
-                              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
-                              <input
-                                type="email"
-                                required
-                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
-                                placeholder="john@company.com"
-                                value={formData.email}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    email: e.target.value,
-                                  })
-                                }
-                              />
-                            </div>
-                          </div>
-
-                          <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-300">
-                              Service Interest
-                            </label>
-                            <div className="relative group">
-                              <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
-                              <select
-                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all appearance-none cursor-pointer"
-                                value={formData.service}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    service: e.target.value,
-                                  })
-                                }
-                              >
-                                <option value="consulting">
-                                  IT Consulting
-                                </option>
-                                <option value="web-app-development">
-                                  Web & App Development
-                                </option>
-                                <option value="crm-erp-solutions">
-                                  CRM/ERP/Billing Solutions
-                                </option>
-                                <option value="digital-marketing-services">
-                                  Digital Marketing
-                                </option>
-                                <option value="ui-ux-design">
-                                  UI/UX Design
-                                </option>
-                                <option value="ecommerce-solutions">
-                                  E-commerce Solutions
-                                </option>
-                                <option value="lead-management-systems">
-                                  Lead Management
-                                </option>
-                                <option value="ivr-calling-solutions">
-                                  IVR Solutions
-                                </option>
-                                <option value="hyperlocal-platform-dev">
-                                  Hyperlocal Platforms
-                                </option>
-                                <option value="seo-optimization-expert">
-                                  SEO & Optimization
-                                </option>
-                                <option value="animation-graphics-design">
-                                  Animation & Graphics
-                                </option>
-                                <option value="business-registration-compliance">
-                                  Business Registration & Compliance
-                                </option>
-                                <option value="other">Other</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <Button
-                            type="submit"
-                            className="w-full bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-14 text-lg rounded-xl transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] group"
+                  <div className="space-y-8">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <AnimatePresence mode="wait">
+                        {step === 1 ? (
+                          <motion.div
+                            key="step1"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.3 }}
+                            className="space-y-6"
                           >
-                            Next Step
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </motion.div>
-                      ) : (
-                        <motion.div
-                          key="step2"
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -20 }}
-                          transition={{ duration: 0.3 }}
-                          className="space-y-6"
-                        >
-                          <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-300">
-                              Phone Number
-                            </label>
-                            <div className="relative group">
-                              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
-                              <input
-                                type="tel"
-                                required
-                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
-                                placeholder="+91 70708 09208"
-                                value={formData.phone}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    phone: e.target.value,
-                                  })
-                                }
-                              />
+                            <div className="space-y-2">
+                              <label className="text-sm font-medium text-gray-300">
+                                Full Name
+                              </label>
+                              <div className="relative group">
+                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <input
+                                  type="text"
+                                  required
+                                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                  placeholder="John Doe"
+                                  value={formData.name}
+                                  onChange={(e) =>
+                                    setFormData({
+                                      ...formData,
+                                      name: e.target.value,
+                                    })
+                                  }
+                                />
+                              </div>
                             </div>
-                          </div>
 
-                          <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-300">
-                              Message
-                            </label>
-                            <div className="relative group">
-                              <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
-                              <textarea
-                                rows={6}
-                                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600 resize-none"
-                                placeholder="Tell us about your project requirements..."
-                                value={formData.message}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    message: e.target.value,
-                                  })
-                                }
-                              ></textarea>
+                            <div className="space-y-2">
+                              <label className="text-sm font-medium text-gray-300">
+                                Email Address
+                              </label>
+                              <div className="relative group">
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <input
+                                  type="email"
+                                  required
+                                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                  placeholder="john@company.com"
+                                  value={formData.email}
+                                  onChange={(e) =>
+                                    setFormData({
+                                      ...formData,
+                                      email: e.target.value,
+                                    })
+                                  }
+                                />
+                              </div>
                             </div>
-                          </div>
 
-                          <div className="flex gap-4">
-                            <Button
-                              type="button"
-                              onClick={handleBack}
-                              variant="outline"
-                              className="bg-transparent border-[#262626] text-gray-400 hover:bg-[#1a1a1a] hover:text-white h-14 rounded-xl px-8"
-                            >
-                              <ChevronLeft className="mr-2 w-5 h-5" />
-                              Back
-                            </Button>
+                            <div className="space-y-2">
+                              <label className="text-sm font-medium text-gray-300">
+                                Service Interest
+                              </label>
+                              <div className="relative group">
+                                <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <select
+                                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all appearance-none cursor-pointer"
+                                  value={formData.service}
+                                  onChange={(e) =>
+                                    setFormData({
+                                      ...formData,
+                                      service: e.target.value,
+                                    })
+                                  }
+                                >
+                                  <option value="consulting">
+                                    Expert Business Advice
+                                  </option>
+                                  <option value="web-app-development">
+                                    Build a Website or Mobile App
+                                  </option>
+                                  <option value="crm-erp-solutions">
+                                    Manage Staff, Billing & Office
+                                  </option>
+                                  <option value="digital-marketing-services">
+                                    Grow Sales & Social Media
+                                  </option>
+                                  <option value="ui-ux-design">
+                                    Design My App or Logo
+                                  </option>
+                                  <option value="ecommerce-solutions">
+                                    Start an Online Store
+                                  </option>
+                                  <option value="lead-management-systems">
+                                    Track New Customers
+                                  </option>
+                                  <option value="ivr-calling-solutions">
+                                    Automatic Phone System (IVR)
+                                  </option>
+                                  <option value="hyperlocal-platform-dev">
+                                    Delivery or Rider App
+                                  </option>
+                                  <option value="seo-optimization-expert">
+                                    Rank Higher on Google (SEO)
+                                  </option>
+                                  <option value="animation-graphics-design">
+                                    Videos & Animations
+                                  </option>
+                                  <option value="business-registration-compliance">
+                                    GST, Tax & Registration
+                                  </option>
+                                  <option value="other">Other</option>
+                                </select>
+                              </div>
+                            </div>
+
                             <Button
                               type="submit"
-                              className="flex-1 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-bold h-14 text-lg rounded-xl transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] group"
+                              className="w-full bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-14 text-lg rounded-xl transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] group"
                             >
-                              Send Message
-                              <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                              Next Step
+                              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Button>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </form>
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="step2"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.3 }}
+                            className="space-y-6"
+                          >
+                            <div className="space-y-2">
+                              <label className="text-sm font-medium text-gray-300">
+                                Phone Number
+                              </label>
+                              <div className="relative group">
+                                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <input
+                                  type="tel"
+                                  required
+                                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                  placeholder="+91 70708 09208"
+                                  value={formData.phone}
+                                  onChange={(e) =>
+                                    setFormData({
+                                      ...formData,
+                                      phone: e.target.value,
+                                    })
+                                  }
+                                />
+                              </div>
+                            </div>
+
+                            <div className="space-y-2">
+                              <label className="text-sm font-medium text-gray-300">
+                                Message
+                              </label>
+                              <div className="relative group">
+                                <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <textarea
+                                  rows={6}
+                                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600 resize-none"
+                                  placeholder="Tell us about your project requirements..."
+                                  value={formData.message}
+                                  onChange={(e) =>
+                                    setFormData({
+                                      ...formData,
+                                      message: e.target.value,
+                                    })
+                                  }
+                                ></textarea>
+                              </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                              <Button
+                                type="button"
+                                onClick={handleBack}
+                                variant="outline"
+                                className="bg-transparent border-[#262626] text-gray-400 hover:bg-[#1a1a1a] hover:text-white h-14 rounded-xl px-8"
+                              >
+                                <ChevronLeft className="mr-2 w-5 h-5" />
+                                Back
+                              </Button>
+                              <Button
+                                type="submit"
+                                disabled={status === "loading"}
+                                className="flex-1 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-bold h-14 text-lg rounded-xl transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_30px_rgba(245,158,11,0.4)] group"
+                              >
+                                {status === "loading"
+                                  ? "Sending..."
+                                  : "Send Message"}
+                                <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                              </Button>
+                            </div>
+                            {status === "error" && (
+                              <p className="text-red-500 text-sm text-center">
+                                Something went wrong. Please try again or call
+                                us.
+                              </p>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </form>
+                  </div>
                 )}
               </AnimatePresence>
+
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-2 gap-4 pt-8 border-t border-white/5 mt-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/5 flex items-center justify-center border border-[#f59e0b]/10">
+                    <ShieldCheck className="w-5 h-5 text-[#f59e0b]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-tight">
+                      100% Private
+                    </p>
+                    <p className="text-[10px] text-gray-500">
+                      Your data is safe with us
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/5 flex items-center justify-center border border-[#f59e0b]/10">
+                    <Clock className="w-5 h-5 text-[#f59e0b]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-white uppercase tracking-tight">
+                      Fast Callback
+                    </p>
+                    <p className="text-[10px] text-gray-500">
+                      Response in &lt; 24 hours
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -427,18 +505,34 @@ function ContactFormContent() {
             <h3 className="text-xl font-bold text-white">Our Location</h3>
           </div>
 
-          <div className="rounded-3xl overflow-hidden h-96 shadow-xl border border-[#262626] bg-[#0a0a0a] relative">
-            <iframe
-              src="https://maps.google.com/maps?q=Ward%2015%2C%20Phulwari%20Sharif%2C%20Patna%2C%20Bihar%20801505&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, position: "relative", zIndex: 10 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Office Location"
-            ></iframe>
-          </div>
+          <motion.div
+            className="group relative rounded-3xl overflow-hidden h-96 shadow-2xl border border-[#262626] bg-[#0a0a0a]"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            whileHover={{ borderColor: "#f59e0b" }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Glossy Overlay for depth */}
+            <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-[#f59e0b]/5 via-transparent to-[#f59e0b]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Map Filter Wrapper */}
+            <div className="w-full h-full grayscale invert-[0.9] contrast-[1.2] brightness-[0.9] transition-all duration-700 group-hover:contrast-[1.1] group-hover:brightness-[1]">
+              <iframe
+                src="https://maps.google.com/maps?q=Ward%2015%2C%20Phulwari%20Sharif%2C%20Patna%2C%20Bihar%20801505&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location"
+              ></iframe>
+            </div>
+
+            {/* Subtle glow effect */}
+            <div className="absolute -inset-1 bg-[#f59e0b]/20 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+          </motion.div>
         </div>
       </div>
     </div>

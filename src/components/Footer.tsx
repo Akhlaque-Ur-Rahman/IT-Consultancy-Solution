@@ -226,15 +226,24 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <p>© 2026 EDUNEX. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <button className="hover:text-[#f59e0b] transition-colors">
+              <Link
+                href="/privacy"
+                className="hover:text-[#f59e0b] transition-colors"
+              >
                 Privacy Policy
-              </button>
-              <button className="hover:text-[#f59e0b] transition-colors">
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-[#f59e0b] transition-colors"
+              >
                 Terms of Service
-              </button>
-              <button className="hover:text-[#f59e0b] transition-colors">
+              </Link>
+              <Link
+                href="/cookies"
+                className="hover:text-[#f59e0b] transition-colors"
+              >
                 Cookie Policy
-              </button>
+              </Link>
             </div>
           </div>
         </div>

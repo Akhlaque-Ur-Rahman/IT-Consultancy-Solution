@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 interface ServiceResultsProps {
-  title?: string;
+  title?: React.ReactNode;
   results?: {
     label: string;
     value: string;

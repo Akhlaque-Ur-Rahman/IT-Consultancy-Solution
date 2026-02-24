@@ -34,22 +34,54 @@ export function ContactForm({
     }
   }, [prefilledService]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      onClose();
-      setIsSubmitted(false);
-      setStep(1);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "",
-        message: "",
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          ...formData,
+          from_name: "EDUNEX Website",
+          subject: `New Inquiry: ${formData.service}`,
+        }),
       });
-    }, 2000);
+
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitted(true);
+        setStatus("success");
+        setTimeout(() => {
+          onClose();
+          setIsSubmitted(false);
+          setStatus("idle");
+          setStep(1);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            service: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("error");
+    }
   };
 
   const servicesList = [
@@ -295,12 +327,20 @@ export function ContactForm({
                           </Button>
                           <Button
                             type="submit"
+                            disabled={status === "loading"}
                             className="flex-1 bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-bold h-11"
                           >
-                            Submit Request
+                            {status === "loading"
+                              ? "Sending..."
+                              : "Submit Request"}
                             <Send className="ml-2 w-4 h-4" />
                           </Button>
                         </div>
+                        {status === "error" && (
+                          <p className="text-red-500 text-sm text-center">
+                            Something went wrong. Please try again.
+                          </p>
+                        )}
                       </motion.div>
                     )}
                   </form>

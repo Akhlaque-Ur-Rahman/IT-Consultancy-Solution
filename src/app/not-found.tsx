@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function NotFound() {
-  const [joke, setJoke] = useState("Page not found, but vibes are.");
+  const [joke, setJoke] = useState(
+    "We can't find this page, but we can find your business more leads.",
+  );
   const jokes = [
-    "Page not found, but vibes are.",
-    "404: The page went AFK.",
-    "Lost in the cloud. Bring snacks.",
-    "Oops… coffee spilled on the router.",
+    "We can't find this page, but we can help find your business more leads.",
+    "This page is missing, but our GST expert isn't. Need tax help?",
+    "404: The page went for a tea break in Patna.",
+    "Oops! Even our best code gets lost sometimes.",
   ];
 
   useEffect(() => {

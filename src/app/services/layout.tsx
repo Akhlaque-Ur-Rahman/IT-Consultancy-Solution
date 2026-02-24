@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Our Services — Everything Your Patna Business Needs",
   description:
-    "Explore EDUNEX’s complete portfolio: development, CRM/ERP, marketing, UI/UX, and compliance.",
+    "From fast websites and mobile apps to GST compliance and digital marketing. Simple tech for Bihar's growth.",
 };
 
 export default function ServicesLayout({

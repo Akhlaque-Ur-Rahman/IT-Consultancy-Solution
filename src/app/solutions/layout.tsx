@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Solutions",
+  title: "Tailored Solutions — Built for Bihar Business Workflows",
   description:
-    "Custom CRM, ERP, and tailored software solutions designed for your business workflows.",
+    "Custom billing software, CRM, and ERP systems designed to solve the unique challenges of businesses in Patna.",
 };
 
 export default function SolutionsLayout({

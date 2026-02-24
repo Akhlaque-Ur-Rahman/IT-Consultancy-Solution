@@ -14,8 +14,8 @@ export const ServiceFAQs = ({
   subtitle = "Support & Clarity",
 }: {
   items: FAQ[];
-  title?: string;
-  subtitle?: string;
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 

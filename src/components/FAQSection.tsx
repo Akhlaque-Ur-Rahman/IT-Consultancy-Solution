@@ -10,8 +10,8 @@ interface FAQ {
 
 interface FAQSectionProps {
   faqs: FAQ[];
-  title?: string;
-  description?: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
 }
 
 export function FAQSection({

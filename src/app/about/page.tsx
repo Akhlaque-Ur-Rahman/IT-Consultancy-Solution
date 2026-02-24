@@ -12,27 +12,27 @@ export default function AboutPage() {
   const values = [
     {
       icon: Target,
-      title: "Customer-Centric",
+      title: "Honest Work",
       description:
-        "We put our clients' success at the heart of everything we do",
+        "We tell you exactly what you need and what it will cost. No hidden fees.",
     },
     {
       icon: Award,
-      title: "Excellence",
+      title: "Built to Last",
       description:
-        "We deliver exceptional quality in every project we undertake",
+        "We don't just build for today; we build systems that grow with you.",
     },
     {
       icon: Users,
-      title: "Collaboration",
+      title: "Partners, Not Just Vendors",
       description:
-        "We work as an extension of your team to achieve shared goals",
+        "We treat your business like our own and care about your growth.",
     },
     {
       icon: Eye,
-      title: "Innovation",
+      title: "Always Simple",
       description:
-        "We leverage cutting-edge technologies to solve complex challenges",
+        "We take complex problems and turn them into simple, easy-to-use tools.",
     },
   ];
 
@@ -61,12 +61,13 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl font-bold text-white mb-4">About EDUNEX</h1>
+          <h1 className="text-5xl font-bold text-white mb-4">
+            Meet the Team Behind Your{" "}
+            <span className="text-[#f59e0b]">Success</span>
+          </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            EDUNEX is a technology consulting and software development firm
-            delivering web, mobile, CRM, and ERP solutions to growing
-            businesses. We focus on structured execution, scalable architecture,
-            and long-term operational reliability.
+            Since 2012, we&apos;ve been helping business owners in Patna and
+            beyond grow with simple, honest technology and expert advice.
           </p>
         </motion.div>
 
@@ -82,19 +83,19 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
-                Founded in 2015, EDUNEX began with a simple mission: to help
-                businesses navigate the complexities of digital transformation
-                with confidence and clarity.
+                We started in 2012 with a simple goal: to make technology easy
+                for every business owner. We saw too many people struggling with
+                confusing tech words and overpriced systems.
               </p>
               <p>
-                What started as a small team of passionate developers and
-                consultants has grown into a structured IT consulting firm
-                serving 65+ clients across the region.
+                What began as a small group of friends helping local shops has
+                grown into a team of experts that has helped over 120 businesses
+                succeed online.
               </p>
               <p>
-                Today, we combine deep technical expertise with business acumen
-                to deliver end-to-end solutions—from web development and CRM
-                systems to compliance services and digital marketing.
+                Today, we handle everything for you—whether it&apos;s building a
+                website, setting up an office system, or handling your taxes. We
+                focus on the tech so you can focus on your customers.
               </p>
             </div>
           </div>
@@ -121,9 +122,9 @@ export default function AboutPage() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
             <p className="text-gray-400 leading-relaxed">
-              To empower businesses with cutting-edge technology solutions and
-              expert guidance, enabling them to scale efficiently, compete
-              effectively, and achieve sustainable growth.
+              To give every business owner access to high-quality, reliable, and
+              affordable technology that makes their work easier every single
+              day.
             </p>
             {/* Animation */}
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
@@ -141,9 +142,9 @@ export default function AboutPage() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
             <p className="text-gray-400 leading-relaxed">
-              To be India's most trusted IT consulting partner, known for
-              delivering exceptional value, fostering innovation, and creating
-              lasting impact for businesses of all sizes.
+              To be the most trusted name in Patna for technology help, known
+              for our honesty, simple solutions, and real results for our
+              clients.
             </p>
             {/* Animation */}
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>

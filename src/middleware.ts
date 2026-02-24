@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
   response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://edunexservices.in; connect-src 'self' https://*.google.com;"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://edunexservices.in; connect-src 'self' https://*.google.com https://api.web3forms.com ws: wss:; frame-src 'self' https://www.google.com https://maps.google.com;"
   );
   response.headers.set(
     'Strict-Transport-Security',
@@ -19,6 +19,11 @@ export function middleware(request: NextRequest) {
   return response;
 }
 
+// Fallback default export for standard Next.js behavior
+export default middleware;
+
 export const config = {
-  matcher: '/:path*',
+  matcher: [
+    '/((?!api|_next/static|_next/image|ws|favicon.ico|logo.jpg).*)',
+  ],
 };

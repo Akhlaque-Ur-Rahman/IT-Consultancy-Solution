@@ -1,4 +1,4 @@
-import { HeroModern } from "@/components/HeroModern";
+import { HeroModernAnimated as HeroModern } from "@/components/HeroModernAnimated";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TrustCarousel } from "@/components/TrustCarousel";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
@@ -83,13 +83,14 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
-              Comprehensive IT Consulting &amp; Software Development Services
+              Everything You Need to{" "}
+              <span className="text-[#f59e0b]">Run & Grow</span> Your Business
+              Online
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              EDUNEX delivers enterprise-grade technology solutions including
-              web and mobile app development, CRM/ERP systems, digital
-              marketing, UI/UX design, e-commerce platforms, and complete
-              business compliance services for organizations across India
+              From custom websites and mobile apps to managing your taxes and
+              marketing — we handle the technical side so you can focus on your
+              customers.
             </p>
           </div>
 
@@ -121,7 +122,11 @@ export default function HomePage() {
           {/* Detailed Service Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {primaryServices.map((service, index) => (
-              <Link key={service.id} href="/services" className="block h-full">
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                className="block h-full"
+              >
                 <ServiceCard
                   icon={service.icon}
                   title={service.title}
@@ -136,30 +141,28 @@ export default function HomePage() {
           {/* SEO Content Block */}
           <div className="mt-16 bg-[#121212] border border-[#262626] rounded-lg p-8">
             <h3 className="text-xl font-semibold text-[#f59e0b] mb-4">
-              Why Choose EDUNEX for IT Consulting and Software Development?
+              Why Business Owners Trust{" "}
+              <span className="text-[#f59e0b]">EDUNEX</span>
             </h3>
-            <div className="text-sm text-gray-400 leading-relaxed space-y-3">
+            <div className="text-sm text-gray-400 leading-relaxed space-y-4">
               <p>
-                EDUNEX is a leading IT consulting and software development
-                company serving businesses across India. With over 15 years of
-                experience, we specialize in delivering custom web applications,
-                mobile apps (iOS and Android), enterprise CRM/ERP systems,
-                e-commerce platforms, and digital transformation solutions
-                tailored to your business needs.
+                Building a website or app shouldn&apos;t be a headache. With
+                over 12 years of experience in Patna and across India,
+                we&apos;ve helped more than 90 business owners turn their ideas
+                into professional digital products that actually work.
               </p>
               <p>
-                Our team of certified developers, UI/UX designers, digital
-                marketing experts, and compliance professionals work
-                collaboratively to transform your digital infrastructure. We
-                follow industry best practices, agile methodologies, and
-                maintain ISO 9001:2015 certification to ensure quality delivery.
+                Our team handles everything for you. Whether you need a simple
+                website, a custom mobile app, advanced software for your office,
+                or even help with your business taxes and marketing—we&apos;ve
+                got you covered. We use the latest technology to make sure your
+                business stays ahead of the competition.
               </p>
               <p>
-                Whether you're a startup looking for a minimal viable product
-                (MVP) or an established enterprise requiring complex system
-                integration, EDUNEX provides end-to-end technology solutions
-                with transparent pricing, dedicated project managers, and
-                ongoing support.
+                When you work with EDUNEX, you get honest pricing, clear
+                communication, and a team that finishes on time. We don&apos;t
+                just build your project and leave; we provide ongoing support to
+                make sure your digital business keeps running smoothly 24/7.
               </p>
             </div>
           </div>
@@ -190,12 +193,13 @@ export default function HomePage() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              Real Results from Our IT Consulting Projects
+              How We Helped{" "}
+              <span className="text-[#f59e0b]">90+ Business Owners</span>{" "}
+              Succeed
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-              Discover how EDUNEX has helped businesses across India transform
-              their operations through custom software development, digital
-              marketing, and enterprise solutions
+              See how our simple, reliable solutions solved real problems for
+              local businesses and large companies alike.
             </p>
           </div>
 
@@ -239,8 +243,13 @@ export default function HomePage() {
       {/* FAQ Section - Schema.org */}
       <FAQSection
         faqs={faqs}
-        title="Frequently Asked Questions About Our IT Services"
-        description="Get answers to common questions about our software development, consulting, and business services"
+        title={
+          <>
+            Common Questions{" "}
+            <span className="text-[#f59e0b]">Answered Simply</span>
+          </>
+        }
+        description="Everything you need to know about our services, pricing, and how we work with you."
       />
 
       {/* Final CTA Section */}
@@ -253,12 +262,13 @@ export default function HomePage() {
         <div className="relative max-w-[1400px] mx-auto px-6 text-center">
           <div>
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business with Technology?
+              Ready to Start Your{" "}
+              <span className="text-[#f59e0b]">Success Story</span>?
             </h2>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Schedule a free consultation with our IT experts to discuss your
-              project requirements, budget, and timeline. Get a detailed
-              proposal with transparent pricing and delivery milestones.
+              Discuss your project with us today. No complicated jargon, no
+              hidden fees — just honest advice and a plan to help your business
+              grow.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">

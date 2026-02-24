@@ -17,20 +17,21 @@ import type { Metadata } from "next";
 export default function ResourcesPage() {
   const whitepapers = [
     {
-      title: "Digital Transformation ROI: A 2026 Guide",
+      title: "The Bihar Digital Growth Guide 2026",
       description:
-        "Measuring the impact of digital initiatives on business outcomes",
+        "A 50-page roadmap for taking your regional business to a state-wide level.",
       downloads: 1234,
     },
     {
-      title: "Cloud Migration Best Practices",
-      description: "Step-by-step guide to successful cloud adoption",
+      title: "GST Compliance Checklist for SMEs",
+      description:
+        "Everything you need to keep your tax records safe and ready.",
       downloads: 987,
     },
     {
-      title: "E-commerce Security & Compliance",
+      title: "E-commerce for Local Retailers",
       description:
-        "Protecting customer data and ensuring regulatory compliance",
+        "How to build an online store that works even on slow mobile data.",
       downloads: 756,
     },
   ];

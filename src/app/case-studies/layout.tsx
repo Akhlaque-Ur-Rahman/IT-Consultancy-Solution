@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Success Stories — See How We Help Patna Businesses Grow",
   description:
-    "Explore case studies showcasing measurable results across industries with EDUNEX.",
+    "Real results for 90+ local business owners in Bihar. See how our simple software solved real problems.",
 };
 
 export default function CaseStudiesLayout({

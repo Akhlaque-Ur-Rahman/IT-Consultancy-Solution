@@ -1,11 +1,17 @@
+"use client";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import HeroModernWrapper from "@/components/HeroModernWrapper";
+import { motion } from "motion/react";
 
-export function HeroModern() {
-  // Server-rendered hero core: heading and static layout.
-  // Interactive/animated parts are moved to a client island (`HeroModernClient`).
+export function HeroModernAnimated() {
+  // Entrance animation variants
+  const fadeInUP = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="relative min-h-[calc(100svh-5rem)] flex items-center justify-center overflow-hidden bg-black">
       <div
@@ -18,24 +24,48 @@ export function HeroModern() {
 
       <div className="relative w-full max-w-[1000px] mx-auto px-4 md:px-6 pb-16">
         <div className="text-center w-full">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-6 mx-auto">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={fadeInUP}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-6 mx-auto"
+          >
             <div className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse" />
             <span className="text-sm font-medium text-[#f59e0b]">
               Scaling Digital Success Since 2012
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight max-w-4xl mx-auto">
+          <motion.h1
+            initial="initial"
+            animate="animate"
+            variants={fadeInUP}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight max-w-4xl mx-auto"
+          >
             Build Your <span className="text-[#f59e0b]">Dream Website</span>{" "}
             with 12 Years of Experience and 90+ Happy Clients
-          </h1>
+          </motion.h1>
 
-          <div className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={fadeInUP}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+          >
             Expert-built websites and apps designed to grow your reach. Simple
             process, guaranteed on-time delivery.
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={fadeInUP}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-4 mb-10"
+          >
             <Link href="/contact">
               <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-6 text-base transition-all duration-200 group">
                 Request a Strategy Call
@@ -51,9 +81,15 @@ export function HeroModern() {
                 <PlayCircle className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 pt-8  max-w-4xl mx-auto">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={fadeInUP}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-wrap items-center justify-center gap-8 pt-8  max-w-4xl mx-auto"
+          >
             <div className="group relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md px-6 py-4 rounded-xl transition-all duration-300 hover:border-[#f59e0b]/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b]/0 to-[#d97706]/0 group-hover:from-[#f59e0b]/15 group-hover:to-[#d97706]/15 transition-all duration-300" />
               <div className="relative">
@@ -98,7 +134,7 @@ export function HeroModern() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

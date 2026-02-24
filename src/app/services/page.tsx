@@ -39,10 +39,13 @@ export default function ServicesPage() {
               Complete Service Portfolio
             </span>
           </div>
-          <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
+          <h1 className="text-5xl font-bold text-white mb-4">
+            Everything You Need to{" "}
+            <span className="text-[#f59e0b]">Grow & Run</span> Your Business
+          </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            End-to-end IT consulting and business solutions to accelerate your
-            digital transformation journey
+            From custom websites and mobile apps to handling your taxes and
+            marketing. Simple, reliable, and on-time.
           </p>
         </motion.div>
 

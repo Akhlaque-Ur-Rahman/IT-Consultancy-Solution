@@ -25,10 +25,13 @@ export default function CaseStudiesPage() {
               Success Stories
             </span>
           </div>
-          <h1 className="text-5xl font-bold text-white mb-4">Case Studies</h1>
+          <h1 className="text-5xl font-bold text-white mb-4">
+            How We Helped{" "}
+            <span className="text-[#f59e0b]">90+ Business Owners</span> Succeed
+          </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Real-world examples of how we've helped businesses achieve
-            measurable success through technology
+            See how our simple, reliable solutions solved real problems for
+            local businesses and large companies alike.
           </p>
         </motion.div>
 
@@ -165,10 +168,11 @@ export default function CaseStudiesPage() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-bold mb-4">
-            Ready to Write Your Success Story?
+            Ready to Write Your{" "}
+            <span className="text-[#f59e0b]">Success Story</span>?
           </h3>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's create measurable impact for your business together
+            Let&apos;s create real results for your business together.
           </p>
           <Link href="/contact">
             <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8 py-6 text-lg">
