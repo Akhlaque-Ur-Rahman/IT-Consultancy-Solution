@@ -7,11 +7,7 @@ import { Footer } from "@/components/Footer";
 import { ConsultationCTA } from "@/components/ConsultationCTA";
 import GoToTopButton from "@/components/GoToTopButton";
 
-export default function ChromeClient({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function AppLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   const routes = [

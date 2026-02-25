@@ -18,6 +18,7 @@ import { EngineeringDetails } from "@/components/services/EngineeringDetails";
 import { MarketingStrategy } from "@/components/services/MarketingStrategy";
 import { DesignPortfolio } from "@/components/services/DesignPortfolio";
 import { ComplianceDetails } from "@/components/services/ComplianceDetails";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -48,6 +49,13 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-black">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Services", item: "/services" },
+          { name: service.title, item: `/services/${service.slug}` },
+        ]}
+      />
       {/* 1. Conversion Hero */}
       <ServiceHero
         badge={service.category}

@@ -31,11 +31,14 @@ export function Header() {
       dropdownItems: [
         {
           label: "Web & App Development",
-          href: "/services?category=development",
+          href: "/services/web-app-development",
         },
-        { label: "CRM/ERP Solutions", href: "/solutions" },
-        { label: "Digital Marketing", href: "/services?category=marketing" },
-        { label: "UI/UX Design", href: "/services?category=design" },
+        { label: "CRM/ERP Solutions", href: "/services/crm-erp-solutions" },
+        {
+          label: "Digital Marketing",
+          href: "/services/digital-marketing-services",
+        },
+        { label: "UI/UX Design", href: "/services/ui-ux-design" },
         { label: "All Services", href: "/services" },
       ],
     },

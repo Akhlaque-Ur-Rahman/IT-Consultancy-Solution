@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform } from "motion/react";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import Link from "next/link";
 
 interface CaseStudyCardProps {
   title: string;
@@ -10,6 +11,9 @@ interface CaseStudyCardProps {
   industry: string;
   image: string;
   impact: Record<string, string | undefined>;
+  companyType?: string;
+  problemSolved?: string;
+  slug?: string;
 }
 
 export function CaseStudyCard({
@@ -18,6 +22,9 @@ export function CaseStudyCard({
   industry,
   image,
   impact,
+  companyType,
+  problemSolved,
+  slug,
 }: CaseStudyCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -35,64 +42,84 @@ export function CaseStudyCard({
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative h-full cursor-pointer group"
+      className="relative h-full group"
     >
-      <div className="relative h-full bg-[#121212] rounded-xl overflow-hidden border border-[#262626] transition-all duration-300 hover:border-[#f59e0b]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-        {/* Image */}
-        <div className="relative h-56 overflow-hidden bg-[#0a0a0a]">
-          <ImageWithFallback
-            src={`https://source.unsplash.com/800x600/?${encodeURIComponent(image)}`}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <Link
+        href={slug ? `/case-studies/${slug}` : "#"}
+        className="block h-full cursor-pointer"
+      >
+        <div className="relative h-full bg-[#121212] rounded-xl overflow-hidden border border-[#262626] transition-all duration-300 hover:border-[#f59e0b]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {/* Image */}
+          <div className="relative h-56 overflow-hidden bg-[#0a0a0a]">
+            <ImageWithFallback
+              src={`https://source.unsplash.com/800x600/?${encodeURIComponent(image)}`}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
-          {/* Industry Badge */}
-          <div className="absolute top-4 left-4 px-3 py-1.5 rounded-md bg-[#f59e0b]/90 backdrop-blur-sm text-xs font-medium text-black">
-            {industry}
+            {/* Industry Badge */}
+            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-md bg-[#f59e0b]/90 backdrop-blur-sm text-xs font-medium text-black">
+              {industry}
+            </div>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Client */}
-          <p className="text-sm font-medium text-[#f59e0b] mb-2">{client}</p>
+          {/* Content */}
+          <div className="p-6">
+            {/* Client */}
+            <p className="text-sm font-medium text-[#f59e0b] mb-2">{client}</p>
 
-          {/* Title */}
-          <h3 className="text-lg font-semibold text-white mb-4 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">
-            {title}
-          </h3>
+            {/* Title */}
+            <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">
+              {title}
+            </h3>
 
-          {/* Impact Metrics */}
-          <div className="grid grid-cols-2 gap-3 mb-4">
-            {Object.entries(impact)
-              .slice(0, 4)
-              .map(([key, value]) => (
-                <div
-                  key={key}
-                  className="p-3 rounded-md bg-[#0a0a0a] border border-[#262626]"
-                >
-                  <p className="text-xl font-bold text-[#f59e0b] mb-1">
-                    {value}
-                  </p>
-                  <p className="text-xs text-gray-500 capitalize">
-                    {key.replace(/([A-Z])/g, " $1").trim()}
-                  </p>
+            {/* Company Type & Problem Solved Snippet */}
+            <div className="flex flex-col gap-2 mb-4">
+              {companyType && (
+                <span className="inline-flex w-fit px-2 py-0.5 rounded bg-[#f59e0b]/10 text-[10px] font-bold text-[#f59e0b] uppercase tracking-wider border border-[#f59e0b]/20">
+                  {companyType}
+                </span>
+              )}
+              {problemSolved && (
+                <div className="flex items-center gap-2 text-gray-400 text-xs">
+                  <TrendingUp className="w-3.5 h-3.5 text-[#f59e0b]" />
+                  <span className="line-clamp-1">{problemSolved}</span>
                 </div>
-              ))}
+              )}
+            </div>
+
+            {/* Impact Metrics */}
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              {Object.entries(impact)
+                .slice(0, 4)
+                .map(([key, value]) => (
+                  <div
+                    key={key}
+                    className="p-3 rounded-md bg-[#0a0a0a] border border-[#262626]"
+                  >
+                    <p className="text-xl font-bold text-[#f59e0b] mb-1">
+                      {value}
+                    </p>
+                    <p className="text-xs text-gray-500 capitalize">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </p>
+                  </div>
+                ))}
+            </div>
+
+            {/* CTA */}
+            <button className="flex items-center gap-2 text-sm font-medium text-gray-400 group-hover:text-[#f59e0b] transition-colors">
+              View Case Study
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
 
-          {/* CTA */}
-          <button className="flex items-center gap-2 text-sm font-medium text-gray-400 group-hover:text-[#f59e0b] transition-colors">
-            View Case Study
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          {/* Bottom Accent */}
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
         </div>
-
-        {/* Bottom Accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
-      </div>
+      </Link>
     </motion.div>
   );
 }

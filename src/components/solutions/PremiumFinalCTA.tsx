@@ -26,9 +26,9 @@ export default function PremiumFinalCTA() {
               Digital <span className="text-[#f59e0b]">Foundation?</span>
             </h2>
             <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join the ranks of successful enterprises that have streamlined
-              their operations with our high-performance solutions. Let&apos;s
-              build your custom roadmap today.
+              Don&apos;t settle for generic software. Partner with senior
+              engineers to build a core system that drives measurable business
+              outcomes. Let&apos;s discuss your implementation roadmap today.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -37,7 +37,7 @@ export default function PremiumFinalCTA() {
                   size="lg"
                   className="bg-[#f59e0b] hover:bg-[#d97706] text-black font-black h-14 px-10 rounded-2xl shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all hover:scale-105 w-full"
                 >
-                  Schedule Discovery Call
+                  Get a Free Consultation
                   <Calendar className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -47,8 +47,8 @@ export default function PremiumFinalCTA() {
                   size="lg"
                   className="border-white/10 text-white hover:bg-white/5 h-14 px-10 rounded-2xl bg-transparent w-full"
                 >
-                  Talk to an Engineer
-                  <MessageSquare className="ml-2 w-5 h-5" />
+                  Request Implementation Plan
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
             </div>

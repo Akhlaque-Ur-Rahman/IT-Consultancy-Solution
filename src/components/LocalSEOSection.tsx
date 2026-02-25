@@ -16,7 +16,7 @@ export function LocalSEOSection() {
   ];
 
   const localTrust = [
-    { icon: Building2, value: "500+", label: "Happy Clients" },
+    { icon: Building2, value: "90+", label: "Happy Clients" },
     { icon: Users, value: "15+", label: "Years Experience" },
     { icon: Award, value: "ISO", label: "Certified" },
     { icon: MapPin, value: "10+", label: "Local Areas" },

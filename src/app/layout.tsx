@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/index.css";
-import Shell from "@/components/Shell";
+import { AppLayout } from "@/components/AppLayout";
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 import { Preloader } from "@/components/Preloader";
 import Script from "next/script";
@@ -112,7 +112,7 @@ export default function RootLayout({
         />
         <Preloader />
         <SmoothScrollWrapper />
-        <Shell>{children}</Shell>
+        <AppLayout>{children}</AppLayout>
       </body>
     </html>
   );

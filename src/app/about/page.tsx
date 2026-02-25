@@ -6,7 +6,7 @@ import { Target, Eye, Award, Users, Briefcase, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export default function AboutPage() {
   const values = [
@@ -52,7 +52,13 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-8 pb-20 min-h-screen bg-black">
+    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black text-white">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "About Us", item: "/about" },
+        ]}
+      />
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { MessageCircle } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 
@@ -11,20 +11,37 @@ export function ConsultationCTA({
   defaultService?: string;
 }) {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <>
+    <div className="fixed bottom-8 right-8 flex items-center gap-3 z-50">
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, x: 20, filter: "blur(10px)" }}
+            className="px-4 py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg text-white text-sm font-semibold tracking-wide uppercase shadow-xl"
+          >
+            Talk to an Expert
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.button
-        className="fixed bottom-8 right-8 px-6 py-3 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold rounded-md shadow-lg hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-200 z-50 group"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="w-14 h-14 flex items-center justify-center bg-black/40 backdrop-blur-xl text-white border border-white/10 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden hover:border-[#f59e0b]/50 transition-colors duration-500"
         onClick={() => setIsContactFormOpen(true)}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <span className="flex items-center gap-2">
-          <MessageCircle className="w-5 h-5" />
-          Request Consultation
-        </span>
+        <div className="relative flex items-center justify-center shrink-0">
+          <MessageCircle className="w-6 h-6 text-[#f59e0b]" />
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#f59e0b] rounded-full border-2 border-black animate-pulse" />
+        </div>
       </motion.button>
 
       <ContactForm
@@ -32,6 +49,6 @@ export function ConsultationCTA({
         onClose={() => setIsContactFormOpen(false)}
         prefilledService={defaultService}
       />
-    </>
+    </div>
   );
 }

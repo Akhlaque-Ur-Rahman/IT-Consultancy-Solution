@@ -21,21 +21,20 @@ export default function UnifiedEcosystem() {
               </div>
               <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 One Platform. <br />
-                <span className="text-gray-500">Infinite Synergy.</span>
+                <span className="text-gray-500">Zero Fragmentation.</span>
               </h2>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                Stop managing bridge connectors and API middleware. Our
-                solutions are built on a shared data fabric, meaning your CRM,
-                ERP, and Billing systems talk to each other natively, in
-                real-time.
+                Eliminate the hidden costs of bridge connectors and data silos.
+                Our ecosystem provides absolute consistency across department
+                lines, giving you a single source of truth for every decision.
               </p>
 
               <ul className="space-y-4">
                 {[
-                  "Real-time data synchronization across all modules",
-                  "Unified identity and access management (IAM)",
-                  "Global search across your entire business data",
-                  "Centralized AI engine for cross-functional insights",
+                  "Eliminate tool fragmentation and data duplication",
+                  "Unified cross-department visibility (Full Spectrum)",
+                  "Absolute data consistency for rapid decision-making",
+                  "Single platform control for reduced operational risk",
                 ].map((item, idx) => (
                   <li
                     key={idx}
@@ -60,7 +59,7 @@ export default function UnifiedEcosystem() {
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-[#f59e0b] font-black text-2xl uppercase tracking-tighter">
-                      AG
+                      EN
                     </span>
                   </div>
                 </div>

@@ -16,12 +16,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import Link from "next/link";
 
 const solutions = [
@@ -30,95 +24,116 @@ const solutions = [
     icon: Users,
     name: "Custom CRM",
     target: "Sales & Marketing Teams",
-    tagline: "Know Your Customers Better",
+    tagline: "Stop Lead Leakage & Increase Sales Velocity",
+    icp: "Ideal for growing agencies and sales teams managing 50+ monthly enquiries.",
     description:
-      "Stop losing leads in notebooks and WhatsApp messages. Our CRM keeps all your customer info in one place, helping you close more deals with less effort.",
+      "Transform your chaotic sales process into a structured revenue engine. Our CRM eliminates manual tracking, ensuring no lead is ever forgotten while providing real-time visibility into your pipeline.",
     capabilities: [
       {
-        name: "Lead Scoring",
-        definition: "Auto-ranks customers based on how likely they are to buy.",
+        name: "Predictive Lead Scoring",
+        definition: "Focus your team on the deals most likely to close today.",
       },
       {
-        name: "Sales Pipelines",
-        definition: "A visual map of every deal from 'Hello' to 'Closed'.",
+        name: "Automated Workflows",
+        definition: "Eliminate repetitive tasks and manual data entry.",
       },
       {
-        name: "WhatsApp Hub",
-        definition: "Chat with customers directly from your dashboard.",
+        name: "WhatsApp Ecosystem",
+        definition: "Meet your customers where they are, natively integrated.",
       },
       {
-        name: "Deep Analytics",
+        name: "Executive Dashboards",
         definition:
-          "Simple charts that show you what's working and what's not.",
+          "Instant visibility into team performance and revenue forecasts.",
       },
     ],
-    outcomes: ["24% Faster Sales Cycle", "18% More Customers Saved"],
-    price: "₹1,49,999",
+    outcomes: [
+      "24% Faster Sales Cycle (Average)",
+      "Eliminate 15+ Hours of Weekly Admin",
+      "Senior Implementation Engineer Included",
+    ],
+    price: "₹1,49,999+",
+    priceContext: "Starts from. Depends on scale.",
     metric: { value: "10M+", label: "Leads Tracked" },
-    localTrust: "Used by 45+ Patna Agencies",
+    localTrust: "Used by 45+ Regional Agencies",
   },
   {
     id: "erp",
     icon: BarChart3,
     name: "Enterprise ERP",
     target: "Operations & Finance",
-    tagline: "Run Your Office on Autopilot",
+    tagline: "Complete Operational Control & Real-Time Accuracy",
+    icp: "Designed for multi-branch distribution and complex manufacturing units.",
     description:
-      "Manage your staff, stock, and money without the headache. A complete system that connects your warehouse to your front office.",
+      "Run your entire operation from a single source of truth. From warehouse inventory to financial reporting, our ERP provides the data consistency needed for high-stakes decision making.",
     capabilities: [
       {
-        name: "Live Inventory",
-        definition: "See exactly what's in stock across all your branches.",
+        name: "Omnichannel Inventory",
+        definition:
+          "Live stock tracking across all physical and digital branches.",
       },
       {
-        name: "Auto-Accounting",
-        definition: "Your bills and taxes are calculated automatically.",
+        name: "Automated Reconciliation",
+        definition: "Reduce financial audit time from weeks to minutes.",
       },
       {
-        name: "Staff Manager",
-        definition: "Track attendance, salary, and performance in one click.",
+        name: "Unified Huma Capital",
+        definition: "Manage performance, payroll, and compliance in one click.",
       },
       {
-        name: "Regional Compliance",
-        definition: "Built-in rules for Bihar's specific tax and labor laws.",
+        name: "Strategic Insights",
+        definition:
+          "Predictive analytics to reduce waste and optimize procurement.",
       },
     ],
-    outcomes: ["15% Less Waste", "Zero Errors in Billing"],
-    price: "₹2,99,999",
+    outcomes: [
+      "Reduce Operational Waste by 15%",
+      "100% Billing & Inventory Accuracy",
+      "Full Onboarding & Training Support",
+    ],
+    price: "₹2,99,999+",
+    priceContext: "Custom pricing for scale.",
     metric: { value: "99.9%", label: "Stock Accuracy" },
-    localTrust: "Trusted by Magadh Distribution",
+    localTrust: "Powering Magadh Distribution",
   },
   {
     id: "billing",
     icon: Zap,
-    name: "Billing & Invoicing",
-    target: "Shops & Service Providers",
-    tagline: "Get Paid Faster, Every Time",
+    name: "Automated Billing & Invoicing",
+    target: "Service Providers & Retailers",
+    tagline: "Accelerate Cash Flow & Automate Collections",
+    icp: "Best for recurring service models and high-volume billing operations.",
     description:
-      "Professional invoices that look great and remind customers to pay. Perfect for businesses with monthly fees or complex billing.",
+      "Move beyond manual invoicing. Our systems automate the entire payment lifecycle, from GST-compliant generation to smart follow-ups, ensuring you get paid faster and more reliably.",
     capabilities: [
       {
-        name: "Auto-Reminders",
+        name: "Smart Rev-Ops",
         definition:
-          "Sends polite WhatsApp/Email nudges before payments are due.",
+          "Automated reminders that reduce DSOs (Days Sales Outstanding).",
       },
       {
-        name: "GST-Ready",
-        definition: "Generate tax-compliant bills in seconds, not hours.",
+        name: "Seamless Compliance",
+        definition: "Always-ready GST filing and audit-ready reports.",
       },
       {
-        name: "Multi-Location",
-        definition: "Control billing for all your shops from your phone.",
+        name: "Global Payment Fabric",
+        definition:
+          "Integrated QR, UPI, and Credit support for instant settlements.",
       },
       {
-        name: "Instant Payments",
-        definition: "QR codes and links so customers can pay on the spot.",
+        name: "Multi-Store Control",
+        definition: "Centralized financial oversight for all your locations.",
       },
     ],
-    outcomes: ["20% Faster Cash Flow", "Zero Manual Data Entry"],
-    price: "₹49,999",
+    outcomes: [
+      "Improve Cash Flow by 20%",
+      "Zero Manual Payment Entry Errors",
+      "Dedicated Implementation Specialist",
+    ],
+    price: "₹49,999+",
+    priceContext: "Starting price for basic tier.",
     metric: { value: "₹50Cr+", label: "Bills Processed" },
-    localTrust: "Powering Vaishali Agro",
+    localTrust: "Trusted by Vaishali Agro",
   },
 ];
 
@@ -211,39 +226,40 @@ export default function SolutionShowcase() {
                 <h2 className="text-4xl font-bold text-white mb-4">
                   {solution.name}
                 </h2>
-                <p className="text-[#f59e0b] text-lg font-medium mb-6">
+                <p className="text-[#f59e0b] text-lg font-medium mb-4">
                   {solution.tagline}
                 </p>
+                <div className="mb-6 flex items-start gap-2 text-xs text-gray-400 bg-white/5 p-3 rounded-lg border border-white/10">
+                  <span className="font-bold text-[#f59e0b] uppercase">
+                    Ideal For:
+                  </span>
+                  <span>{(solution as any).icp}</span>
+                </div>
                 <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                   {solution.description}
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mb-10">
-                  <TooltipProvider>
-                    {solution.capabilities.map((cap, idx) => (
-                      <Tooltip key={idx}>
-                        <TooltipTrigger asChild>
-                          <div className="flex items-center gap-3 cursor-help group/cap">
-                            <div className="w-5 h-5 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0 group-hover/cap:bg-[#f59e0b]/20 transition-colors">
-                              <Check className="w-3 h-3 text-[#f59e0b]" />
-                            </div>
-                            <span className="text-sm text-gray-300 font-medium flex items-center gap-1.5 border-b border-white/5 border-dashed group-hover/cap:text-white transition-colors">
-                              {cap.name}
-                              <Info className="w-3 h-3 text-gray-600" />
-                            </span>
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent className="max-w-[200px] border-[#262626] bg-[#121212] text-gray-300">
-                          <p>{cap.definition}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    ))}
-                  </TooltipProvider>
+                  {solution.capabilities.map((cap, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 group/cap"
+                      title={cap.definition}
+                    >
+                      <div className="w-5 h-5 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0 group-hover/cap:bg-[#f59e0b]/20 transition-colors">
+                        <Check className="w-3 h-3 text-[#f59e0b]" />
+                      </div>
+                      <span className="text-sm text-gray-300 font-medium flex items-center gap-1.5 border-b border-white/5 border-dashed group-hover/cap:text-white transition-colors cursor-help">
+                        {cap.name}
+                        <Info className="w-3 h-3 text-gray-600" />
+                      </span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/5 mb-8">
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">
-                    Expected Outcomes
+                    Business Outcomes
                   </p>
                   <div className="space-y-3">
                     {solution.outcomes.map((outcome, idx) => (
@@ -255,27 +271,28 @@ export default function SolutionShowcase() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between gap-6 pt-8 border-t border-white/5">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/5">
                   <div>
                     <p className="text-xs text-gray-500 mb-1 uppercase tracking-widest">
-                      Enterprise Starting From
+                      {(solution as any).priceContext ||
+                        "Enterprise Starting From"}
                     </p>
                     <p className="text-2xl font-bold text-white tracking-tight">
                       {solution.price}
                     </p>
                   </div>
-                  <div className="flex gap-4">
-                    <Link href="/contact">
-                      <Button className="bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-12 px-6 rounded-xl">
-                        Get Demo
+                  <div className="flex gap-4 w-full sm:w-auto">
+                    <Link href="/contact" className="flex-1 sm:flex-initial">
+                      <Button className="bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-12 px-8 rounded-xl w-full">
+                        Request Demo
                       </Button>
                     </Link>
-                    <Link href="/contact">
+                    <Link href="/contact" className="flex-1 sm:flex-initial">
                       <Button
                         variant="outline"
-                        className="border-white/10 text-white hover:bg-white/5 h-12 px-6 rounded-xl bg-transparent"
+                        className="border-white/10 text-white hover:bg-white/5 h-12 px-8 rounded-xl bg-transparent w-full"
                       >
-                        Details
+                        Architecture Call
                       </Button>
                     </Link>
                   </div>

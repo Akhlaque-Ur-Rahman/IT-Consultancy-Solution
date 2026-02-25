@@ -14,39 +14,39 @@ export default function ValuePropositions() {
   const values = [
     {
       icon: Cpu,
-      title: "Bespoke Engineering",
+      title: "Outcome-Based Engineering",
       description:
-        "No off-the-shelf templates. Every line of code is written to solve your specific business logic and performance requirements.",
+        "We don't just write code; we solve business bottlenecks. Every architectural decision is weighed against its impact on your bottom line.",
     },
     {
       icon: Scaling,
-      title: "Hyper-Scalable",
+      title: "Scale-Ready Architectures",
       description:
-        "Architected on modern cloud-native stacks (Next.js, Go/Node, PostgreSQL) that handle millions of requests without breaking a sweat.",
+        "Built for future-state performance. Our systems handle millions of requests natively, ensuring your growth is never capped by technical debt.",
     },
     {
       icon: ShieldCheck,
-      title: "Military-Grade Security",
+      title: "Compliance-First Security",
       description:
-        "Advanced encryption, SOC2-ready protocols, and frequent penetration testing to safeguard your organization's most valuable data.",
+        "Data sovereignty is our priority. Sophisticated encryption and SOC2-ready protocols safeguard your most valuable intellectual property.",
     },
     {
       icon: Layers,
-      title: "Modular Freedom",
+      title: "Uncompromising Ownership",
       description:
-        "Built with a plug-and-play architecture. Add new modules or change providers without needing to rebuild your entire ecosystem.",
+        "You own 100% of the custom IP. No vendor lock-in, no seat-based pricing—just total control over your digital core.",
     },
     {
       icon: Headphones,
-      title: "Priority Engineering Support",
+      title: "SLA-Backed Expert Support",
       description:
-        "Direct access to the engineers who built your system. We offer 24/7 incident response and proactive platform monitoring.",
+        "Direct access to our senior engineering cell. We provide 24/7 proactive monitoring and guaranteed response times for critical systems.",
     },
     {
       icon: Key,
-      title: "Full Source Ownership",
+      title: "Seamless Ecosystem Integration",
       description:
-        "Unlike rigid SaaS providers, you own the intellectual property of your custom modules, ensuring no vendor lock-in.",
+        "Native tool compatibility ensures your existing stack works in harmony with our solutions, reducing tool fragmentation from day one.",
     },
   ];
 
@@ -55,7 +55,7 @@ export default function ValuePropositions() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            The <span className="text-[#f59e0b]">Antigravity</span> Advantage
+            The <span className="text-[#f59e0b]">EDUNEX</span> Advantage
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Why forward-thinking enterprises choose us to power their digital

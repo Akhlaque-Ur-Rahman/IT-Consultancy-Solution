@@ -6,6 +6,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { services } from "@/data/mockData";
 import { Filter } from "lucide-react";
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -25,7 +26,13 @@ export default function ServicesPage() {
       : services.filter((s) => s.category === selectedCategory);
 
   return (
-    <div className="pt-8 pb-20 min-h-screen bg-black">
+    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Services", item: "/services" },
+        ]}
+      />
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div

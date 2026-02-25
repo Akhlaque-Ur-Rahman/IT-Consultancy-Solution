@@ -25,16 +25,24 @@ export function Footer() {
   const services = [
     {
       label: "Web Development",
-      href: "/services?category=development",
+      href: "/services/web-app-development",
       id: "web-dev",
     },
-    { label: "CRM/ERP Solutions", href: "/solutions", id: "crm-erp" },
+    {
+      label: "CRM/ERP Solutions",
+      href: "/services/crm-erp-solutions",
+      id: "crm-erp",
+    },
     {
       label: "Digital Marketing",
-      href: "/services?category=marketing",
+      href: "/services/digital-marketing-services",
       id: "digital-marketing",
     },
-    { label: "Compliance Services", href: "/compliance", id: "compliance" },
+    {
+      label: "Compliance Services",
+      href: "/compliance",
+      id: "compliance",
+    },
   ];
 
   const resources = [

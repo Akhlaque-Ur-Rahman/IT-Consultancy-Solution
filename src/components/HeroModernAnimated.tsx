@@ -2,7 +2,7 @@
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import HeroModernWrapper from "@/components/HeroModernWrapper";
+
 import { motion } from "motion/react";
 
 export function HeroModernAnimated() {
@@ -137,8 +137,6 @@ export function HeroModernAnimated() {
           </motion.div>
         </div>
       </div>
-
-      <HeroModernWrapper />
     </section>
   );
 }

@@ -59,8 +59,8 @@ export default function DeploymentOptions() {
             viewport={{ once: true }}
             className="text-3xl lg:text-4xl font-bold text-white mb-4"
           >
-            Flexible <span className="text-[#f59e0b]">Deployment</span>{" "}
-            Architecture
+            Flexible <span className="text-[#f59e0b]">Deployment</span> for
+            Security & Compliance
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -69,9 +69,9 @@ export default function DeploymentOptions() {
             transition={{ delay: 0.1 }}
             className="text-gray-400 max-w-2xl mx-auto"
           >
-            Choose the model that aligns with your security protocols and
-            infrastructure strategy. All options support enterprise-grade
-            encryption.
+            Choose the model that aligns with your data sovereignty requirements
+            and long-term TCO strategy. All options are SOC2-ready and
+            enterprise-grade.
           </motion.p>
         </div>
 

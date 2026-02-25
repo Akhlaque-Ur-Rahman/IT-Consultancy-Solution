@@ -19,6 +19,8 @@ import {
   Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -85,7 +87,13 @@ function ContactFormContent() {
   const handleBack = () => setStep(1);
 
   return (
-    <div className="pt-8 pb-20 min-h-screen bg-black">
+    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Contact Us", item: "/contact" },
+        ]}
+      />
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
         <motion.div

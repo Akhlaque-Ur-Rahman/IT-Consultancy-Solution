@@ -16,42 +16,42 @@ export default function IndustryVerticals() {
       icon: ShoppingCart,
       title: "Retail & E-commerce",
       description:
-        "Omnichannel inventory, automated logistics, and personalized customer journeys.",
+        "Built for 35% improvement in stock turnover with omnichannel inventory and automated logistics.",
       color: "from-blue-500/20 to-cyan-500/20",
     },
     {
       icon: Stethoscope,
       title: "Healthcare",
       description:
-        "HIPAA-compliant systems, patient management, and telehealth integrations.",
+        "Reduces admin overhead by 40% with HIPAA-compliant patient management and telehealth.",
       color: "from-emerald-500/20 to-teal-500/20",
     },
     {
       icon: Factory,
       title: "Manufacturing",
       description:
-        "Smart factory monitoring, supply chain visibility, and predictive maintenance.",
+        "Enable 99.9% uptime with smart factory monitoring and predictive maintenance systems.",
       color: "from-orange-500/20 to-amber-500/20",
     },
     {
       icon: Truck,
       title: "Logistics",
       description:
-        "Real-time fleet tracking, last-mile optimization, and warehouse automation.",
+        "Cut operational costs by 22% with real-time fleet tracking and last-mile optimization.",
       color: "from-indigo-500/20 to-purple-500/20",
     },
     {
       icon: GraduationCap,
       title: "Education",
       description:
-        "LMS platforms, student performance analytics, and administrative automation.",
+        "Increase student retention by 25% with automated performance analytics and LMS platforms.",
       color: "from-rose-500/20 to-pink-500/20",
     },
     {
       icon: Briefcase,
       title: "Professional Services",
       description:
-        "Project management, billable hour tracking, and outcome-based reporting.",
+        "Recover 15+ billable hours per month with automated tracking and outcome-based reporting.",
       color: "from-slate-500/20 to-gray-500/20",
     },
   ];

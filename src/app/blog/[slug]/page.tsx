@@ -3,6 +3,7 @@ import { Calendar, Clock, User, ArrowLeft, Tag, Share2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -55,6 +56,14 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="pt-4 pb-20 min-h-screen bg-black">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Resources", item: "/resources" },
+          { name: "Blog", item: "/blog" },
+          { name: post.title, item: `/blog/${post.slug}` },
+        ]}
+      />
       <div className="max-w-[800px] mx-auto px-6">
         {/* Back Link */}
         <div className="mb-8">

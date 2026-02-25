@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "EDUNEX - IT Consulting & Enterprise Software Solutions",
@@ -70,7 +71,9 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="bg-black">
+    <main className="min-h-screen bg-black">
+      <BreadcrumbSchema items={[{ name: "Home", item: "/" }]} />
+      {/* Hero Section */}
       {/* SEO: H1 is in Hero component */}
       <HeroModern />
 
@@ -344,6 +347,6 @@ export default function HomePage() {
           }),
         }}
       />
-    </div>
+    </main>
   );
 }

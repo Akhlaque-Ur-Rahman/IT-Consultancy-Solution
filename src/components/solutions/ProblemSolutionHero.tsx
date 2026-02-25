@@ -14,7 +14,7 @@ export default function ProblemSolutionHero() {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-20 pb-24 lg:pt-32 lg:pb-40 bg-black">
+    <section className="relative overflow-hidden pt-4 lg:pt-8 pb-24 lg:pb-40 bg-black">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 bg-[radial-gradient(circle_at_50%_-20%,rgba(245,158,11,0.15),transparent_70%)]" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#f59e0b]/5 blur-[120px] rounded-full -z-10" />
@@ -35,18 +35,39 @@ export default function ProblemSolutionHero() {
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Empowering Visionary{" "}
+              Scale Your Enterprise with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#d97706]">
-                Business Leaders
+                High-Performance Infrastructure
               </span>
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-400 mb-8 leading-relaxed">
-              We bridge the gap between complex business challenges and
-              high-performance digital solutions. Our integrated ecosystem is
-              designed for decision-makers who demand scalability, security, and
-              measurable outcomes.
+              We solve tool fragmentation and high operational costs for
+              founders and executive teams. Our integrated ecosystem is designed
+              for decision-makers who demand scalability, security, and proven
+              ROI.
             </p>
+
+            <div className="flex flex-wrap items-center gap-6 mb-10 text-gray-500">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
+                <span className="text-xs font-bold uppercase tracking-wider">
+                  12+ Years Experience
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
+                <span className="text-xs font-bold uppercase tracking-wider">
+                  90+ Success Stories
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
+                <span className="text-xs font-bold uppercase tracking-wider">
+                  Enterprise Security
+                </span>
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-4">
               <Link href="/contact">
@@ -54,7 +75,7 @@ export default function ProblemSolutionHero() {
                   size="lg"
                   className="bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-14 px-8 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-300"
                 >
-                  Request Strategic Consultation
+                  Book Implementation Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -94,12 +115,21 @@ export default function ProblemSolutionHero() {
               <div className="mt-10 pt-10 border-t border-white/5">
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
-                    {[1, 2, 3, 4].map((i) => (
+                    {[
+                      "/avatars/129416.jpg",
+                      "/avatars/21597.jpg",
+                      "/avatars/2827.jpg",
+                      "/avatars/129416.jpg", // Reuse for 4th slot
+                    ].map((src, i) => (
                       <div
                         key={i}
-                        className="w-10 h-10 rounded-full border-2 border-[#121212] bg-[#1a1a1a] flex items-center justify-center text-[10px] text-white font-bold"
+                        className="w-10 h-10 rounded-full border-2 border-[#121212] bg-[#1a1a1a] overflow-hidden relative"
                       >
-                        {String.fromCharCode(64 + i)}
+                        <img
+                          src={src}
+                          alt={`Client ${i + 1}`}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     ))}
                   </div>

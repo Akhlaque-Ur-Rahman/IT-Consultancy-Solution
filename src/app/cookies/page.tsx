@@ -5,7 +5,7 @@ import { Info } from "lucide-react";
 
 export default function CookiesPage() {
   return (
-    <div className="pt-8 pb-20 min-h-screen bg-black">
+    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
       <div className="max-w-[800px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

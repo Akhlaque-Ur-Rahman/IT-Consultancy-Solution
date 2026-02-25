@@ -13,10 +13,17 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export default function CompliancePage() {
   return (
-    <div className="pt-8 pb-20 min-h-screen bg-black">
+    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", item: "/" },
+          { name: "Compliance", item: "/compliance" },
+        ]}
+      />
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Page Header */}
         <motion.div
