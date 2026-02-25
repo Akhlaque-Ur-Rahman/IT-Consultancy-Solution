@@ -777,45 +777,104 @@ export const clientLogos = [
 
 export const complianceServices = [
   {
-    id: 'firm-registration',
-    title: 'New Firm Registration',
-    description: 'Everything you need to officially start your business in Patna.',
-    steps: ['Check Your Papers', 'Government Filing', 'Get Your Certificate', 'Open Bank Account'],
-    timeline: '7-10 days',
-    price: 'Starting ₹5,999',
+    id: "gst-registration",
+    title: "GST Registration & Filing",
+    description: "End-to-end GST management for retail shops, freelancers, and growing service businesses.",
+    whoItIsFor: "For new entrepreneurs and existing shop owners starting legally.",
+    keyBenefits: [
+      "Avoid heavy penalties and legal notices",
+      "Process 100% online – No office visits",
+      "End-to-end handling by experts",
+      "GST billing advice included"
+    ],
+    icon: "FileText",
+    steps: ["Doc Collection", "ARN Generation", "Final Certificate"],
+    timeline: "3-5 Working Days",
+    price: "₹1,499",
+    priceType: "Starting",
+    confidenceStatement: "Handled by CA-vetted compliance professionals.",
+    actionLabel: "Start GST Registration"
   },
   {
-    id: 'gst-compliance',
-    title: 'GST & Monthly Filing',
-    description: 'We handle your GST registration and monthly returns so you stay stress-free.',
-    steps: ['GST Number Login', 'Monthly Returns', 'Annual Summary', 'Easy Tax Plan'],
-    timeline: '3-5 days',
-    price: 'Starting ₹2,999/month',
+    id: "company-registration",
+    title: "Company & Udhyam Setup",
+    description: "Launch your private limited, LLP, or MSME with structured documentation and legal backing.",
+    whoItIsFor: "For startup founders and SMEs looking for professional entity structure.",
+    keyBenefits: [
+      "Save 20+ hours of paperwork effort",
+      "Legal backing for bank loans & tenders",
+      "Udhyam registration for MSME benefits",
+      "Professional entity status"
+    ],
+    icon: "Shield",
+    steps: ["Name Approval", "DSC & DIN", "SpicE+ Filing"],
+    timeline: "7-10 Working Days",
+    price: "₹4,999",
+    priceType: "Fixed",
+    confidenceStatement: "Trusted by 50+ regional startups.",
+    actionLabel: "Register Your Company"
   },
   {
-    id: 'trademark',
-    title: 'Trademark (Brand Protection)',
-    description: 'Protect your brand name and logo from being copied by others.',
-    steps: ['Name Search', 'Apply for Brand', 'Handle Questions', 'Permanent Seal'],
-    timeline: '8-12 months',
-    price: 'Starting ₹8,999',
+    id: "fssai-license",
+    title: "FSSAI & Trade License",
+    description: "Mandatory food safety and municipal licenses for restaurants, cafes, and food retailers.",
+    whoItIsFor: "For food business owners ensuring health and safety compliance.",
+    keyBenefits: [
+      "Stay compliant with food safety norms",
+      "Build customer trust with FSSAI logo",
+      "Avoid municipal sealing or fines",
+      "Renewal reminders included"
+    ],
+    icon: "Check",
+    steps: ["Site Inspection Prep", "Application", "License Issue"],
+    timeline: "5-7 Working Days",
+    price: "₹2,499",
+    priceType: "Starting",
+    confidenceStatement: "Regional expertise in Bihar municipal norms.",
+    actionLabel: "Get Trade License"
   },
   {
-    id: 'contracts',
-    title: 'Legal Papers & Agreements',
-    description: 'Clear, simple legal documents for your partners, staff, and office.',
-    steps: ['Requirement Check', 'Simple Drafting', 'Official Review', 'Final Signing'],
-    timeline: '3-7 days',
-    price: 'Starting ₹4,999',
+    id: "tax-audit-filing",
+    title: "Income Tax & Audit",
+    description: "Structured tax planning and annual auditing for businesses, NGOs, and professionals.",
+    whoItIsFor: "For professionals and businesses seeking accurate annual filings.",
+    keyBenefits: [
+      "Maximize tax savings legally",
+      "Accurate filings to avoid IT notices",
+      "Dedicated audit support",
+      "Expert tax planning session"
+    ],
+    icon: "IndianRupee",
+    steps: ["Data Gathering", "Tax Review", "Final E-Filing"],
+    timeline: "Annual / Periodic",
+    price: "₹3,000",
+    priceType: "Starting",
+    confidenceStatement: "CA-monitored processing.",
+    actionLabel: "Request Tax Filing"
+  },
+];
+
+export const complianceFAQs = [
+  {
+    question: "What documents are generally required for GST registration?",
+    answer: "Typically, you need your PAN Card, Aadhaar Card, Proof of Business Address (like an electricity bill or rent agreement), and a Bank Account statement/cancelled cheque."
   },
   {
-    id: 'itr',
-    title: 'Income Tax (ITR) Filing',
-    description: 'Professional income tax filing for business owners and individuals.',
-    steps: ['Collect Vouchers', 'Check Your Tax', 'Swift Filing', 'Receipt Given'],
-    timeline: '2-3 days',
-    price: 'Starting ₹999',
+    question: "Do I need to visit any government office personally?",
+    answer: "No. Our process is 100% digital. You provide the documents to us securely online, and we handle all filings and follow-ups with the departments."
   },
+  {
+    question: "Are government fees included in the service pricing shown?",
+    answer: "The pricing mentioned covers our professional service fees. Government fees (if applicable) are paid directly to the department based on the specific registration type."
+  },
+  {
+    question: "How long does it take to get the final certificate?",
+    answer: "Most basic registrations like GST or Udhyam are completed within 3-5 working days. Company registrations can take 7-10 days depending on department approvals."
+  },
+  {
+    question: "Do you provide ongoing support after the registration?",
+    answer: "Yes, we provide end-to-end support including monthly GST filings, annual renewals, and consultation on any compliance notices you might receive."
+  }
 ];
 
 export const pricingPlans = [
