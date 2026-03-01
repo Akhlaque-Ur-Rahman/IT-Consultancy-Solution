@@ -50,9 +50,10 @@ export default function CompliancePage() {
             <span className="text-[#f59e0b]">We Handle the Paperwork.</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-            From GST registration to annual tax filings, we provide expert
-            compliance support for SMEs and entrepreneurs across Bihar. Fastest
-            processing with minimum documents.
+            From GST registration and corporate governance to annual tax
+            filings, we provide expert regulatory compliance and comprehensive
+            risk management support for SMEs and enterprises across Bihar.
+            Fastest processing with minimum documents.
           </p>
 
           {/* Trust Badges */}
@@ -164,16 +165,18 @@ export default function CompliancePage() {
                   Outcomes & Benefits:
                 </p>
                 <div className="space-y-3">
-                  {(service as any).keyBenefits.map((benefit: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-[#f59e0b]" />
+                  {(service as any).keyBenefits.map(
+                    (benefit: string, idx: number) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-[#f59e0b]" />
+                        </div>
+                        <span className="text-sm text-gray-300 leading-tight">
+                          {benefit}
+                        </span>
                       </div>
-                      <span className="text-sm text-gray-300 leading-tight">
-                        {benefit}
-                      </span>
-                    </div>
-                  ))}
+                    ),
+                  )}
                 </div>
               </div>
 

@@ -105,11 +105,11 @@ export default function AboutPage() {
                   We built EDUNEX to bridge this gap. Operating as your
                   fractional engineering department, we architect vertically
                   integrated technology ecosystems tailored to the exact
-                  specifications of your business operations. From
-                  high-availability headless commerce platforms and custom ERP
-                  integrations to granular legal compliance routing
-                  (GST/Trademark), we unify your entire digital footprint under
-                  one cohesive architectural strategy.
+                  specifications of your business operations. From AI-enhanced
+                  cloud migrations and high-availability headless commerce
+                  platforms to custom ERP integrations and granular legal
+                  compliance routing, we unify your entire digital footprint
+                  under one highly secure, proactive architectural strategy.
                 </p>
                 <p>
                   Our mandate is simple: to eliminate the operational friction
@@ -179,14 +179,14 @@ export default function AboutPage() {
               </p>
               <p>
                 <strong>
-                  Phase 3: Security Hardening & Post-Deployment SLA.
+                  Phase 3: Cybersecurity Posture & Post-Deployment SLA.
                 </strong>{" "}
                 A deployment is not a conclusion; it is a baseline. We implement
                 strict JWT-based authentication layers, Role-Based Access
-                Control (RBAC), and automated database backups. Post-launch, we
-                provide proactive system monitoring and scaling provisions to
-                guarantee your infrastructure effortlessly manages demand
-                surges.
+                Control (RBAC), and automated cloud database backups.
+                Post-launch, we provide proactive managed IT monitoring,
+                proactive threat prevention, and scaling provisions to guarantee
+                your infrastructure effortlessly manages demand surges.
               </p>
             </div>
           </div>

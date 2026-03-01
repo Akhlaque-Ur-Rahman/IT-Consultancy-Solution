@@ -97,9 +97,9 @@ export default function HomePage() {
               Online
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              From custom websites and mobile apps to managing your taxes and
-              marketing — we handle the technical side so you can focus on your
-              customers.
+              From AI-driven custom software and enterprise cloud migration to
+              managing your statutory compliance and performance marketing—we
+              deliver complete managed IT services so you can focus on scaling.
             </p>
           </div>
 
@@ -190,19 +190,20 @@ export default function HomePage() {
                     At EDUNEX Services, we do not view technology as a simple
                     procurement exercise. We architect unified digital
                     ecosystems tailored to the exact operational realities of
-                    your enterprise. By leveraging full-stack modern JavaScript
-                    utilizing Next.js, headless commerce architectures, and
-                    horizontally scalable cloud infrastructure, we build digital
-                    environments that operate reliably at scale.
+                    your enterprise. By leveraging AI-driven automation, B2B
+                    SaaS consulting, headless commerce architectures, and
+                    secure, horizontally scalable cloud infrastructure, we build
+                    digital environments that operate reliably at global scale.
                   </p>
                   <p className="mb-4">
-                    Our approach to ERP and CRM integration focuses on creating
-                    a single source of truth for your organization. By
-                    centralizing data analytics, automating redundant
-                    administrative workflows, and ensuring real-time
-                    synchronization between financial compliance and operational
-                    metrics, we allow executive leadership to make data-driven
-                    decisions instantly. We replace fragmentation with cohesion.
+                    Our approach to backend systems and managed IT services
+                    focuses on creating a resilient single source of truth for
+                    your organization. By centralizing data analytics,
+                    automating redundant administrative workflows, and ensuring
+                    real-time synchronization between financial compliance and
+                    operational metrics, we allow executive leadership to make
+                    data-driven decisions instantly. We replace fragmentation
+                    with cohesion.
                   </p>
                 </div>
 

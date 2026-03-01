@@ -96,33 +96,34 @@ export default function ServicesPage() {
               </p>
               <div className="mt-8 break-inside-avoid">
                 <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                  1. Application Engineering & Architecture
+                  1. Application Engineering & Enterprise Cloud Architecture
                 </h3>
                 <p>
                   Our engineering pod builds horizontally scalable applications
-                  using cloud-native paradigms. From progressive web apps (PWAs)
-                  utilizing Next.js and React to robust backend services
-                  governed by Node.js and RESTful APIs, our software is strictly
-                  typed and built for high availability. Whether you require a
-                  custom headless E-commerce stack or a proprietary enterprise
-                  ERP tailored to regional Indian workflows, our codebase is
-                  designed for extreme longevity and zero-downtime scalability.
+                  using modern cloud-native paradigms and AI-driven automation
+                  frameworks. From progressive web apps (PWAs) utilizing Next.js
+                  and React to robust backend microservices governed by Node.js,
+                  our systems are strictly typed and built for high
+                  availability. Whether you require a custom headless E-commerce
+                  stack, full enterprise cloud migration, or a proprietary ERP
+                  tailored to complex operational workflows, our codebase is
+                  designed for extreme longevity and zero-downtime reliability.
                 </p>
               </div>
               <div className="mt-8 break-inside-avoid">
                 <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                  2. Performance Marketing & Digital Footprint
+                  2. Growth Marketing & Data Analytics Consulting
                 </h3>
                 <p>
                   Traffic without conversion mechanics yields zero ROI. Our
                   digital marketing strategies natively integrate with the
-                  software we build. By instrumenting deep analytics engines
-                  inside your web applications, we deploy hyper-targeted Paid
-                  Search (SEM), technical on-page Search Engine Optimization
-                  (SEO), and conversion-rate-optimized (CRO) funnels. We capture
-                  granular user telemetry to iteratively improve
-                  cost-per-acquisition metrics, transforming your software into
-                  a quantifiable revenue channel.
+                  software we build. By instrumenting deep analytics engines and
+                  advanced data visualization tools inside your applications, we
+                  deploy hyper-targeted Paid Search (SEM), high-authority Search
+                  Engine Optimization (SEO), and conversion-rate-optimized
+                  funnels. We leverage predictive data and user telemetry to
+                  iteratively improve cost-per-acquisition metrics, transforming
+                  your software into a quantifiable, automated revenue channel.
                 </p>
               </div>
               <div className="mt-8 break-inside-avoid">

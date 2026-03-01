@@ -23,9 +23,9 @@ const solutionsFaqs = [
   },
   {
     question:
-      "Do you offer localized cloud deployment within India to comply with data residency laws?",
+      "Do you offer localized cloud deployment or enterprise cloud migration within India to comply with data residency laws?",
     answer:
-      "Absolutely. We routinely architect deployments on AWS Asia Pacific (Mumbai) or local localized data centers. For compliance-heavy industries like healthcare or finance in India, we ensure strict data sovereignty, meaning your sensitive customer data never crosses international borders.",
+      "Absolutely. We routinely architect secure enterprise cloud migrations on AWS Asia Pacific (Mumbai) or localized data centers. For compliance-heavy industries like healthcare or finance in India, we ensure a strict cybersecurity posture and complete data sovereignty, meaning your sensitive customer data never crosses international borders.",
   },
   {
     question:
