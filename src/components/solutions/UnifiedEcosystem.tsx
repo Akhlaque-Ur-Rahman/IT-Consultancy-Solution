@@ -52,14 +52,14 @@ export default function UnifiedEcosystem() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-32 h-32 rounded-3xl bg-black border border-[#f59e0b] flex items-center justify-center shadow-[0_0_50px_rgba(245,158,11,0.2)] z-20">
                   <img
-                    src="/logo.svg"
-                    alt="Logo"
+                    src="/logo.jpg"
+                    alt="EDUNEX Logo"
                     className="w-12 h-12 invert opacity-20"
                     onError={(e) => (e.currentTarget.style.display = "none")}
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-[#f59e0b] font-black text-2xl uppercase tracking-tighter">
-                      EN
+                      EDUNEX
                     </span>
                   </div>
                 </div>
