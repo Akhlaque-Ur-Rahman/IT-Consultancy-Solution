@@ -66,34 +66,68 @@ export default function UnifiedEcosystem() {
 
                 {/* Orbiting Symbols */}
                 {[
-                  { icon: Zap, label: "Billing", angle: 0 },
-                  { icon: Shield, label: "Security", angle: 90 },
-                  { icon: BarChart, label: "ERP", angle: 180 },
-                  { icon: Network, label: "CRM", angle: 270 },
+                  {
+                    icon: Zap,
+                    label: "Billing",
+                    angle: 0,
+                    inset: "10%",
+                    duration: 25,
+                    reverse: false,
+                  },
+                  {
+                    icon: Shield,
+                    label: "Security",
+                    angle: 90,
+                    inset: "25%",
+                    duration: 35,
+                    reverse: true,
+                  },
+                  {
+                    icon: BarChart,
+                    label: "ERP",
+                    angle: 180,
+                    inset: "10%",
+                    duration: 25,
+                    reverse: false,
+                  },
+                  {
+                    icon: Network,
+                    label: "CRM",
+                    angle: 270,
+                    inset: "25%",
+                    duration: 35,
+                    reverse: true,
+                  },
                 ].map((node, idx) => (
                   <motion.div
                     key={idx}
-                    animate={{ rotate: 360 }}
+                    animate={{ rotate: node.reverse ? -360 : 360 }}
                     transition={{
-                      duration: 20,
+                      duration: node.duration,
                       repeat: Infinity,
                       ease: "linear",
                     }}
-                    className="absolute inset-0 pointer-events-none"
-                    style={{ rotate: node.angle }}
+                    className="absolute pointer-events-none"
+                    style={{
+                      top: node.inset,
+                      left: node.inset,
+                      right: node.inset,
+                      bottom: node.inset,
+                      rotate: node.angle,
+                    }}
                   >
                     <div
                       className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
                       style={{
-                        transform: `rotate(${-node.angle}deg)`,
-                      }} /* Counter-rotate to keep icon vertical */
+                        transform: `translateX(-50%) translateY(-50%) rotate(${-node.angle}deg)`,
+                      }} /* Counter-rotate to keep icon vertical initially */
                     >
                       <motion.div
                         animate={{
-                          rotate: -360,
-                        }} /* Counter-rotate child to keep it upright */
+                          rotate: node.reverse ? 360 : -360,
+                        }} /* Counter-rotate child continuously to keep it upright */
                         transition={{
-                          duration: 20,
+                          duration: node.duration,
                           repeat: Infinity,
                           ease: "linear",
                         }}
@@ -109,8 +143,8 @@ export default function UnifiedEcosystem() {
                 ))}
 
                 {/* Decorative Rings */}
-                <div className="absolute inset-[20%] border border-white/5 rounded-full" />
-                <div className="absolute inset-[10%] border border-white/5 rounded-full" />
+                <div className="absolute inset-[10%] border border-white/5 rounded-full pointer-events-none" />
+                <div className="absolute inset-[25%] border border-white/5 rounded-full pointer-events-none" />
               </div>
             </div>
           </div>
