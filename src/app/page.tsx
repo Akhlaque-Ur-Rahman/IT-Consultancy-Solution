@@ -27,7 +27,7 @@ import { OrganizationSchema } from "@/components/OrganizationSchema";
 export const metadata: Metadata = {
   title: "EDUNEX - IT Consulting & Enterprise Software Solutions",
   description:
-    "Transform your business with EDUNEX. Expert IT consulting, custom software development, ERP/CRM solutions, and digital marketing services.",
+    "Transform operations with EDUNEX. We provide enterprise IT consulting, AI-driven custom software development, cloud migration, and data analytics services.",
   alternates: {
     canonical: "https://edunexservices.in",
   },

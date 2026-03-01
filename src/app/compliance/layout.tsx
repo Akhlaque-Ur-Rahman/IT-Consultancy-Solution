@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Business Compliance | EDUNEX Services",
+  title: "Corporate Compliance & Risk Management | EDUNEX",
   description:
-    "End-to-end business registration, tax filing, GST compliance, and accounting services for businesses in Bihar.",
+    "Expert regulatory compliance and comprehensive risk management for enterprises. Protect your business with our tailored corporate governance solutions.",
   alternates: {
     canonical: "https://edunexservices.in/compliance",
   },

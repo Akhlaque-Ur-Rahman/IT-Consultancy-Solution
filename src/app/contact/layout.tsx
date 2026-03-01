@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | EDUNEX Services",
+  title: "Contact Our Enterprise IT Experts | EDUNEX",
   description:
-    "Get in touch with the EDUNEX team. We are ready to help you build, grow, and manage your business technology.",
+    "Schedule a consultation with EDUNEX's senior architects for expert IT consulting, cloud migration strategies, and custom enterprise software development.",
   alternates: {
     canonical: "https://edunexservices.in/contact",
   },
