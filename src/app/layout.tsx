@@ -97,6 +97,49 @@ const jsonLd = {
   ],
 };
 
+const navigationLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    {
+      "@type": "SiteNavigationElement",
+      position: 1,
+      name: "Services",
+      url: "https://www.edunexservices.in/services",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 2,
+      name: "Solutions",
+      url: "https://www.edunexservices.in/solutions",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 3,
+      name: "Case Studies",
+      url: "https://www.edunexservices.in/case-studies",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 4,
+      name: "Compliance",
+      url: "https://www.edunexservices.in/compliance",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 5,
+      name: "About",
+      url: "https://www.edunexservices.in/about",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 6,
+      name: "Contact",
+      url: "https://www.edunexservices.in/contact",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -109,6 +152,11 @@ export default function RootLayout({
           id="local-business-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Script
+          id="site-navigation-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationLd) }}
         />
         <Preloader />
         <SmoothScrollWrapper />

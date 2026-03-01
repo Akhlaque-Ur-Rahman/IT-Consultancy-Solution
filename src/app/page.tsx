@@ -20,6 +20,7 @@ import Link from "next/link";
 import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { COMPANY_INFO } from "@/config/company";
 
 export const metadata: Metadata = {
   title: "EDUNEX - IT Consulting & Enterprise Software Solutions",
@@ -150,9 +151,10 @@ export default function HomePage() {
             <div className="text-sm text-gray-400 leading-relaxed space-y-4">
               <p>
                 Building a website or app shouldn&apos;t be a headache. With
-                over 12 years of experience in Patna and across India,
-                we&apos;ve helped more than 90 business owners turn their ideas
-                into professional digital products that actually work.
+                over {COMPANY_INFO.yearsOfExperience} years of experience in
+                Patna and across India, we&apos;ve helped more than 90 business
+                owners turn their ideas into professional digital products that
+                actually work.
               </p>
               <p>
                 Our team handles everything for you. Whether you need a simple
@@ -293,7 +295,7 @@ export default function HomePage() {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
               <span>✓ 90+ Projects Delivered</span>
               <span>•</span>
-              <span>✓ 10+ Years Experience</span>
+              <span>✓ {COMPANY_INFO.yearsOfExperience}+ Years Experience</span>
               <span>•</span>
               <span>✓ Reliable Infrastructure</span>
               <span>•</span>

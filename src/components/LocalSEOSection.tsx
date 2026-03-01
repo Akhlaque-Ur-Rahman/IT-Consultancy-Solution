@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { MapPin, Building2, Users, Award } from "lucide-react";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/config/company";
 
 export function LocalSEOSection() {
   const serviceAreas = [
@@ -17,7 +18,11 @@ export function LocalSEOSection() {
 
   const localTrust = [
     { icon: Building2, value: "90+", label: "Happy Clients" },
-    { icon: Users, value: "15+", label: "Years Experience" },
+    {
+      icon: Users,
+      value: `${COMPANY_INFO.yearsOfExperience}+`,
+      label: "Years Experience",
+    },
     { icon: Award, value: "ISO", label: "Certified" },
     { icon: MapPin, value: "10+", label: "Local Areas" },
   ];
@@ -100,9 +105,10 @@ export function LocalSEOSection() {
             <div className="text-sm text-gray-400 leading-relaxed space-y-3">
               <p>
                 EDUNEX is a premier IT consulting and software development
-                company serving businesses across Patna. With over 15 years of
-                experience, we specialize in delivering enterprise-grade web and
-                mobile application development, CRM/ERP implementation, digital
+                company serving businesses across Patna. With over{" "}
+                {COMPANY_INFO.yearsOfExperience} years of experience, we
+                specialize in delivering enterprise-grade web and mobile
+                application development, CRM/ERP implementation, digital
                 marketing, UI/UX design, e-commerce solutions, and comprehensive
                 business compliance services.
               </p>

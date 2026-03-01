@@ -1,3 +1,5 @@
+import { COMPANY_INFO } from "@/config/company";
+
 // Mock data for IT Consulting Website
 
 export const services = [
@@ -941,7 +943,7 @@ export const blogPosts = [
     readTime: '5 min read',
     excerpt: 'Simple steps to take your local shop or agency online. From choosing the right website to handling regional growth.',
     image: 'technology-abstract-digital-network-dark',
-    author: 'Arjun Malhotra',
+    author: COMPANY_INFO.team.ceo.name,
     authorRole: 'CEO',
     tags: ['Patna Business', 'Growth', 'Local SEO'],
     content: `
@@ -987,8 +989,8 @@ export const blogPosts = [
     readTime: '6 min read',
     excerpt: 'Paper bills are slow and prone to errors. See how custom billing software is helping local shops manage stock and save time.',
     image: 'ecommerce-laptop-shopping-lifestyle',
-    author: 'Priya Desai',
-    authorRole: 'CTO',
+    author: COMPANY_INFO.team.cto.name,
+    authorRole: COMPANY_INFO.team.cto.role,
     tags: ['Billing Software', 'Retail', 'Patna'],
     content: `
       <h2>The End of the Paper Bill Era</h2>
@@ -1010,8 +1012,8 @@ export const blogPosts = [
     readTime: '4 min read',
     excerpt: 'Discover how a tailored CRM can improve lead management, customer retention, and sales productivity for your enterprise.',
     image: 'business-growth-analytics-dashboard',
-    author: 'Rahul Sharma',
-    authorRole: 'Head of Design',
+    author: COMPANY_INFO.team.coFounder.name,
+    authorRole: COMPANY_INFO.team.coFounder.role,
     tags: ['CRM', 'Business Growth', 'Lead Management'],
     content: `
       <h2>Tailored Relationships, Scalable Results</h2>
@@ -1027,30 +1029,30 @@ export const blogPosts = [
 export const teamMembers = [
   {
     id: 1,
-    name: 'Arjun Malhotra',
-    role: 'CEO & Founder',
-    bio: '15+ years in enterprise software and digital transformation',
+    name: COMPANY_INFO.team.ceo.name,
+    role: COMPANY_INFO.team.ceo.role,
+    bio: `${COMPANY_INFO.yearsOfExperience}+ years in enterprise software and digital transformation`,
     image: 'indian-man-ceo-portrait',
   },
   {
     id: 2,
-    name: 'Priya Desai',
-    role: 'CTO',
-    bio: 'Former Tech Lead at major tech firms, specializing in cloud architecture',
-    image: 'professional-woman-office-tech',
+    name: COMPANY_INFO.team.coFounder.name,
+    role: COMPANY_INFO.team.coFounder.role,
+    bio: 'Strategic leader focusing on scaling operations and ecosystem growth',
+    image: 'portrait-man-business',
   },
   {
     id: 3,
-    name: 'Rahul Sharma',
-    role: 'Head of Design',
-    bio: 'Award-winning designer with expertise in enterprise UX',
+    name: COMPANY_INFO.team.cto.name,
+    role: COMPANY_INFO.team.cto.role,
+    bio: 'Tech visionary specializing in cloud architecture and enterprise software',
     image: 'creative-professional-portrait',
   },
   {
     id: 4,
     name: 'Neha Kapoor',
     role: 'Head of Compliance',
-    bio: 'Chartered Accountant with 12+ years in business compliance',
+    bio: `Chartered Accountant with ${COMPANY_INFO.yearsOfExperience}+ years in business compliance`,
     image: 'professional-woman-indian-office',
   },
 ];

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/config/company";
 
 export default function ProblemSolutionHero() {
   const challenges = [
@@ -52,7 +53,7 @@ export default function ProblemSolutionHero() {
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
                 <span className="text-xs font-bold uppercase tracking-wider">
-                  12+ Years Experience
+                  {COMPANY_INFO.yearsOfExperience}+ Years Experience
                 </span>
               </div>
               <div className="flex items-center gap-2">

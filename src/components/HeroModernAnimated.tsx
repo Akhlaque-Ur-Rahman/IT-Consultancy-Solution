@@ -2,6 +2,7 @@
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/config/company";
 
 import { motion } from "motion/react";
 
@@ -45,7 +46,8 @@ export function HeroModernAnimated() {
             className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight max-w-4xl mx-auto"
           >
             Build Your <span className="text-[#f59e0b]">Dream Website</span>{" "}
-            with 12 Years of Experience and 90+ Happy Clients
+            with {COMPANY_INFO.yearsOfExperience} Years of Experience and 90+
+            Happy Clients
           </motion.h1>
 
           <motion.div
