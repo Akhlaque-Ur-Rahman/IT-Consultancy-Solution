@@ -50,18 +50,15 @@ export default function UnifiedEcosystem() {
             <div className="relative aspect-square max-w-md mx-auto w-full">
               {/* Decorative Ecosystem Visualization */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-3xl bg-black border border-[#f59e0b] flex items-center justify-center shadow-[0_0_50px_rgba(245,158,11,0.2)] z-20">
+                {/* Core Brand Logo */}
+                <div className="w-32 h-32 rounded-full bg-black border-2 border-[#f59e0b] flex items-center justify-center shadow-[0_0_50px_rgba(245,158,11,0.2)] z-20 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-[#f59e0b]/10 animate-pulse" />
                   <img
                     src="/logo.jpg"
-                    alt="EDUNEX Logo"
-                    className="w-12 h-12 invert opacity-20"
-                    onError={(e) => (e.currentTarget.style.display = "none")}
+                    alt="EDUNEX Services Logo"
+                    className="w-[85%] h-auto object-contain relative z-10"
+                    // If the logo has a dark background natively, this will sit flush inside the black circle.
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[#f59e0b] font-black text-2xl uppercase tracking-tighter">
-                      EDUNEX
-                    </span>
-                  </div>
                 </div>
 
                 {/* Orbiting Symbols */}
@@ -70,7 +67,7 @@ export default function UnifiedEcosystem() {
                     icon: Zap,
                     label: "Billing",
                     angle: 0,
-                    inset: "10%",
+                    inset: "28%", // Inner ring
                     duration: 25,
                     reverse: false,
                   },
@@ -78,7 +75,7 @@ export default function UnifiedEcosystem() {
                     icon: Shield,
                     label: "Security",
                     angle: 90,
-                    inset: "25%",
+                    inset: "0%", // Outer ring touches edges of container (much larger gap)
                     duration: 35,
                     reverse: true,
                   },
@@ -86,7 +83,7 @@ export default function UnifiedEcosystem() {
                     icon: BarChart,
                     label: "ERP",
                     angle: 180,
-                    inset: "10%",
+                    inset: "28%", // Inner ring
                     duration: 25,
                     reverse: false,
                   },
@@ -94,7 +91,7 @@ export default function UnifiedEcosystem() {
                     icon: Network,
                     label: "CRM",
                     angle: 270,
-                    inset: "25%",
+                    inset: "0%", // Outer ring
                     duration: 35,
                     reverse: true,
                   },
@@ -131,10 +128,10 @@ export default function UnifiedEcosystem() {
                           repeat: Infinity,
                           ease: "linear",
                         }}
-                        className="w-16 h-16 rounded-2xl bg-[#121212] border border-white/10 flex flex-col items-center justify-center gap-1 shadow-2xl pointer-events-auto"
+                        className="w-16 h-16 rounded-full bg-[#121212] border border-white/10 flex flex-col items-center justify-center gap-1 shadow-2xl pointer-events-auto"
                       >
                         <node.icon className="w-5 h-5 text-[#f59e0b]" />
-                        <span className="text-[8px] font-bold text-gray-500 uppercase">
+                        <span className="text-[8px] font-bold text-gray-500 uppercase leading-none">
                           {node.label}
                         </span>
                       </motion.div>
@@ -143,8 +140,8 @@ export default function UnifiedEcosystem() {
                 ))}
 
                 {/* Decorative Rings */}
-                <div className="absolute inset-[10%] border border-white/5 rounded-full pointer-events-none" />
-                <div className="absolute inset-[25%] border border-white/5 rounded-full pointer-events-none" />
+                <div className="absolute inset-[28%] border border-white/5 rounded-full pointer-events-none" />
+                <div className="absolute inset-[0%] border border-white/5 rounded-full pointer-events-none" />
               </div>
             </div>
           </div>
