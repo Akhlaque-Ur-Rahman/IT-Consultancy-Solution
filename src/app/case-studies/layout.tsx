@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Success Stories — See How We Help Patna Businesses Grow",
+  title: "Case Studies | EDUNEX Services",
   description:
-    "Real results for 90+ local business owners in Bihar. See how our simple software solved real problems.",
+    "Explore our success stories and see how we've helped businesses in Patna scale with custom software and strategic consulting.",
+  alternates: {
+    canonical: "https://edunexservices.in/case-studies",
+  },
 };
 
 export default function CaseStudiesLayout({
@@ -11,5 +14,5 @@ export default function CaseStudiesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <>{children}</>;
 }

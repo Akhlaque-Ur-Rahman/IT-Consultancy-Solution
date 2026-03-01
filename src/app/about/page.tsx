@@ -77,40 +77,156 @@ export default function AboutPage() {
           </p>
         </motion.div>
 
-        {/* Story Section */}
+        {/* Executive Overview */}
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 items-center mb-20"
+          className="mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
-            <div className="space-y-4 text-gray-400 leading-relaxed">
+          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg md:prose-xl max-w-none">
+            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
+              Our Architectural Philosophy
+            </h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="space-y-6 text-gray-400 leading-relaxed">
+                <p>
+                  At EDUNEX Services, we believe that software should never be a
+                  cost center—it must be a fundamental driver of enterprise
+                  valuation. Founded in 2012, we recognized a systemic failure
+                  in how digital transformation was being sold to mid-market and
+                  scaling businesses. Too often, firms were forced to choose
+                  between rigid, off-the-shelf SaaS products that dictated their
+                  workflows, or unreliable freelance contractors incapable of
+                  delivering secure, enterprise-grade architecture.
+                </p>
+                <p>
+                  We built EDUNEX to bridge this gap. Operating as your
+                  fractional engineering department, we architect vertically
+                  integrated technology ecosystems tailored to the exact
+                  specifications of your business operations. From
+                  high-availability headless commerce platforms and custom ERP
+                  integrations to granular legal compliance routing
+                  (GST/Trademark), we unify your entire digital footprint under
+                  one cohesive architectural strategy.
+                </p>
+                <p>
+                  Our mandate is simple: to eliminate the operational friction
+                  caused by legacy systems and replace it with strictly typed,
+                  horizontally scalable infrastructure that empowers your
+                  executive team to make real-time, data-driven decisions.
+                  Explore our{" "}
+                  <Link
+                    href="/case-studies"
+                    className="text-[#f59e0b] hover:underline"
+                  >
+                    Enterprise Case Studies
+                  </Link>{" "}
+                  to see this philosophy in action.
+                </p>
+              </div>
+              <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden border border-[#262626]">
+                <ImageWithFallback
+                  src="https://source.unsplash.com/800x800/?server-room-infrastructure-code"
+                  alt="Enterprise Infrastructure Architecture"
+                  className="w-full h-full object-cover opacity-80"
+                />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Engineering Lifecycle */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
+              The Engineering & Deployment Lifecycle
+            </h2>
+            <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
               <p>
-                We started in 2012 with a simple goal: to make technology easy
-                for every business owner. We saw too many people struggling with
-                confusing tech words and overpriced systems.
+                The successful deployment of enterprise ecosystems requires
+                rigorous engineering discipline. We reject the fragmented "build
+                it and forget it" mentality. Our deployment methodology is
+                strictly governed by modern Agile principles, utilizing
+                Continuous Integration pipelines (CI) alongside comprehensive
+                unit and End-to-End (E2E) testing. This guarantees that your
+                business logic is preserved accurately before deployment to
+                production environments.
               </p>
               <p>
-                What began as a small group of friends helping local shops has
-                grown into a team of experts that has helped over 120 businesses
-                succeed online.
+                <strong>Phase 1: Architectural Audit & Systems Design.</strong>{" "}
+                We do not write code until we fully map your current data
+                topologies, API dependencies, and operational bottlenecks. We
+                generate precise entity-relationship diagrams (ERDs) and define
+                the tech stack—typically Next.js (React) for
+                performance-critical frontends, and Node.js with PostgreSQL for
+                secure, relational backend services.
               </p>
               <p>
-                Today, we handle everything for you—whether it&apos;s building a
-                website, setting up an office system, or handling your taxes. We
-                focus on the tech so you can focus on your customers.
+                <strong>Phase 2: Sprint-Based Execution.</strong> Your dedicated
+                engineering pod works in discrete 2-week sprints. We prioritize
+                core business value, delivering functional software iteratively.
+                This provides your stakeholders with total transparency and the
+                flexibility to pivot logic in response to immediate market
+                feedback without derailing the overarching timeline.
+              </p>
+              <p>
+                <strong>
+                  Phase 3: Security Hardening & Post-Deployment SLA.
+                </strong>{" "}
+                A deployment is not a conclusion; it is a baseline. We implement
+                strict JWT-based authentication layers, Role-Based Access
+                Control (RBAC), and automated database backups. Post-launch, we
+                provide proactive system monitoring and scaling provisions to
+                guarantee your infrastructure effortlessly manages demand
+                surges.
               </p>
             </div>
           </div>
-          <div className="relative h-96 rounded-2xl overflow-hidden border border-[#262626]">
-            <ImageWithFallback
-              src="https://source.unsplash.com/800x600/?modern-corporate-office-team-collaboration"
-              alt="Team at work"
-              className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-            />
+        </motion.div>
+
+        {/* Data Security & Compliance */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
+              Data Sovereignty & Legal Compliance
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-6">
+              In an era defined by stringent data protection laws and complex
+              financial regulations, technical excellence is irrelevant without
+              legal grounding. Operating a modern business requires systems that
+              are not only performant but fundamentally secure and compliant
+              with localized statutory requirements.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-6">
+              We engineer our CRM and ERP solutions with absolute data
+              sovereignty in mind. We utilize heavily encrypted payload
+              transmissions and secure relational databases that comply with
+              data localization mandates. Furthermore, our unique structure
+              integrates business compliance advisory services directly
+              alongside software engineering.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              From automated tracking of GST return cycles to the secure
+              archiving of digital incorporation certificates (LLP, Private
+              Limited) and trademark prosecution documents, we ensure your
+              technical infrastructure actively protects your legal exposure. We
+              believe that security and compliance are not post-production
+              add-ons; they are architectural prerequisites.
+            </p>
           </div>
         </motion.div>
 

@@ -1048,47 +1048,32 @@ export const teamMembers = [
     bio: 'Tech visionary specializing in cloud architecture and enterprise software',
     image: 'creative-professional-portrait',
   },
-  {
-    id: 4,
-    name: 'Neha Kapoor',
-    role: 'Head of Compliance',
-    bio: `Chartered Accountant with ${COMPANY_INFO.yearsOfExperience}+ years in business compliance`,
-    image: 'professional-woman-indian-office',
-  },
 ];
 
 export const faqs = [
   {
-    question: 'What IT consulting services does EDUNEX provide?',
-    answer: 'EDUNEX offers structured IT consulting services including web development, CRM/ERP implementation, digital marketing, and business compliance. We focus on delivering reliable technology solutions for businesses in Patna and the surrounding regional areas.',
+    question: 'What is your specific methodology for enterprise digital transformation?',
+    answer: 'We utilize a vertically integrated approach. Instead of merely deploying off-the-shelf software, we audit your existing data siloes, design a unified architecture using modern JavaScript (React/Next.js) and scalable databases (PostgreSQL/Redis), and deploy high-availability systems tailored to your specific operational workflows. This ensures long-term ROI rather than a temporary fix.',
   },
   {
-    question: 'How long does a typical software development project take?',
-    answer: 'Timeline depend on project complexity. A standard business website takes 3-4 weeks, while custom CRM/ERP systems typically require 3-6 months. We provide clear milestones and regular updates during the execution phase.',
+    question: 'How do you structure deployment timelines for complex software systems?',
+    answer: 'Enterprise deployment timelines are dictated by architectural complexity. While a high-performance corporate web presence requires 3-5 weeks, deep CRM/ERP infrastructure or custom headless commerce solutions operate on 3-6 month Agile sprints. We explicitly define milestones, sprint deliverables, and testing protocols before writing a single line of code.',
   },
   {
-    question: 'Do you provide ongoing support and maintenance after project delivery?',
-    answer: 'Yes, we provide ongoing operational support and performance monitoring. All projects include a standard support period for technical reliability and maintenance.',
+    question: 'What is your service-level agreement (SLA) for post-deployment infrastructure?',
+    answer: 'Unlike transactional vendors, we act as a fractional engineering department. We offer continuous integration/continuous deployment (CI/CD) oversight, high-availability server monitoring, automated security patching, and scaling consultancy to ensure your systems handle traffic spikes without degradation.',
   },
   {
-    question: 'What is the cost of developing a custom software solution?',
-    answer: 'Pricing is based on specific project requirements. Basic business websites start from ₹45,000, while custom software solutions are quoted after a detailed need analysis. We focus on providing value-driven pricing for regional enterprises.',
+    question: 'How do you handle data migration from legacy, on-premise systems?',
+    answer: 'Legacy data migration is handled via secure, encrypted ETL (Extract, Transform, Load) pipelines. We sanitize your existing database schemas, map them to modern relational or NoSQL structures, and execute the migration during designated low-traffic maintenance windows to guarantee zero data loss and absolute operational continuity.',
   },
   {
-    question: 'Can you help with business registration and legal compliance in India?',
-    answer: 'Yes, we offer complete business setup services including firm registration (Proprietorship, LLP), GST registration, and ongoing compliance management focused on regional business regulations.',
+    question: 'Do you offer integrated regulatory and financial compliance frameworks?',
+    answer: 'Yes. Operating in the Indian market requires strict adherence to statutory law. We integrate legal scaffolding—including LLP/Private Limited incorporation, GST registration, trademark protection, and automated compliance tracking—directly into our service offering. Your technological growth is thus insulated by solid legal foundations.',
   },
   {
-    question: 'Which areas do you serve?',
-    answer: 'EDUNEX primarily serves businesses in Patna, Bihar, and the Eastern India region. We focus on building long-term partnerships with local and mid-sized enterprises.',
-  },
-  {
-    question: 'What technologies do you specialize in?',
-    answer: 'We utilize modern, stable technology stacks including React, Node.js, and PostgreSQL for web applications. Our focus is on building scalable architecture that ensures long-term operational reliability.',
-  },
-  {
-    question: 'How do you ensure data security and confidentiality?',
-    answer: 'We implement industry-standard security practices and performance monitoring. Our deployment architecture is designed for high availability and reliable infrastructure.',
+    question: 'How does EDUNEX handle intellectual property and codebase ownership?',
+    answer: 'Upon final delivery and successful deployment, our clients retain full intellectual property rights to the custom application codebase, proprietary logic, and all associated databases. We operate with complete transparency and zero vendor lock-in.',
   },
 ];
 

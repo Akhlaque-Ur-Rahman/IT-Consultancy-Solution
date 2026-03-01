@@ -249,6 +249,76 @@ export default function CaseStudiesPage() {
           </div>
         </motion.div>
 
+        {/* Implementation Methodology & ROI Framework (SEO Expansion) */}
+        <motion.div
+          className="mb-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
+              Our Repeatable Implementation Methodology
+            </h2>
+            <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
+              <p>
+                The successful case studies displayed above are not anomalies;
+                they are the direct output of a highly disciplined, repeatable
+                engineering framework. We do not construct software based on
+                assumptions. Instead, we treat every digital transformation as a
+                high-stakes architectural endeavor, prioritizing data integrity,
+                security, and measurable Return on Investment (ROI).
+              </p>
+              <p>
+                <strong>The Phase Zero Audit:</strong> Every engagement begins
+                with comprehensive systems topography mapping. Before writing
+                any code, our architects conduct a deep-dive audit into your
+                existing legacy databases, third-party API dependencies, and
+                localized compliance requirements (such as GST or corporate tax
+                parameters). This ensures that our proposed solutions directly
+                target your most expensive operational bottlenecks.
+              </p>
+              <div className="break-inside-avoid mt-8">
+                <h3 className="text-2xl font-bold text-[#f59e0b] mb-4">
+                  Governing Principles of Deployment
+                </h3>
+                <ul className="list-disc pl-5 space-y-3">
+                  <li>
+                    <strong>Zero-Disruption Cutover:</strong> We engineer
+                    staging environments that identically mirror production.
+                    Deployments are scheduled during historically low-traffic
+                    windows to guarantee zero operational downtime for your
+                    staff and customers.
+                  </li>
+                  <li>
+                    <strong>Agile Iteration:</strong> We abandon waterfall
+                    development. Success requires adaptability. We deliver
+                    functional platform cores within 4 weeks, allowing our
+                    clients to stress-test logic in the real world while we
+                    iteratively build peripheral modules.
+                  </li>
+                  <li>
+                    <strong>Quantifiable Success Metrics:</strong> "Better
+                    performance" is a useless metric. We define success
+                    mathematically: 99.99% application uptime, 40% reduction in
+                    database query latency, or a 3x increase in lead conversion
+                    velocity.
+                  </li>
+                </ul>
+              </div>
+              <p className="mt-8 break-inside-avoid">
+                By maintaining these strict engineering standards, EDUNEX
+                Services consistently delivers enterprise-grade infrastructure
+                that survives unpredictable market conditions and unyielding
+                scaling demands. These case studies represent our commitment to
+                replacing theoretical advice with hard-coded operational
+                dominance.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Why This Matters Section */}
         <motion.div
           className="text-center mb-24 max-w-3xl mx-auto"

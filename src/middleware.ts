@@ -1,6 +1,17 @@
 import { NextResponse, NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
+  // Ensure HTTP redirects to HTTPS
+  if (
+    request.headers.get("x-forwarded-proto") === "http" &&
+    !request.nextUrl.hostname.includes("localhost")
+  ) {
+    return NextResponse.redirect(
+      `https://${request.nextUrl.hostname}${request.nextUrl.pathname}${request.nextUrl.search}`,
+      308
+    );
+  }
+
   const response = NextResponse.next();
 
   // Add security headers

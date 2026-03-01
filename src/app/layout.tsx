@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.edunexservices.in"),
+  metadataBase: new URL("https://edunexservices.in"),
   title: "EDUNEX — Simple IT Solutions for Patna Businesses",
   description:
     "We help business owners in Patna grow with simple websites, custom apps, and expert tax advice. Reliable, honest, and local since 2012.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.edunexservices.in",
+    url: "https://edunexservices.in",
     title: "EDUNEX — Simple IT Solutions for Patna Businesses",
     description:
       "Reliable websites, custom apps, and business growth tools for Patna's smart business owners.",
@@ -60,9 +60,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "EDUNEX Services",
-  image: "https://www.edunexservices.in/logo.jpg",
-  "@id": "https://www.edunexservices.in",
-  url: "https://www.edunexservices.in",
+  image: "https://edunexservices.in/logo.jpg",
+  "@id": "https://edunexservices.in",
+  url: "https://edunexservices.in",
   telephone: "+91 70708 09208",
   address: {
     "@type": "PostalAddress",
@@ -105,37 +105,37 @@ const navigationLd = {
       "@type": "SiteNavigationElement",
       position: 1,
       name: "Services",
-      url: "https://www.edunexservices.in/services",
+      url: "https://edunexservices.in/services",
     },
     {
       "@type": "SiteNavigationElement",
       position: 2,
       name: "Solutions",
-      url: "https://www.edunexservices.in/solutions",
+      url: "https://edunexservices.in/solutions",
     },
     {
       "@type": "SiteNavigationElement",
       position: 3,
       name: "Case Studies",
-      url: "https://www.edunexservices.in/case-studies",
+      url: "https://edunexservices.in/case-studies",
     },
     {
       "@type": "SiteNavigationElement",
       position: 4,
       name: "Compliance",
-      url: "https://www.edunexservices.in/compliance",
+      url: "https://edunexservices.in/compliance",
     },
     {
       "@type": "SiteNavigationElement",
       position: 5,
       name: "About",
-      url: "https://www.edunexservices.in/about",
+      url: "https://edunexservices.in/about",
     },
     {
       "@type": "SiteNavigationElement",
       position: 6,
       name: "Contact",
-      url: "https://www.edunexservices.in/contact",
+      url: "https://edunexservices.in/contact",
     },
   ],
 };

@@ -1,11 +1,12 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bihar Business Blog — Tech Insights for Local Success",
+  title: "Blog & Insights | EDUNEX Services",
   description:
-    "Practical technology tips, GST guides, and growth strategies specifically for business owners in Patna and across Bihar.",
-  keywords:
-    "Patna Business, Bihar Technology, Local SEO Bihar, GST Filing Patna, SDM Bihar",
+    "Stay updated with the latest trends in digital transformation, regional business growth, and technology solutions.",
+  alternates: {
+    canonical: "https://edunexservices.in/blog",
+  },
 };
 
 export default function BlogLayout({

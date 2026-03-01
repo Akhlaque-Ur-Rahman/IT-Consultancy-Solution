@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Compliance",
+  title: "Business Compliance | EDUNEX Services",
   description:
-    "Business registration, GST & tax compliance, trademarks, and legal support services.",
+    "End-to-end business registration, tax filing, GST compliance, and accounting services for businesses in Bihar.",
+  alternates: {
+    canonical: "https://edunexservices.in/compliance",
+  },
 };
 
 export default function ComplianceLayout({
@@ -11,5 +14,5 @@ export default function ComplianceLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <>{children}</>;
 }

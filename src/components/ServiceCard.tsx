@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, LucideIcon } from "lucide-react";
 import * as Icons from "lucide-react";
+import { ServiceSchema } from "./ServiceSchema";
 
 interface ServiceCardProps {
   icon: string;
@@ -35,6 +36,11 @@ export function ServiceCard({
       }}
       className="group relative h-full"
     >
+      <ServiceSchema
+        name={title}
+        description={description}
+        url={`https://edunexservices.in/services#${title.replace(/\s+/g, "-").toLowerCase()}`}
+      />
       <div className="relative h-full bg-[#121212] rounded-xl border border-[#262626] p-6 transition-all duration-300 hover:border-[#f59e0b]/40 cursor-pointer overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
         {/* Subtle Gold Glow on Hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>

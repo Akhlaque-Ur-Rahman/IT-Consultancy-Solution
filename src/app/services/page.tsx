@@ -50,10 +50,99 @@ export default function ServicesPage() {
             Everything You Need to{" "}
             <span className="text-[#f59e0b]">Grow & Run</span> Your Business
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            From custom websites and mobile apps to handling your taxes and
-            marketing. Simple, reliable, and on-time.
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-16">
+            From custom software architecture and headless commerce to statutory
+            business compliance. We engineer end-to-end digital environments.
           </p>
+        </motion.div>
+
+        {/* Enterprise Service Philosophy (SEO Expansion) */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
+              Integrated Digital Engineering: Beyond Disconnected Solutions
+            </h2>
+            <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
+              <p>
+                The fundamental flaw in modern enterprise software adoption is
+                fragmentation. Businesses often procure a marketing website from
+                one agency, employ an internal team to duct-tape a legacy CRM
+                together, and hire a completely disconnected CA firm for
+                compliance. The result is a fragile digital ecosystem riddled
+                with data silos, security vulnerabilities, and massive
+                operational inefficiencies.
+              </p>
+              <p>
+                At EDUNEX Services, we eliminate this fragmentation by
+                engineering holistic, vertically integrated solutions. We do not
+                view software development, digital marketing, and business
+                compliance as separate disciplines; rather, they are
+                interlocking gears within our unified operational engine. By
+                centralizing these requirements, we drastically reduce technical
+                debt and accelerate your time to market with our{" "}
+                <Link
+                  href="/solutions"
+                  className="text-[#f59e0b] hover:underline"
+                >
+                  Unified Enterprise Solutions
+                </Link>
+                .
+              </p>
+              <div className="mt-8 break-inside-avoid">
+                <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                  1. Application Engineering & Architecture
+                </h3>
+                <p>
+                  Our engineering pod builds horizontally scalable applications
+                  using cloud-native paradigms. From progressive web apps (PWAs)
+                  utilizing Next.js and React to robust backend services
+                  governed by Node.js and RESTful APIs, our software is strictly
+                  typed and built for high availability. Whether you require a
+                  custom headless E-commerce stack or a proprietary enterprise
+                  ERP tailored to regional Indian workflows, our codebase is
+                  designed for extreme longevity and zero-downtime scalability.
+                </p>
+              </div>
+              <div className="mt-8 break-inside-avoid">
+                <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                  2. Performance Marketing & Digital Footprint
+                </h3>
+                <p>
+                  Traffic without conversion mechanics yields zero ROI. Our
+                  digital marketing strategies natively integrate with the
+                  software we build. By instrumenting deep analytics engines
+                  inside your web applications, we deploy hyper-targeted Paid
+                  Search (SEM), technical on-page Search Engine Optimization
+                  (SEO), and conversion-rate-optimized (CRO) funnels. We capture
+                  granular user telemetry to iteratively improve
+                  cost-per-acquisition metrics, transforming your software into
+                  a quantifiable revenue channel.
+                </p>
+              </div>
+              <div className="mt-8 break-inside-avoid">
+                <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                  3. Statutory Compliance & Legal Scaffolding
+                </h3>
+                <p>
+                  Deploying enterprise architecture in India necessitates
+                  rigorous adherence to local regulations. Our unique
+                  multi-disciplinary approach weaves legal safeguards straight
+                  into your operational launch. We manage the complexities of
+                  Private Limited/LLP incorporation, ensure automated alignment
+                  with monthly GST filing regulations, and architect your data
+                  compliance boundaries to satisfy regional data protection
+                  mandates. At EDUNEX, technical excellence is systematically
+                  protected by uncompromising legal foundations.
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Filter Tabs */}

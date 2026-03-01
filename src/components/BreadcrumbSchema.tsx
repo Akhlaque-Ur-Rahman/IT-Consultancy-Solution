@@ -11,7 +11,7 @@ interface BreadcrumbSchemaProps {
 }
 
 export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
-  const baseUrl = "https://www.edunexservices.in";
+  const baseUrl = "https://edunexservices.in";
 
   const breadcrumbList = {
     "@context": "https://schema.org",

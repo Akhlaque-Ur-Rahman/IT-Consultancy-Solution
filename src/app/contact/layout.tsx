@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Let's Talk — Free Tech Advice for your Patna Project",
+  title: "Contact Us | EDUNEX Services",
   description:
-    "Have a question or ready to build? Contact our Patna team for honest advice on your next website or app project.",
+    "Get in touch with the EDUNEX team. We are ready to help you build, grow, and manage your business technology.",
+  alternates: {
+    canonical: "https://edunexservices.in/contact",
+  },
 };
 
 export default function ContactLayout({
@@ -11,5 +14,5 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <>{children}</>;
 }

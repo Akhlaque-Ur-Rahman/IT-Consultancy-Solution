@@ -21,11 +21,16 @@ import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { COMPANY_INFO } from "@/config/company";
+import { WebSiteSchema } from "@/components/WebSiteSchema";
+import { OrganizationSchema } from "@/components/OrganizationSchema";
 
 export const metadata: Metadata = {
   title: "EDUNEX - IT Consulting & Enterprise Software Solutions",
   description:
     "Transform your business with EDUNEX. Expert IT consulting, custom software development, ERP/CRM solutions, and digital marketing services.",
+  alternates: {
+    canonical: "https://edunexservices.in",
+  },
 };
 
 export default function HomePage() {
@@ -142,33 +147,116 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* SEO Content Block */}
-          <div className="mt-16 bg-[#121212] border border-[#262626] rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-[#f59e0b] mb-4">
-              Why Business Owners Trust{" "}
-              <span className="text-[#f59e0b]">EDUNEX</span>
-            </h3>
-            <div className="text-sm text-gray-400 leading-relaxed space-y-4">
-              <p>
-                Building a website or app shouldn&apos;t be a headache. With
-                over {COMPANY_INFO.yearsOfExperience} years of experience in
-                Patna and across India, we&apos;ve helped more than 90 business
-                owners turn their ideas into professional digital products that
-                actually work.
-              </p>
-              <p>
-                Our team handles everything for you. Whether you need a simple
-                website, a custom mobile app, advanced software for your office,
-                or even help with your business taxes and marketing—we&apos;ve
-                got you covered. We use the latest technology to make sure your
-                business stays ahead of the competition.
-              </p>
-              <p>
-                When you work with EDUNEX, you get honest pricing, clear
-                communication, and a team that finishes on time. We don&apos;t
-                just build your project and leave; we provide ongoing support to
-                make sure your digital business keeps running smoothly 24/7.
-              </p>
+          {/* Deep Technical Authority Section (SEO & Content Upgrade) */}
+          <div className="mt-20 bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-16">
+            <div className="max-w-4xl mx-auto prose prose-invert prose-lg md:prose-xl">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 border-b border-[#262626] pb-6">
+                Enterprise Digital Transformation: Architecting Your Competitive
+                Advantage
+              </h2>
+
+              <div className="space-y-8 text-gray-400 leading-relaxed">
+                <div>
+                  <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                    The Problem: Legacy Bottlenecks and Fragmented Operations
+                  </h3>
+                  <p className="mb-4">
+                    In today's hyper-accelerated market, traditional SMBs,
+                    startups, and mid-market enterprises face a critical
+                    inflection point. Legacy systems, siloed data frameworks,
+                    and off-the-shelf software solutions are no longer
+                    sufficient to maintain operational agility. Institutional
+                    buyers and visionary founders frequently encounter what we
+                    define as "friction economics"—where outdated internal
+                    tools, manual data reconciliation, and fragmented
+                    communication platforms directly cannibalize profit margins.
+                  </p>
+                  <p className="mb-4">
+                    The challenge is rarely a lack of ambition; it is the
+                    absence of a unified, scalable digital infrastructure. When
+                    customer relationship data lives in spreadsheets, localized
+                    financial compliance operates outside your core business
+                    logic, and your customer-facing digital storefront is
+                    decoupled from inventory management, scaling becomes
+                    exponentially difficult and risky.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                    The Solution: Unified, Ecosystem-Driven Technology
+                  </h3>
+                  <p className="mb-4">
+                    At EDUNEX Services, we do not view technology as a simple
+                    procurement exercise. We architect unified digital
+                    ecosystems tailored to the exact operational realities of
+                    your enterprise. By leveraging full-stack modern JavaScript
+                    utilizing Next.js, headless commerce architectures, and
+                    horizontally scalable cloud infrastructure, we build digital
+                    environments that operate reliably at scale.
+                  </p>
+                  <p className="mb-4">
+                    Our approach to ERP and CRM integration focuses on creating
+                    a single source of truth for your organization. By
+                    centralizing data analytics, automating redundant
+                    administrative workflows, and ensuring real-time
+                    synchronization between financial compliance and operational
+                    metrics, we allow executive leadership to make data-driven
+                    decisions instantly. We replace fragmentation with cohesion.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                    Implementation: Engineering Excellence & Compliance Security
+                  </h3>
+                  <p className="mb-4">
+                    Deploying enterprise software requires rigorous engineering
+                    discipline. Our implementation methodology is structured
+                    around agile delivery sprints, ensuring continuous
+                    integration and continuous deployment (CI/CD) pipelines
+                    minimize operational downtime. We utilize deep architectural
+                    patterns, including strictly typed interfaces (TypeScript),
+                    robust microservices where necessary, and secure RESTful or
+                    GraphQL APIs to ensure high availability and military-grade
+                    data security.
+                  </p>
+                  <p className="mb-4">
+                    Furthermore, operating a business in India demands absolute
+                    adherence to statutory requirements. Our unique integration
+                    of regulatory compliance consulting—spanning GST
+                    registration, trademark protection, and localized financial
+                    structuring—with high-end software development means your
+                    digital infrastructure is built from day one to be fully
+                    compliant with Indian financial and legal frameworks.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
+                    Value Differentiation: The Long-Term Technical Partnership
+                  </h3>
+                  <p className="mb-4">
+                    The market is saturated with transactional vendors who
+                    deliver codebase handoffs and disappear. EDUNEX Services
+                    operates on a fundamentally different paradigm. We act as
+                    your fractional CTO and extended engineering department.
+                    Supported by over {COMPANY_INFO.yearsOfExperience} years of
+                    hard-won architectural experience in Patna and beyond, we
+                    look past the initial deployment.
+                  </p>
+                  <p>
+                    We provide proactive monitoring, continuous security
+                    patching, rigorous performance audits, and strategic
+                    scalability planning. When you partner with us, you are
+                    securing a technology ally dedicated exclusively to
+                    optimizing your time-to-market, reducing your technical
+                    debt, and maximizing your return on engineered investment.
+                    We don't just write code; we architect your firm's
+                    structural longevity.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

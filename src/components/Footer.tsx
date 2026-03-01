@@ -46,7 +46,7 @@ export function Footer() {
   ];
 
   const resources = [
-    { label: "Blog", href: "/resources", id: "blog" },
+    { label: "Blog", href: "/blog", id: "blog" },
     { label: "Whitepapers", href: "/resources", id: "whitepapers" },
     { label: "FAQs", href: "/resources", id: "faqs" },
     { label: "Support", href: "/contact", id: "support" },
