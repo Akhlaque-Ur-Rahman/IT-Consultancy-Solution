@@ -53,9 +53,9 @@ export default function CaseStudiesPage() {
             Grow with Reliable Tech
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-            Real implementations. Complex problems solved. See how our
-            structured approach delivers stability and measurable success for
-            regional and enterprise-scale organizations.
+            Real problems solved for businesses right here in Bihar. See how our
+            simple, affordable solutions deliver measurable success for local
+            distributors, clinics, and service providers.
           </p>
 
           {/* Trust Indicators */}
@@ -237,11 +237,11 @@ export default function CaseStudiesPage() {
                 <div className="pt-4">
                   <Button className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-bold h-14 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">
                     <Download className="mr-2 w-5 h-5" />
-                    Download Success Implementation Blueprint (PDF)
+                    Download Success Story Details (PDF)
                   </Button>
                   <p className="text-center text-[10px] text-gray-500 mt-3 font-medium">
-                    Includes: Architecture overview, transition strategy, and
-                    ROI analysis.
+                    Includes: What we built, how long it took, and how much
+                    money it saved.
                   </p>
                 </div>
               </div>
@@ -259,61 +259,56 @@ export default function CaseStudiesPage() {
         >
           <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
-              Our Repeatable Implementation Methodology
+              How We Solve Local Business Problems
             </h2>
             <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
               <p>
-                The successful case studies displayed above are not anomalies;
-                they are the direct output of a highly disciplined, repeatable
-                engineering framework. We do not construct software based on
-                assumptions. Instead, we treat every digital transformation as a
-                high-stakes architectural endeavor, prioritizing data integrity,
-                security, and measurable Return on Investment (ROI).
+                The success stories you see above aren't magic. They are the
+                result of actually listening to local business owners. While
+                outside agencies try to sell you expensive pre-packaged tools,
+                we build systems designed specifically for the way work happens
+                in Bihar.
               </p>
               <p>
-                <strong>The Phase Zero Audit:</strong> Every engagement begins
-                with comprehensive systems topography mapping. Before writing
-                any code, our architects conduct a deep-dive audit into your
-                existing legacy databases, third-party API dependencies, and
-                localized compliance requirements (such as GST or corporate tax
-                parameters). This ensures that our proposed solutions directly
-                target your most expensive operational bottlenecks.
+                <strong>Understanding Your Shop Floor:</strong> We don't guess
+                what you need. Before we quote a price, we visit your godown,
+                talk to your billing counter staff, and look at the ledgers and
+                registers you currently use. We find out exactly where the
+                mistakes happen—whether it's skipped GST entries or misplaced
+                inventory—and we design a digital solution that solves that
+                specific headache.
               </p>
               <div className="break-inside-avoid mt-8">
                 <h3 className="text-2xl font-bold text-[#f59e0b] mb-4">
-                  Governing Principles of Deployment
+                  Our Promise to Small Businesses
                 </h3>
                 <ul className="list-disc pl-5 space-y-3">
                   <li>
-                    <strong>Zero-Disruption Cutover:</strong> We engineer
-                    staging environments that identically mirror production.
-                    Deployments are scheduled during historically low-traffic
-                    windows to guarantee zero operational downtime for your
-                    staff and customers.
+                    <strong>No Disruptions:</strong> We don't force you to stop
+                    your business while we set things up. We train your staff
+                    side-by-side while they work, ensuring the transition from
+                    paper to computer is smooth and stress-free.
                   </li>
                   <li>
-                    <strong>Agile Iteration:</strong> We abandon waterfall
-                    development. Success requires adaptability. We deliver
-                    functional platform cores within 4 weeks, allowing our
-                    clients to stress-test logic in the real world while we
-                    iteratively build peripheral modules.
+                    <strong>Simple Interfaces:</strong> Software is useless if
+                    your staff is too confused to use it. Our digital tools are
+                    built to be as easy to understand as a standard WhatsApp
+                    message.
                   </li>
                   <li>
-                    <strong>Quantifiable Success Metrics:</strong> "Better
-                    performance" is a useless metric. We define success
-                    mathematically: 99.99% application uptime, 40% reduction in
-                    database query latency, or a 3x increase in lead conversion
-                    velocity.
+                    <strong>Real Results:</strong> We don't talk about "synergy"
+                    or "digital transformation." We measure success by how much
+                    time you save every week, how many billing errors disappear,
+                    and how many new local walk-ins you get from our maps
+                    optimization.
                   </li>
                 </ul>
               </div>
               <p className="mt-8 break-inside-avoid">
-                By maintaining these strict engineering standards, EDUNEX
-                Services consistently delivers enterprise-grade infrastructure
-                that survives unpredictable market conditions and unyielding
-                scaling demands. These case studies represent our commitment to
-                replacing theoretical advice with hard-coded operational
-                dominance.
+                When you partner with EDUNEX, you get practical advice and
+                honest work. Our goal is to give every small and medium business
+                in Bihar access to the same powerful tools that big corporations
+                use, but at a price that makes sense for your local market.
               </p>
             </div>
           </div>
@@ -331,9 +326,9 @@ export default function CaseStudiesPage() {
             <span className="text-[#f59e0b]">Your Business</span>
           </h3>
           <p className="text-gray-400 text-lg leading-relaxed">
-            If your organization faces similar challenges — slow legacy systems,
-            manual operational overhead, or scaling bottlenecks — our tailored
-            approach can deliver comparable stability and growth results.
+            If your shop or godown faces similar challenges — messy paper
+            trails, billing mistakes, or trouble getting local customers to find
+            you — we can fix it quickly and affordably.
           </p>
         </motion.div>
 
@@ -343,13 +338,13 @@ export default function CaseStudiesPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold text-white mb-6">
-                  Trusted by Forward-Thinking{" "}
-                  <span className="text-[#f59e0b]">Regional Enterprises</span>
+                  Trusted by Fast-Growing{" "}
+                  <span className="text-[#f59e0b]">Local Businesses</span>
                 </h3>
                 <p className="text-gray-400 mb-8 leading-relaxed">
-                  We don't just build software; we build the digital foundation
-                  for your long-term success. Our commitment to reliability is
-                  backed by measurable delivery benchmarks.
+                  We don't just build software; we build tools that make your
+                  daily work easier. Our goal is to bring reliable, face-to-face
+                  IT support to every business in Bihar.
                 </p>
                 <div className="space-y-4">
                   {[

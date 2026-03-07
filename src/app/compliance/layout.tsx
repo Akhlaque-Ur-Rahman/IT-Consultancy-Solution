@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Corporate Compliance & Risk Management | EDUNEX",
+  title: "GST, FSSAI & Business Registration in Patna | EDUNEX",
   description:
-    "Expert regulatory compliance and comprehensive risk management for enterprises. Protect your business with our tailored corporate governance solutions.",
+    "Fast, hassle-free business compliance in Bihar. Get your GST, Trade License, Shop Act, or FSSAI registration done without visiting government offices.",
   alternates: {
     canonical: "https://edunexservices.in/compliance",
   },

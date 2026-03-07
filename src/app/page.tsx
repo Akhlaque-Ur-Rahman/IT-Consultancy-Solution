@@ -25,9 +25,9 @@ import { WebSiteSchema } from "@/components/WebSiteSchema";
 import { OrganizationSchema } from "@/components/OrganizationSchema";
 
 export const metadata: Metadata = {
-  title: "EDUNEX - IT Consulting & Enterprise Software Solutions",
+  title: "EDUNEX - IT Consulting & Custom Software Development in Bihar",
   description:
-    "Transform operations with EDUNEX. We provide enterprise IT consulting, AI-driven custom software development, cloud migration, and data analytics services.",
+    "IT Consulting & Custom Software Development for SMEs in Bihar. Build billing software, mobile apps, and manage your GST legally.",
   alternates: {
     canonical: "https://edunexservices.in",
   },
@@ -45,33 +45,33 @@ export default function HomePage() {
     {
       id: "it-consulting",
       icon: Code,
-      title: "IT Consulting & Strategy",
+      title: "Custom Software",
       description:
-        "Enterprise technology consulting for digital transformation and business growth",
-      href: "/services?category=consulting",
+        "Affordable web and mobile apps built to automate your local business workflows",
+      href: "/services?category=development",
     },
     {
       id: "software-dev",
       icon: Database,
-      title: "Software Development",
+      title: "ERP & Billing Systems",
       description:
-        "Custom web, mobile, and enterprise application development services",
-      href: "/services?category=development",
+        "Easy-to-use billing, inventory, and staff management systems for distributors",
+      href: "/services?category=solutions",
     },
     {
       id: "digital-marketing",
       icon: TrendingUp,
-      title: "Digital Marketing",
+      title: "Local Digital Marketing",
       description:
-        "SEO, social media marketing, and performance-driven digital strategies",
+        "Google Maps ranking and local Facebook ads to bring walk-in customers to your shop",
       href: "/services?category=marketing",
     },
     {
       id: "compliance",
       icon: Shield,
-      title: "Business & Legal Compliance",
+      title: "GST & Compliance",
       description:
-        "Company registration, GST, trademark, and complete compliance management",
+        "Headache-free firm registration, FSSAI, trade licenses, and monthly GST filing in Bihar",
       href: "/compliance",
     },
   ];
@@ -93,13 +93,13 @@ export default function HomePage() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
               Everything You Need to{" "}
-              <span className="text-[#f59e0b]">Run & Grow</span> Your Business
-              Online
+              <span className="text-[#f59e0b]">Automate & Grow</span> Your
+              Business in Bihar
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              From AI-driven custom software and enterprise cloud migration to
-              managing your statutory compliance and performance marketing—we
-              deliver complete managed IT services so you can focus on scaling.
+              From building custom billing software for your godown to managing
+              your GST returns and ranking your clinic on Google—we provide
+              practical, affordable IT solutions for local SMEs.
             </p>
           </div>
 
@@ -151,110 +151,88 @@ export default function HomePage() {
           <div className="mt-20 bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-16">
             <div className="max-w-4xl mx-auto prose prose-invert prose-lg md:prose-xl">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 border-b border-[#262626] pb-6">
-                Enterprise Digital Transformation: Architecting Your Competitive
-                Advantage
+                Why Bihar Businesses Choose Us as Their Technology Partner
               </h2>
 
               <div className="space-y-8 text-gray-400 leading-relaxed">
                 <div>
                   <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                    The Problem: Legacy Bottlenecks and Fragmented Operations
+                    The Problem: Losing Money to Manual Work and Mistakes
                   </h3>
                   <p className="mb-4">
-                    In today's hyper-accelerated market, traditional SMBs,
-                    startups, and mid-market enterprises face a critical
-                    inflection point. Legacy systems, siloed data frameworks,
-                    and off-the-shelf software solutions are no longer
-                    sufficient to maintain operational agility. Institutional
-                    buyers and visionary founders frequently encounter what we
-                    define as "friction economics"—where outdated internal
-                    tools, manual data reconciliation, and fragmented
-                    communication platforms directly cannibalize profit margins.
+                    If you run a business in Bihar—whether it's a wholesale
+                    godown in Patna, a clinic in Gaya, or a factory in
+                    Muzaffarpur—you face the exact same problems. Staff making
+                    mistakes in handwritten bills, ledgers constantly not
+                    matching up, marketing budgets wasted on newspaper ads that
+                    don't bring customers, and the constant headache of filing
+                    proper GST to avoid heavy government fines.
                   </p>
                   <p className="mb-4">
-                    The challenge is rarely a lack of ambition; it is the
-                    absence of a unified, scalable digital infrastructure. When
-                    customer relationship data lives in spreadsheets, localized
-                    financial compliance operates outside your core business
-                    logic, and your customer-facing digital storefront is
-                    decoupled from inventory management, scaling becomes
-                    exponentially difficult and risky.
+                    Most small businesses try to fix this by hiring expensive
+                    agencies from Delhi or Bangalore. These agencies speak in
+                    confusing tech jargon, sell complicated software that your
+                    staff cannot understand, and charge massive corporate fees.
+                    When you actually need emergency support, they are thousands
+                    of kilometers away.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                    The Solution: Unified, Ecosystem-Driven Technology
+                    The Solution: Simple Software Built for Local Workflows
                   </h3>
                   <p className="mb-4">
-                    At EDUNEX Services, we do not view technology as a simple
-                    procurement exercise. We architect unified digital
-                    ecosystems tailored to the exact operational realities of
-                    your enterprise. By leveraging AI-driven automation, B2B
-                    SaaS consulting, headless commerce architectures, and
-                    secure, horizontally scalable cloud infrastructure, we build
-                    digital environments that operate reliably at global scale.
+                    At EDUNEX, we do not sell oversized corporate software. We
+                    build simple, extremely fast, and highly secure digital
+                    systems strictly tailored to how regional SMEs operate. We
+                    design interfaces so simple that even staff with zero
+                    computer experience can learn to generate a GST bill or
+                    track inventory in one afternoon.
                   </p>
                   <p className="mb-4">
-                    Our approach to backend systems and managed IT services
-                    focuses on creating a resilient single source of truth for
-                    your organization. By centralizing data analytics,
-                    automating redundant administrative workflows, and ensuring
-                    real-time synchronization between financial compliance and
-                    operational metrics, we allow executive leadership to make
-                    data-driven decisions instantly. We replace fragmentation
-                    with cohesion.
+                    Our software works even when the internet drops, keeping
+                    your billing counter moving, and syncs safely to the cloud
+                    the second your connection returns. Everything is backed up,
+                    safe from theft or hard drive crashes.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                    Implementation: Engineering Excellence & Compliance Security
+                    More Than Just Code: End-to-End Compliance & Support
                   </h3>
                   <p className="mb-4">
-                    Deploying enterprise software requires rigorous engineering
-                    discipline. Our implementation methodology is structured
-                    around agile delivery sprints, ensuring continuous
-                    integration and continuous deployment (CI/CD) pipelines
-                    minimize operational downtime. We utilize deep architectural
-                    patterns, including strictly typed interfaces (TypeScript),
-                    robust microservices where necessary, and secure RESTful or
-                    GraphQL APIs to ensure high availability and military-grade
-                    data security.
+                    We know that pure software isn't enough. That is why we
+                    provide end-to-end business support right here in Bihar. We
+                    will register your new firm, secure your FSSAI or trade
+                    licenses, and handle your monthly GST return filings.
                   </p>
                   <p className="mb-4">
-                    Furthermore, operating a business in India demands absolute
-                    adherence to statutory requirements. Our unique integration
-                    of regulatory compliance consulting—spanning GST
-                    registration, trademark protection, and localized financial
-                    structuring—with high-end software development means your
-                    digital infrastructure is built from day one to be fully
-                    compliant with Indian financial and legal frameworks.
+                    When you want to grow, we optimize your Google Maps profile
+                    so local families can find your shop instantly, and run
+                    targeted Facebook ads that bring real foot traffic to your
+                    location. You get an honest, practical strategy built on
+                    local market understanding, not empty promises.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                    Value Differentiation: The Long-Term Technical Partnership
+                    A Partner You Can Meet Face-to-Face
                   </h3>
                   <p className="mb-4">
-                    The market is saturated with transactional vendors who
-                    deliver codebase handoffs and disappear. EDUNEX Services
-                    operates on a fundamentally different paradigm. We act as
-                    your fractional CTO and extended engineering department.
-                    Supported by over {COMPANY_INFO.yearsOfExperience} years of
-                    hard-won architectural experience in Patna and beyond, we
-                    look past the initial deployment.
+                    The biggest advantage we offer is our physical presence. We
+                    don't just email you a zip file and disappear. We sit in
+                    your godown, watch how your staff works, and train them
+                    perfectly. If a system goes down or if you face a critical
+                    accounting error, our technical team is a quick drive away.
                   </p>
                   <p>
-                    We provide proactive monitoring, continuous security
-                    patching, rigorous performance audits, and strategic
-                    scalability planning. When you partner with us, you are
-                    securing a technology ally dedicated exclusively to
-                    optimizing your time-to-market, reducing your technical
-                    debt, and maximizing your return on engineered investment.
-                    We don't just write code; we architect your firm's
-                    structural longevity.
+                    Partnering with EDUNEX means getting a complete IT
+                    department working exactly on your budget, fully dedicated
+                    to making your local business more organized, profitable,
+                    and stress-free.
                   </p>
                 </div>
               </div>
@@ -367,7 +345,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
                 <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-7 text-lg transition-all duration-200">
-                  Schedule Free Consultation
+                  Schedule Free Consultation in Bihar
                 </Button>
               </Link>
               <Link href="/about">
@@ -375,7 +353,7 @@ export default function HomePage() {
                   variant="outline"
                   className="border-2 border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black px-10 py-7 text-lg transition-all duration-200"
                 >
-                  Learn More About EDUNEX
+                  Learn More About Us
                 </Button>
               </Link>
             </div>
@@ -393,51 +371,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Schema.org JSON-LD for Organization */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "EDUNEX",
-            alternateName: "EDUNEX IT Consulting",
-            description:
-              "Enterprise IT consulting, software development, CRM/ERP implementation, digital marketing, and business compliance services",
-            url: "https://edunexservices.in",
-            telephone: "+91-70708-09208",
-            email: "support@edunesservices.in",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Ward 15, Phulwari Sharif",
-              addressLocality: "Patna",
-              addressRegion: "Bihar",
-              postalCode: "801505",
-              addressCountry: "IN",
-            },
-            areaServed: ["Phulwari Sharif", "Patna", "Bihar", "India"],
-            priceRange: "₹₹₹",
-            sameAs: [
-              "https://www.facebook.com/edunexservices",
-              "https://www.linkedin.com/company/edunexservices",
-              "https://www.instagram.com/edunexservices",
-            ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              reviewCount: "65",
-            },
-            serviceType: [
-              "IT Consulting",
-              "Software Development",
-              "CRM/ERP Implementation",
-              "Digital Marketing",
-              "Business Compliance",
-            ],
-          }),
-        }}
-      />
     </main>
   );
 }

@@ -50,10 +50,9 @@ export default function CompliancePage() {
             <span className="text-[#f59e0b]">We Handle the Paperwork.</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-            From GST registration and corporate governance to annual tax
-            filings, we provide expert regulatory compliance and comprehensive
-            risk management support for SMEs and enterprises across Bihar.
-            Fastest processing with minimum documents.
+            From GST registration and FSSAI licenses to Trade Licenses and Shop
+            Act registrations, we help small and medium businesses in Bihar stay
+            100% legal without the usual government office headaches.
           </p>
 
           {/* Trust Badges */}
@@ -236,17 +235,15 @@ export default function CompliancePage() {
           <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Don't Let Compliance Delays <br />
-                <span className="text-red-500">
-                  Drain Your Business Profits
-                </span>
+                Don't Let GST Penalties <br />
+                <span className="text-red-500">Eat Your Shop's Margins</span>
               </h2>
               <div className="space-y-4">
                 {[
-                  "Avoid heavy penalties and late fees from government departments.",
-                  "Stay fully compliant with GST and municipal regulations.",
-                  "Prevent sudden business disruptions or legal notices.",
-                  "Maintain a clean entity profile for bank loans and tenders.",
+                  "Avoid daily late fees for missing GST filing deadlines.",
+                  "Stop wasting days visiting municipal offices for Trade Licenses.",
+                  "Prevent sudden shop closures from local authorities.",
+                  "Get your bank current account opened instantly with correct documents.",
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3 text-gray-400 text-sm">
                     <AlertCircle className="w-5 h-5 text-red-500/50 flex-shrink-0" />
@@ -257,15 +254,15 @@ export default function CompliancePage() {
             </div>
             <div className="bg-[#0a0a0a] p-8 rounded-2xl border border-white/5">
               <h4 className="text-white font-bold mb-4">
-                Start Your Compliance Check
+                Check Your Compliance Status
               </h4>
               <p className="text-gray-500 text-sm mb-6">
-                Position your business for stability. Let our experts handle the
-                risks while you handle the growth.
+                Not sure what licenses your exact type of shop needs in Patna?
+                Let us give you a free checklist.
               </p>
               <Link href="/contact" className="block">
                 <Button className="w-full bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/20 font-bold h-12">
-                  Request Filing Support
+                  Get Free License Checklist
                 </Button>
               </Link>
             </div>

@@ -5,91 +5,91 @@ import { COMPANY_INFO } from "@/config/company";
 export const services = [
   {
     id: 'web-app-dev',
-    slug: 'web-app-development',
+    slug: 'custom-software-bihar',
     type: 'engineering',
     icon: 'Code',
-    title: 'Web & App Development',
-    description: 'Beautiful websites and mobile apps that work fast on every device.',
+    title: 'Custom Software & Applications',
+    description: 'Custom software, websites, and mobile apps built specifically for SMEs in Patna and across Bihar to automate your manual work.',
     category: 'development',
-    features: ['React & Node.js', 'iOS & Android', 'Progressive Web Apps', 'API Development'],
-    outcomeHeadline: 'Build a <span className="text-[#f59e0b]">Professional Website</span> That Works as Hard as You Do',
-    keyBenefits: ['Fast & Easy to Use', 'Works on All Devices', 'Safe & Secure'],
+    features: ['Custom Web Portals', 'Mobile Apps for Staff', 'Inventory Systems', 'Local Business Solutions'],
+    outcomeHeadline: 'Build <span className="text-[#f59e0b]">Custom Software</span> That Eliminates Your Daily Headaches',
+    keyBenefits: ['Affordable for SMEs', 'Easy to Use for Staff', 'Full On-Site Training'],
     deliverables: [
-      { title: 'Custom Websites', desc: 'Beautiful sites for any business', icon: 'Globe' },
-      { title: 'Mobile Apps', desc: 'Your business in your customers pockets', icon: 'Smartphone' },
-      { title: 'Smart Systems', desc: 'Tools that automate your work', icon: 'Server' }
+      { title: 'Business Software', desc: 'Custom apps for your shop or factory', icon: 'Globe' },
+      { title: 'Mobile Apps', desc: 'Connect with customers and staff', icon: 'Smartphone' },
+      { title: 'Retail Systems', desc: 'Tools that automate your billing', icon: 'Server' }
     ],
     processSteps: [
-      { title: 'Talking & Planning', desc: 'We listen to what your business needs' },
-      { title: 'Designing', desc: 'Creating the look and feel you love' },
-      { title: 'Building', desc: 'Real-time updates as we create your site' },
-      { title: 'Launch', desc: 'Testing everything before you go live' }
+      { title: 'Local Meeting', desc: 'We meet you in Patna or nearby to discuss' },
+      { title: 'Designing', desc: 'Creating simple screens your staff can use' },
+      { title: 'Building', desc: 'Developing the system step-by-step' },
+      { title: 'Training', desc: 'We train your team on-site' }
     ],
     faqs: [
-      { q: 'What tools do you use?', a: 'We use the latest technology like React and Next.js to make sure your website is super fast and ready for the future.' },
-      { q: 'Can you help me after the site is live?', a: 'Yes, we stay with you to handle any updates, security, or changes you need.' },
-      { q: 'Will it work on mobile phones?', a: 'Absolutely. Every website we build is "Mobile-First," meaning it looks great on any screen.' },
-      { q: 'How do we track progress?', a: 'We give you a simple weekly report so you always know exactly what we are working on.' }
+      { q: 'How much does custom software cost in Bihar?', a: 'It costs much less than metro-city agencies. We build affordable solutions crafted explicitly for the SME budget.' },
+      { q: 'Do you provide on-site consultation in Patna?', a: 'Yes! We prefer to visit your office, shop, or factory to see exactly how your business works.' },
+      { q: 'Will my staff be able to use it?', a: 'Absolutely. We design interfaces so intuitively that anyone can use them, removing technical barriers.' },
+      { q: 'How long does deployment take?', a: 'Most SME projects in Bihar are deployed within 3 to 6 weeks, depending on the complexity of your manual processes.' }
     ],
     typeSpecificData: {
-      performance: 'Fastest Loading Speeds',
-      security: 'Built-in Protection',
-      stack: ['Next.js', 'React', 'Mobile Optimized']
+      performance: 'Works on Slow Internet',
+      security: 'Data Kept Safe & Private',
+      stack: ['Scalable Tech', 'Easy-to-use interfaces', 'Mobile Optimized']
     },
     results: [
       {
-        label: "More Visitors",
-        value: "2.5x",
-        suffix: "Traffic Boost",
-        desc: "Helped a local business double their daily website visitors."
+        label: "Manual Work",
+        value: "-60%",
+        suffix: "Time Saved",
+        desc: "Helped a local Patna manufacturer save 4 hours a day on data entry."
       },
       {
-        label: "Faster Launch",
-        value: "-45%",
-        suffix: "Time Saved",
-        desc: "Got a new startup online in half the usual time."
+        label: "Faster Process",
+        value: "3x",
+        suffix: "Speed Boost",
+        desc: "Got a Muzaffarpur distributor's entire inventory online in 3 weeks."
       }
     ],
     testimonial: {
-      quote: "EDUNEX made the whole process so simple. They didn't use confusing tech words and built exactly what I needed to grow my business.",
-      author: "Founder, local startup"
+      quote: "The EDUNEX team actually came to our godown in Patna to understand our pain. The software they built is exactly what we needed to stop losing stock.",
+      author: "Owner, Patna Wholesale Distributor"
     },
-    resultsTitle: "Real Growth We've Delivered",
-    ctaBadge: "Launch Your Website",
-    ctaTitle: "Ready to Start Building?",
-    ctaDescription: "Let's chat about your idea. No jargon, just a clear plan to get your business online."
+    resultsTitle: "Real Bihar Businesses We've Helped",
+    ctaBadge: "Automate Your Work",
+    ctaTitle: "Ready to Automate Your Shop or Factory?",
+    ctaDescription: "Let's chat. We are based right here in Bihar and ready to help you grow without confusing tech jargon."
   },
   {
     id: 'crm-erp',
-    slug: 'crm-erp-solutions',
+    slug: 'erp-billing-software',
     type: 'engineering',
     icon: 'Database',
-    title: 'CRM/ERP/Billing Solutions',
-    description: 'Simple software to manage your office, billing, and staff without the paper mess.',
+    title: 'ERP & Billing Systems',
+    description: 'Stop losing money to manual billing errors. Get a custom ERP system to manage inventory, staff, and GST billing effortlessly.',
     category: 'solutions',
-    features: ['Custom CRM', 'ERP Systems', 'Billing Automation', 'Office Management'],
-    outcomeHeadline: 'Manage Your Whole Business in <span className="text-[#f59e0b]">One Simple Screen</span>',
-    keyBenefits: ['Everything in One Place', 'No More Manual Errors', 'Save Hours Every Day'],
+    features: ['GST Billing Automation', 'Inventory Tracking', 'Staff Management', 'Tally Integration'],
+    outcomeHeadline: 'Manage Your Entire Business from <span className="text-[#f59e0b]">Your Phone or PC</span>',
+    keyBenefits: ['Everything in One Place', 'No More Calculation Errors', 'Save Hours Every Day'],
     deliverables: [
-      { title: 'Customer Records', desc: 'Never lose a lead again', icon: 'Users' },
-      { title: 'Office Software', desc: 'Built for how you work', icon: 'Database' },
-      { title: 'Automatic Billing', desc: 'Invoices sent in seconds', icon: 'Receipt' }
+      { title: 'GST Billing', desc: 'Create accurate invoices in seconds', icon: 'Receipt' },
+      { title: 'Godown Management', desc: 'Track exactly what comes in and out', icon: 'Database' },
+      { title: 'Customer Records', desc: 'Never lose a lead or payment due again', icon: 'Users' }
     ],
     processSteps: [
-      { title: 'Audit', desc: 'We study how you work today' },
+      { title: 'Audit', desc: 'We visit your office or shop in Bihar' },
       { title: 'Blueprint', desc: 'Designing a simpler system for you' },
-      { title: 'Build', desc: 'Step-by-step creation with your feedback' },
-      { title: 'Training', desc: 'We teach your team everything' }
+      { title: 'Build', desc: 'Building your billing software securely' },
+      { title: 'Training', desc: 'We teach your staff how to use it' }
     ],
     faqs: [
-      { q: 'Can we use our old data?', a: 'Yes, we move all your old files and papers into the new digital system safely.' },
-      { q: 'Can I check it from home?', a: 'Yes, as long as you have internet, you can manage your office from anywhere.' },
-      { q: 'Is it hard to learn?', a: 'No, we design it to be very simple, just like using a basic app on your phone.' },
-      { q: 'Can it connect to Tally?', a: 'Yes, it works perfectly with Tally, WhatsApp, and other tools you already use.' }
+      { q: 'Can small businesses afford ERP systems?', a: 'Yes. We do not charge massive enterprise fees. We built our systems specifically for the SME budgets of Bihar.' },
+      { q: 'Can we use our old data from Tally or Excel?', a: 'Yes, we safely move all your old files and Excel sheets into the new digital system.' },
+      { q: 'Can I check it from home?', a: 'Yes, the owner can manage the shop, check sales, and see inventory from their mobile phone anywhere.' },
+      { q: 'Does it create GST-ready invoices?', a: 'Yes, it automatically calculates GST and creates compliant PDF invoices you can send via WhatsApp.' }
     ],
     typeSpecificData: {
-      stack: ['Safe & Reliable Backend', 'Easy Frontend'],
-      performance: 'Fast even with thousands of files',
+      stack: ['Secure Cloud Database', 'Easy Mobile Interface'],
+      performance: 'Fast even with thousands of stock items',
       security: 'End-to-end Data Privacy',
       integrations: ['Tally', 'WhatsApp', 'Email']
     },
@@ -97,79 +97,79 @@ export const services = [
       {
         label: "Time Saved",
         value: "35%",
-        suffix: "Faster Work",
-        desc: "Helped a local distributor handle billing in minutes instead of hours."
+        suffix: "Faster Billing",
+        desc: "Helped a local transporter handle dispatch billing in minutes instead of hours."
       },
       {
         label: "Accuracy",
         value: "100%",
-        suffix: "No More Errors",
-        desc: "Successfully moved over 5 lakh rows of paper data to digital."
+        suffix: "GST Compliant",
+        desc: "Upgraded an old retail shop from hand-written bills to secure GST digital billing."
       }
     ],
     testimonial: {
-      quote: "The software they built for us is so easy. My staff learned it in a day, and we finally know exactly what's happening in our business.",
-      author: "Manager, local warehouse"
+      quote: "The software they built for us is so easy. My staff learned it in a day, and we finally stopped making mistakes with our taxation and stock counting.",
+      author: "Manager, Local Hardware Store"
     },
-    resultsTitle: "Results from Better Management",
-    ctaBadge: "Simplify Your Work",
-    ctaTitle: "Tired of Paperwork?",
+    resultsTitle: "Local Success Stories",
+    ctaBadge: "Simplify Your Shop",
+    ctaTitle: "Tired of Messy Excel Sheets?",
     ctaDescription: "Let's build a simpler system for your office. Tell us how you work, and we'll handle the rest."
   },
   {
     id: 'digital-marketing',
-    slug: 'digital-marketing-services',
+    slug: 'local-seo-marketing',
     type: 'marketing',
     icon: 'TrendingUp',
-    title: 'Digital & Social Media Marketing',
-    description: 'Get more phone calls and sales with simple, effective local marketing.',
+    title: 'Local SEO & Digital Marketing',
+    description: 'Get more phone calls and foot traffic from local customers in Patna and across Bihar.',
     category: 'marketing',
-    features: ['SEO & SEM', 'Social Media Campaigns', 'Content Marketing', 'Analytics'],
-    outcomeHeadline: 'Get More Customers and <span className="text-[#f59e0b]">Grow Your Sales</span> Every Month',
-    keyBenefits: ['More Phone Calls', 'Higher Local Rankings', 'Clear Monthly Reports'],
+    features: ['Google Maps SEO', 'Local Facebook Ads', 'WhatsApp Marketing', 'Business Registration'],
+    outcomeHeadline: 'Get More Local Customers to <span className="text-[#f59e0b]">Call Your Business</span>',
+    keyBenefits: ['More Phone Calls', 'Top Ranking in Your City', 'Clear Monthly Reports'],
     deliverables: [
-      { title: 'Google Ranking', desc: 'Be the first thing people see', icon: 'Search' },
-      { title: 'Facebook Ads', desc: 'Reach local people easily', icon: 'Target' },
-      { title: 'Content Posts', desc: 'Tell your story simply', icon: 'PenTool' }
+      { title: 'Google Ranking', desc: 'Be the first shop people see nearby', icon: 'Search' },
+      { title: 'Facebook Ads', desc: 'Reach local families instantly', icon: 'Target' },
+      { title: 'WhatsApp Push', desc: 'Send offers directly to older customers', icon: 'MessageSquare' }
     ],
     processSteps: [
-      { title: 'Research', desc: 'Seeing what your competitors do' },
+      { title: 'Research', desc: 'Seeing what other local shops do' },
       { title: 'Plan', desc: 'Choosing where to spend your budget' },
-      { title: 'Action', desc: 'Running ads and posting content' },
-      { title: 'Check', desc: 'Tuning for more leads every week' }
+      { title: 'Action', desc: 'Running local ads and posting content' },
+      { title: 'Check', desc: 'Bringing you more leads every week' }
     ],
     faqs: [
       { q: 'How do I know if it is working?', a: 'We send you a simple report every month showing exactly how many new calls and leads you got.' },
-      { q: 'Do you handle Facebook?', a: 'Yes, we manage your Facebook, Instagram, and Google accounts so you don&apos;t have to.' },
-      { q: 'Is it expensive?', a: 'We work with your budget and focus on getting you the best value for every rupee spent.' },
-      { q: 'Can it help a small shop?', a: 'Yes, we specialize in helping local businesses get noticed by people in their neighborhood.' }
+      { q: 'Can it help a small shop or clinic?', a: 'Yes, we specialize in helping local Bihar businesses get noticed by people in their immediate neighborhood.' },
+      { q: 'Is it expensive?', a: 'We work with your exact budget and focus on getting you the best value for every rupee spent, unlike expensive national agencies.' },
+      { q: 'Do you manage my Google Maps listing?', a: 'Yes, we optimize your Google My Business profile so you show up first when people search nearby.' }
     ],
     typeSpecificData: {
-      channels: ['Facebook Ads', 'Google Search', 'Instagram'],
-      reporting: 'Easy-to-Read Reports'
+      channels: ['Facebook Ads', 'Google Maps', 'WhatsApp'],
+      reporting: 'Easy-to-Read ROI Reports'
     },
     results: [
       {
         label: "New Leads",
         value: "4x",
         suffix: "More Enquiries",
-        desc: "Helped a local client get 4 times more calls from their Google ads."
+        desc: "Helped a local clinic get 4 times more calls from their Google Maps profile."
       },
       {
         label: "Cost Saved",
         value: "-22%",
         suffix: "Ad Efficiency",
-        desc: "Reduced wasteful spending on ads that weren't bringing in customers."
+        desc: "Stopped a small local service from wasting money on ads that weren't bringing admissions."
       }
     ],
     testimonial: {
-      quote: "We used to waste so much money on ads that didn't work. Now, we get regular enquiries from people who actually want to buy.",
-      author: "Business Owner, local retail shop"
+      quote: "We used to waste so much money giving ads in the newspaper. Now, we get regular enquiries from people finding us on their phones.",
+      author: "Owner, Patna Retail Shop"
     },
-    resultsTitle: "Growth We've Achieved",
+    resultsTitle: "Real Traffic Growth",
     ctaBadge: "Grow Your Sales",
-    ctaTitle: "Ready to Get More Customers?",
-    ctaDescription: "Stop guessing and start growing with a simple marketing plan that works for your local area."
+    ctaTitle: "Ready to Get More Walk-In Customers?",
+    ctaDescription: "Stop guessing and start growing with a simple marketing plan that works specifically for your city."
   },
   {
     id: 'ui-ux',
@@ -527,174 +527,174 @@ export const services = [
   },
   {
     id: 'compliance',
-    slug: 'business-registration-compliance',
+    slug: 'gst-business-registration',
     type: 'compliance',
     icon: 'FileText',
-    title: 'Business Registration & Compliance',
-    description: 'Handling your firm registration, GST, and legal paperwork correctly.',
+    title: 'GST & Business Registration',
+    description: 'Handling your firm registration, GST returns, and legal paperwork correctly so you can focus on running your business in Bihar.',
     category: 'compliance',
-    features: ['Company Registration', 'GST & Tax', 'Trademark', 'Legal Contracts'],
+    features: ['Company Registration', 'Monthly GST Filing', 'Food License (FSSAI)', 'Trade License'],
     outcomeHeadline: 'We Handle Your <span className="text-[#f59e0b]">Taxes & Registration</span> So You Don&apos;t Have To',
-    keyBenefits: ['100% Legal & Safe', 'No Late Fees', 'Honest Advice'],
+    keyBenefits: ['100% Legal & Safe', 'No Late Fees or Penalties', 'Honest Local Advice'],
     deliverables: [
-      { title: 'New Firm', desc: 'Proprietor, LLP, or Pvt Ltd setup', icon: 'Briefcase' },
-      { title: 'GST Filing', desc: 'Monthly taxes handled for you', icon: 'FileText' },
-      { title: 'Trademark', desc: 'Protect your brand name', icon: 'Shield' }
+      { title: 'New Firm Setup', desc: 'Proprietor, LLP, or Pvt Ltd in Patna', icon: 'Briefcase' },
+      { title: 'GST Filing', desc: 'Monthly taxes handled for your shop', icon: 'FileText' },
+      { title: 'Local Licenses', desc: 'FSSAI, Trade, and Shop Establishment', icon: 'Shield' }
     ],
     processSteps: [
       { title: 'Documents', desc: 'We tell you exactly what papers are needed' },
-      { title: 'Filing', desc: 'We submit everything to the government' },
+      { title: 'Filing', desc: 'We submit everything to the Bihar government' },
       { title: 'Progress', desc: 'We handle all questions and follow-ups' },
-      { title: 'Handover', desc: 'You get your certificates and documents' }
+      { title: 'Handover', desc: 'You get your certificates directly on WhatsApp' }
     ],
     faqs: [
-      { q: 'How long does it take?', a: 'Firm registration usually takes 7-15 days depending on the type.' },
-      { q: 'Do you handle GST filing?', a: 'Yes, we can handle your monthly GST returns so you never miss a deadline.' },
-      { q: 'What papers do I need?', a: 'Usually just PAN, Aadhaar, and address proof. We give you a simple checklist.' },
-      { q: 'Do you help with ITR?', a: 'Yes, we also file Income Tax Returns for business owners and employees.' }
+      { q: 'How long does it take to register a shop in Patna?', a: 'Firm registration usually takes 7-15 days depending on the type of business.' },
+      { q: 'Can you handle my monthly GST?', a: 'Yes! We file your monthly GST returns on time so you never pay a single rupee in late fees.' },
+      { q: 'I want to open a restaurant. Can you help?', a: 'Yes, we help with Food Licenses (FSSAI) and local municipal trade licenses in Bihar.' },
+      { q: 'Do you help with ITR?', a: 'Yes, we file Income Tax Returns for business owners, shopkeepers, and employees.' }
     ],
     typeSpecificData: {
-      renewal: 'Automatic Reminders',
-      consultancy: 'Free Legal Advice'
+      renewal: 'Automatic Reminders via WhatsApp',
+      consultancy: 'Free Advice on Local Laws'
     },
-    resultsTitle: "Compliance Results",
+    resultsTitle: "Local Businesses Protected",
     results: [
       {
         label: "Businesses Setup",
         value: "200+",
         suffix: "New Firms",
-        desc: "Successfully registered over 200 new businesses in the last year."
+        desc: "Successfully registered over 200 new small businesses across Bihar last year."
       },
       {
         label: "Penalties",
         value: "₹0",
         suffix: "Zero Lates",
-        desc: "Ensured our clients never paid a single late fee for GST filing."
+        desc: "Ensured our monthly clients never paid a single late fee for GST filing."
       }
     ],
-    ctaTitle: "Need Business Help?",
-    ctaDescription: "Let's get your business registered and compliant without any headache."
+    ctaTitle: "Need Help Starting Your Business?",
+    ctaDescription: "Let's get your shop or company registered correctly without the runaround."
   },
 ];
 
 export const caseStudies = [
   {
     id: 1,
-    slug: "ecommerce-platform-optimization",
-    title: "E-commerce Platform Optimization",
-    client: "Patna Retail Mart",
-    industry: "Retail",
-    companyType: "Large Retailer",
-    problemSolved: "Scaling during peak traffic",
-    deploymentScale: "State-wide",
+    slug: "wholesale-billing-automation",
+    title: "Wholesale Billing Automation",
+    client: "Patna Wholesale Mart",
+    industry: "Retail & Distribution",
+    companyType: "Local Wholesale Distributor",
+    problemSolved: "Eliminating manual billing errors",
+    deploymentScale: "Single Godown (Patna)",
     image: "automated-warehouse-robotics-dark",
     challenge:
-      "Legacy system struggled with performance during peak shopping hours",
+      "Handwritten bills resulted in heavy stock physical mismatch and delayed GST filing.",
     solution:
-      "Implemented a responsive frontend and optimized database queries for faster catalog browsing",
+      "Installed a custom desktop billing software with automatic GST PDF generation and inventory deduction.",
     businessContext:
-      "One of the largest retail chains in Patna with a growing catalog of 50,000+ products and a daily transacting user base of 5,000+ customers.",
+      "A prominent wholesale distributor in Patna matching 500+ daily orders using carbon-copy bill books.",
     coreProblem:
-      "During festive sales, the legacy platform experienced 40% downtime due to database lock contention, leading to direct revenue loss and customer frustration.",
+      "At the end of every month, their CA would find massive discrepancies between cash collected and stock sold due to human error in the rush hours.",
     solutionApproach:
-      "We migrated the frontend to Next.js for static generation and implemented Redis caching for the catalog. Database queries were refactored to eliminate N+1 issues.",
+      "We built a hyper-fast, keyboard-only billing interface that generates GST invoices in seconds. The system works completely offline during internet cuts and syncs data to the cloud automatically when the connection returns.",
     implementationConfidence:
-      "The migration was completed in 3 months with zero-downtime during the final handover. We provided 4 weeks of high-availability monitoring post-launch.",
+      "We deployed the system over a weekend and spent 3 days at the godown training the billing staff to ensure they were comfortable before Monday morning rush.",
     impact: {
-      revenue: "+22%",
-      uptime: "99.98%",
-      loadTime: "-35%",
+      revenue: "+12%",
+      uptime: "100%",
+      loadTime: "-90%",
       conversion: "+18%",
     },
-    techStack: ["React", "Node.js", "PostgreSQL", "Cloud Hosting"],
-    timeline: "3 months",
+    techStack: ["Desktop App", "Local Database", "Cloud Backup"],
+    timeline: "3 weeks",
     testimonial:
-      "The team delivered a structured e-commerce solution that improved our online sales and load speeds significantly.",
+      "EDUNEX actually sat in our godown to watch our boys work. The software they gave us is so fast, we don't have a crowd at the billing counter anymore.",
     testimonialAuthor: "Sanjeev Singh",
-    testimonialRole: "Operations Manager, Patna Retail Mart",
+    testimonialRole: "Owner, Patna Wholesale Mart",
     downloadFeatures: [
-      "Detailed implementation approach",
-      "Architecture overview",
-      "Lessons learned",
-      "Business impact analysis",
+      "Offline-first architecture details",
+      "GST calculation rules",
+      "Staff training plan",
+      "Cost saving breakdown",
     ],
   },
   {
     id: 2,
-    slug: "healthcare-crm-implementation",
-    title: "Healthcare CRM Implementation",
-    client: "Bihar MediCare Center",
+    slug: "local-clinic-management",
+    title: "Local Clinic Management",
+    client: "Gaya Ortho Clinic",
     industry: "Healthcare",
-    companyType: "Multi-specialty Hospital",
-    problemSolved: "Patient record digitization",
-    deploymentScale: "In-house Infrastructure",
+    companyType: "Private Local Clinic",
+    problemSolved: "Patient queue management",
+    deploymentScale: "Single Clinic",
     image: "modern-hospital-laboratory-dark",
-    challenge: "Manual patient records leading to tracking inefficiencies",
+    challenge: "Overcrowded waiting rooms and lost patient history files.",
     solution:
-      "Custom CRM with digital record management and automated appointment scheduling",
+      "Custom clinic software with digital prescriptions and token displays.",
     businessContext:
-      "A 200-bed multi-specialty hospital handling hundreds of patient registrations daily across 15+ specialized departments.",
+      "A busy private clinic in Gaya seeing 150+ patients daily in a very congested physical waiting area.",
     coreProblem:
-      "Paper-based records caused significant delays in retrieving patient history, leading to an average 25-minute wait time for follow-up consultations.",
+      "Patients were constantly arguing over queue placement, and doctors were spending 10 minutes finding old paper files for returning patients.",
     solutionApproach:
-      "Developed a custom HIPAA-compliant CRM focused on speed of entry. Integrated a real-time scheduling engine and SMS-based automated reminders.",
+      "Developed a custom clinic app where reception creates an instant digital profile. A smart TV in the waiting room acts as a token display, reducing noise and confusion.",
     implementationConfidence:
-      "The system was deployed department-by-department to ensure minimal disruption to patient care. Staff training was completed in under 7 days per unit.",
+      "We set up the TV, computers, and software in one day. We stayed on-site for the first week to help the receptionist transition from her paper register.",
     impact: {
-      efficiency: "+28%",
-      patientSatisfaction: "+24%",
-      paperwork: "-32%",
-      appointments: "+19%",
+      efficiency: "+40%",
+      patientSatisfaction: "+80%",
+      paperwork: "-95%",
+      appointments: "+20%",
     },
-    techStack: ["React", "PostgreSQL", "Docker"],
-    timeline: "5 months",
+    techStack: ["Web App", "Secure Cloud", "SMS Gateway"],
+    timeline: "4 weeks",
     testimonial:
-      "The CRM solution is aligned with our operational needs. Communication was clear and timelines were respected.",
-    testimonialAuthor: "Dr. Ramesh Kumar",
-    testimonialRole: "Director, Bihar MediCare Center",
+      "My clinic is finally silent and peaceful. The patients wait patiently looking at the TV screen, and I can pull up patient history with a single click.",
+    testimonialAuthor: "Dr. R.K. Verma",
+    testimonialRole: "Head Doctor, Gaya Ortho Clinic",
     downloadFeatures: [
-      "Compliance audit report",
-      "Workflow mapping documentation",
-      "Deployment strategy",
+      "Queue logic design",
+      "Prescription printing setup",
+      "SMS alert system",
     ],
   },
   {
     id: 3,
-    slug: "logistics-tracking-system",
-    title: "Logistics Tracking System",
-    client: "Ganga Logistics Services",
-    industry: "Logistics",
-    companyType: "Regional Distributor",
-    problemSolved: "Real-time fleet monitoring",
-    deploymentScale: "Pan-India Tracking",
+    slug: "manufacturing-attendance-system",
+    title: "Factory Attendance System",
+    client: "Muzaffarpur Agrotech",
+    industry: "Manufacturing",
+    companyType: "Regional Factory",
+    problemSolved: "Biometric attendance tracking",
+    deploymentScale: "Factory Floor",
     image: "logistics-delivery-truck-night",
-    challenge: "Inconsistent delivery tracking for regional distribution",
+    challenge: "Fake attendances (buddy punching) costing the factory money.",
     solution:
-      "Integrated real-time tracking system with route monitoring capabilities",
+      "Installed fingerprint biometric machines linked directly to payroll software.",
     businessContext:
-      "A regional logistics firm managing a fleet of 50+ vehicles across 12 Bihar districts, serving over 500 retail partners.",
+      "A growing food processing factory in Muzaffarpur employing 300+ daily wage workers in 3 shifts.",
     coreProblem:
-      "Lack of real-time visibility led to an 18% discrepancy in estimated vs. actual delivery times, causing logistical bottlenecks and partner disputes.",
+      "Supervisors were marking absent workers as present, leading to massive financial leakage in the monthly wage distribution.",
     solutionApproach:
-      "Built a mobile-first tracking platform using React Native with low-bandwidth optimization. Integrated Google Maps API for real-time route optimization.",
+      "Installed heavy-duty biometric devices at the factory gates. Built custom software to pull this data automatically and calculate exactly how many hours each worker spent inside.",
     implementationConfidence:
-      "We implemented a hybrid tracking logic that works even in low-connectivity rural areas, ensuring data integrity through offline-first synchronization.",
+      "We tested the machines against dust and grease, which are common in factories, ensuring 99% read accuracy on difficult fingerprints.",
     impact: {
-      deliveryTime: "-17%",
+      deliveryTime: "-0%",
       operationalCost: "-14%",
-      customerRating: "4.6/5",
-      efficiency: "+21%",
+      customerRating: "Perfect",
+      efficiency: "+100%",
     },
-    techStack: ["React Native", "Node.js", "Google Maps API"],
-    timeline: "4 months",
+    techStack: ["Hardware IoT", "Desktop Software", "Payroll Engine"],
+    timeline: "2 weeks",
     testimonial:
-      "A practical solution that helped us optimize our regional delivery routes and reduce delays.",
-    testimonialAuthor: "Alok Verma",
-    testimonialRole: "Manager, Ganga Logistics Services",
+      "This system paid for itself in the first month. We stopped losing money to fake attendances. Very practical work by the EDUNEX team.",
+    testimonialAuthor: "Alok Sharma",
+    testimonialRole: "Plant Manager, Muzaffarpur Agrotech",
     downloadFeatures: [
-      "Technical architecture",
-      "Route optimization case",
-      "IoT integration guide",
+      "Hardware setup specs",
+      "Shift calculation logic",
+      "Payroll integration guide",
     ],
   },
 ];
@@ -1052,28 +1052,28 @@ export const teamMembers = [
 
 export const faqs = [
   {
-    question: 'What is your specific methodology for enterprise digital transformation?',
-    answer: 'We utilize a vertically integrated approach. Instead of merely deploying off-the-shelf software, we audit your existing data siloes, design a unified architecture using modern JavaScript (React/Next.js) and scalable databases (PostgreSQL/Redis), and deploy high-availability systems tailored to your specific operational workflows. This ensures long-term ROI rather than a temporary fix.',
+    question: 'How much does custom software cost in Bihar?',
+    answer: 'Our pricing is built specifically for local SMEs. A basic billing system or website starts very affordably, while complete factory ERPs are priced based on the exact features you need. We do not charge massive corporate agency fees.',
   },
   {
-    question: 'How do you structure deployment timelines for complex software systems?',
-    answer: 'Enterprise deployment timelines are dictated by architectural complexity. While a high-performance corporate web presence requires 3-5 weeks, deep CRM/ERP infrastructure or custom headless commerce solutions operate on 3-6 month Agile sprints. We explicitly define milestones, sprint deliverables, and testing protocols before writing a single line of code.',
+    question: 'How long does it take to build and deploy?',
+    answer: 'Most local business software is deployed within 3 to 6 weeks. Simple websites and GST setups take just 5-7 days. We give you a clear, fixed timeline before we start.',
   },
   {
-    question: 'What is your service-level agreement (SLA) for post-deployment infrastructure?',
-    answer: 'Unlike transactional vendors, we act as a fractional engineering department. We offer continuous integration/continuous deployment (CI/CD) oversight, high-availability server monitoring, automated security patching, and scaling consultancy to ensure your systems handle traffic spikes without degradation.',
+    question: 'Do you provide local support in Patna and Bihar?',
+    answer: 'Yes! Unlike agencies in Delhi or Bangalore, we are based right here. If your system goes down or your team needs training, we can send someone directly to your shop, clinic, or godown.',
   },
   {
-    question: 'How do you handle data migration from legacy, on-premise systems?',
-    answer: 'Legacy data migration is handled via secure, encrypted ETL (Extract, Transform, Load) pipelines. We sanitize your existing database schemas, map them to modern relational or NoSQL structures, and execute the migration during designated low-traffic maintenance windows to guarantee zero data loss and absolute operational continuity.',
+    question: 'Is my business data safe with you?',
+    answer: 'Absolutely. We use secure cloud servers (like AWS or Google) to ensure your customer data, billing history, and inventory are backed up daily and protected from local hardware failures or theft.',
   },
   {
-    question: 'Do you offer integrated regulatory and financial compliance frameworks?',
-    answer: 'Yes. Operating in the Indian market requires strict adherence to statutory law. We integrate legal scaffolding—including LLP/Private Limited incorporation, GST registration, trademark protection, and automated compliance tracking—directly into our service offering. Your technological growth is thus insulated by solid legal foundations.',
+    question: 'Can you handle both GST and our Billing Software?',
+    answer: 'Yes, this is our specialty. We provide end-to-end service—giving you the software to generate GST-compliant bills and handling the actual filing of your monthly returns.',
   },
   {
-    question: 'How does EDUNEX handle intellectual property and codebase ownership?',
-    answer: 'Upon final delivery and successful deployment, our clients retain full intellectual property rights to the custom application codebase, proprietary logic, and all associated databases. We operate with complete transparency and zero vendor lock-in.',
+    question: "What if my staff doesn't know how to use computers?",
+    answer: "We design our software to be as simple as using WhatsApp. Plus, we provide detailed on-site training for your staff in Hindi or English until they are completely comfortable.",
   },
 ];
 
@@ -1081,20 +1081,20 @@ export const gmbReviews = [
   {
     id: 'r1',
     author: 'Sanjeev Kumar',
-    company: 'Bihar Retail Mart',
+    company: 'Patna Wholesale Traders',
     rating: 5,
     avatar: 'portrait-man-business',
     date: '3 weeks ago',
-    text: 'The team delivered our CRM solution aligned with our operational needs. Communication was clear and timelines were respected.',
+    text: 'EDUNEX automated our godown billing. Now my staff makes zero mistakes with GST. Best IT support in Patna.',
   },
   {
     id: 'r2',
     author: 'Dr. Manish Sharma',
-    company: 'MediCare Center - Patna',
+    company: 'Gaya Ortho Clinic',
     rating: 5,
     avatar: 'male-doctor-portrait',
     date: '1 month ago',
-    text: 'A reliable IT partner for regional businesses. They built our record management system with a focus on stability and ease of use.',
+    text: 'They built a brilliant queue management software for my clinic. Patients are happier, and the clinic is silent. Highly recommended.',
   },
   {
     id: 'r3',
@@ -1103,15 +1103,15 @@ export const gmbReviews = [
     rating: 5,
     avatar: 'professional-man-smiling',
     date: '2 months ago',
-    text: 'EDUNEX provided a structured approach to our software needs. The billing integration works seamlessly for our regional distribution.',
+    text: 'We tried Delhi agencies before, but EDUNEX understood our local Bihar market better. The tracking app they built is super fast.',
   },
   {
     id: 'r4',
     author: 'Sneha Kumari',
-    company: 'Regional Coaching Institute',
+    company: 'Boring Road Boutique',
     rating: 5,
     avatar: 'professional-woman-portrait',
     date: '2 months ago',
-    text: 'Professional services with a focus on practical execution. They helped us modernize our student records platform efficiently.',
+    text: 'They handled my GST registration and built my e-commerce site. So easy to work with and very affordable for small shops.',
   },
 ];

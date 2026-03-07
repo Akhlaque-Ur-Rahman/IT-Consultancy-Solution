@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "B2B IT Consulting & Cloud Experts | EDUNEX Services",
+  title: "Local IT Consulting & Software Experts in Bihar | EDUNEX",
   description:
-    "Partner with EDUNEX for enterprise IT consulting, custom software framework development, and scalable cloud architectures that accelerate your B2B growth.",
+    "Partner with EDUNEX, Patna's trusted technology experts. We build custom software, billing systems, and provide reliable IT support for Bihar businesses.",
   alternates: {
     canonical: "https://edunexservices.in/about",
   },

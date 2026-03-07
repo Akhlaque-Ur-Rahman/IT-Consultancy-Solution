@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resources & Whitepapers | EDUNEX Services",
+  title: "Free Software & IT Guides for Bihar Businesses | EDUNEX",
   description:
-    "Insights, guides, and knowledge to help you make informed decisions for your business growth.",
+    "Download free checklists and guides that explain how small businesses in Patna and Bihar can easily start using digital tools and billing software.",
   alternates: {
     canonical: "https://edunexservices.in/resources",
   },

@@ -43,16 +43,17 @@ export default function ServicesPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
             <span className="text-sm font-medium text-[#f59e0b]">
-              Complete Service Portfolio
+              Local Bihar IT Services
             </span>
           </div>
           <h1 className="text-5xl font-bold text-white mb-4">
             Everything You Need to{" "}
-            <span className="text-[#f59e0b]">Grow & Run</span> Your Business
+            <span className="text-[#f59e0b]">Run & Grow</span> Your Business
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-16">
-            From custom software architecture and headless commerce to statutory
-            business compliance. We engineer end-to-end digital environments.
+            From easy-to-use custom software and automated billing systems to
+            strict statutory business compliance. We help regional SMEs scale
+            safely.
           </p>
         </motion.div>
 
@@ -66,80 +67,66 @@ export default function ServicesPage() {
         >
           <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
-              Integrated Digital Engineering: Beyond Disconnected Solutions
+              Why We Are Different From Other IT Agencies
             </h2>
             <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
               <p>
-                The fundamental flaw in modern enterprise software adoption is
-                fragmentation. Businesses often procure a marketing website from
-                one agency, employ an internal team to duct-tape a legacy CRM
-                together, and hire a completely disconnected CA firm for
-                compliance. The result is a fragile digital ecosystem riddled
-                with data silos, security vulnerabilities, and massive
-                operational inefficiencies.
+                The biggest problem small and medium businesses face in Bihar
+                today is hiring completely disconnected people. You might hire a
+                freelancer in Delhi to build a simple website, buy an
+                off-the-shelf billing software that doesn't match how your
+                godown works, and have a local CA handle your GST who doesn't
+                know how your software calculates taxes.
               </p>
               <p>
-                At EDUNEX Services, we eliminate this fragmentation by
-                engineering holistic, vertically integrated solutions. We do not
-                view software development, digital marketing, and business
-                compliance as separate disciplines; rather, they are
-                interlocking gears within our unified operational engine. By
-                centralizing these requirements, we drastically reduce technical
-                debt and accelerate your time to market with our{" "}
-                <Link
-                  href="/solutions"
-                  className="text-[#f59e0b] hover:underline"
-                >
-                  Unified Enterprise Solutions
-                </Link>
-                .
+                At EDUNEX, we eliminate this confusion because we handle
+                everything under one roof, right here in your home state. We
+                don't view your software, your digital marketing, and your
+                business registration as different things. Our unified approach
+                means your billing software automatically prepares your exact
+                GST numbers, while our digital marketing brings new customers
+                directly to your digital storefront or WhatsApp.
               </p>
               <div className="mt-8 break-inside-avoid">
                 <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                  1. Application Engineering & Enterprise Cloud Architecture
+                  1. Local Billing & Workflow Automation
                 </h3>
                 <p>
-                  Our engineering pod builds horizontally scalable applications
-                  using modern cloud-native paradigms and AI-driven automation
-                  frameworks. From progressive web apps (PWAs) utilizing Next.js
-                  and React to robust backend microservices governed by Node.js,
-                  our systems are strictly typed and built for high
-                  availability. Whether you require a custom headless E-commerce
-                  stack, full enterprise cloud migration, or a proprietary ERP
-                  tailored to complex operational workflows, our codebase is
-                  designed for extreme longevity and zero-downtime reliability.
+                  We don't sell massive corporate systems that your staff cannot
+                  learn. Our local engineering team visits your shop, godown, or
+                  clinic, understands exactly how you work with paper today, and
+                  builds simple, fast, lightning-quick digital systems. Whether
+                  you need a local inventory tracker that works offline or an
+                  app to manage your delivery boys, we build it to be reliable
+                  and easy.
                 </p>
               </div>
               <div className="mt-8 break-inside-avoid">
                 <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                  2. Growth Marketing & Data Analytics Consulting
+                  2. Local SEO & Digital Growth
                 </h3>
                 <p>
-                  Traffic without conversion mechanics yields zero ROI. Our
-                  digital marketing strategies natively integrate with the
-                  software we build. By instrumenting deep analytics engines and
-                  advanced data visualization tools inside your applications, we
-                  deploy hyper-targeted Paid Search (SEM), high-authority Search
-                  Engine Optimization (SEO), and conversion-rate-optimized
-                  funnels. We leverage predictive data and user telemetry to
-                  iteratively improve cost-per-acquisition metrics, transforming
-                  your software into a quantifiable, automated revenue channel.
+                  Having a website means nothing if local people can't find your
+                  shop. We specialize in Local Search Engine Optimization (SEO).
+                  When a family in Patna searches for your type of business, we
+                  make sure your shop shows up first on Google Maps. We run
+                  targeted, affordable local Facebook ads that actually result
+                  in foot traffic or direct WhatsApp enquiries to your phone,
+                  proving real return on every rupee spent.
                 </p>
               </div>
               <div className="mt-8 break-inside-avoid">
                 <h3 className="text-2xl font-semibold text-[#f59e0b] mb-4">
-                  3. Statutory Compliance & Legal Scaffolding
+                  3. Headache-Free Business Registration
                 </h3>
                 <p>
-                  Deploying enterprise architecture in India necessitates
-                  rigorous adherence to local regulations. Our unique
-                  multi-disciplinary approach weaves legal safeguards straight
-                  into your operational launch. We manage the complexities of
-                  Private Limited/LLP incorporation, ensure automated alignment
-                  with monthly GST filing regulations, and architect your data
-                  compliance boundaries to satisfy regional data protection
-                  mandates. At EDUNEX, technical excellence is systematically
-                  protected by uncompromising legal foundations.
+                  Running a business in India means heavy paperwork. We do it
+                  for you. Our compliance team handles the complicated process
+                  of registering your firm (Private Limited, MSME, or
+                  Proprietorship), securing local Trade Licenses or FSSAI
+                  certificates, and filing your monthly GST returns on time to
+                  ensure you never pay a single late fee or penalty. Technical
+                  excellence, fully protected by legal safety.
                 </p>
               </div>
             </div>

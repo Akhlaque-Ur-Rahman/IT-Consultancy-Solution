@@ -19,6 +19,7 @@ import { MarketingStrategy } from "@/components/services/MarketingStrategy";
 import { DesignPortfolio } from "@/components/services/DesignPortfolio";
 import { ComplianceDetails } from "@/components/services/ComplianceDetails";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { ServiceSchema } from "@/components/ServiceSchema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -33,12 +34,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${service.title} | ${service.outcomeHeadline} | EDUNEX`,
     description: service.description,
+    alternates: {
+      canonical: `https://edunexservices.in/services/${slug}`,
+    },
     openGraph: {
       title: service.title,
       description: service.description,
       type: "website",
     },
   };
+}
+
+export async function generateStaticParams() {
+  return services.map((service) => ({
+    slug: service.slug,
+  }));
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -49,6 +59,11 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-black">
+      <ServiceSchema
+        name={service.title}
+        description={service.description}
+        url={`https://edunexservices.in/services/${service.slug}`}
+      />
       <BreadcrumbSchema
         items={[
           { name: "Home", item: "/" },

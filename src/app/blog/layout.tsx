@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog & Insights | EDUNEX Services",
+  title: "IT & Business Growth Blog for Bihar SMEs | EDUNEX",
   description:
-    "Stay updated with the latest trends in digital transformation, regional business growth, and technology solutions.",
+    "Read simple, practical advice on how to use technology to grow your shop, clinic, or distribution business in Patna and Bihar.",
   alternates: {
     canonical: "https://edunexservices.in/blog",
   },

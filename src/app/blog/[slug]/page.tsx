@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { BlogPostingSchema } from "@/components/BlogPostingSchema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -25,6 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords:
       post.tags.join(", ") +
       ", IT Consulting, regional business, regional tech",
+    alternates: {
+      canonical: `https://edunexservices.in/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -33,6 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: [post.author],
     },
   };
+}
+
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -56,6 +66,16 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="pt-4 pb-20 min-h-screen bg-black">
+      <BlogPostingSchema
+        post={{
+          title: post.title,
+          description: post.excerpt,
+          image: "https://edunexservices.in/logo.jpg",
+          datePublished: "2024-01-01",
+          authorName: post.author,
+          url: `https://edunexservices.in/blog/${post.slug}`,
+        }}
+      />
       <BreadcrumbSchema
         items={[
           { name: "Home", item: "/" },

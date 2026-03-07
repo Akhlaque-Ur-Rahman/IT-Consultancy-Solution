@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Organization",
   name: "EDUNEX Services",
   image: "https://edunexservices.in/logo.jpg",
   "@id": "https://edunexservices.in",
@@ -136,6 +136,18 @@ const navigationLd = {
       position: 6,
       name: "Contact",
       url: "https://edunexservices.in/contact",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 7,
+      name: "IT Consulting Patna",
+      url: "https://edunexservices.in/it-consulting-patna",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 8,
+      name: "Software Dev Bihar",
+      url: "https://edunexservices.in/software-development-bihar",
     },
   ],
 };

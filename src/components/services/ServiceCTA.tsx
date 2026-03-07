@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Star } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServiceCTAProps {
   badge?: string;
@@ -100,7 +101,7 @@ export const ServiceCTA = ({
                   ].map((src, i) => (
                     <motion.div
                       key={i}
-                      className="inline-block h-12 w-12 rounded-full border-2 border-[#0a0a0a] bg-white/5 shadow-2xl overflow-hidden ring-2 ring-white/5"
+                      className="relative inline-block h-12 w-12 rounded-full border-2 border-[#0a0a0a] bg-white/5 shadow-2xl overflow-hidden ring-2 ring-white/5"
                       whileHover={{ y: -4, scale: 1.1, zIndex: 10 }}
                       transition={{
                         type: "spring",
@@ -108,10 +109,12 @@ export const ServiceCTA = ({
                         damping: 10,
                       }}
                     >
-                      <img
+                      <Image
                         src={src}
                         alt={`Tech Leader ${i + 1}`}
-                        className="w-full h-full object-cover filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                        fill
+                        sizes="48px"
+                        className="object-cover filter brightness-90 group-hover:brightness-110 transition-all duration-300"
                       />
                     </motion.div>
                   ))}

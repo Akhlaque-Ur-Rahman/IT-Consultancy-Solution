@@ -105,16 +105,17 @@ function ContactFormContent() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
             <Phone className="w-4 h-4 text-[#f59e0b]" />
             <span className="text-sm font-medium text-[#f59e0b]">
-              Get in Touch
+              Local IT Support in Bihar
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let&apos;s Talk About Your{" "}
-            <span className="text-[#f59e0b]">Next Project</span>
+            Let&apos;s Build Your{" "}
+            <span className="text-[#f59e0b]">Business Success</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Have a question? Or ready to start building? We&apos;re here to help
-            you every step of the way.
+            Ready to upgrade your shop's software, get more local customers, or
+            handle your GST? Drop us a message and our Patna team will call you
+            back today.
           </p>
         </motion.div>
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enterprise Cloud & Software Solutions | EDUNEX",
+  title: "Custom Billing & Operational Systems in Bihar | EDUNEX",
   description:
-    "Transform your operations with EDUNEX's custom enterprise software solutions, B2B SaaS architecture, and seamlessly integrated scalable workflows.",
+    "Simple, fast software made locally in Patna. We build inventory and billing systems that actually match how your godown or shop works.",
   alternates: {
     canonical: "https://edunexservices.in/solutions",
   },

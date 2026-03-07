@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY_INFO } from "@/config/company";
 
 export default function ProblemSolutionHero() {
@@ -126,10 +127,12 @@ export default function ProblemSolutionHero() {
                         key={i}
                         className="w-10 h-10 rounded-full border-2 border-[#121212] bg-[#1a1a1a] overflow-hidden relative"
                       >
-                        <img
+                        <Image
                           src={src}
                           alt={`Client ${i + 1}`}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="40px"
+                          className="object-cover"
                         />
                       </div>
                     ))}

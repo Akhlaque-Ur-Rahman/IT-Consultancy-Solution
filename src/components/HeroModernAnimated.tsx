@@ -34,7 +34,7 @@ export function HeroModernAnimated() {
           >
             <div className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse" />
             <span className="text-sm font-medium text-[#f59e0b]">
-              Scaling Digital Success Since 2012
+              Your Local Technology Partner Since 2012
             </span>
           </motion.div>
 
@@ -45,9 +45,8 @@ export function HeroModernAnimated() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight max-w-4xl mx-auto"
           >
-            Build Your <span className="text-[#f59e0b]">Dream Website</span>{" "}
-            with {COMPANY_INFO.yearsOfExperience} Years of Experience and 90+
-            Happy Clients
+            IT Consulting & Custom Software for{" "}
+            <span className="text-[#f59e0b]">SMEs in Bihar</span>
           </motion.h1>
 
           <motion.div
@@ -57,8 +56,9 @@ export function HeroModernAnimated() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Expert-built websites and apps designed to grow your reach. Simple
-            process, guaranteed on-time delivery.
+            Stop losing money to manual work. We build affordable billing
+            systems, fast websites, and handle your GST compliance right here in
+            your city.
           </motion.div>
 
           <motion.div
@@ -70,7 +70,7 @@ export function HeroModernAnimated() {
           >
             <Link href="/contact">
               <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-6 text-base transition-all duration-200 group">
-                Request a Strategy Call
+                Schedule a Free IT Consultation in Bihar
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

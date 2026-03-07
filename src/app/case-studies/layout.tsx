@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enterprise Case Studies & Tech Success | EDUNEX",
+  title: "Local Business Tech Success Stories in Bihar | EDUNEX",
   description:
-    "Explore EDUNEX's high-impact case studies. See how we architect scalable enterprise cloud solutions and custom software driving real B2B growth.",
+    "Explore how EDUNEX helps local shops, clinics, and distributors in Patna and across Bihar save time and money with simple digital solutions.",
   alternates: {
     canonical: "https://edunexservices.in/case-studies",
   },

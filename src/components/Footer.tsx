@@ -43,6 +43,16 @@ export function Footer() {
       href: "/compliance",
       id: "compliance",
     },
+    {
+      label: "IT Consulting Patna",
+      href: "/it-consulting-patna",
+      id: "it-consulting-patna",
+    },
+    {
+      label: "Software Dev Bihar",
+      href: "/software-development-bihar",
+      id: "software-dev-bihar",
+    },
   ];
 
   const resources = [

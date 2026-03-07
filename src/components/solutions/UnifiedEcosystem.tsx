@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Network, Zap, Shield, BarChart, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 export default function UnifiedEcosystem() {
   return (
@@ -60,10 +61,12 @@ export default function UnifiedEcosystem() {
                 <div className="relative z-20 flex items-center justify-center group">
                   <div className="absolute inset-0 bg-[#f59e0b] rounded-full blur-[30px] md:blur-[50px] opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
                   <div className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-b from-[#1a1a1a] to-black border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(245,158,11,0.2)] overflow-hidden relative">
-                    <img
+                    <Image
                       src="/logo.jpg"
                       alt="EDUNEX Services Logo"
-                      className="w-full h-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 80px, 128px"
+                      className="object-contain relative z-10 transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                 </div>

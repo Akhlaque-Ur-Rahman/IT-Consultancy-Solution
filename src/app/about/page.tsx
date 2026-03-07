@@ -87,49 +87,45 @@ export default function AboutPage() {
         >
           <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg md:prose-xl max-w-none">
             <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
-              Our Architectural Philosophy
+              Local Roots, Practical Execution
             </h2>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6 text-gray-400 leading-relaxed">
                 <p>
-                  At EDUNEX Services, we believe that software should never be a
-                  cost center—it must be a fundamental driver of enterprise
-                  valuation. Founded in 2012, we recognized a systemic failure
-                  in how digital transformation was being sold to mid-market and
-                  scaling businesses. Too often, firms were forced to choose
-                  between rigid, off-the-shelf SaaS products that dictated their
-                  workflows, or unreliable freelance contractors incapable of
-                  delivering secure, enterprise-grade architecture.
+                  At EDUNEX Services, we believe that technology should make
+                  your life easier, not more complicated. Founded in 2012 right
+                  here in Bihar, we saw local businesses struggling to digitize.
+                  Small shop owners and distributors were being overcharged by
+                  out-of-state agencies for complex software they didn't need
+                  and couldn't use.
                 </p>
                 <p>
-                  We built EDUNEX to bridge this gap. Operating as your
-                  fractional engineering department, we architect vertically
-                  integrated technology ecosystems tailored to the exact
-                  specifications of your business operations. From AI-enhanced
-                  cloud migrations and high-availability headless commerce
-                  platforms to custom ERP integrations and granular legal
-                  compliance routing, we unify your entire digital footprint
-                  under one highly secure, proactive architectural strategy.
+                  We built EDUNEX to fix this. We act as your local technology
+                  partner. We don't just sell you software; we visit your
+                  godown, understand how your staff works with paper bills
+                  today, and build simple digital systems that make sense to
+                  them. Whether you need an offline-ready billing system, a
+                  website that brings in local customers from Google Maps, or
+                  help filing your GST without headaches, we handle it all.
                 </p>
                 <p>
-                  Our mandate is simple: to eliminate the operational friction
-                  caused by legacy systems and replace it with strictly typed,
-                  horizontally scalable infrastructure that empowers your
-                  executive team to make real-time, data-driven decisions.
-                  Explore our{" "}
+                  Our goal is simple: to stop you from losing money to manual
+                  mistakes, and to give you the peace of mind that comes from
+                  having a reliable tech team just a phone call or a short drive
+                  away. Explore our{" "}
                   <Link
                     href="/case-studies"
                     className="text-[#f59e0b] hover:underline"
                   >
-                    Enterprise Case Studies
+                    Local Success Stories
                   </Link>{" "}
-                  to see this philosophy in action.
+                  to see how we've helped businesses like yours.
                 </p>
               </div>
               <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden border border-[#262626]">
                 <ImageWithFallback
-                  src="https://source.unsplash.com/800x800/?server-room-infrastructure-code"
-                  alt="Enterprise Infrastructure Architecture"
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+                  alt="Local Business Support"
                   className="w-full h-full object-cover opacity-80"
                 />
               </div>
@@ -147,86 +143,40 @@ export default function AboutPage() {
         >
           <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
-              The Engineering & Deployment Lifecycle
+              How We Work With You
             </h2>
             <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
               <p>
-                The successful deployment of enterprise ecosystems requires
-                rigorous engineering discipline. We reject the fragmented "build
-                it and forget it" mentality. Our deployment methodology is
-                strictly governed by modern Agile principles, utilizing
-                Continuous Integration pipelines (CI) alongside comprehensive
-                unit and End-to-End (E2E) testing. This guarantees that your
-                business logic is preserved accurately before deployment to
-                production environments.
+                We know that learning a new software can be scary for your
+                staff. That is why we never just install a program and
+                disappear. We stay with you until everything works perfectly.
+                Our process is built around trust, transparency, and
+                face-to-face support.
               </p>
               <p>
-                <strong>Phase 1: Architectural Audit & Systems Design.</strong>{" "}
-                We do not write code until we fully map your current data
-                topologies, API dependencies, and operational bottlenecks. We
-                generate precise entity-relationship diagrams (ERDs) and define
-                the tech stack—typically Next.js (React) for
-                performance-critical frontends, and Node.js with PostgreSQL for
-                secure, relational backend services.
+                <strong>Step 1: On-Site Business Review.</strong> Before any
+                money changes hands, we sit down with you at your shop, clinic,
+                or factory. We watch exactly how you do things today—how you
+                write invoices, track stock, and manage customers. We then
+                suggest the simplest, lowest-cost digital way to automate that
+                work.
               </p>
               <p>
-                <strong>Phase 2: Sprint-Based Execution.</strong> Your dedicated
-                engineering pod works in discrete 2-week sprints. We prioritize
-                core business value, delivering functional software iteratively.
-                This provides your stakeholders with total transparency and the
-                flexibility to pivot logic in response to immediate market
-                feedback without derailing the overarching timeline.
+                <strong>Step 2: Fast, Practical Delivery.</strong> We build
+                exactly what we promised, on time. For custom software, we show
+                you progress every week so you can request changes before we
+                finish. For simple websites or GST registrations, we move
+                incredibly fast so you can get started immediately.
               </p>
               <p>
-                <strong>
-                  Phase 3: Cybersecurity Posture & Post-Deployment SLA.
-                </strong>{" "}
-                A deployment is not a conclusion; it is a baseline. We implement
-                strict JWT-based authentication layers, Role-Based Access
-                Control (RBAC), and automated cloud database backups.
-                Post-launch, we provide proactive managed IT monitoring,
-                proactive threat prevention, and scaling provisions to guarantee
-                your infrastructure effortlessly manages demand surges.
+                <strong>Step 3: Training & Ongoing Support.</strong> This is
+                where we are completely different. We provide on-site training
+                for your staff in Hindi or English. If your system goes down or
+                if you get stuck on a GST filing, our team is right here in
+                Bihar to fix it immediately, ensuring your business never has to
+                stop.
               </p>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Data Security & Compliance */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
-            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
-              Data Sovereignty & Legal Compliance
-            </h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              In an era defined by stringent data protection laws and complex
-              financial regulations, technical excellence is irrelevant without
-              legal grounding. Operating a modern business requires systems that
-              are not only performant but fundamentally secure and compliant
-              with localized statutory requirements.
-            </p>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              We engineer our CRM and ERP solutions with absolute data
-              sovereignty in mind. We utilize heavily encrypted payload
-              transmissions and secure relational databases that comply with
-              data localization mandates. Furthermore, our unique structure
-              integrates business compliance advisory services directly
-              alongside software engineering.
-            </p>
-            <p className="text-gray-400 leading-relaxed">
-              From automated tracking of GST return cycles to the secure
-              archiving of digital incorporation certificates (LLP, Private
-              Limited) and trademark prosecution documents, we ensure your
-              technical infrastructure actively protects your legal exposure. We
-              believe that security and compliance are not post-production
-              add-ons; they are architectural prerequisites.
-            </p>
           </div>
         </motion.div>
 
