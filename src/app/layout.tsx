@@ -137,18 +137,6 @@ const navigationLd = {
       name: "Contact",
       url: "https://edunexservices.in/contact",
     },
-    {
-      "@type": "SiteNavigationElement",
-      position: 7,
-      name: "IT Consulting Patna",
-      url: "https://edunexservices.in/it-consulting-patna",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 8,
-      name: "Software Dev Bihar",
-      url: "https://edunexservices.in/software-development-bihar",
-    },
   ],
 };
 

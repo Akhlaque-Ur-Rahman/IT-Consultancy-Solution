@@ -12,11 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/compliance',
     '/contact',
     '/cookies',
-    '/it-consulting-patna',
     '/privacy',
     '/resources',
     '/services',
-    '/software-development-bihar',
     '/solutions',
     '/terms',
   ].map((route) => ({
