@@ -1,7 +1,7 @@
 import { services } from "@/data/mockData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SITE_URL } from "@/config/company";
+import { SITE_URL, SEO_KEYWORDS, META_TITLE_MAX, META_DESC_MAX, truncateMeta } from "@/config/company";
 
 // Universal Components
 import { ServiceHero } from "@/components/services/ServiceHero";
@@ -36,17 +36,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!service) return { title: "Service Not Found | EDUNEX" };
 
-  const headline = stripHtml(service.outcomeHeadline);
+  const serviceKw = SEO_KEYWORDS.serviceKeywords[slug];
+  const baseDesc = service.description;
+  const metaDesc =
+    baseDesc.length >= META_DESC_MAX
+      ? truncateMeta(baseDesc, META_DESC_MAX)
+      : baseDesc.length < 120
+        ? `${baseDesc} Trusted by 90+ Patna & Bihar businesses.`
+        : baseDesc;
+  const fullDesc = truncateMeta(metaDesc, META_DESC_MAX);
+  const fullTitle = truncateMeta(
+    `${service.title} | Patna & Bihar | EDUNEX`,
+    META_TITLE_MAX
+  );
 
   return {
-    title: `${service.title} | ${headline} | EDUNEX`,
-    description: service.description,
+    title: fullTitle,
+    description: fullDesc,
+    keywords: serviceKw ?? SEO_KEYWORDS.primary.slice(0, 4),
     alternates: {
       canonical: `${SITE_URL}/services/${slug}`,
     },
     openGraph: {
-      title: service.title,
-      description: service.description,
+      title: fullTitle,
+      description: fullDesc,
       type: "website",
     },
   };

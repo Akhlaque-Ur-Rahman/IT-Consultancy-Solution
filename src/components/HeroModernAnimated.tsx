@@ -45,8 +45,8 @@ export function HeroModernAnimated() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight max-w-4xl mx-auto"
           >
-            IT Consulting & Custom Software for{" "}
-            <span className="text-[#f59e0b]">SMEs in Bihar</span>
+            Software Development Company{" "}
+            <span className="text-[#f59e0b]">Patna | Bihar</span>
           </motion.h1>
 
           <motion.div
@@ -56,9 +56,9 @@ export function HeroModernAnimated() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Stop losing money to manual work. We build affordable billing
-            systems, fast websites, and handle your GST compliance right here in
-            your city.
+            Billing software, GST registration &amp; custom ERP for Patna
+            businesses. Affordable IT solutions—websites, mobile apps, digital
+            marketing—since 2012.
           </motion.div>
 
           <motion.div

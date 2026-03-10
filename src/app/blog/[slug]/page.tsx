@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { BlogPostingSchema } from "@/components/BlogPostingSchema";
-import { SITE_URL } from "@/config/company";
+import { SITE_URL, META_TITLE_MAX, META_DESC_MAX, truncateMeta } from "@/config/company";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,18 +22,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const fullTitle = truncateMeta(`${post.title} | EDUNEX`, META_TITLE_MAX);
+  const fullDesc = truncateMeta(post.excerpt, META_DESC_MAX);
   return {
-    title: `${post.title} | EDUNEX Blog`,
-    description: post.excerpt,
-    keywords:
-      post.tags.join(", ") +
-      ", IT Consulting, regional business, regional tech",
+    title: fullTitle,
+    description: fullDesc,
+    keywords: [...post.tags, "IT Consulting Patna", "Software Company Bihar"],
     alternates: {
       canonical: `${SITE_URL}/blog/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: fullTitle,
+      description: fullDesc,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],

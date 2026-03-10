@@ -20,16 +20,24 @@ import Link from "next/link";
 import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
-import { COMPANY_INFO, SITE_URL } from "@/config/company";
+import { COMPANY_INFO, SITE_URL, SEO_KEYWORDS } from "@/config/company";
 import { WebSiteSchema } from "@/components/WebSiteSchema";
 import { OrganizationSchema } from "@/components/OrganizationSchema";
 
 export const metadata: Metadata = {
-  title: "EDUNEX - IT Consulting & Custom Software Development in Bihar",
+  title:
+    "Software Development Patna | Billing Software & GST Bihar | EDUNEX",
   description:
-    "IT Consulting & Custom Software Development for SMEs in Bihar. Build billing software, mobile apps, and manage your GST legally.",
+    "Top IT company in Patna. Custom billing software, ERP, GST registration, web & digital marketing for Bihar SMEs. 90+ clients since 2012.",
+  keywords: SEO_KEYWORDS.primary.concat(SEO_KEYWORDS.secondary),
   alternates: {
     canonical: SITE_URL,
+  },
+  openGraph: {
+    title: "Software Development Patna | Billing & GST Bihar | EDUNEX",
+    description:
+      "Top IT company in Patna. Custom billing, ERP, GST, web & digital marketing for Bihar SMEs. 90+ clients since 2012.",
+    type: "website",
   },
 };
 
