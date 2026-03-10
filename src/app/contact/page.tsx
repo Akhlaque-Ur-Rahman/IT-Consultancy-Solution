@@ -21,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { CONTACT_FORM_SERVICES } from "@/lib/contactFormOptions";
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -31,6 +32,7 @@ function ContactFormContent() {
     email: "",
     phone: "",
     service: "consulting",
+    company: "",
     message: "",
   });
 
@@ -57,27 +59,18 @@ function ContactFormContent() {
     setStatus("loading");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
-          ...formData,
-          from_name: "EDUNEX Contact Page",
-          subject: `Contact Lead: ${formData.service}`,
-        }),
+      const { supabase } = await import("@/lib/supabase");
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        source: "contact_page",
       });
-
-      const result = await response.json();
-      if (result.success) {
-        setIsSubmitted(true);
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
+      if (error) throw error;
+      setIsSubmitted(true);
+      setStatus("success");
     } catch (error) {
       console.error("Submission error:", error);
       setStatus("error");
@@ -189,6 +182,7 @@ function ContactFormContent() {
                           email: "",
                           phone: "",
                           service: "consulting",
+                          company: "",
                           message: "",
                         });
                         setStatus("idle");
@@ -258,6 +252,28 @@ function ContactFormContent() {
 
                             <div className="space-y-2">
                               <label className="text-sm font-medium text-gray-300">
+                                Phone Number
+                              </label>
+                              <div className="relative group">
+                                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <input
+                                  type="tel"
+                                  required
+                                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
+                                  placeholder="+91 70708 09208"
+                                  value={formData.phone}
+                                  onChange={(e) =>
+                                    setFormData({
+                                      ...formData,
+                                      phone: e.target.value,
+                                    })
+                                  }
+                                />
+                              </div>
+                            </div>
+
+                            <div className="space-y-2">
+                              <label className="text-sm font-medium text-gray-300">
                                 Service Interest
                               </label>
                               <div className="relative group">
@@ -272,43 +288,11 @@ function ContactFormContent() {
                                     })
                                   }
                                 >
-                                  <option value="consulting">
-                                    Expert Business Advice
-                                  </option>
-                                  <option value="web-app-development">
-                                    Build a Website or Mobile App
-                                  </option>
-                                  <option value="crm-erp-solutions">
-                                    Manage Staff, Billing & Office
-                                  </option>
-                                  <option value="digital-marketing-services">
-                                    Grow Sales & Social Media
-                                  </option>
-                                  <option value="ui-ux-design">
-                                    Design My App or Logo
-                                  </option>
-                                  <option value="ecommerce-solutions">
-                                    Start an Online Store
-                                  </option>
-                                  <option value="lead-management-systems">
-                                    Track New Customers
-                                  </option>
-                                  <option value="ivr-calling-solutions">
-                                    Automatic Phone System (IVR)
-                                  </option>
-                                  <option value="hyperlocal-platform-dev">
-                                    Delivery or Rider App
-                                  </option>
-                                  <option value="seo-optimization-expert">
-                                    Rank Higher on Google (SEO)
-                                  </option>
-                                  <option value="animation-graphics-design">
-                                    Videos & Animations
-                                  </option>
-                                  <option value="business-registration-compliance">
-                                    GST, Tax & Registration
-                                  </option>
-                                  <option value="other">Other</option>
+                                  {CONTACT_FORM_SERVICES.map((s) => (
+                                    <option key={s.slug} value={s.slug}>
+                                      {s.label}
+                                    </option>
+                                  ))}
                                 </select>
                               </div>
                             </div>
@@ -332,20 +316,19 @@ function ContactFormContent() {
                           >
                             <div className="space-y-2">
                               <label className="text-sm font-medium text-gray-300">
-                                Phone Number
+                                Company Name
                               </label>
                               <div className="relative group">
-                                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
+                                <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
                                 <input
-                                  type="tel"
-                                  required
+                                  type="text"
                                   className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#262626] bg-[#0a0a0a] text-white focus:ring-2 focus:ring-[#f59e0b]/50 focus:border-[#f59e0b] outline-none transition-all placeholder:text-gray-600"
-                                  placeholder="+91 70708 09208"
-                                  value={formData.phone}
+                                  placeholder="Your company (optional)"
+                                  value={formData.company}
                                   onChange={(e) =>
                                     setFormData({
                                       ...formData,
-                                      phone: e.target.value,
+                                      company: e.target.value,
                                     })
                                   }
                                 />

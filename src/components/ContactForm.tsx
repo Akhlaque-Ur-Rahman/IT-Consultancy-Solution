@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Send, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
+import { CONTACT_FORM_SERVICES } from "@/lib/contactFormOptions";
 
 interface ContactFormProps {
   isOpen: boolean;
@@ -23,7 +24,7 @@ export function ContactForm({
     email: "",
     phone: "",
     company: "",
-    service: prefilledService || "",
+    service: prefilledService || "consulting",
     message: "",
   });
 
@@ -43,64 +44,38 @@ export function ContactForm({
     setStatus("loading");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
-          ...formData,
-          from_name: "EDUNEX Website",
-          subject: `New Inquiry: ${formData.service}`,
-        }),
+      const { supabase } = await import("@/lib/supabase");
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service || "consulting",
+        message: formData.message,
+        company: formData.company || null,
+        source: "consultation_modal",
       });
-
-      const result = await response.json();
-      if (result.success) {
-        setIsSubmitted(true);
-        setStatus("success");
-        setTimeout(() => {
-          onClose();
-          setIsSubmitted(false);
-          setStatus("idle");
-          setStep(1);
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            company: "",
-            service: "",
-            message: "",
-          });
-        }, 3000);
-      } else {
-        setStatus("error");
-      }
+      if (error) throw error;
+      setIsSubmitted(true);
+      setStatus("success");
+      setTimeout(() => {
+        onClose();
+        setIsSubmitted(false);
+        setStatus("idle");
+        setStep(1);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "consulting",
+          message: "",
+        });
+      }, 3000);
     } catch (error) {
       console.error("Submission error:", error);
       setStatus("error");
     }
   };
-
-  const servicesList = [
-    { label: "Web & App Development", slug: "web-app-development" },
-    { label: "CRM/ERP/Billing Solutions", slug: "crm-erp-solutions" },
-    { label: "Digital Marketing", slug: "digital-marketing-services" },
-    { label: "UI/UX Design", slug: "ui-ux-design" },
-    { label: "E-commerce Solutions", slug: "ecommerce-solutions" },
-    { label: "Lead Management", slug: "lead-management-systems" },
-    { label: "IVR Solutions", slug: "ivr-calling-solutions" },
-    { label: "Hyperlocal Platforms", slug: "hyperlocal-platform-dev" },
-    { label: "SEO & Optimization", slug: "seo-optimization-expert" },
-    { label: "Animation & Graphics", slug: "animation-graphics-design" },
-    {
-      label: "Business Registration & Compliance",
-      slug: "business-registration-compliance",
-    },
-    { label: "Other", slug: "other" },
-  ];
 
   return (
     <AnimatePresence>
@@ -147,7 +122,7 @@ export function ContactForm({
               <div className="p-8">
                 {!isSubmitted ? (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Step 1: Basic Info */}
+                    {/* Step 1: Name, Email, Phone, Service */}
                     {step === 1 && (
                       <motion.div
                         initial={{ opacity: 0, x: 20 }}
@@ -170,7 +145,7 @@ export function ContactForm({
                             }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
-                            placeholder="Enter your full name"
+                            placeholder="John Doe"
                           />
                         </div>
 
@@ -193,7 +168,7 @@ export function ContactForm({
                             }
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
-                            placeholder="your.email@company.com"
+                            placeholder="john@company.com"
                           />
                         </div>
 
@@ -222,6 +197,51 @@ export function ContactForm({
 
                         <div>
                           <label
+                            htmlFor="service"
+                            className="block text-sm font-medium text-gray-300 mb-2"
+                          >
+                            Service Interest *
+                          </label>
+                          <select
+                            id="service"
+                            value={formData.service}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                service: e.target.value,
+                              })
+                            }
+                            required
+                            className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent transition-all"
+                          >
+                            {CONTACT_FORM_SERVICES.map((s) => (
+                              <option key={s.slug} value={s.slug} className="bg-[#121212]">
+                                {s.label}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        <Button
+                          type="button"
+                          onClick={() => setStep(2)}
+                          className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-bold h-11"
+                        >
+                          Next Step
+                        </Button>
+                      </motion.div>
+                    )}
+
+                    {/* Step 2: Company (optional), Message */}
+                    {step === 2 && (
+                      <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-6"
+                      >
+                        <div>
+                          <label
                             htmlFor="company"
                             className="block text-sm font-medium text-gray-300 mb-2"
                           >
@@ -237,60 +257,8 @@ export function ContactForm({
                               })
                             }
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all"
-                            placeholder="Your company name"
+                            placeholder="Your company (optional)"
                           />
-                        </div>
-
-                        <Button
-                          type="button"
-                          onClick={() => setStep(2)}
-                          className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black font-bold h-11"
-                        >
-                          Next Step
-                        </Button>
-                      </motion.div>
-                    )}
-
-                    {/* Step 2: Service & Message */}
-                    {step === 2 && (
-                      <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        className="space-y-6"
-                      >
-                        <div>
-                          <label
-                            htmlFor="service"
-                            className="block text-sm font-medium text-gray-300 mb-2"
-                          >
-                            Service Interested In *
-                          </label>
-                          <select
-                            id="service"
-                            value={formData.service}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                service: e.target.value,
-                              })
-                            }
-                            required
-                            className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent transition-all"
-                          >
-                            <option value="" className="bg-[#121212]">
-                              Select a service
-                            </option>
-                            {servicesList.map((service) => (
-                              <option
-                                key={service.slug}
-                                value={service.slug}
-                                className="bg-[#121212]"
-                              >
-                                {service.label}
-                              </option>
-                            ))}
-                          </select>
                         </div>
 
                         <div>
@@ -298,7 +266,7 @@ export function ContactForm({
                             htmlFor="message"
                             className="block text-sm font-medium text-gray-300 mb-2"
                           >
-                            Tell Us About Your Project *
+                            Message *
                           </label>
                           <textarea
                             id="message"
@@ -312,7 +280,7 @@ export function ContactForm({
                             required
                             className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent placeholder:text-gray-600 transition-all resize-none"
                             rows={6}
-                            placeholder="Describe your requirements, timeline, and any specific goals..."
+                            placeholder="Tell us about your project requirements..."
                           />
                         </div>
 
@@ -375,9 +343,9 @@ export function ContactForm({
                     ></div>
                   </div>
                   <div className="flex justify-between mt-2">
-                    <span className="text-xs text-gray-500">Basic Info</span>
+                    <span className="text-xs text-gray-500">Your Details</span>
                     <span className="text-xs text-gray-500">
-                      Project Details
+                      Message
                     </span>
                   </div>
                 </div>

@@ -43,7 +43,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.edunexservices.in https://edunexservices.in https://source.unsplash.com https://res.cloudinary.com; connect-src 'self' https://*.google.com https://api.web3forms.com ws: wss:; frame-src 'self' https://www.google.com https://maps.google.com;",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.edunexservices.in https://edunexservices.in https://source.unsplash.com https://res.cloudinary.com; connect-src 'self' https://*.google.com https://*.supabase.co ws: wss:; frame-src 'self' https://www.google.com https://maps.google.com;",
           },
         ],
       },
