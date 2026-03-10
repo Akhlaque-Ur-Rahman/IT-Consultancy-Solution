@@ -68,60 +68,60 @@ export default function ResourcesPage() {
         >
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-white">Latest Blog Posts</h2>
-            <Button
-              variant="outline"
-              className="border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black bg-transparent"
-            >
-              View All Posts
-            </Button>
+            <Link href="/blog">
+              <Button
+                variant="outline"
+                className="border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black bg-transparent"
+              >
+                View All Posts
+              </Button>
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <motion.div
-                key={post.id}
-                className="group relative bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-all duration-300 cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="relative h-48 bg-[#0a0a0a]">
-                  <ImageWithFallback
-                    src={`https://source.unsplash.com/800x600/?${encodeURIComponent(post.image)}`}
-                    alt={post.title}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-sm text-xs font-medium text-[#f59e0b] border border-[#f59e0b]/20">
-                    {post.category}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      <span>{post.date}</span>
+              <Link key={post.id} href={`/blog/${post.slug}`}>
+                <motion.div
+                  className="group relative bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-all duration-300 cursor-pointer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="relative h-48 bg-[#0a0a0a]">
+                    <ImageWithFallback
+                      src={`https://source.unsplash.com/800x600/?${encodeURIComponent(post.image)}`}
+                      alt={post.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-sm text-xs font-medium text-[#f59e0b] border border-[#f59e0b]/20">
+                      {post.category}
                     </div>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    className="text-[#f59e0b] hover:text-[#fbbf24] p-0 hover:bg-transparent"
-                  >
-                    Read More →
-                  </Button>
-                </div>
-                {/* Animation */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
-              </motion.div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        <span>{post.date}</span>
+                      </div>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <span className="text-[#f59e0b] hover:text-[#fbbf24] font-medium text-sm">
+                      Read More →
+                    </span>
+                  </div>
+                  {/* Animation */}
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>

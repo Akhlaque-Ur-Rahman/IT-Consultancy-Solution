@@ -1,12 +1,13 @@
 import Script from "next/script";
+import { SITE_URL } from "@/config/company";
 
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "EDUNEX Services",
-    url: "https://edunexservices.in",
-    logo: "https://edunexservices.in/logo.png",
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
     description:
       "Enterprise digital transformation and business compliance consulting based in Patna, Bihar.",
     address: {

@@ -1,3 +1,6 @@
+/** Canonical production URL - use www consistently for SEO */
+export const SITE_URL = "https://www.edunexservices.in";
+
 export const COMPANY_INFO = {
   yearsOfExperience: 12,
   team: {

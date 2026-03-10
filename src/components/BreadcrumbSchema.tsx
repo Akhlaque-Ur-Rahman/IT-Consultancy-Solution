@@ -1,5 +1,6 @@
 import React from "react";
 import Script from "next/script";
+import { SITE_URL } from "@/config/company";
 
 interface BreadcrumbItem {
   name: string;
@@ -11,7 +12,7 @@ interface BreadcrumbSchemaProps {
 }
 
 export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
-  const baseUrl = "https://edunexservices.in";
+  const baseUrl = SITE_URL;
 
   const breadcrumbList = {
     "@context": "https://schema.org",

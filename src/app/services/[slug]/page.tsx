@@ -1,6 +1,7 @@
 import { services } from "@/data/mockData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { SITE_URL } from "@/config/company";
 
 // Universal Components
 import { ServiceHero } from "@/components/services/ServiceHero";
@@ -25,17 +26,23 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
 
   if (!service) return { title: "Service Not Found | EDUNEX" };
 
+  const headline = stripHtml(service.outcomeHeadline);
+
   return {
-    title: `${service.title} | ${service.outcomeHeadline} | EDUNEX`,
+    title: `${service.title} | ${headline} | EDUNEX`,
     description: service.description,
     alternates: {
-      canonical: `https://edunexservices.in/services/${slug}`,
+      canonical: `${SITE_URL}/services/${slug}`,
     },
     openGraph: {
       title: service.title,
@@ -62,7 +69,7 @@ export default async function ServicePage({ params }: Props) {
       <ServiceSchema
         name={service.title}
         description={service.description}
-        url={`https://edunexservices.in/services/${service.slug}`}
+        url={`${SITE_URL}/services/${service.slug}`}
       />
       <BreadcrumbSchema
         items={[

@@ -1,16 +1,17 @@
 import Script from "next/script";
+import { SITE_URL } from "@/config/company";
 
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "EDUNEX Services",
-    url: "https://edunexservices.in",
+    url: SITE_URL,
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://edunexservices.in/search?q={search_term_string}",
+        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     },

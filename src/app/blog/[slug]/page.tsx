@@ -3,8 +3,10 @@ import { Calendar, Clock, User, ArrowLeft, Tag, Share2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { BlogPostingSchema } from "@/components/BlogPostingSchema";
+import { SITE_URL } from "@/config/company";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       post.tags.join(", ") +
       ", IT Consulting, regional business, regional tech",
     alternates: {
-      canonical: `https://edunexservices.in/blog/${slug}`,
+      canonical: `${SITE_URL}/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
@@ -50,18 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return (
-      <div className="pt-4 pb-20 min-h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Post Not Found</h1>
-          <Link href="/blog">
-            <Button className="bg-[#f59e0b] text-black hover:bg-[#d97706]">
-              Back to Blog
-            </Button>
-          </Link>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   return (
@@ -70,10 +61,10 @@ export default async function BlogPostPage({ params }: Props) {
         post={{
           title: post.title,
           description: post.excerpt,
-          image: "https://edunexservices.in/logo.jpg",
-          datePublished: "2024-01-01",
+          image: `${SITE_URL}/logo.jpg`,
+          datePublished: new Date(post.date).toISOString().split("T")[0],
           authorName: post.author,
-          url: `https://edunexservices.in/blog/${post.slug}`,
+          url: `${SITE_URL}/blog/${post.slug}`,
         }}
       />
       <BreadcrumbSchema

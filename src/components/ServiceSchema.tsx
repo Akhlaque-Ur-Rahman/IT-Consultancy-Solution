@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { SITE_URL } from "@/config/company";
 
 interface ServiceSchemaProps {
   name: string;
@@ -15,7 +16,7 @@ export function ServiceSchema({ name, description, url }: ServiceSchemaProps) {
     provider: {
       "@type": "Organization",
       name: "EDUNEX Services",
-      url: "https://edunexservices.in",
+      url: SITE_URL,
     },
     areaServed: {
       "@type": "Country",

@@ -31,12 +31,12 @@ export function Header() {
       dropdownItems: [
         {
           label: "Web & App Development",
-          href: "/services/web-app-development",
+          href: "/services/custom-software-bihar",
         },
-        { label: "CRM/ERP Solutions", href: "/services/crm-erp-solutions" },
+        { label: "CRM/ERP Solutions", href: "/services/erp-billing-software" },
         {
           label: "Digital Marketing",
-          href: "/services/digital-marketing-services",
+          href: "/services/local-seo-marketing",
         },
         { label: "UI/UX Design", href: "/services/ui-ux-design" },
         { label: "All Services", href: "/services" },

@@ -20,7 +20,7 @@ import Link from "next/link";
 import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
-import { COMPANY_INFO } from "@/config/company";
+import { COMPANY_INFO, SITE_URL } from "@/config/company";
 import { WebSiteSchema } from "@/components/WebSiteSchema";
 import { OrganizationSchema } from "@/components/OrganizationSchema";
 
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   description:
     "IT Consulting & Custom Software Development for SMEs in Bihar. Build billing software, mobile apps, and manage your GST legally.",
   alternates: {
-    canonical: "https://edunexservices.in",
+    canonical: SITE_URL,
   },
 };
 
@@ -280,7 +280,7 @@ export default function HomePage() {
             {caseStudies.map((caseStudy) => (
               <Link
                 key={caseStudy.id}
-                href="/case-studies"
+                href={`/case-studies/${caseStudy.slug}`}
                 className="block h-full"
               >
                 <CaseStudyCard
@@ -354,6 +354,14 @@ export default function HomePage() {
                   className="border-2 border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black px-10 py-7 text-lg transition-all duration-200"
                 >
                   Learn More About Us
+                </Button>
+              </Link>
+              <Link href="/blog">
+                <Button
+                  variant="outline"
+                  className="border border-[#262626] text-gray-300 hover:bg-[#262626] hover:text-white px-10 py-7 text-lg transition-all duration-200"
+                >
+                  Read Our Blog
                 </Button>
               </Link>
             </div>

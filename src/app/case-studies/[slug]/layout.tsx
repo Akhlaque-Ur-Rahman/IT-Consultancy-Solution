@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { caseStudies } from "@/data/mockData";
+import { SITE_URL } from "@/config/company";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${caseStudy.title} | EDUNEX Case Studies`,
     description: caseStudy.challenge,
     alternates: {
-      canonical: `https://edunexservices.in/case-studies/${slug}`,
+      canonical: `${SITE_URL}/case-studies/${slug}`,
     },
     openGraph: {
       title: caseStudy.title,

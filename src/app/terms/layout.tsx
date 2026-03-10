@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/config/company";
 
 export const metadata: Metadata = {
   title: "Terms of Service | EDUNEX",
   description:
     "Service terms and conditions for using EDUNEX IT and compliance services.",
   alternates: {
-    canonical: "https://edunexservices.in/terms",
+    canonical: `${SITE_URL}/terms`,
   },
 };
 

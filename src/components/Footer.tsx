@@ -25,17 +25,17 @@ export function Footer() {
   const services = [
     {
       label: "Web Development",
-      href: "/services/web-app-development",
+      href: "/services/custom-software-bihar",
       id: "web-dev",
     },
     {
       label: "CRM/ERP Solutions",
-      href: "/services/crm-erp-solutions",
+      href: "/services/erp-billing-software",
       id: "crm-erp",
     },
     {
       label: "Digital Marketing",
-      href: "/services/digital-marketing-services",
+      href: "/services/local-seo-marketing",
       id: "digital-marketing",
     },
     {

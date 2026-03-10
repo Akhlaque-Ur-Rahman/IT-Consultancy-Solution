@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { SITE_URL } from "@/config/company";
 
 interface BlogPostingSchemaProps {
   post: {
@@ -28,7 +29,7 @@ export function BlogPostingSchema({ post }: BlogPostingSchemaProps) {
       name: "EDUNEX Services",
       logo: {
         "@type": "ImageObject",
-        url: "https://edunexservices.in/logo.jpg",
+        url: `${SITE_URL}/logo.jpg`,
       },
     },
     mainEntityOfPage: {

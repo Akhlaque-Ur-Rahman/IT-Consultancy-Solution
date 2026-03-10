@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/config/company";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | EDUNEX",
   description:
     "Read our Privacy Policy to understand how we collect, use, and protect your information.",
   alternates: {
-    canonical: "https://edunexservices.in/privacy",
+    canonical: `${SITE_URL}/privacy`,
   },
 };
 

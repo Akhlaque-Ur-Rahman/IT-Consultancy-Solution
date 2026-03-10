@@ -5,6 +5,7 @@ import { AppLayout } from "@/components/AppLayout";
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 import { Preloader } from "@/components/Preloader";
 import Script from "next/script";
+import { SITE_URL } from "@/config/company";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://edunexservices.in"),
+  metadataBase: new URL(SITE_URL),
   title: "EDUNEX — Simple IT Solutions for Patna Businesses",
   description:
     "We help business owners in Patna grow with simple websites, custom apps, and expert tax advice. Reliable, honest, and local since 2012.",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://edunexservices.in",
+    url: SITE_URL,
     title: "EDUNEX — Simple IT Solutions for Patna Businesses",
     description:
       "Reliable websites, custom apps, and business growth tools for Patna's smart business owners.",
@@ -60,9 +61,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "EDUNEX Services",
-  image: "https://edunexservices.in/logo.jpg",
-  "@id": "https://edunexservices.in",
-  url: "https://edunexservices.in",
+  image: `${SITE_URL}/logo.jpg`,
+  "@id": SITE_URL,
+  url: SITE_URL,
   telephone: "+91 70708 09208",
   address: {
     "@type": "PostalAddress",
@@ -101,42 +102,14 @@ const navigationLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   itemListElement: [
-    {
-      "@type": "SiteNavigationElement",
-      position: 1,
-      name: "Services",
-      url: "https://edunexservices.in/services",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 2,
-      name: "Solutions",
-      url: "https://edunexservices.in/solutions",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 3,
-      name: "Case Studies",
-      url: "https://edunexservices.in/case-studies",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 4,
-      name: "Compliance",
-      url: "https://edunexservices.in/compliance",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 5,
-      name: "About",
-      url: "https://edunexservices.in/about",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 6,
-      name: "Contact",
-      url: "https://edunexservices.in/contact",
-    },
+    { "@type": "SiteNavigationElement", position: 1, name: "Services", url: `${SITE_URL}/services` },
+    { "@type": "SiteNavigationElement", position: 2, name: "Solutions", url: `${SITE_URL}/solutions` },
+    { "@type": "SiteNavigationElement", position: 3, name: "Case Studies", url: `${SITE_URL}/case-studies` },
+    { "@type": "SiteNavigationElement", position: 4, name: "Compliance", url: `${SITE_URL}/compliance` },
+    { "@type": "SiteNavigationElement", position: 5, name: "About", url: `${SITE_URL}/about` },
+    { "@type": "SiteNavigationElement", position: 6, name: "Blog", url: `${SITE_URL}/blog` },
+    { "@type": "SiteNavigationElement", position: 7, name: "Resources", url: `${SITE_URL}/resources` },
+    { "@type": "SiteNavigationElement", position: 8, name: "Contact", url: `${SITE_URL}/contact` },
   ],
 };
 

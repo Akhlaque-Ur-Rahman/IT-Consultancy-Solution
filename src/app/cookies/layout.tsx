@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/config/company";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | EDUNEX",
   description: "Learn how EDUNEX uses cookies to improve your experience on our website.",
   alternates: {
-    canonical: "https://edunexservices.in/cookies",
+    canonical: `${SITE_URL}/cookies`,
   },
 };
 
