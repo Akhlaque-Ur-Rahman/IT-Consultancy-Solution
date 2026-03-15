@@ -1,5 +1,5 @@
 /** Canonical production URL - use www consistently for SEO */
-export const SITE_URL = "https://www.edunexservices.in";
+export const SITE_URL = "https://edunexservices.in";
 
 /** SEO limits: Google typically truncates at ~60 title / ~160 description chars */
 export const META_TITLE_MAX = 65;

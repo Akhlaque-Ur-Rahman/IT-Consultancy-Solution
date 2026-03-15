@@ -78,15 +78,12 @@ export const ServiceCTA = ({
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform ease-in-out" />
                 </Button>
               </Link>
-              <Link
-                href={`/contact?service=${serviceTitle.toLowerCase().replace(/ /g, "-")}`}
-              >
+              <Link href="/case-studies">
                 <Button
                   variant="secondary"
                   className="px-6 py-4 text-xl font-bold rounded-2xl h-auto backdrop-blur-md sm:w-auto w-full group"
                 >
-                  <MessageSquare className="mr-3 w-8 h-8 text-[#f59e0b]" />
-                  Talk to an Expert
+                  View Case Studies
                 </Button>
               </Link>
             </div>

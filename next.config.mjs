@@ -20,10 +20,10 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "edunexservices.in",
+            value: "www.edunexservices.in",
           },
         ],
-        destination: "https://www.edunexservices.in/:path*",
+        destination: "https://edunexservices.in/:path*",
         permanent: true,
       },
     ];
@@ -43,7 +43,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.edunexservices.in https://edunexservices.in https://source.unsplash.com https://res.cloudinary.com; connect-src 'self' https://*.google.com https://*.supabase.co ws: wss:; frame-src 'self' https://www.google.com https://maps.google.com;",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://edunexservices.in https://source.unsplash.com https://res.cloudinary.com; connect-src 'self' https://*.google.com https://*.supabase.co ws: wss:; frame-src 'self' https://www.google.com https://maps.google.com;",
           },
         ],
       },

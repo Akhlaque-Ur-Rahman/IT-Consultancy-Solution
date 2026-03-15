@@ -6,7 +6,12 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { BlogPostingSchema } from "@/components/BlogPostingSchema";
-import { SITE_URL, META_TITLE_MAX, META_DESC_MAX, truncateMeta } from "@/config/company";
+import {
+  SITE_URL,
+  META_TITLE_MAX,
+  META_DESC_MAX,
+  truncateMeta,
+} from "@/config/company";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -171,6 +176,22 @@ export default async function BlogPostPage({ params }: Props) {
               <Share2 className="w-4 h-4 mr-2" />
               Share
             </Button>
+            <Link href="/services">
+              <Button
+                variant="outline"
+                className="border-[#262626] text-gray-400 hover:text-white hover:bg-[#262626]"
+              >
+                Explore Services
+              </Button>
+            </Link>
+            <Link href="/case-studies">
+              <Button
+                variant="outline"
+                className="border-[#262626] text-gray-400 hover:text-white hover:bg-[#262626]"
+              >
+                Case Studies
+              </Button>
+            </Link>
             <Link href="/contact">
               <Button className="bg-[#f59e0b] text-black hover:bg-[#d97706] px-8">
                 Consult an Expert
