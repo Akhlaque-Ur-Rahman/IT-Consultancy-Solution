@@ -1,5 +1,8 @@
-/** Canonical production URL - use www consistently for SEO */
+/** Canonical origin (HTTPS, non-www). No trailing slash — append paths as `/path`. */
 export const SITE_URL = "https://edunexservices.in";
+
+/** Homepage canonical URL per Search Console preference (root uses trailing slash). */
+export const SITE_URL_HOME = `${SITE_URL}/`;
 
 /** SEO limits: Google typically truncates at ~60 title / ~160 description chars */
 export const META_TITLE_MAX = 65;

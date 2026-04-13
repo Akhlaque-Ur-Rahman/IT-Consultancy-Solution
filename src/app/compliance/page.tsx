@@ -322,6 +322,68 @@ export default function CompliancePage() {
           </div>
         </motion.div>
 
+        {/* SEO: unique, substantive compliance methodology (not duplicate boilerplate) */}
+        <motion.section
+          className="mb-24"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="bg-[#121212] border border-[#262626] rounded-3xl p-8 lg:p-12">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Our compliance process, documentation standards & data handling
+            </h2>
+            <div className="space-y-5 text-gray-400 leading-relaxed text-base md:text-lg">
+              <p>
+                Statutory compliance in India is not a one-time form fill—it is
+                an ongoing relationship between your business, government
+                portals, and the professionals who represent you. At EDUNEX in
+                Patna, we treat every GST, FSSAI, or municipal license matter as
+                a documented workflow: we confirm which registrations apply to
+                your exact trade, collect only what the law requires for that
+                stage, and keep a clear paper and digital trail so you can
+                respond to bank KYC, audits, or inspector visits without panic.
+              </p>
+              <p>
+                Before we file anything on your behalf, we align expectations on
+                timelines (many approvals depend on department queues outside
+                anyone&apos;s control), naming consistency across PAN, bank, and
+                trade licenses, and how your invoices and licenses should match
+                for GST and food-safety inspections. For GST, we coordinate
+                monthly or quarterly returns with your actual sales data—whether
+                that comes from our billing software or your existing
+                system—so figures filed with the government match what you show
+                customers and lenders.
+              </p>
+              <p>
+                We retain copies of submitted applications, acknowledgements,
+                certificates, and renewal dates in an organized handover so you
+                always know what is valid, what expires next, and what to
+                refresh before penalties apply. Where a chartered accountant or
+                specialized consultant must sign off, we facilitate that handoff
+                with complete context rather than sending you back and forth
+                between offices.
+              </p>
+              <p>
+                On data protection: identity and business documents are shared
+                only for the stated filing purpose, stored with access limited
+                to staff involved in your case, and never sold or reused for
+                marketing. If you engage us for software alongside compliance,
+                we keep a clear separation between operational app data and
+                statutory records unless you ask us to link them for automation.
+              </p>
+              <p>
+                We do not claim third-party certifications we have not earned;
+                our strength is practical execution for Bihar SMEs—fewer
+                surprises, fewer missed deadlines, and a single Patna team you
+                can call when a notice or a new rule affects your shop, clinic,
+                or warehouse.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
         {/* FAQ Section */}
         <motion.div
           className="max-w-3xl mx-auto mb-24"

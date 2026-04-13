@@ -1,12 +1,12 @@
 import Script from "next/script";
-import { SITE_URL } from "@/config/company";
+import { SITE_URL, SITE_URL_HOME } from "@/config/company";
 
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "EDUNEX Services",
-    url: SITE_URL,
+    url: SITE_URL_HOME,
     potentialAction: {
       "@type": "SearchAction",
       target: {

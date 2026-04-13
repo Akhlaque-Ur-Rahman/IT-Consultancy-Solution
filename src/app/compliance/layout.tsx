@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/config/company";
 
 export const metadata: Metadata = {
-  title: "GST, FSSAI & Business Registration in Patna | EDUNEX",
+  title:
+    "Business Compliance Patna | GST, FSSAI, Trade License & Shop Act | EDUNEX",
   description:
-    "Fast, hassle-free business compliance in Bihar. Get your GST, Trade License, Shop Act, or FSSAI registration done without visiting government offices.",
+    "EDUNEX helps Bihar SMEs with GST registration, monthly filing support, FSSAI, Trade License, and Shop Act compliance—with clear documentation and Patna-based coordination.",
   alternates: {
     canonical: `${SITE_URL}/compliance`,
   },

@@ -17,12 +17,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.edunexservices.in",
-          },
-        ],
+        has: [{ type: "host", value: "www.edunexservices.in" }],
         destination: "https://edunexservices.in/:path*",
         permanent: true,
       },
