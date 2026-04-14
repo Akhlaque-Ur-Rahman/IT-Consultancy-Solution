@@ -6,6 +6,7 @@ import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 import { Preloader } from "@/components/Preloader";
 import Script from "next/script";
 import { SITE_URL } from "@/config/company";
+import { WebSiteSchema } from "@/components/WebSiteSchema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,11 +14,11 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "EDUNEX — Simple IT Solutions for Patna Businesses",
   description:
-    "We help business owners in Patna grow with simple websites, custom apps, and expert tax advice. Reliable, honest, and local since 2012.",
+    "We help business owners in Patna grow with simple websites, custom apps, and expert tax advice. Reliable, honest, and local since 2018.",
   keywords: [
     "IT Consulting Patna",
     "Software Development Bihar",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "EDUNEX — Simple IT Solutions for Patna Businesses",
     description:
-      "Helping Patna businesses grow with honest technology since 2012.",
+      "Helping Patna businesses grow with honest technology since 2018.",
     images: ["/logo.jpg"],
   },
   icons: {
@@ -57,12 +58,24 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+export async function generateMetadata(): Promise<Metadata> {
+  const isPreview = process.env.VERCEL_ENV === "preview";
+  if (!isPreview) return baseMetadata;
+  return {
+    ...baseMetadata,
+    robots: { index: false, follow: false },
+  };
+}
+
+const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "EDUNEX Services",
+  description:
+    "Enterprise digital transformation and business compliance consulting based in Patna, Bihar.",
   image: `${SITE_URL}/logo.jpg`,
-  "@id": SITE_URL,
+  logo: `${SITE_URL}/logo.jpg`,
   url: SITE_URL,
   telephone: "+91 70708 09208",
   address: {
@@ -77,6 +90,13 @@ const jsonLd = {
     "@type": "GeoCoordinates",
     latitude: 25.5788,
     longitude: 85.0747,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-7070809208",
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: ["en", "hi"],
   },
   openingHoursSpecification: [
     {
@@ -93,8 +113,9 @@ const jsonLd = {
     },
   ],
   sameAs: [
-    "https://facebook.com/edunex",
-    "https://linkedin.com/company/edunex",
+    "https://www.linkedin.com/company/edunexservices",
+    "https://twitter.com/edunexservices",
+    "https://www.facebook.com/edunexservices",
   ],
 };
 
@@ -122,10 +143,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased bg-black text-white`}>
         <Script
-          id="local-business-schema"
+          id="organization-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <WebSiteSchema />
         <Script
           id="site-navigation-schema"
           type="application/ld+json"

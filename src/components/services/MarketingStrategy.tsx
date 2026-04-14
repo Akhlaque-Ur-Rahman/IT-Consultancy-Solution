@@ -2,6 +2,10 @@
 import React from "react";
 import { motion } from "motion/react";
 import { BarChart3, Target, PieChart } from "lucide-react";
+import {
+  SectionHeading,
+  SectionHeadingAccent,
+} from "@/components/SectionHeading";
 
 interface MarketingProps {
   data: {
@@ -12,14 +16,19 @@ interface MarketingProps {
 
 export const MarketingStrategy = ({ data }: MarketingProps) => {
   return (
-    <section className="py-24 bg-[#0a0a0a]">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Outcome-Driven Marketing
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto italic">
-            "We don't measure impressions, we measure impact."
+    <section className="bg-[#0a0a0a] py-16 md:py-24">
+      <div className="mx-auto max-w-[1400px] px-6">
+        <div className="mb-16 text-center">
+          <SectionHeading eyebrow="Marketing strategy" align="center">
+            <>
+              Outcome-Driven{" "}
+              <SectionHeadingAccent>Marketing</SectionHeadingAccent>
+            </>
+          </SectionHeading>
+          <p className="mx-auto max-w-2xl italic text-gray-400">
+            <span aria-hidden>&ldquo;</span>
+            We don&apos;t measure impressions, we measure impact.
+            <span aria-hidden>&rdquo;</span>
           </p>
         </div>
 

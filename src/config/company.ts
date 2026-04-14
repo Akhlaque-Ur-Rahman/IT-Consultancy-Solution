@@ -80,7 +80,8 @@ export const SEO_KEYWORDS = {
 };
 
 export const COMPANY_INFO = {
-  yearsOfExperience: 12,
+  /** Operating years from founding (2018 → present). */
+  yearsOfExperience: 8,
   team: {
     ceo: {
       name: "Md Nafees Hussain",

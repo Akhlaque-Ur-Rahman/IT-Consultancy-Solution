@@ -98,7 +98,9 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
 
                   {/* Quote */}
                   <p className="text-2xl text-gray-700 mb-8 leading-relaxed italic max-w-3xl">
-                    "{testimonials[currentIndex].quote}"
+                    <span aria-hidden>&ldquo;</span>
+                    {testimonials[currentIndex].quote}
+                    <span aria-hidden>&rdquo;</span>
                   </p>
 
                   {/* Author */}

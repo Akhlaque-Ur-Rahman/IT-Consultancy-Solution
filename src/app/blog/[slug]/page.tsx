@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { BlogPostingSchema } from "@/components/BlogPostingSchema";
+import { SectionAmbient } from "@/components/SectionAmbient";
 import {
   SITE_URL,
   META_TITLE_MAX,
@@ -61,144 +62,156 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div className="pt-4 pb-20 min-h-screen bg-black">
-      <BlogPostingSchema
-        post={{
-          title: post.title,
-          description: post.excerpt,
-          image: `${SITE_URL}/logo.jpg`,
-          datePublished: new Date(post.date).toISOString().split("T")[0],
-          authorName: post.author,
-          url: `${SITE_URL}/blog/${post.slug}`,
-        }}
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", item: "/" },
-          { name: "Resources", item: "/resources" },
-          { name: "Blog", item: "/blog" },
-          { name: post.title, item: `/blog/${post.slug}` },
-        ]}
-      />
-      <div className="max-w-[800px] mx-auto px-6">
-        {/* Back Link */}
-        <div className="mb-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-[#f59e0b] transition-colors text-sm font-medium"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Articles
-          </Link>
-        </div>
+    <div className="page-depth-grain min-h-screen bg-black">
+      <div className="relative z-[1]">
+        <BlogPostingSchema
+          post={{
+            title: post.title,
+            description: post.excerpt,
+            image: `${SITE_URL}/logo.jpg`,
+            datePublished: new Date(post.date).toISOString().split("T")[0],
+            authorName: post.author,
+            url: `${SITE_URL}/blog/${post.slug}`,
+          }}
+        />
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", item: "/" },
+            { name: "Blog", item: "/blog" },
+            { name: post.title, item: `/blog/${post.slug}` },
+          ]}
+        />
 
-        {/* Article Header */}
-        <header className="mb-12">
-          <div>
-            <span className="px-3 py-1 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 text-[#f59e0b] text-xs font-bold uppercase tracking-wider mb-6 inline-block">
-              {post.category}
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              {post.title}
-            </h1>
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="mx-auto max-w-[800px]">
+              <div className="mb-8">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 transition-colors hover:text-[#f59e0b]"
+                >
+                  <ArrowLeft className="h-4 w-4" aria-hidden />
+                  Back to Articles
+                </Link>
+              </div>
 
-            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400 pb-8 border-b border-[#262626]">
-              <div className="flex items-center gap-2 text-white">
-                <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center">
-                  <User className="w-5 h-5 text-[#f59e0b]" />
+              <header className="mb-0">
+                <span className="mb-6 inline-block rounded-full border border-[#f59e0b]/25 bg-[#f59e0b]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#f59e0b] shadow-[0_0_24px_-12px_rgba(245,158,11,0.35)]">
+                  {post.category}
+                </span>
+                <h1 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl md:leading-tight">
+                  {post.title}
+                </h1>
+
+                <div className="mt-8 flex flex-wrap items-center gap-6 border-b border-[#262626] pb-8 text-sm text-gray-400">
+                  <div className="flex items-center gap-2 text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f59e0b]/10">
+                      <User className="h-5 w-5 text-[#f59e0b]" aria-hidden />
+                    </div>
+                    <div>
+                      <p className="block font-semibold">{post.author}</p>
+                      <p className="text-xs text-gray-500">{post.authorRole}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" aria-hidden />
+                    {post.date}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" aria-hidden />
+                    {post.readTime}
+                  </div>
                 </div>
+              </header>
+            </div>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="mx-auto max-w-[800px]">
+              <div className="relative mb-12 h-[300px] overflow-hidden rounded-3xl border border-white/[0.09] bg-[#121212] md:h-[450px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/5 to-transparent" />
+                <div className="flex h-full flex-col items-center justify-center p-12 text-center">
+                  <Tag className="mb-4 h-20 w-20 text-[#262626]" aria-hidden />
+                  <p className="max-w-sm italic text-gray-600">
+                    Focusing on regional growth and technical excellence for
+                    businesses in Patna and beyond.
+                  </p>
+                </div>
+              </div>
+
+              <article className="prose prose-invert prose-amber max-w-none">
+                <div
+                  className="blog-content space-y-6 text-lg leading-relaxed text-gray-300"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              </article>
+
+              <div className="mt-12 border-t border-[#262626] pt-8">
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="cursor-pointer rounded-md bg-[#262626] px-3 py-1 text-xs text-gray-400 transition-colors hover:bg-[#f59e0b]/10 hover:text-[#f59e0b]"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-16 flex flex-col items-center justify-between gap-8 rounded-2xl border border-white/[0.09] bg-gradient-to-br from-[#171717] via-[#121212] to-[#0c0c0c] p-8 shadow-[0_12px_40px_-18px_rgba(0,0,0,0.85)] md:flex-row">
                 <div>
-                  <p className="font-semibold block">{post.author}</p>
-                  <p className="text-xs text-gray-500">{post.authorRole}</p>
+                  <h2 className="mb-2 text-xl font-bold text-white">
+                    Found this useful?
+                  </h2>
+                  <p className="text-sm text-gray-400">
+                    Share it with your network or talk to us for a custom
+                    solution.
+                  </p>
                 </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                {post.date}
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                {post.readTime}
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="border-[#262626] text-gray-400 hover:bg-[#262626] hover:text-white"
+                  >
+                    <Share2 className="mr-2 h-4 w-4" aria-hidden />
+                    Share
+                  </Button>
+                  <Link href="/services">
+                    <Button
+                      variant="outline"
+                      className="border-[#262626] text-gray-400 hover:bg-[#262626] hover:text-white"
+                    >
+                      Explore Services
+                    </Button>
+                  </Link>
+                  <Link href="/case-studies">
+                    <Button
+                      variant="outline"
+                      className="border-[#262626] text-gray-400 hover:bg-[#262626] hover:text-white"
+                    >
+                      Case Studies
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] px-8 font-semibold text-black hover:shadow-[0_0_24px_rgba(245,158,11,0.35)]">
+                      Consult an Expert
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </header>
-
-        {/* Article Image Placeholder */}
-        <div className="relative h-[300px] md:h-[450px] bg-[#121212] rounded-3xl mb-12 overflow-hidden border border-[#262626]">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/5 to-transparent" />
-          <div className="flex flex-col items-center justify-center h-full text-center p-12">
-            <Tag className="w-20 h-20 text-[#262626] mb-4" />
-            <p className="text-gray-600 max-w-sm italic">
-              Focusing on regional growth and technical excellence for
-              businesses in Patna and beyond.
-            </p>
-          </div>
-        </div>
-
-        {/* Content */}
-        <article className="prose prose-invert prose-amber max-w-none">
-          <div
-            className="text-gray-300 leading-relaxed space-y-6 text-lg blog-content"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </article>
-
-        {/* Tags */}
-        <div className="mt-12 pt-8 border-t border-[#262626]">
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 rounded-md bg-[#262626] text-gray-400 text-xs hover:text-[#f59e0b] hover:bg-[#f59e0b]/10 transition-colors cursor-pointer"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Sharing & CTA */}
-        <div className="mt-16 p-8 bg-gradient-to-br from-[#121212] to-[#0a0a0a] border border-[#262626] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h4 className="text-xl font-bold text-white mb-2">
-              Found this useful?
-            </h4>
-            <p className="text-gray-400 text-sm">
-              Share it with your network or talk to us for a custom solution.
-            </p>
-          </div>
-          <div className="flex items-center gap-4">
-            <Button
-              variant="outline"
-              className="border-[#262626] text-gray-400 hover:text-white hover:bg-[#262626]"
-            >
-              <Share2 className="w-4 h-4 mr-2" />
-              Share
-            </Button>
-            <Link href="/services">
-              <Button
-                variant="outline"
-                className="border-[#262626] text-gray-400 hover:text-white hover:bg-[#262626]"
-              >
-                Explore Services
-              </Button>
-            </Link>
-            <Link href="/case-studies">
-              <Button
-                variant="outline"
-                className="border-[#262626] text-gray-400 hover:text-white hover:bg-[#262626]"
-              >
-                Case Studies
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button className="bg-[#f59e0b] text-black hover:bg-[#d97706] px-8">
-                Consult an Expert
-              </Button>
-            </Link>
-          </div>
-        </div>
+        </SectionAmbient>
       </div>
     </div>
   );

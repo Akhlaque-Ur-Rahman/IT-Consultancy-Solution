@@ -5,7 +5,6 @@ import { SITE_URL, SEO_KEYWORDS, META_TITLE_MAX, META_DESC_MAX, truncateMeta } f
 
 // Universal Components
 import { ServiceHero } from "@/components/services/ServiceHero";
-import { TrustStrip } from "@/components/services/TrustStrip";
 import { DeliverablesGrid } from "@/components/services/DeliverablesGrid";
 import { ProcessFlow } from "@/components/services/ProcessFlow";
 import { ServiceFAQs } from "@/components/services/ServiceFAQs";
@@ -20,15 +19,12 @@ import { MarketingStrategy } from "@/components/services/MarketingStrategy";
 import { DesignPortfolio } from "@/components/services/DesignPortfolio";
 import { ComplianceDetails } from "@/components/services/ComplianceDetails";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { SectionAmbient } from "@/components/SectionAmbient";
 import { ServiceSchema } from "@/components/ServiceSchema";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
-
-function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -42,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     baseDesc.length >= META_DESC_MAX
       ? truncateMeta(baseDesc, META_DESC_MAX)
       : baseDesc.length < 120
-        ? `${baseDesc} Trusted by 90+ Patna & Bihar businesses.`
+        ? `${baseDesc} Hands-on delivery for Patna & Bihar teams.`
         : baseDesc;
   const fullDesc = truncateMeta(metaDesc, META_DESC_MAX);
   const fullTitle = truncateMeta(
@@ -78,7 +74,8 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="page-depth-grain min-h-screen bg-black">
+      <div className="relative z-[1]">
       <ServiceSchema
         name={service.title}
         description={service.description}
@@ -102,13 +99,10 @@ export default async function ServicePage({ params }: Props) {
         serviceTitle={service.slug}
       />
 
-      {/* 2. Trust Signals Strip */}
-      <TrustStrip items={(service as any).trustItems} />
-
-      {/* 3. Capability Cards (What We Deliver) */}
+      {/* 2. Capability Cards (What We Deliver) */}
       <DeliverablesGrid items={service.deliverables} />
 
-      {/* 4. Type-Specific Details / Strategy */}
+      {/* 3. Type-Specific Details / Strategy */}
       {service.type === "engineering" && service.typeSpecificData && (
         <EngineeringDetails data={service.typeSpecificData as any} />
       )}
@@ -122,10 +116,10 @@ export default async function ServicePage({ params }: Props) {
         <ComplianceDetails data={service.typeSpecificData as any} />
       )}
 
-      {/* 5. Process Timeline */}
+      {/* 4. Process Timeline */}
       <ProcessFlow steps={service.processSteps || []} />
 
-      {/* 6. Measurable Results */}
+      {/* 5. Measurable Results */}
       <ServiceResults
         title={
           <span
@@ -136,24 +130,28 @@ export default async function ServicePage({ params }: Props) {
         testimonial={(service as any).testimonial}
       />
 
-      {/* 7. Engagement Models - Only for professional services */}
+      {/* 6. Engagement Models - Only for professional services */}
       {service.type !== "compliance" && (
         <EngagementModels
           title={(service as any).engagementTitle}
           subtitle={(service as any).engagementSubtitle}
           models={(service as any).engagementModels}
           serviceTitle={service.slug}
+          sourcePath={`/services/${service.slug}`}
         />
       )}
 
-      {/* 8. FAQ Accordion */}
-      <ServiceFAQs
-        items={service.faqs || []}
-        title={(service as any).faqTitle}
-        subtitle={(service as any).faqSubtitle}
-      />
+      {/* 7. FAQ Accordion — matches homepage FAQ styling */}
+      <SectionAmbient preset="surface" className="border-t border-[#262626]">
+        <ServiceFAQs
+          items={service.faqs || []}
+          title={(service as any).faqTitle}
+          subtitle={(service as any).faqSubtitle}
+          sectionClassName="border-transparent bg-transparent"
+        />
+      </SectionAmbient>
 
-      {/* 9. Final CTA Section */}
+      {/* 8. Final CTA Section */}
       <ServiceCTA
         badge={(service as any).ctaBadge}
         title={
@@ -164,6 +162,7 @@ export default async function ServicePage({ params }: Props) {
         description={(service as any).ctaDescription}
         serviceTitle={service.slug}
       />
+      </div>
     </main>
   );
 }

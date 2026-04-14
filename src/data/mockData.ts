@@ -12,7 +12,7 @@ export const services = [
     description: 'Custom software, websites, and mobile apps built specifically for SMEs in Patna and across Bihar to automate your manual work.',
     category: 'development',
     features: ['Custom Web Portals', 'Mobile Apps for Staff', 'Inventory Systems', 'Local Business Solutions'],
-    outcomeHeadline: 'Build <span className="text-[#f59e0b]">Custom Software</span> That Eliminates Your Daily Headaches',
+    outcomeHeadline: 'Build <span class="text-[#f59e0b]">Custom Software</span> That Eliminates Your Daily Headaches',
     keyBenefits: ['Affordable for SMEs', 'Easy to Use for Staff', 'Full On-Site Training'],
     deliverables: [
       { title: 'Business Software', desc: 'Custom apps for your shop or factory', icon: 'Globe' },
@@ -68,7 +68,7 @@ export const services = [
     description: 'Stop losing money to manual billing errors. Get a custom ERP system to manage inventory, staff, and GST billing effortlessly.',
     category: 'solutions',
     features: ['GST Billing Automation', 'Inventory Tracking', 'Staff Management', 'Tally Integration'],
-    outcomeHeadline: 'Manage Your Entire Business from <span className="text-[#f59e0b]">Your Phone or PC</span>',
+    outcomeHeadline: 'Manage Your Entire Business from <span class="text-[#f59e0b]">Your Phone or PC</span>',
     keyBenefits: ['Everything in One Place', 'No More Calculation Errors', 'Save Hours Every Day'],
     deliverables: [
       { title: 'GST Billing', desc: 'Create accurate invoices in seconds', icon: 'Receipt' },
@@ -125,7 +125,7 @@ export const services = [
     description: 'Get more phone calls and foot traffic from local customers in Patna and across Bihar.',
     category: 'marketing',
     features: ['Google Maps SEO', 'Local Facebook Ads', 'WhatsApp Marketing', 'Business Registration'],
-    outcomeHeadline: 'Get More Local Customers to <span className="text-[#f59e0b]">Call Your Business</span>',
+    outcomeHeadline: 'Get More Local Customers to <span class="text-[#f59e0b]">Call Your Business</span>',
     keyBenefits: ['More Phone Calls', 'Top Ranking in Your City', 'Clear Monthly Reports'],
     deliverables: [
       { title: 'Google Ranking', desc: 'Be the first shop people see nearby', icon: 'Search' },
@@ -180,7 +180,7 @@ export const services = [
     description: 'Professional designs that make your business look premium and trust-worthy.',
     category: 'design',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    outcomeHeadline: 'Design That Makes Your Customers Say <span className="text-[#f59e0b]">"Wow"</span>',
+    outcomeHeadline: 'Design That Makes Your Customers Say <span class="text-[#f59e0b]">"Wow"</span>',
     keyBenefits: ['Easy to Use', 'Looks Premium', 'Keeps People Coming Back'],
     deliverables: [
       { title: 'Research', desc: 'Understanding what your customers like', icon: 'Users' },
@@ -230,7 +230,7 @@ export const services = [
     description: 'Full-featured online stores to sell your products across India easily.',
     category: 'development',
     features: ['Multi-vendor', 'Payment Gateway', 'Inventory Management', 'Analytics'],
-    outcomeHeadline: 'Sell More Online with a <span className="text-[#f59e0b]">Powerful e-Commerce Store</span>',
+    outcomeHeadline: 'Sell More Online with a <span class="text-[#f59e0b]">Powerful e-Commerce Store</span>',
     keyBenefits: ['Sell 24/7', 'Safe Payments', 'Easy to Manage Orders'],
     deliverables: [
       { title: 'Custom Stores', desc: 'Your own online shop', icon: 'ShoppingBag' },
@@ -281,7 +281,7 @@ export const services = [
     description: 'Smart systems to track your customers and never miss a single new enquiry.',
     category: 'solutions',
     features: ['Lead Tracking', 'Automation', 'CRM Integration', 'Reporting'],
-    outcomeHeadline: 'Never Lose a Customer Again with <span className="text-[#f59e0b]">Smart Lead Tracking</span>',
+    outcomeHeadline: 'Never Lose a Customer Again with <span class="text-[#f59e0b]">Smart Lead Tracking</span>',
     keyBenefits: ['Instant Alerts', 'Automatic Follow-ups', 'Know Where Leads Come From'],
     deliverables: [
       { title: 'Lead Scoring', desc: 'Know which customers are ready to buy', icon: 'Target' },
@@ -332,7 +332,7 @@ export const services = [
     description: 'Automatic business phone system that answers your customers 24/7.',
     category: 'solutions',
     features: ['Multi-language', 'Call Routing', 'Analytics', 'Integration'],
-    outcomeHeadline: 'Professional <span className="text-[#f59e0b]">24/7 Phone Answering</span> for Your Business',
+    outcomeHeadline: 'Professional <span class="text-[#f59e0b]">24/7 Phone Answering</span> for Your Business',
     keyBenefits: ['No Missed Calls', 'Professional Welcome', 'Hindi & English Support'],
     deliverables: [
       { title: 'Cloud Phone', desc: 'No hardware needed', icon: 'Cloud' },
@@ -383,7 +383,7 @@ export const services = [
     description: 'Apps to manage local deliveries and track your riders in real-time.',
     category: 'development',
     features: ['Geolocation', 'Real-time Tracking', 'Multi-vendor', 'Mobile Apps'],
-    outcomeHeadline: 'Connect Your Business with <span className="text-[#f59e0b]">Local Customers</span> Instantly',
+    outcomeHeadline: 'Connect Your Business with <span class="text-[#f59e0b]">Local Customers</span> Instantly',
     keyBenefits: ['Real-time Tracking', 'Accept Orders Nearby', 'Easy for Delivery Boys'],
     deliverables: [
       { title: 'Driver App', desc: 'Real-time GPS for your team', icon: 'Navigation' },
@@ -434,7 +434,7 @@ export const services = [
     description: 'Help people in your city find your business first when they search on Google.',
     category: 'marketing',
     features: ['On-page SEO', 'Technical SEO', 'Link Building', 'Performance'],
-    outcomeHeadline: 'Be the <span className="text-[#f59e0b]">First Result</span> People See on Google',
+    outcomeHeadline: 'Be the <span class="text-[#f59e0b]">First Result</span> People See on Google',
     keyBenefits: ['More Free Traffic', 'Better Local Ranking', 'Stay Ahead of Competitors'],
     deliverables: [
       { title: 'Technical SEO', desc: 'Making your site super fast', icon: 'Tools' },
@@ -484,7 +484,7 @@ export const services = [
     description: 'Cool videos and animations that explain your business in 60 seconds.',
     category: 'design',
     features: ['Motion Graphics', '2D/3D Animation', 'Explainer Videos', 'Brand Assets'],
-    outcomeHeadline: 'Tell Your Story with <span className="text-[#f59e0b]">Amazing Video & Animation</span>',
+    outcomeHeadline: 'Tell Your Story with <span class="text-[#f59e0b]">Amazing Video & Animation</span>',
     keyBenefits: ['Grab Attention', 'Explain Ideas Easily', 'Premium Look'],
     deliverables: [
       { title: 'Explainers', desc: 'Videos that show how your product works', icon: 'Video' },
@@ -534,7 +534,7 @@ export const services = [
     description: 'Handling your firm registration, GST returns, and legal paperwork correctly so you can focus on running your business in Bihar.',
     category: 'compliance',
     features: ['Company Registration', 'Monthly GST Filing', 'Food License (FSSAI)', 'Trade License'],
-    outcomeHeadline: 'We Handle Your <span className="text-[#f59e0b]">Taxes & Registration</span> So You Don&apos;t Have To',
+    outcomeHeadline: 'We Handle Your <span class="text-[#f59e0b]">Taxes & Registration</span> So You Don&apos;t Have To',
     keyBenefits: ['100% Legal & Safe', 'No Late Fees or Penalties', 'Honest Local Advice'],
     deliverables: [
       { title: 'New Firm Setup', desc: 'Proprietor, LLP, or Pvt Ltd in Patna', icon: 'Briefcase' },
@@ -699,11 +699,16 @@ export const caseStudies = [
   },
 ];
 
+/** Homepage / solutions counters — operational facts, not inflated client volumes. */
 export const metrics = [
-  { label: 'Clients Served', value: 48, suffix: '+' },
-  { label: 'Projects Delivered', value: 112, suffix: '+' },
-  { label: 'Reliable Infrastructure', value: 99.9, suffix: '%' },
-  { label: 'Average Growth ROI', value: 18.5, suffix: '%' },
+  {
+    label: "Years in operation",
+    value: COMPANY_INFO.yearsOfExperience,
+    suffix: "+",
+  },
+  { label: "Support coverage", value: 24, suffix: "/7" },
+  { label: "Core practice areas", value: 4, suffix: "+" },
+  { label: "Where we ship", emphasis: "Patna · Bihar · India" },
 ];
 
 export const testimonials = [
@@ -941,7 +946,7 @@ export const blogPosts = [
     category: 'Technology',
     date: 'January 5, 2026',
     readTime: '5 min read',
-    excerpt: 'Software Development Patna & Digital Marketing Bihar guide. Take your local shop online—website, Local SEO, GST registration. Trusted by 90+ Patna businesses.',
+    excerpt: 'Software Development Patna & Digital Marketing Bihar guide. Take your local shop online—website, Local SEO, GST registration. Practical guidance for regional SMEs.',
     image: 'technology-abstract-digital-network-dark',
     author: COMPANY_INFO.team.ceo.name,
     authorRole: 'CEO',
@@ -964,7 +969,7 @@ export const blogPosts = [
     category: 'Compliance',
     date: 'January 13, 2026',
     readTime: '8 min read',
-    excerpt: 'GST Registration Patna & Bihar made easy. Learn GST rules for SMEs, monthly filing tips, and avoid penalties. Expert compliance support in Patna since 2012.',
+    excerpt: 'GST Registration Patna & Bihar made easy. Learn GST rules for SMEs, monthly filing tips, and avoid penalties. Expert compliance support in Patna since 2018.',
     image: 'business-paperwork-official-documents',
     author: 'Neha Kapoor',
     authorRole: 'Head of Compliance',

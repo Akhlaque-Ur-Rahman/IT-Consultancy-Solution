@@ -1,20 +1,15 @@
 import Script from "next/script";
 import { SITE_URL, SITE_URL_HOME } from "@/config/company";
 
+/** WebSite only — no SearchAction until a real /search exists */
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
     name: "EDUNEX Services",
     url: SITE_URL_HOME,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    publisher: { "@id": `${SITE_URL}/#organization` },
   };
 
   return (

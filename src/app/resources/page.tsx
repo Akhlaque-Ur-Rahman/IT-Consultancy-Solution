@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/accordion";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { SectionAmbient } from "@/components/SectionAmbient";
 
 export default function ResourcesPage() {
   const whitepapers = [
@@ -37,190 +38,229 @@ export default function ResourcesPage() {
   ];
 
   return (
-    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* Page Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
-            <BookOpen className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-sm font-medium text-[#f59e0b]">
-              Knowledge Hub
-            </span>
-          </div>
-          <h1 className="text-5xl font-bold text-white mb-4">Resources</h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Insights, guides, and knowledge to help you make informed decisions
-          </p>
-        </motion.div>
+    <div className="page-depth-grain min-h-screen bg-black">
+      <div className="relative z-[1]">
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", item: "/" },
+            { name: "Resources", item: "/resources" },
+          ]}
+        />
 
-        {/* Blog Section */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
         >
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-white">Latest Blog Posts</h2>
-            <Link href="/blog">
-              <Button
-                variant="outline"
-                className="border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black bg-transparent"
-              >
-                View All Posts
-              </Button>
-            </Link>
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/25 bg-[#f59e0b]/10 px-4 py-2 shadow-[0_0_32px_-12px_rgba(245,158,11,0.35)]">
+                <BookOpen className="h-4 w-4 text-[#fbbf24]" aria-hidden />
+                <span className="text-sm font-semibold text-[#fbbf24]">
+                  Knowledge Hub
+                </span>
+              </div>
+              <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl md:leading-tight">
+                <span className="bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] bg-clip-text text-transparent">
+                  Resources
+                </span>
+              </h1>
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl [text-wrap:balance]">
+                Insights, guides, and knowledge to help you make informed
+                decisions
+              </p>
+            </motion.div>
           </div>
+        </SectionAmbient>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Link key={post.id} href={`/blog/${post.slug}`}>
-                <motion.div
-                  className="group relative bg-[#121212] rounded-2xl border border-[#262626] overflow-hidden hover:border-[#f59e0b]/50 transition-all duration-300 cursor-pointer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="relative h-48 bg-[#0a0a0a]">
-                    <ImageWithFallback
-                      src={`https://source.unsplash.com/800x600/?${encodeURIComponent(post.image)}`}
-                      alt={post.title}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                    />
-                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-sm text-xs font-medium text-[#f59e0b] border border-[#f59e0b]/20">
-                      {post.category}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        <span>{post.date}</span>
-                      </div>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-3 line-clamp-2 group-hover:text-[#f59e0b] transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <span className="text-[#f59e0b] hover:text-[#fbbf24] font-medium text-sm">
-                      Read More →
-                    </span>
-                  </div>
-                  {/* Animation */}
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Whitepapers Section */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-16 md:py-24"
         >
-          <h2 className="text-3xl font-bold text-white mb-8">
-            Whitepapers & Guides
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {whitepapers.map((paper, index) => (
-              <motion.div
-                key={index}
-                className="group relative overflow-hidden bg-[#121212] rounded-2xl border border-[#262626] p-8 hover:border-[#f59e0b]/50 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-              >
-                <div className="w-12 h-12 rounded-lg bg-[#f59e0b]/10 flex items-center justify-center mb-6 text-[#f59e0b]">
-                  <Download className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#f59e0b] transition-colors">
-                  {paper.title}
-                </h3>
-                <p className="text-gray-400 text-sm mb-6">
-                  {paper.description}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-500">
-                    {paper.downloads.toLocaleString()} downloads
-                  </span>
-                  <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] text-black font-medium border-0">
-                    <Download className="mr-2 w-4 h-4" />
-                    Download
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                <h2 className="text-3xl font-bold text-white">
+                  Latest Blog Posts
+                </h2>
+                <Link href="/blog">
+                  <Button
+                    variant="outline"
+                    className="border-[#f59e0b] bg-transparent text-[#f59e0b] hover:bg-[#f59e0b] hover:text-black"
+                  >
+                    View All Posts
                   </Button>
-                </div>
-                {/* Animation */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </Link>
+              </div>
 
-        {/* FAQs Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+              <div className="grid gap-8 md:grid-cols-3">
+                {blogPosts.map((post, index) => (
+                  <Link key={post.id} href={`/blog/${post.slug}`}>
+                    <motion.div
+                      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/[0.09] bg-gradient-to-b from-[#171717] via-[#121212] to-[#0c0c0c] shadow-[0_12px_40px_-18px_rgba(0,0,0,0.85)] transition-all duration-300 hover:border-[#f59e0b]/35"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                      whileHover={{ y: -4 }}
+                    >
+                      <div className="relative h-48 bg-[#0a0a0a]">
+                        <ImageWithFallback
+                          src={`https://source.unsplash.com/800x600/?${encodeURIComponent(post.image)}`}
+                          alt={post.title}
+                          className="h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-100"
+                        />
+                        <div className="absolute left-4 top-4 rounded-full border border-[#f59e0b]/20 bg-black/80 px-3 py-1 text-xs font-medium text-[#f59e0b] backdrop-blur-sm">
+                          {post.category}
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <div className="mb-3 flex items-center gap-3 text-xs text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" aria-hidden />
+                            <span>{post.date}</span>
+                          </div>
+                          <span>•</span>
+                          <span>{post.readTime}</span>
+                        </div>
+                        <h3 className="mb-3 line-clamp-2 text-xl font-semibold text-white transition-colors group-hover:text-[#f59e0b]">
+                          {post.title}
+                        </h3>
+                        <p className="mb-4 line-clamp-3 text-sm text-gray-400">
+                          {post.excerpt}
+                        </p>
+                        <span className="text-sm font-medium text-[#f59e0b] transition-colors group-hover:text-[#fbbf24]">
+                          Read More →
+                        </span>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 transform bg-gradient-to-r from-[#f59e0b] to-[#d97706] transition-transform duration-200 group-hover:scale-x-100" />
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
         >
-          <div className="text-center mb-12">
-            <HelpCircle className="w-12 h-12 text-[#f59e0b] mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Find answers to common questions about our services
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="group relative overflow-hidden bg-[#121212] rounded-xl border border-[#262626] px-6 hover:border-[#f59e0b]/30 transition-colors"
-                >
-                  <AccordionTrigger className="hover:no-underline py-6">
-                    <div className="text-left">
-                      <p className="font-semibold text-white">{faq.question}</p>
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="mb-8 text-3xl font-bold text-white">
+                Whitepapers &amp; Guides
+              </h2>
+              <div className="grid gap-8 md:grid-cols-3">
+                {whitepapers.map((paper, index) => (
+                  <motion.div
+                    key={index}
+                    className="group relative overflow-hidden rounded-2xl border border-white/[0.09] bg-gradient-to-b from-[#171717] via-[#121212] to-[#0c0c0c] p-8 shadow-[0_12px_40px_-18px_rgba(0,0,0,0.85)] transition-all duration-300 hover:border-[#f59e0b]/35"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                  >
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-[#f59e0b]/10 text-[#f59e0b]">
+                      <Download className="h-6 w-6" aria-hidden />
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6 text-gray-400 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                  {/* Animation */}
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></div>
-                </AccordionItem>
-              ))}
-            </Accordion>
+                    <h3 className="mb-3 text-xl font-semibold text-white transition-colors group-hover:text-[#f59e0b]">
+                      {paper.title}
+                    </h3>
+                    <p className="mb-6 text-sm text-gray-400">
+                      {paper.description}
+                    </p>
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                      <span className="text-xs text-gray-500">
+                        {paper.downloads.toLocaleString()} downloads
+                      </span>
+                      <Button className="border-0 bg-gradient-to-r from-[#f59e0b] to-[#d97706] font-medium text-black hover:shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+                        <Download className="mr-2 h-4 w-4" />
+                        Download
+                      </Button>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 transform bg-gradient-to-r from-[#f59e0b] to-[#d97706] transition-transform duration-200 group-hover:scale-x-100" />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
+        </SectionAmbient>
 
-          <div className="text-center mt-12">
-            <p className="text-gray-400 mb-4">Still have questions?</p>
-            <Link href="/contact">
-              <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-semibold hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] px-8 py-6">
-                Contact Support
-              </Button>
-            </Link>
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="relative border-t border-[#262626] py-16 md:py-24"
+        >
+          <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.06]">
+            <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-white blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white blur-3xl" />
           </div>
-        </motion.div>
+          <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-12 text-center">
+                <HelpCircle className="mx-auto mb-4 h-12 w-12 text-[#f59e0b]" />
+                <h2 className="mb-4 text-3xl font-bold text-white">
+                  Frequently Asked Questions
+                </h2>
+                <p className="mx-auto max-w-2xl text-gray-400">
+                  Find answers to common questions about our services
+                </p>
+              </div>
+
+              <div className="mx-auto max-w-3xl">
+                <Accordion type="single" collapsible className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="group relative overflow-hidden rounded-xl border border-[#262626] bg-[#121212] px-6 transition-colors hover:border-[#f59e0b]/30"
+                    >
+                      <AccordionTrigger className="py-6 hover:no-underline">
+                        <div className="text-left">
+                          <p className="font-semibold text-white">
+                            {faq.question}
+                          </p>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-6 leading-relaxed text-gray-400">
+                        {faq.answer}
+                      </AccordionContent>
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 transform bg-gradient-to-r from-[#f59e0b] to-[#d97706] transition-transform duration-200 group-hover:scale-x-100" />
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+
+              <div className="mt-12 text-center">
+                <p className="mb-4 text-gray-400">Still have questions?</p>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] px-8 py-6 font-semibold text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                    Contact Support
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </SectionAmbient>
       </div>
     </div>
   );

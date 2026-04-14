@@ -12,19 +12,20 @@ export function Preloader() {
     const hasSeen = localStorage.getItem("edunex_preloader_seen");
 
     if (hasSeen) {
-      setLoading(false);
+      queueMicrotask(() => setLoading(false));
       return;
     }
 
-    // If not seen, start the sequence
-    setLoading(true);
-    document.body.style.overflow = "hidden";
+    queueMicrotask(() => {
+      setLoading(true);
+      document.body.style.overflow = "hidden";
+    });
 
     const timer = setTimeout(() => {
       setLoading(false);
       localStorage.setItem("edunex_preloader_seen", "true");
       document.body.style.overflow = "unset";
-    }, 3000); // Fixed duration for animations
+    }, 3000);
 
     return () => {
       clearTimeout(timer);

@@ -1,11 +1,27 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  PlayCircle,
+  Radio,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { COMPANY_INFO } from "@/config/company";
+import {
+  SectionHeading,
+  SectionHeadingAccent,
+} from "@/components/SectionHeading";
+import { buildContactUrl } from "@/lib/contactPrefill";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0 },
+};
 
 export default function ProblemSolutionHero() {
   const challenges = [
@@ -15,135 +31,267 @@ export default function ProblemSolutionHero() {
     "Lack of real-time insights for decision making",
   ];
 
+  const contactHref = buildContactUrl({
+    serviceSlug: "consulting",
+    ref: "/solutions",
+  });
+
   return (
-    <section className="relative overflow-hidden pt-4 lg:pt-8 pb-24 lg:pb-40 bg-black">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 bg-[radial-gradient(circle_at_50%_-20%,rgba(245,158,11,0.15),transparent_70%)]" />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#f59e0b]/5 blur-[120px] rounded-full -z-10" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#f59e0b]/5 blur-[120px] rounded-full -z-10" />
+    <section className="relative overflow-hidden border-b border-[#262626] bg-[#050505] pb-16 pt-10 md:pb-24 md:pt-14 lg:pb-28">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div
+          className="absolute -top-40 left-1/2 h-[min(70vh,640px)] w-[min(140vw,1200px)] -translate-x-1/2 opacity-[0.4]"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(245,158,11,0.48) 0%, rgba(245,158,11,0.1) 45%, transparent 72%)",
+            filter: "blur(2px)",
+          }}
+        />
+        <div
+          className="absolute left-[12%] top-[28%] h-[380px] w-[380px] rounded-full opacity-[0.12]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(245,158,11,0.4) 0%, transparent 68%)",
+            filter: "blur(50px)",
+          }}
+        />
+        <div
+          className="absolute bottom-[8%] right-[5%] h-[280px] w-[280px] rounded-full opacity-[0.08]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(251,191,36,0.35) 0%, transparent 70%)",
+            filter: "blur(45px)",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/30 to-[#050505]" />
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+            backgroundSize: "64px 64px",
+            maskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 75%)",
+          }}
+        />
+      </div>
 
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 md:px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14 xl:gap-20">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="initial"
+            animate="animate"
+            variants={fadeInUp}
+            transition={{ duration: 0.55 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse" />
-              <span className="text-xs font-semibold text-[#f59e0b] uppercase tracking-wider">
-                Enterprise-Grade Architecture
-              </span>
-            </div>
-
-            <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <SectionHeading
+              eyebrow="Enterprise-grade architecture"
+              align="left"
+              titleAs="h1"
+              className="mb-6 md:mb-8"
+              titleClassName="text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl [text-wrap:balance]"
+              subtitle="We solve tool fragmentation and high operational costs for founders and executive teams. Our integrated ecosystem is designed for decision-makers who demand scalability, security, and proven ROI."
+              subtitleClassName="mt-5 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg"
+            >
               Scale Your Enterprise with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#d97706]">
+              <SectionHeadingAccent>
                 High-Performance Infrastructure
-              </span>
-            </h1>
+              </SectionHeadingAccent>
+            </SectionHeading>
 
-            <p className="text-lg lg:text-xl text-gray-400 mb-8 leading-relaxed">
-              We solve tool fragmentation and high operational costs for
-              founders and executive teams. Our integrated ecosystem is designed
-              for decision-makers who demand scalability, security, and proven
-              ROI.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-6 mb-10 text-gray-500">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
-                <span className="text-xs font-bold uppercase tracking-wider">
-                  {COMPANY_INFO.yearsOfExperience}+ Years Experience
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
-                <span className="text-xs font-bold uppercase tracking-wider">
-                  90+ Success Stories
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
-                <span className="text-xs font-bold uppercase tracking-wider">
-                  Enterprise Security
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold h-14 px-8 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-300"
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={fadeInUp}
+              transition={{ duration: 0.55, delay: 0.08 }}
+              className="mb-8 flex flex-wrap gap-3 md:mb-10 md:gap-4"
+              aria-label="Company highlights"
+            >
+              {[
+                {
+                  k: `${COMPANY_INFO.yearsOfExperience}+`,
+                  v: "Years experience",
+                },
+                { k: "4+", v: "Practice areas" },
+                { k: "24/7", v: "Support coverage" },
+              ].map((stat) => (
+                <div
+                  key={stat.v}
+                  className="group relative min-w-[140px] flex-1 overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-transparent px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-colors duration-300 hover:border-[#f59e0b]/25 sm:min-w-0 sm:flex-1"
                 >
-                  Book Implementation Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <div
+                    className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-[#f59e0b]/15 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100"
+                    aria-hidden
+                  />
+                  <p className="relative text-2xl font-bold tabular-nums tracking-tight text-white md:text-3xl">
+                    {stat.k}
+                  </p>
+                  <p className="relative mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                    {stat.v}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={fadeInUp}
+              transition={{ duration: 0.55, delay: 0.14 }}
+              className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+            >
+              <Link href={contactHref} className="sm:shrink-0">
+                <Button className="group h-auto w-full rounded-full border-2 border-[#f59e0b] bg-black/70 px-7 py-5 text-base font-semibold text-white shadow-[0_0_40px_-8px_rgba(245,158,11,0.55),0_12px_40px_-18px_rgba(0,0,0,0.9)] transition-all duration-200 hover:bg-black/85 hover:shadow-[0_0_48px_-6px_rgba(245,158,11,0.65)] sm:w-auto">
+                  Book implementation consultation
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-            </div>
+              <Link href="/case-studies" className="sm:shrink-0">
+                <Button
+                  variant="outline"
+                  className="h-auto w-full rounded-full border border-white/20 bg-transparent px-7 py-5 text-base text-white transition-all duration-200 hover:bg-white/10 hover:text-white sm:w-auto"
+                >
+                  View case studies
+                  <PlayCircle className="ml-2 h-5 w-5 opacity-80" />
+                </Button>
+              </Link>
+            </motion.div>
+
+            <motion.p
+              initial="initial"
+              animate="animate"
+              variants={fadeInUp}
+              transition={{ duration: 0.55, delay: 0.2 }}
+              className="mt-5 text-sm text-neutral-500"
+            >
+              Strategy session · Roadmap in weeks · No lock-in on discovery
+            </motion.p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.12 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/20 to-transparent blur-2xl -z-10" />
-            <div className="bg-[#121212]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-10 shadow-2xl">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <AlertCircle className="text-[#f59e0b] w-6 h-6" />
-                The Cost of Status Quo
-              </h3>
+            <div
+              className="pointer-events-none absolute -inset-px rounded-[1.35rem] opacity-90"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(245,158,11,0.35) 0%, rgba(245,158,11,0.08) 38%, transparent 62%)",
+                filter: "blur(18px)",
+              }}
+              aria-hidden
+            />
+            <div className="relative overflow-hidden rounded-[1.35rem] border border-white/[0.1] bg-gradient-to-b from-[#141414] via-[#0e0e0e] to-[#080808] shadow-[0_0_0_1px_rgba(245,158,11,0.08),0_28px_90px_-28px_rgba(0,0,0,0.95)]">
+              <div className="absolute inset-x-0 top-0 z-[1] h-px bg-gradient-to-r from-transparent via-[#f59e0b]/45 to-transparent" />
+              <div
+                className="pointer-events-none absolute -right-16 top-12 h-48 w-48 rounded-full bg-[#f59e0b]/20 blur-3xl"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute -left-10 bottom-8 h-36 w-36 rounded-full bg-amber-500/10 blur-3xl"
+                aria-hidden
+              />
 
-              <div className="space-y-6">
-                {challenges.map((challenge, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                    className="flex items-start gap-4 group"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-gray-600 mt-2.5 group-hover:bg-[#f59e0b] transition-colors" />
-                    <p className="text-gray-400 group-hover:text-gray-200 transition-colors uppercase text-sm font-medium tracking-wide">
-                      {challenge}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-10 pt-10 border-t border-white/5">
-                <div className="flex items-center gap-4">
-                  <div className="flex -space-x-3">
-                    {[
-                      "/avatars/129416.jpg",
-                      "/avatars/21597.jpg",
-                      "/avatars/2827.jpg",
-                      "/avatars/129416.jpg", // Reuse for 4th slot
-                    ].map((src, i) => (
-                      <div
-                        key={i}
-                        className="w-10 h-10 rounded-full border-2 border-[#121212] bg-[#1a1a1a] overflow-hidden relative"
-                      >
-                        <Image
-                          src={src}
-                          alt={`Client ${i + 1}`}
-                          fill
-                          sizes="40px"
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
+              <div className="relative p-7 md:p-9">
+                <div className="mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.07] pb-6">
                   <div>
-                    <p className="text-sm font-bold text-white">
-                      500+ Enterprises
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      Transformed their operations with our stack
-                    </p>
+                    <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400">
+                      <Radio
+                        className="h-3.5 w-3.5 text-[#f59e0b]"
+                        strokeWidth={2}
+                        aria-hidden
+                      />
+                      Diagnostic
+                    </div>
+                    <h2 className="flex items-center gap-2 text-xl font-bold tracking-tight text-white md:text-2xl">
+                      <Sparkles
+                        className="h-5 w-5 shrink-0 text-[#f59e0b]"
+                        strokeWidth={2}
+                        aria-hidden
+                      />
+                      The cost of status quo
+                    </h2>
+                  </div>
+                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-400/95">
+                    Live signal
+                    <span
+                      className="relative flex h-2 w-2"
+                      aria-hidden
+                    >
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                    </span>
+                  </span>
+                </div>
+
+                <ul className="space-y-3.5" aria-label="Operational risks">
+                  {challenges.map((challenge, index) => (
+                    <motion.li
+                      key={challenge}
+                      initial={{ opacity: 0, x: 10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.35 + index * 0.06 }}
+                      className="group relative flex gap-4 rounded-xl border border-white/[0.05] bg-white/[0.02] px-4 py-3.5 transition-all duration-300 hover:border-[#f59e0b]/20 hover:bg-white/[0.04]"
+                    >
+                      <span
+                        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-gradient-to-b from-white/[0.08] to-transparent font-mono text-xs font-bold text-[#f59e0b]"
+                        aria-hidden
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="pt-0.5 text-[13px] font-medium leading-snug text-neutral-300 transition-colors group-hover:text-neutral-100 md:text-sm">
+                        {challenge}
+                      </p>
+                      <ArrowUpRight
+                        className="ml-auto mt-1 h-4 w-4 shrink-0 text-neutral-600 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#f59e0b] group-hover:opacity-100"
+                        aria-hidden
+                      />
+                    </motion.li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 border-t border-white/[0.07] pt-8">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="flex -space-x-3">
+                        {[
+                          "/avatars/129416.jpg",
+                          "/avatars/21597.jpg",
+                          "/avatars/2827.jpg",
+                          "/avatars/129416.jpg",
+                        ].map((src, i) => (
+                          <div
+                            key={`${src}-${i}`}
+                            className="relative h-11 w-11 overflow-hidden rounded-full border-2 border-[#0e0e0e] bg-[#1a1a1a] ring-1 ring-white/10"
+                          >
+                            <Image
+                              src={src}
+                              alt=""
+                              fill
+                              sizes="44px"
+                              className="object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">
+                          Select regional brands
+                        </p>
+                        <p className="text-xs text-neutral-500">
+                          Hands-on delivery across Bihar &amp; beyond
+                        </p>
+                      </div>
+                    </div>
+                    <Link
+                      href="/case-studies"
+                      className="inline-flex items-center justify-center gap-1.5 self-start rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-300 transition-colors hover:border-[#f59e0b]/35 hover:text-white sm:self-auto"
+                    >
+                      Explore outcomes
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
                   </div>
                 </div>
               </div>

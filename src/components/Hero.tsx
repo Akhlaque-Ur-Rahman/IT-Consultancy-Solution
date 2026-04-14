@@ -52,7 +52,7 @@ export function Hero() {
                   >
                     <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#f59e0b] animate-pulse"></div>
                     <span className="text-xs md:text-sm font-medium text-[#f59e0b]">
-                      Trusted by 48+ Organizations
+                      Trusted by SME &amp; enterprise teams in Bihar
                     </span>
                   </motion.div>
                   <motion.h1
@@ -107,13 +107,13 @@ export function Hero() {
                   >
                     <div>
                       <p className="text-3xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">
-                        48+
+                        4+
                       </p>
-                      <p className="text-sm text-gray-400">Happy Clients</p>
+                      <p className="text-sm text-gray-400">Core practice areas</p>
                     </div>
                     <div>
                       <p className="text-3xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#fbbf24] bg-clip-text text-transparent">
-                        12+
+                        8+
                       </p>
                       <p className="text-sm text-gray-400">Years Experience</p>
                     </div>

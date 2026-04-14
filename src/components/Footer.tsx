@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import {
   Mail,
@@ -61,198 +63,209 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0a0a0a] text-white mt-20 border-t border-[#262626]">
-      {/* Main Footer Content */}
-      <div className="max-w-[1400px] mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div>
+    <footer className="relative mt-20 overflow-hidden border-t border-white/[0.08] bg-[#050505] text-white">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_40%_at_50%_-20%,rgba(245,158,11,0.07),transparent_55%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"
+        aria-hidden
+      />
+
+      <div className="relative z-[1] mx-auto max-w-[1400px] px-6 py-16">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+          {/* Brand */}
+          <div className="lg:col-span-4">
             <Image
               src="/logo.jpg"
               alt="EDUNEX Logo"
-              className="h-14 w-auto object-contain"
+              className="mb-5 h-14 w-auto object-contain"
               width={200}
               height={56}
             />
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Enterprise-grade IT consulting, software development, and business
-              solutions for scaling organizations.
+            <p className="mb-8 max-w-sm text-sm leading-relaxed text-neutral-400">
+              IT consulting, custom software, and compliance—built for regional
+              SMEs who need clarity, not jargon.
             </p>
             <div className="space-y-3">
-              <div className="flex items-start gap-3 text-sm text-gray-400">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-[#f59e0b]" />
-                <span>Ward 15, Phulwari Sharif, Patna, Bihar 801505</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <Phone className="w-4 h-4 flex-shrink-0 text-[#f59e0b]" />
-                <span>+91 70708 09208</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <Mail className="w-4 h-4 flex-shrink-0 text-[#f59e0b]" />
-                <span>support@edunesservices.in</span>
-              </div>
+              {[
+                {
+                  icon: MapPin,
+                  text: "Ward 15, Phulwari Sharif, Patna, Bihar 801505",
+                },
+                { icon: Phone, text: "+91 70708 09208" },
+                { icon: Mail, text: "support@edunesservices.in" },
+              ].map(({ icon: Icon, text }) => (
+                <div
+                  key={text}
+                  className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-neutral-400 transition-colors hover:border-white/10 hover:bg-white/[0.04]"
+                >
+                  <Icon
+                    className="mt-0.5 h-4 w-4 shrink-0 text-amber-500/80"
+                    strokeWidth={1.75}
+                    aria-hidden
+                  />
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <motion.li
-                  key={link.id}
-                  whileHover={{ x: 4 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-all duration-200 block"
+          <div className="grid grid-cols-2 gap-10 sm:gap-8 lg:col-span-5 lg:grid-cols-3">
+            <div>
+              <h4 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Explore
+              </h4>
+              <ul className="space-y-2.5">
+                {quickLinks.map((link) => (
+                  <motion.li
+                    key={link.id}
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-400 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Services
+              </h4>
+              <ul className="space-y-2.5">
+                {services.map((service) => (
+                  <motion.li
+                    key={service.id}
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  >
+                    <Link
+                      href={service.href}
+                      className="text-sm text-neutral-400 transition-colors hover:text-white"
+                    >
+                      {service.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <h4 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Resources
+              </h4>
+              <ul className="space-y-2.5">
+                {resources.map((resource) => (
+                  <motion.li
+                    key={resource.id}
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  >
+                    <Link
+                      href={resource.href}
+                      className="text-sm text-neutral-400 transition-colors hover:text-white"
+                    >
+                      {resource.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">
-              Services
+          {/* Newsletter */}
+          <div className="lg:col-span-3">
+            <h4 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+              Newsletter
             </h4>
-            <ul className="space-y-2.5">
-              {services.map((service) => (
-                <motion.li
-                  key={service.id}
-                  whileHover={{ x: 4 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Link
-                    href={service.href}
-                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-all duration-200 block"
-                  >
-                    {service.label}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources & Newsletter */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#f59e0b]">
-              Resources
-            </h4>
-            <ul className="space-y-2.5 mb-6">
-              {resources.map((resource) => (
-                <motion.li
-                  key={resource.id}
-                  whileHover={{ x: 4 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Link
-                    href={resource.href}
-                    className="text-sm text-gray-400 hover:text-[#f59e0b] transition-all duration-200 block"
-                  >
-                    {resource.label}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-
-            <h4 className="text-sm font-semibold mb-3">
-              Subscribe to Newsletter
-            </h4>
-            <div className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Your email"
-                className="bg-[#121212] border-[#262626] text-white placeholder:text-gray-500 text-sm focus:border-[#f59e0b]"
-              />
-              <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] text-black px-4 shrink-0">
-                Subscribe
-              </Button>
+            <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 shadow-[0_24px_64px_-40px_rgba(0,0,0,0.9)]">
+              <p className="mb-4 text-sm text-neutral-400">
+                Product updates and compliance tips for Bihar businesses—no
+                spam.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Input
+                  type="email"
+                  placeholder="Work email"
+                  className="border-white/10 bg-black/40 text-white placeholder:text-neutral-600 focus-visible:ring-amber-500/30"
+                />
+                <Button className="shrink-0 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-5 text-black hover:opacity-95">
+                  Join
+                </Button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="mt-12 pt-8 border-t border-[#262626]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <motion.a
-                    key={social.label}
-                    href={social.url}
-                    whileHover={{ scale: 1.1, backgroundColor: "#f59e0b" }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#262626] hover:border-[#f59e0b] flex items-center justify-center transition-all duration-200 group"
-                    aria-label={social.label}
-                  >
-                    <Icon className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
-                  </motion.a>
-                );
-              })}
-            </div>
+        {/* Social + trust */}
+        <div className="mt-14 flex flex-col gap-8 border-t border-white/[0.06] pt-10 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-2.5">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <motion.a
+                  key={social.label}
+                  href={social.url}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-neutral-400 transition-colors hover:border-amber-500/35 hover:text-amber-200"
+                  aria-label={social.label}
+                >
+                  <Icon className="h-5 w-5" strokeWidth={1.5} />
+                </motion.a>
+              );
+            })}
+          </div>
 
-            <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
-              <span className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-[#f59e0b]"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
-                ISO 9001:2015 Certified
+          <div className="flex flex-wrap items-center gap-2 text-[11px] text-neutral-500 md:justify-end">
+            {[
+              "ISO 9001:2015",
+              "GDPR-ready practices",
+              "SSL secured",
+            ].map((label, i) => (
+              <span key={label} className="flex items-center gap-2">
+                {i > 0 && (
+                  <span className="text-neutral-700" aria-hidden>
+                    ·
+                  </span>
+                )}
+                <span className="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1.5">
+                  {label}
+                </span>
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-[#f59e0b]"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
-                </svg>
-                GDPR Compliant
-              </span>
-              <span>•</span>
-              <span>Secured by SSL</span>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="bg-[#000000] py-6 border-t border-[#262626]">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-            <p>© 2026 EDUNEX. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <Link
-                href="/privacy"
-                className="hover:text-[#f59e0b] transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-[#f59e0b] transition-colors"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/cookies"
-                className="hover:text-[#f59e0b] transition-colors"
-              >
-                Cookie Policy
-              </Link>
-            </div>
+      {/* Bottom bar */}
+      <div className="relative border-t border-white/[0.06] bg-black py-6">
+        <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-4 px-6 text-sm text-neutral-500 md:flex-row">
+          <p>© {new Date().getFullYear()} EDUNEX. All rights reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-neutral-300"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="transition-colors hover:text-neutral-300"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/cookies"
+              className="transition-colors hover:text-neutral-300"
+            >
+              Cookies
+            </Link>
           </div>
         </div>
       </div>

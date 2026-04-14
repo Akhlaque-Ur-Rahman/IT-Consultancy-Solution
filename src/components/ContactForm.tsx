@@ -106,7 +106,7 @@ export function ContactForm({
                     Request a Demo
                   </h2>
                   <p className="text-sm text-gray-400 mt-1">
-                    Fill out the form and we'll get back to you within 24 hours
+                    Fill out the form and we&apos;ll get back to you within 24 hours
                   </p>
                 </div>
                 <motion.button
@@ -325,7 +325,7 @@ export function ContactForm({
                       Request Submitted!
                     </h3>
                     <p className="text-gray-400">
-                      We'll get back to you within 24 hours.
+                      We&apos;ll get back to you within 24 hours.
                     </p>
                   </motion.div>
                 )}

@@ -13,6 +13,9 @@ import SocialProofBlock from "@/components/solutions/SocialProofBlock";
 import DecisionHelper from "@/components/solutions/DecisionHelper";
 import { FAQSection } from "@/components/FAQSection";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { TrustCarousel } from "@/components/TrustCarousel";
+import { MetricsCounter } from "@/components/MetricsCounter";
+import { clientLogos, metrics } from "@/data/mockData";
 
 const solutionsFaqs = [
   {
@@ -48,56 +51,62 @@ const solutionsFaqs = [
 
 export default function SolutionsPage() {
   return (
-    <main className="bg-black min-h-screen">
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", item: "/" },
-          { name: "Solutions", item: "/solutions" },
-        ]}
-      />
-      {/* 1. Problem → Solution Intro */}
-      <ProblemSolutionHero />
+    <main className="page-depth-grain min-h-screen bg-black">
+      <div className="relative z-[1]">
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", item: "/" },
+            { name: "Solutions", item: "/solutions" },
+          ]}
+        />
+        {/* 1. Problem → Solution Intro */}
+        <ProblemSolutionHero />
 
-      {/* 2. Industry Use Cases */}
-      <IndustryVerticals />
+        <TrustCarousel logos={clientLogos} />
+        <MetricsCounter metrics={metrics} />
 
-      {/* 2.5 Social Proof (Validation) */}
-      <SocialProofBlock />
+        {/* 2. Industry Use Cases */}
+        <IndustryVerticals />
 
-      {/* 3. Solution Cards (Showcase) */}
-      <SolutionShowcase />
+        {/* 2.5 Social Proof (Validation) */}
+        <SocialProofBlock />
 
-      {/* 3.5 Decision Support */}
-      <DecisionHelper />
+        {/* 3. Solution Cards (Showcase) */}
+        <SolutionShowcase />
 
-      {/* 4. Integrations */}
-      <IntegrationsGrid />
+        {/* 3.5 Decision Support */}
+        <DecisionHelper />
 
-      {/* 5. Deployment Options */}
-      <DeploymentOptions />
+        {/* 4. Integrations */}
+        <IntegrationsGrid />
 
-      {/* 6. Implementation Process */}
-      <ImplementationProcess />
+        {/* 5. Deployment Options */}
+        <DeploymentOptions />
 
-      {/* 7. Value Propositions (Why Choose Us) */}
-      <ValuePropositions />
+        {/* 6. Implementation Process */}
+        <ImplementationProcess />
 
-      {/* 8. Unified Ecosystem Message */}
-      <UnifiedEcosystem />
+        {/* 7. Value Propositions (Why Choose Us) */}
+        <ValuePropositions />
 
-      {/* 8.5 Enterprise FAQs */}
-      <FAQSection
-        faqs={solutionsFaqs}
-        title={
-          <>
-            Enterprise Solutions <span className="text-[#f59e0b]">FAQ</span>
-          </>
-        }
-        description="Technical and operational answers for IT directors, founders, and executive decision-makers."
-      />
+        {/* 8. Unified Ecosystem Message */}
+        <UnifiedEcosystem />
 
-      {/* 9. Final CTA */}
-      <PremiumFinalCTA />
+        {/* 8.5 Enterprise FAQs */}
+        <FAQSection
+          faqs={solutionsFaqs}
+          title={
+            <>
+              Enterprise Solutions <span className="text-[#f59e0b]">FAQ</span>
+            </>
+          }
+          description="Technical and operational answers for IT directors, founders, and executive decision-makers."
+          sectionClassName="border-t border-[#262626] bg-black"
+        />
+
+        {/* 9. Final CTA */}
+        <PremiumFinalCTA />
+      </div>
     </main>
   );
 }

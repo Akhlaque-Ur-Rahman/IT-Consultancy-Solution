@@ -15,7 +15,28 @@ import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { SectionAmbient } from "@/components/SectionAmbient";
 import { useState } from "react";
+
+function AuthorityCard({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative">
+      <div
+        className="pointer-events-none absolute -inset-[1px] rounded-[1.05rem] opacity-75"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(245,158,11,0.28) 0%, rgba(245,158,11,0.06) 45%, transparent 68%)",
+          filter: "blur(18px)",
+        }}
+        aria-hidden
+      />
+      <div className="relative overflow-hidden rounded-2xl border border-[#f59e0b]/30 bg-[#121212] p-8 shadow-[0_0_0_1px_rgba(245,158,11,0.08),0_28px_80px_-32px_rgba(0,0,0,0.9),0_0_56px_-24px_rgba(245,158,11,0.14)] lg:p-12">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/45 to-transparent" />
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function CaseStudiesPage() {
   const [selectedIndustry, setSelectedIndustry] = useState("All");
@@ -26,409 +47,455 @@ export default function CaseStudiesPage() {
     (cs) => selectedIndustry === "All" || cs.industry === selectedIndustry,
   );
 
-  return (
-    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", item: "/" },
-          { name: "Case Studies", item: "/case-studies" },
-        ]}
-      />
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* Outcome-Driven Hero */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-6">
-            <TrendingUp className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-sm font-medium text-[#f59e0b]">
-              Proven Results & Real-World Impact
-            </span>
-          </div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-            How We Helped <span className="text-[#f59e0b]">90+ Businesses</span>{" "}
-            Grow with Reliable Tech
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-            Real problems solved for businesses right here in Bihar. See how our
-            simple, affordable solutions deliver measurable success for local
-            distributors, clinics, and service providers.
-          </p>
+  const featured = caseStudies[0];
 
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-8 py-6 border-y border-white/5">
-            {[
-              { icon: CheckCircle2, label: "112+ Projects Delivered" },
-              { icon: ShieldCheck, label: "99.9% Infrastructure Uptime" },
-              { icon: Briefcase, label: "15+ Industries Served" },
-            ].map(
-              (stat, i) =>
-                stat && (
+  return (
+    <div className="page-depth-grain min-h-screen bg-black">
+      <div className="relative z-[1]">
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", item: "/" },
+            { name: "Case Studies", item: "/case-studies" },
+          ]}
+        />
+
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/25 bg-[#f59e0b]/10 px-4 py-2 shadow-[0_0_32px_-12px_rgba(245,158,11,0.35)]">
+                <TrendingUp className="h-4 w-4 text-[#fbbf24]" aria-hidden />
+                <span className="text-sm font-semibold text-[#fbbf24]">
+                  Proven Results &amp; Real-World Impact
+                </span>
+              </div>
+              <h1 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-5xl md:leading-tight">
+                How We Help{" "}
+                <span className="bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] bg-clip-text text-transparent">
+                  Regional Businesses
+                </span>{" "}
+                Grow with Reliable Tech
+              </h1>
+              <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl [text-wrap:balance]">
+                Real problems solved for businesses right here in Bihar. See how
+                our simple, affordable solutions deliver measurable success for
+                local distributors, clinics, and service providers.
+              </p>
+
+              <div className="flex flex-wrap items-center justify-center gap-8 border-y border-[#262626] py-6">
+                {[
+                  { icon: CheckCircle2, label: "Hands-on implementations" },
+                  { icon: ShieldCheck, label: "Resilience-minded architecture" },
+                  { icon: Briefcase, label: "Multi-sector experience" },
+                ].map((stat, i) => (
                   <div key={i} className="flex items-center gap-2.5">
-                    <stat.icon className="w-5 h-5 text-[#f59e0b]" />
-                    <span className="text-sm font-semibold text-white/80 uppercase tracking-wide">
+                    <stat.icon className="h-5 w-5 text-[#f59e0b]" />
+                    <span className="text-sm font-semibold uppercase tracking-wide text-white/80">
                       {stat.label}
                     </span>
                   </div>
-                ),
-            )}
-          </div>
-        </motion.div>
-
-        {/* Industry Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {industries.map((industry) => (
-            <button
-              key={industry}
-              onClick={() => setSelectedIndustry(industry)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
-                selectedIndustry === industry
-                  ? "bg-[#f59e0b] text-black border-[#f59e0b] shadow-[0_0_20px_rgba(245,158,11,0.3)]"
-                  : "bg-transparent text-gray-400 border-white/10 hover:border-[#f59e0b]/40 hover:text-white"
-              }`}
-            >
-              {industry}
-            </button>
-          ))}
-        </div>
-
-        {/* Case Studies Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {filteredCaseStudies.map((caseStudy) => (
-            <CaseStudyCard
-              key={caseStudy.id}
-              title={caseStudy.title}
-              client={caseStudy.client}
-              industry={caseStudy.industry}
-              image={caseStudy.image}
-              impact={caseStudy.impact}
-              companyType={(caseStudy as any).companyType}
-              problemSolved={(caseStudy as any).problemSolved}
-              slug={(caseStudy as any).slug}
-            />
-          ))}
-        </div>
-
-        {/* Persuasive Featured Case Study Narrative */}
-        <motion.div
-          className="bg-[#121212] rounded-3xl shadow-xl overflow-hidden border border-[#262626] mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="grid lg:grid-cols-2">
-            {/* Image & Branding */}
-            <Link
-              href={`/case-studies/${caseStudies[0].slug}`}
-              className="relative h-96 lg:h-auto bg-black group/featured block"
-            >
-              <ImageWithFallback
-                src={`https://source.unsplash.com/800x800/?${encodeURIComponent(caseStudies[0].image)}`}
-                alt={caseStudies[0].title}
-                className="w-full h-full object-cover opacity-70 transition-transform duration-500 group-hover/featured:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/20 to-transparent"></div>
-              <div className="absolute bottom-10 left-10 right-10">
-                <span className="inline-flex px-3 py-1 rounded bg-[#f59e0b] text-[10px] font-bold text-black uppercase tracking-widest mb-4">
-                  Featured implementation
-                </span>
-                <h3 className="text-4xl font-bold text-white mb-2 group-hover/featured:text-[#f59e0b] transition-colors">
-                  {caseStudies[0].client}
-                </h3>
-                <p className="text-[#f59e0b] font-medium">
-                  {caseStudies[0].industry} • {caseStudies[0].deploymentScale}
-                </p>
-              </div>
-            </Link>
-
-            {/* Narrative Content */}
-            <div className="p-8 lg:p-14">
-              <h2 className="text-3xl font-bold text-white mb-10 leading-tight">
-                {caseStudies[0].title}
-              </h2>
-
-              <div className="space-y-10">
-                {/* A) Business Context */}
-                <section>
-                  <h4 className="flex items-center gap-2 text-sm font-bold text-[#f59e0b] uppercase tracking-widest mb-3">
-                    <Users className="w-4 h-4" />
-                    Business Context
-                  </h4>
-                  <p className="text-gray-400 leading-relaxed">
-                    {(caseStudies[0] as any).businessContext}
-                  </p>
-                </section>
-
-                {/* B) Core Problem */}
-                <section>
-                  <h4 className="flex items-center gap-2 text-sm font-bold text-[#f59e0b] uppercase tracking-widest mb-3">
-                    <TrendingUp className="w-4 h-4" />
-                    The Challenge
-                  </h4>
-                  <p className="text-gray-400 leading-relaxed">
-                    {(caseStudies[0] as any).coreProblem}
-                  </p>
-                </section>
-
-                {/* C) Solution Approach */}
-                <section>
-                  <h4 className="flex items-center gap-2 text-sm font-bold text-[#f59e0b] uppercase tracking-widest mb-3">
-                    <ShieldCheck className="w-4 h-4" />
-                    Solution Approach
-                  </h4>
-                  <p className="text-gray-400 leading-relaxed">
-                    {(caseStudies[0] as any).solutionApproach}
-                  </p>
-                </section>
-
-                {/* D) Implementation Confidence */}
-                <section className="p-6 rounded-xl bg-[#0a0a0a] border border-[#f59e0b]/10">
-                  <h4 className="flex items-center gap-2 text-sm font-bold text-[#f59e0b] uppercase tracking-widest mb-3">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Implementation Confidence
-                  </h4>
-                  <p className="text-gray-300 text-sm leading-relaxed italic">
-                    {(caseStudies[0] as any).implementationConfidence}
-                  </p>
-                </section>
-
-                {/* E) Impact Metrics */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                  {Object.entries(caseStudies[0].impact).map(([key, value]) => (
-                    <div
-                      key={key}
-                      className="p-4 rounded-lg bg-[#0a0a0a] border border-[#262626]"
-                    >
-                      <p className="text-2xl font-extrabold text-[#f59e0b] mb-1">
-                        {value}
-                      </p>
-                      <p className="text-[10px] text-gray-500 uppercase font-bold tracking-tight">
-                        {key.replace(/([A-Z])/g, " $1").trim()}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Testimonial */}
-                <div className="pt-8 border-t border-white/5">
-                  <p className="text-white text-lg font-medium italic mb-4">
-                    "{caseStudies[0].testimonial}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b] font-bold">
-                      {caseStudies[0].testimonialAuthor[0]}
-                    </div>
-                    <div>
-                      <p className="font-bold text-white text-sm">
-                        {caseStudies[0].testimonialAuthor}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        {caseStudies[0].testimonialRole}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Download CTA */}
-                <div className="pt-4">
-                  <Button className="w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-black font-bold h-14 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">
-                    <Download className="mr-2 w-5 h-5" />
-                    Download Success Story Details (PDF)
-                  </Button>
-                  <p className="text-center text-[10px] text-gray-500 mt-3 font-medium">
-                    Includes: What we built, how long it took, and how much
-                    money it saved.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Implementation Methodology & ROI Framework (SEO Expansion) */}
-        <motion.div
-          className="mb-24"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="bg-[#121212] border border-[#262626] rounded-2xl p-8 lg:p-12 prose prose-invert prose-lg max-w-none">
-            <h2 className="text-3xl font-bold text-white mb-6 border-b border-[#262626] pb-4">
-              How We Solve Local Business Problems
-            </h2>
-            <div className="space-y-6 text-gray-400 leading-relaxed md:columns-2 gap-12">
-              <p>
-                The success stories you see above aren't magic. They are the
-                result of actually listening to local business owners. While
-                outside agencies try to sell you expensive pre-packaged tools,
-                we build systems designed specifically for the way work happens
-                in Bihar.
-              </p>
-              <p>
-                <strong>Understanding Your Shop Floor:</strong> We don't guess
-                what you need. Before we quote a price, we visit your godown,
-                talk to your billing counter staff, and look at the ledgers and
-                registers you currently use. We find out exactly where the
-                mistakes happen—whether it's skipped GST entries or misplaced
-                inventory—and we design a digital solution that solves that
-                specific headache.
-              </p>
-              <div className="break-inside-avoid mt-8">
-                <h3 className="text-2xl font-bold text-[#f59e0b] mb-4">
-                  Our Promise to Small Businesses
-                </h3>
-                <ul className="list-disc pl-5 space-y-3">
-                  <li>
-                    <strong>No Disruptions:</strong> We don't force you to stop
-                    your business while we set things up. We train your staff
-                    side-by-side while they work, ensuring the transition from
-                    paper to computer is smooth and stress-free.
-                  </li>
-                  <li>
-                    <strong>Simple Interfaces:</strong> Software is useless if
-                    your staff is too confused to use it. Our digital tools are
-                    built to be as easy to understand as a standard WhatsApp
-                    message.
-                  </li>
-                  <li>
-                    <strong>Real Results:</strong> We don't talk about "synergy"
-                    or "digital transformation." We measure success by how much
-                    time you save every week, how many billing errors disappear,
-                    and how many new local walk-ins you get from our maps
-                    optimization.
-                  </li>
-                </ul>
-              </div>
-              <p className="mt-8 break-inside-avoid">
-                When you partner with EDUNEX, you get practical advice and
-                honest work. Our goal is to give every small and medium business
-                in Bihar access to the same powerful tools that big corporations
-                use, but at a price that makes sense for your local market.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Why This Matters Section */}
-        <motion.div
-          className="text-center mb-24 max-w-3xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold text-white mb-6">
-            Why This Matters to{" "}
-            <span className="text-[#f59e0b]">Your Business</span>
-          </h3>
-          <p className="text-gray-400 text-lg leading-relaxed">
-            If your shop or godown faces similar challenges — messy paper
-            trails, billing mistakes, or trouble getting local customers to find
-            you — we can fix it quickly and affordably.
-          </p>
-        </motion.div>
-
-        {/* Social Proof Section */}
-        <section className="mb-24">
-          <div className="bg-[#121212] border border-[#262626] rounded-3xl p-10 lg:p-16">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-3xl font-bold text-white mb-6">
-                  Trusted by Fast-Growing{" "}
-                  <span className="text-[#f59e0b]">Local Businesses</span>
-                </h3>
-                <p className="text-gray-400 mb-8 leading-relaxed">
-                  We don't just build software; we build tools that make your
-                  daily work easier. Our goal is to bring reliable, face-to-face
-                  IT support to every business in Bihar.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    "Proven expertise in 15+ industry sectors",
-                    "Enterprise-grade security and data privacy",
-                    "Structured implementation & training support",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#f59e0b]" />
-                      <span className="text-white/90 font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: "Successful Implementations", value: "112+" },
-                  { label: "Client Retention Rate", value: "94%" },
-                  { label: "Support Ticket Resolution", value: "< 4h" },
-                  { label: "Deployment Success", value: "100%" },
-                ].map((stat, i) => (
-                  <div
-                    key={i}
-                    className="p-6 rounded-2xl bg-black/40 border border-white/5 text-center"
-                  >
-                    <p className="text-3xl font-bold text-[#f59e0b] mb-1">
-                      {stat.value}
-                    </p>
-                    <p className="text-[10px] text-gray-500 uppercase tracking-wider font-bold">
-                      {stat.label}
-                    </p>
-                  </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </SectionAmbient>
 
-        {/* High-Intent Final CTA Section */}
-        <motion.div
-          className="relative rounded-3xl p-12 lg:p-20 overflow-hidden text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-16 md:py-24"
         >
-          {/* Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#121212] to-black z-0"></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.1),transparent_70%)] z-0"></div>
-
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Write Your Own{" "}
-              <span className="text-[#f59e0b]">Success Story</span>?
-            </h3>
-            <p className="text-xl text-gray-400 mb-12">
-              Discuss your specific business challenges with our solution
-              architects. We provide structured guidance to help you modernize
-              and scale.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button className="w-full sm:px-10 h-16 bg-[#f59e0b] hover:bg-[#d97706] text-black font-bold text-lg rounded-xl shadow-[0_10px_30px_rgba(245,158,11,0.3)] transition-all">
-                  Get a Free System Consultation
-                </Button>
-              </Link>
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  className="w-full sm:px-10 h-16 border-white/20 text-white font-bold text-lg rounded-xl hover:bg-white/5 bg-transparent"
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="mb-10 flex flex-wrap justify-center gap-3">
+              {industries.map((industry) => (
+                <button
+                  key={industry}
+                  type="button"
+                  onClick={() => setSelectedIndustry(industry)}
+                  className={`rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 ${
+                    selectedIndustry === industry
+                      ? "scale-105 bg-[#f59e0b] font-semibold text-black shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+                      : "border border-[#262626] bg-[#121212] text-gray-400 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                  }`}
                 >
-                  Discuss Your Requirements
-                </Button>
-              </Link>
+                  {industry}
+                </button>
+              ))}
             </div>
 
-            <p className="mt-8 text-sm text-gray-500 font-medium">
-              No obligations. Just an honest conversation about your tech
-              roadmap.
-            </p>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {filteredCaseStudies.map((caseStudy) => (
+                <Link
+                  key={caseStudy.id}
+                  href={`/case-studies/${caseStudy.slug}`}
+                  className="block h-full"
+                >
+                  <CaseStudyCard
+                    title={caseStudy.title}
+                    client={caseStudy.client}
+                    industry={caseStudy.industry}
+                    image={caseStudy.image}
+                    impact={caseStudy.impact}
+                    companyType={(caseStudy as any).companyType}
+                    problemSolved={(caseStudy as any).problemSolved}
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
-        </motion.div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              className="relative overflow-hidden rounded-3xl border border-[#f59e0b]/25 bg-[#121212] shadow-[0_28px_80px_-32px_rgba(0,0,0,0.9)]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/40 to-transparent" />
+              <div className="grid lg:grid-cols-2">
+                <Link
+                  href={`/case-studies/${featured.slug}`}
+                  className="group/featured relative block h-96 bg-black lg:h-auto"
+                >
+                  <ImageWithFallback
+                    src={`https://source.unsplash.com/800x800/?${encodeURIComponent(featured.image)}`}
+                    alt={featured.title}
+                    className="h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover/featured:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/20 to-transparent" />
+                  <div className="absolute bottom-10 left-10 right-10">
+                    <span className="mb-4 inline-flex rounded bg-[#f59e0b] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black">
+                      Featured implementation
+                    </span>
+                    <h3 className="mb-2 text-4xl font-bold text-white transition-colors group-hover/featured:text-[#f59e0b]">
+                      {featured.client}
+                    </h3>
+                    <p className="font-medium text-[#f59e0b]">
+                      {featured.industry} • {featured.deploymentScale}
+                    </p>
+                  </div>
+                </Link>
+
+                <div className="p-8 lg:p-14">
+                  <h2 className="mb-10 text-3xl font-bold leading-tight text-white">
+                    {featured.title}
+                  </h2>
+
+                  <div className="space-y-10">
+                    <section>
+                      <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#f59e0b]">
+                        <Users className="h-4 w-4" />
+                        Business Context
+                      </h4>
+                      <p className="leading-relaxed text-gray-400">
+                        {(featured as any).businessContext}
+                      </p>
+                    </section>
+
+                    <section>
+                      <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#f59e0b]">
+                        <TrendingUp className="h-4 w-4" />
+                        The Challenge
+                      </h4>
+                      <p className="leading-relaxed text-gray-400">
+                        {(featured as any).coreProblem}
+                      </p>
+                    </section>
+
+                    <section>
+                      <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#f59e0b]">
+                        <ShieldCheck className="h-4 w-4" />
+                        Solution Approach
+                      </h4>
+                      <p className="leading-relaxed text-gray-400">
+                        {(featured as any).solutionApproach}
+                      </p>
+                    </section>
+
+                    <section className="rounded-xl border border-[#f59e0b]/10 bg-[#0a0a0a] p-6">
+                      <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#f59e0b]">
+                        <CheckCircle2 className="h-4 w-4" />
+                        Implementation Confidence
+                      </h4>
+                      <p className="text-sm italic leading-relaxed text-gray-300">
+                        {(featured as any).implementationConfidence}
+                      </p>
+                    </section>
+
+                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                      {Object.entries(featured.impact).map(([key, value]) => (
+                        <div
+                          key={key}
+                          className="rounded-lg border border-[#262626] bg-[#0a0a0a] p-4"
+                        >
+                          <p className="mb-1 text-2xl font-extrabold text-[#f59e0b]">
+                            {value}
+                          </p>
+                          <p className="text-[10px] font-bold uppercase tracking-tight text-gray-500">
+                            {key.replace(/([A-Z])/g, " $1").trim()}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="border-t border-[#262626] pt-8">
+                      <p className="mb-4 text-lg font-medium italic text-white">
+                        &ldquo;{featured.testimonial}&rdquo;
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f59e0b]/20 text-sm font-bold text-[#f59e0b]">
+                          {featured.testimonialAuthor[0]}
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-white">
+                            {featured.testimonialAuthor}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {featured.testimonialRole}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-4">
+                      <Button className="h-14 w-full bg-gradient-to-r from-[#f59e0b] to-[#d97706] font-bold text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                        <Download className="mr-2 h-5 w-5" />
+                        Download Success Story Details (PDF)
+                      </Button>
+                      <p className="mt-3 text-center text-[10px] font-medium text-gray-500">
+                        Includes: What we built, how long it took, and how much
+                        money it saved.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <AuthorityCard>
+                <div className="prose prose-invert prose-lg max-w-none">
+                  <h2 className="mb-6 border-b border-[#262626] pb-4 text-3xl font-bold text-white">
+                    How We Solve Local Business Problems
+                  </h2>
+                  <div className="space-y-6 leading-relaxed text-gray-400 md:columns-2 md:gap-12">
+                    <p>
+                      The success stories you see above aren&apos;t magic. They
+                      are the result of actually listening to local business
+                      owners. While outside agencies try to sell you expensive
+                      pre-packaged tools, we build systems designed specifically
+                      for the way work happens in Bihar.
+                    </p>
+                    <p>
+                      <strong>Understanding Your Shop Floor:</strong> We
+                      don&apos;t guess what you need. Before we quote a price, we
+                      visit your godown, talk to your billing counter staff, and
+                      look at the ledgers and registers you currently use. We
+                      find out exactly where the mistakes happen—whether it&apos;s
+                      skipped GST entries or misplaced inventory—and we design a
+                      digital solution that solves that specific headache.
+                    </p>
+                    <div className="mt-8 break-inside-avoid">
+                      <h3 className="mb-4 text-2xl font-bold text-[#f59e0b]">
+                        Our Promise to Small Businesses
+                      </h3>
+                      <ul className="list-disc space-y-3 pl-5">
+                        <li>
+                          <strong>No Disruptions:</strong> We don&apos;t force you
+                          to stop your business while we set things up. We train
+                          your staff side-by-side while they work, ensuring the
+                          transition from paper to computer is smooth and
+                          stress-free.
+                        </li>
+                        <li>
+                          <strong>Simple Interfaces:</strong> Software is
+                          useless if your staff is too confused to use it. Our
+                          digital tools are built to be as easy to understand as
+                          a standard WhatsApp message.
+                        </li>
+                        <li>
+                          <strong>Real Results:</strong> We don&apos;t talk about
+                          &ldquo;synergy&rdquo; or &ldquo;digital
+                          transformation.&rdquo; We measure success by how much
+                          time you save every week, how many billing errors
+                          disappear, and how many new local walk-ins you get from
+                          our maps optimization.
+                        </li>
+                      </ul>
+                    </div>
+                    <p className="mt-8 break-inside-avoid">
+                      When you partner with EDUNEX, you get practical advice and
+                      honest work. Our goal is to give every small and medium
+                      business in Bihar access to the same powerful tools that big
+                      corporations use, but at a price that makes sense for your
+                      local market.
+                    </p>
+                  </div>
+                </div>
+              </AuthorityCard>
+            </motion.div>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              className="mx-auto max-w-3xl text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="mb-6 text-2xl font-bold text-white">
+                Why This Matters to{" "}
+                <span className="bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] bg-clip-text text-transparent">
+                  Your Business
+                </span>
+              </h3>
+              <p className="text-lg leading-relaxed text-gray-400">
+                If your shop or godown faces similar challenges — messy paper
+                trails, billing mistakes, or trouble getting local customers to
+                find you — we can fix it quickly and affordably.
+              </p>
+            </motion.div>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <section>
+              <div className="overflow-hidden rounded-3xl border border-white/[0.09] bg-gradient-to-b from-[#171717] via-[#121212] to-[#0c0c0c] p-10 shadow-[0_12px_40px_-18px_rgba(0,0,0,0.85)] lg:p-16">
+                <div className="grid items-center gap-12 lg:grid-cols-2">
+                  <div>
+                    <h3 className="mb-6 text-3xl font-bold text-white">
+                      Trusted by Fast-Growing{" "}
+                      <span className="text-[#f59e0b]">Local Businesses</span>
+                    </h3>
+                    <p className="mb-8 leading-relaxed text-gray-400">
+                      We don&apos;t just build software; we build tools that make
+                      your daily work easier. Our goal is to bring reliable,
+                      face-to-face IT support to every business in Bihar.
+                    </p>
+                    <div className="space-y-4">
+                      {[
+                        "Proven expertise in 15+ industry sectors",
+                        "Enterprise-grade security and data privacy",
+                        "Structured implementation & training support",
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-3">
+                          <CheckCircle2 className="h-5 w-5 shrink-0 text-[#f59e0b]" />
+                          <span className="font-medium text-white/90">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { label: "Delivery style", value: "Hands-on" },
+                      { label: "Code ownership", value: "Yours" },
+                      { label: "Support posture", value: "Direct" },
+                      { label: "Compliance mindset", value: "GST-ready" },
+                    ].map((stat, i) => (
+                      <div
+                        key={i}
+                        className="rounded-2xl border border-white/[0.08] bg-black/40 p-6 text-center"
+                      >
+                        <p className="mb-1 text-3xl font-bold text-[#f59e0b]">
+                          {stat.value}
+                        </p>
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                          {stat.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="relative border-t border-[#262626] py-16 md:py-24"
+        >
+          <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.06]">
+            <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-white blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white blur-3xl" />
+          </div>
+          <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-3xl"
+            >
+              <h3 className="mb-6 text-3xl font-bold text-white lg:text-5xl">
+                Ready to Write Your Own{" "}
+                <span className="text-[#f59e0b]">Success Story</span>?
+              </h3>
+              <p className="mb-10 text-lg text-gray-400 md:text-xl">
+                Discuss your specific business challenges with our solution
+                architects. We provide structured guidance to help you modernize
+                and scale.
+              </p>
+
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button className="h-14 w-full rounded-xl bg-gradient-to-r from-[#f59e0b] to-[#d97706] px-10 text-lg font-bold text-black shadow-[0_10px_30px_rgba(245,158,11,0.3)] transition-all hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] sm:h-16">
+                    Get a Free System Consultation
+                  </Button>
+                </Link>
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button
+                    variant="outline"
+                    className="h-14 w-full rounded-xl border-white/20 bg-transparent px-10 text-lg font-bold text-white hover:bg-white/5 sm:h-16"
+                  >
+                    Discuss Your Requirements
+                  </Button>
+                </Link>
+              </div>
+
+              <p className="mt-8 text-sm font-medium text-gray-500">
+                No obligations. Just an honest conversation about your tech
+                roadmap.
+              </p>
+            </motion.div>
+          </div>
+        </SectionAmbient>
       </div>
     </div>
   );

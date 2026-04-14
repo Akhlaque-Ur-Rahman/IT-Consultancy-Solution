@@ -15,13 +15,43 @@ import {
   CheckCircle,
   ChevronLeft,
   ShieldCheck,
-  Lock,
   Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { SectionAmbient } from "@/components/SectionAmbient";
 import { CONTACT_FORM_SERVICES } from "@/lib/contactFormOptions";
+import {
+  buildContactPrefillMessage,
+  buildContactSubmissionSource,
+  resolveContactServiceSlug,
+} from "@/lib/contactPrefill";
+
+function emptyFormFromSearchParams(
+  sp: { get: (key: string) => string | null } | null,
+) {
+  const serviceSlug = resolveContactServiceSlug(sp?.get("service"));
+  const engagementSlug = sp?.get("engagement");
+  const refPath = sp?.get("ref");
+  const shouldPrefill = Boolean(
+    engagementSlug || refPath || sp?.get("service"),
+  );
+  return {
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: serviceSlug,
+    message: shouldPrefill
+      ? buildContactPrefillMessage({
+          serviceSlug,
+          engagementSlug,
+          refPath,
+        })
+      : "",
+  };
+}
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -37,11 +67,27 @@ function ContactFormContent() {
   });
 
   useEffect(() => {
-    const serviceParam = searchParams?.get("service");
-    if (serviceParam) {
-      const normalized = serviceParam.toLowerCase().trim();
-      setFormData((prev) => ({ ...prev, service: normalized }));
-    }
+    const sp = searchParams;
+    if (!sp) return;
+
+    const serviceSlug = resolveContactServiceSlug(sp.get("service"));
+    const engagementSlug = sp.get("engagement");
+    const refPath = sp.get("ref");
+    const shouldPrefill = Boolean(
+      engagementSlug || refPath || sp.get("service"),
+    );
+
+    setFormData((prev) => ({
+      ...prev,
+      service: serviceSlug,
+      message: shouldPrefill
+        ? buildContactPrefillMessage({
+            serviceSlug,
+            engagementSlug,
+            refPath,
+          })
+        : prev.message,
+    }));
   }, [searchParams]);
 
   const [status, setStatus] = useState<
@@ -66,7 +112,10 @@ function ContactFormContent() {
         phone: formData.phone,
         service: formData.service,
         message: formData.message,
-        source: "contact_page",
+        source: buildContactSubmissionSource({
+          refPath: searchParams?.get("ref"),
+          engagementSlug: searchParams?.get("engagement"),
+        }),
       });
       if (error) throw error;
       setIsSubmitted(true);
@@ -80,46 +129,61 @@ function ContactFormContent() {
   const handleBack = () => setStep(1);
 
   return (
-    <div className="pt-4 lg:pt-8 pb-20 min-h-screen bg-black">
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", item: "/" },
-          { name: "Contact Us", item: "/contact" },
-        ]}
-      />
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 mb-4">
-            <Phone className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-sm font-medium text-[#f59e0b]">
-              Local IT Support in Bihar
-            </span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let&apos;s Build Your{" "}
-            <span className="text-[#f59e0b]">Business Success</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Ready to upgrade your shop's software, get more local customers, or
-            handle your GST? Drop us a message and our Patna team will call you
-            back today.
-          </p>
-        </motion.div>
+    <div className="page-depth-grain min-h-screen bg-black">
+      <div className="relative z-[1]">
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", item: "/" },
+            { name: "Contact Us", item: "/contact" },
+          ]}
+        />
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/25 bg-[#f59e0b]/10 px-4 py-2 shadow-[0_0_32px_-12px_rgba(245,158,11,0.35)]">
+                <Phone className="h-4 w-4 text-[#fbbf24]" aria-hidden />
+                <span className="text-sm font-semibold text-[#fbbf24]">
+                  Local IT Support in Bihar
+                </span>
+              </div>
+              <h1 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-5xl md:leading-tight">
+                Let&apos;s Build Your{" "}
+                <span className="bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] bg-clip-text text-transparent">
+                  Business Success
+                </span>
+              </h1>
+              <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl [text-wrap:balance]">
+                Ready to upgrade your shop&apos;s software, get more local
+                customers, or handle your GST? Drop us a message and our Patna
+                team will call you back today.
+              </p>
+            </motion.div>
+          </div>
+        </SectionAmbient>
+
+        <SectionAmbient
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Contact Form Container */}
           <motion.div
-            className="bg-[#121212] rounded-3xl overflow-hidden shadow-2xl border border-[#262626] relative"
+            className="relative overflow-hidden rounded-3xl border border-[#f59e0b]/20 bg-[#121212] shadow-[0_28px_80px_-32px_rgba(0,0,0,0.9)]"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <div className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/45 to-transparent" />
             {/* Form Header / Progress */}
             {!isSubmitted && (
               <div className="bg-[#1a1a1a] px-8 py-6 border-b border-[#262626] flex items-center justify-between">
@@ -177,14 +241,7 @@ function ContactFormContent() {
                       onClick={() => {
                         setIsSubmitted(false);
                         setStep(1);
-                        setFormData({
-                          name: "",
-                          email: "",
-                          phone: "",
-                          service: "consulting",
-                          company: "",
-                          message: "",
-                        });
+                        setFormData(emptyFormFromSearchParams(searchParams));
                         setStatus("idle");
                       }}
                       variant="outline"
@@ -392,7 +449,7 @@ function ContactFormContent() {
               </AnimatePresence>
 
               {/* Trust Indicators */}
-              <div className="grid grid-cols-2 gap-4 pt-8 border-t border-white/5 mt-8">
+              <div className="mt-8 grid grid-cols-2 gap-4 border-t border-[#262626] pt-8">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/5 flex items-center justify-center border border-[#f59e0b]/10">
                     <ShieldCheck className="w-5 h-5 text-[#f59e0b]" />
@@ -426,7 +483,7 @@ function ContactFormContent() {
           {/* Contact Info */}
           <div className="space-y-8">
             <motion.div
-              className="bg-[#121212] rounded-3xl p-8 border border-[#262626]"
+              className="rounded-2xl border border-white/[0.09] bg-gradient-to-b from-[#171717] via-[#121212] to-[#0c0c0c] p-8 shadow-[0_12px_40px_-18px_rgba(0,0,0,0.85)]"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -462,7 +519,7 @@ function ContactFormContent() {
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-[#1a1a1a] to-black rounded-3xl p-8 text-white border border-[#262626] relative overflow-hidden"
+              className="relative overflow-hidden rounded-2xl border border-[#262626] bg-[#0a0a0a] p-8 text-white"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -489,11 +546,16 @@ function ContactFormContent() {
             </motion.div>
           </div>
         </div>
+          </div>
+        </SectionAmbient>
 
-        {/* Map Section */}
-        <div className="mb-20">
-          <div className="flex items-center gap-2 mb-6">
-            <MapPin className="w-5 h-5 text-[#f59e0b]" />
+        <SectionAmbient
+          preset="surface"
+          className="border-b border-[#262626] py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-[1400px] px-6">
+          <div className="mb-6 flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-[#f59e0b]" aria-hidden />
             <h3 className="text-xl font-bold text-white">Our Location</h3>
           </div>
 
@@ -523,9 +585,10 @@ function ContactFormContent() {
             </div>
 
             {/* Subtle glow effect */}
-            <div className="absolute -inset-1 bg-[#f59e0b]/20 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+            <div className="absolute -inset-1 -z-10 rounded-3xl bg-[#f59e0b]/20 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
           </motion.div>
-        </div>
+          </div>
+        </SectionAmbient>
       </div>
     </div>
   );
@@ -535,8 +598,8 @@ export default function ContactClient() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-black flex items-center justify-center">
-          <div className="w-12 h-12 border-4 border-[#f59e0b] border-t-transparent rounded-full animate-spin"></div>
+        <div className="page-depth-grain flex min-h-screen items-center justify-center bg-black">
+          <div className="h-12 w-12 animate-spin rounded-full border-4 border-[#f59e0b] border-t-transparent" />
         </div>
       }
     >

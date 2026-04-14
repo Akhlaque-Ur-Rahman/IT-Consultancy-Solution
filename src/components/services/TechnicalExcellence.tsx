@@ -2,6 +2,12 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Shield, Cpu, Zap, Layers, Globe, Lock } from "lucide-react";
+import {
+  SectionHeading,
+  SectionHeadingAccent,
+} from "@/components/SectionHeading";
+
+const DEFAULT_TECH_TITLE = "Engineered for Stability and Extreme Scale";
 
 const differentiators = [
   {
@@ -36,29 +42,37 @@ interface TechnicalExcellenceProps {
 }
 
 export const TechnicalExcellence = ({
-  title = "Engineered for Stability and Extreme Scale",
+  title = DEFAULT_TECH_TITLE,
   description = "We don't just build software; we architect the foundation of your digital enterprise.",
   items = differentiators,
 }: TechnicalExcellenceProps) => {
   return (
-    <section className="py-24 bg-[#050505] relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#050505] py-16 md:py-24">
       {/* Abstract Background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#f59e0b]/5 to-transparent pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="mx-auto max-w-[1400px] px-6">
         <motion.div
           className="max-w-3xl mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-sm font-bold text-[#f59e0b] uppercase tracking-[0.3em] mb-4">
-            Technical Excellence
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            {title}
-          </h3>
-          <p className="text-xl text-gray-400 font-light">{description}</p>
+          <SectionHeading
+            eyebrow="Technical excellence"
+            align="left"
+            subtitle={description}
+            subtitleClassName="text-xl font-light text-gray-400"
+          >
+            {title === DEFAULT_TECH_TITLE ? (
+              <>
+                Engineered for Stability and{" "}
+                <SectionHeadingAccent>Extreme Scale</SectionHeadingAccent>
+              </>
+            ) : (
+              title
+            )}
+          </SectionHeading>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">

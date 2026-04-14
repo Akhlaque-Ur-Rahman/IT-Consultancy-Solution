@@ -2,6 +2,10 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Gavel, Clock, FileCheck } from "lucide-react";
+import {
+  SectionHeading,
+  SectionHeadingAccent,
+} from "@/components/SectionHeading";
 
 interface ComplianceProps {
   data: {
@@ -12,21 +16,25 @@ interface ComplianceProps {
 
 export const ComplianceDetails = ({ data }: ComplianceProps) => {
   return (
-    <section className="py-24 bg-[#0a0a0a]">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="bg-[#0a0a0a] py-16 md:py-24">
+      <div className="mx-auto max-w-[1400px] px-6">
         <div className="p-12 rounded-[40px] bg-gradient-to-br from-[#121212] to-[#050505] border border-[#1a1a1a] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#f59e0b]/5 rounded-full blur-[100px] -mr-48 -mt-48" />
 
           <div className="grid lg:grid-cols-2 gap-12 relative z-10">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Regulatory Precision
-              </h2>
-              <p className="text-gray-400 mb-8 leading-relaxed">
-                Navigating the complex landscape of corporate law and taxation
-                requires more than just advice—it requires a partner who ensures
-                you're always one step ahead.
-              </p>
+              <SectionHeading
+                eyebrow="Compliance"
+                align="left"
+                subtitle="Navigating the complex landscape of corporate law and taxation requires more than just advice—it requires a partner who ensures you're always one step ahead."
+                subtitleClassName="text-gray-400 leading-relaxed"
+                className="mb-8"
+              >
+                <>
+                  Regulatory{" "}
+                  <SectionHeadingAccent>Precision</SectionHeadingAccent>
+                </>
+              </SectionHeading>
 
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
