@@ -177,7 +177,7 @@ export function Footer() {
                   {col.title}
                 </h4>
                 <ul className="space-y-1">
-                  {col.links.map((link, i) => (
+                  {col.links.map((link) => (
                     <motion.li
                       key={link.id}
                       initial={false}
