@@ -23,6 +23,7 @@ type SectionAmbientProps = {
   className?: string;
   children: React.ReactNode;
   as?: "section" | "div";
+  id?: string;
 };
 
 function AmbientLayers({ preset }: { preset: SectionAmbientPreset }) {
@@ -72,9 +73,11 @@ export function SectionAmbient({
   className,
   children,
   as: Comp = "section",
+  id,
 }: SectionAmbientProps) {
   return (
     <Comp
+      id={id}
       className={cn(
         "relative overflow-hidden",
         PRESET_BG[preset],
