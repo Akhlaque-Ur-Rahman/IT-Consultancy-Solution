@@ -1037,21 +1037,18 @@ export const teamMembers = [
     name: COMPANY_INFO.team.ceo.name,
     role: COMPANY_INFO.team.ceo.role,
     bio: `${COMPANY_INFO.yearsOfExperience}+ years in enterprise software and digital transformation`,
-    image: 'indian-man-ceo-portrait',
   },
   {
     id: 2,
     name: COMPANY_INFO.team.coFounder.name,
     role: COMPANY_INFO.team.coFounder.role,
-    bio: 'Strategic leader focusing on scaling operations and ecosystem growth',
-    image: 'portrait-man-business',
+    bio: "Strategic leader focusing on scaling operations and ecosystem growth",
   },
   {
     id: 3,
     name: COMPANY_INFO.team.cto.name,
     role: COMPANY_INFO.team.cto.role,
-    bio: 'Tech visionary specializing in cloud architecture and enterprise software',
-    image: 'creative-professional-portrait',
+    bio: "Tech visionary specializing in cloud architecture and enterprise software",
   },
 ];
 
