@@ -395,39 +395,98 @@ export default function ServicesClient() {
         </SectionAmbient>
 
         <SectionAmbient
-          preset="surface"
-          className="border-b border-[#262626] py-16 md:py-24"
+          id="services-catalog"
+          preset="surfaceRaised"
+          className="border-b border-[#262626] py-20 md:py-28"
         >
-          <div id="services-catalog" className="mx-auto max-w-[1400px] px-6">
+          <div className="mx-auto max-w-[1400px] px-6">
             <motion.div
-              className="mb-10 flex flex-wrap items-center justify-center gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-10 md:mb-12"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex items-center gap-2 text-gray-400">
-                <Filter className="h-4 w-4" aria-hidden />
-                <span className="text-sm font-medium">Filter:</span>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/[0.06] px-3.5 py-1.5">
+                <Sparkles
+                  className="h-3.5 w-3.5 text-[#fbbf24]"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#fde68a]/90">
+                  Service catalog
+                </span>
               </div>
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  type="button"
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? "scale-105 bg-[#f59e0b] font-semibold text-black shadow-[0_0_15px_rgba(245,158,11,0.4)]"
-                      : "border border-[#262626] bg-[#121212] text-gray-400 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
-                  }`}
-                >
-                  {category.label}
-                </button>
-              ))}
+              <h2 className="text-balance text-3xl font-semibold tracking-[-0.02em] text-white sm:text-4xl lg:text-[2.35rem] lg:leading-[1.15]">
+                Browse{" "}
+                <span className="bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
+                  services
+                </span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
+                Filter by category—billing, ERP, SEO, design, and compliance.
+                One partner for how Bihar SMEs actually operate.
+              </p>
             </motion.div>
 
+            <div className="relative mb-10 md:mb-12">
+              <div
+                className="pointer-events-none absolute -inset-4 rounded-[1.75rem] opacity-[0.35]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(245,158,11,0.14) 0%, transparent 55%)",
+                  filter: "blur(20px)",
+                }}
+                aria-hidden
+              />
+              <div className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#141414] to-[#0c0c0c] p-4 shadow-[0_24px_64px_-40px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.04)] md:p-5">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.35]"
+                  style={{
+                    backgroundImage: `
+                      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "48px 48px",
+                    maskImage:
+                      "radial-gradient(ellipse 90% 80% at 50% 0%, black, transparent)",
+                  }}
+                  aria-hidden
+                />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/25 to-transparent" />
+
+                <motion.div
+                  className="relative flex flex-wrap items-center gap-2 sm:gap-3"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08, duration: 0.45 }}
+                >
+                  <div className="mr-1 flex items-center gap-2 text-gray-400">
+                    <Filter className="h-4 w-4 shrink-0" aria-hidden />
+                    <span className="text-sm font-medium">Filter</span>
+                  </div>
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      type="button"
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`rounded-full px-5 py-2.5 text-xs font-medium transition-all duration-300 sm:px-6 sm:py-3 sm:text-sm ${
+                        selectedCategory === category.id
+                          ? "scale-[1.02] bg-[#f59e0b] font-semibold text-black shadow-[0_0_20px_rgba(245,158,11,0.35)]"
+                          : "border border-white/[0.08] bg-black/40 text-gray-400 backdrop-blur-sm hover:border-[#f59e0b]/40 hover:text-[#fde68a]"
+                      }`}
+                    >
+                      {category.label}
+                    </button>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+
             <motion.div
-              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
               layout
+              className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-8"
             >
               {filteredServices.map((service, index) => (
                 <Link
@@ -447,10 +506,17 @@ export default function ServicesClient() {
             </motion.div>
 
             {filteredServices.length === 0 && (
-              <div className="py-20 text-center">
-                <p className="text-lg text-gray-500">
-                  No services found in this category
+              <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#141414] to-[#0c0c0c] px-6 py-16 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                <p className="text-lg text-gray-400">
+                  No services in this category.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedCategory("all")}
+                  className="mt-6 inline-flex items-center justify-center rounded-full border border-[#f59e0b]/35 bg-[#f59e0b]/[0.08] px-6 py-2.5 text-sm font-semibold text-[#fde68a] transition-colors hover:bg-[#f59e0b]/[0.14]"
+                >
+                  Show all services
+                </button>
               </div>
             )}
           </div>

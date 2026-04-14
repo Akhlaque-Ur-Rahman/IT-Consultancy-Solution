@@ -16,9 +16,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { PageFinalCTA } from "@/components/PageFinalCTA";
 import { SectionAmbient } from "@/components/SectionAmbient";
 import { Button } from "@/components/ui/button";
 import { COMPANY_INFO } from "@/config/company";
+import { buildContactUrl } from "@/lib/contactPrefill";
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -406,36 +408,30 @@ export default function BlogPage() {
           </div>
         </SectionAmbient>
 
-        <SectionAmbient
-          preset="surfaceRaised"
-          className="relative border-t border-[#262626] py-16 md:py-24"
-        >
-          <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.06]">
-            <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-white blur-3xl" />
-            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white blur-3xl" />
-          </div>
-          <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="mb-4 text-3xl font-bold text-white lg:text-4xl">
-                Have a Tech Challenge?
-              </h2>
-              <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 md:text-xl">
-                Our experts can help you navigate your digital transformation
-                journey with structured solutions and scalable results.
-              </p>
-              <Link href="/contact">
-                <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] px-10 py-7 text-lg font-semibold text-black transition-all duration-200 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]">
-                  Get Free Consultation
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </SectionAmbient>
+        <PageFinalCTA
+          id="blog-final-cta"
+          title={
+            <>
+              Have a{" "}
+              <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
+                Tech Challenge?
+              </span>
+            </>
+          }
+          description="Our experts can help you navigate digital transformation with structured solutions and scalable results—same team that ships your software, SEO, and compliance."
+          primaryHref={buildContactUrl({
+            serviceSlug: "consulting",
+            ref: "/blog",
+          })}
+          primaryLabel="Get free consultation"
+          secondaryHref="/services"
+          secondaryLabel="Browse services"
+          trustItems={[
+            "Bihar-first delivery",
+            "Clear scope & pricing",
+            "No vendor lock-in",
+          ]}
+        />
       </div>
     </div>
   );

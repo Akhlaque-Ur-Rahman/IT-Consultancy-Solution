@@ -302,38 +302,42 @@ export default function CaseStudiesPage() {
         </SectionAmbient>
 
         <SectionAmbient
+          id="case-studies-catalog"
           preset="surfaceRaised"
-          className="border-b border-[#262626] py-20 md:py-24"
+          className="border-b border-[#262626] py-20 md:py-28"
         >
-          <div
-            id="case-studies-catalog"
-            className="mx-auto max-w-[1400px] px-6"
-          >
-            <div className="mb-10 md:mb-12">
-              <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div className="max-w-xl text-center md:text-left">
-                  <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/[0.06] px-3 py-1">
+          <div className="mx-auto max-w-[1400px] px-6">
+            <motion.div
+              className="mb-10 md:mb-12"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div className="max-w-2xl">
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/[0.06] px-3.5 py-1.5">
                     <Sparkles
                       className="h-3.5 w-3.5 text-[#fbbf24]"
                       strokeWidth={1.75}
                       aria-hidden
                     />
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#fde68a]/90">
-                      Library
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#fde68a]/90">
+                      Case study library
                     </span>
                   </div>
-                  <h2 className="text-balance text-2xl font-semibold tracking-[-0.02em] text-white sm:text-3xl">
-                    Stories by{" "}
+                  <h2 className="text-balance text-3xl font-semibold tracking-[-0.02em] text-white sm:text-4xl lg:text-[2.35rem] lg:leading-[1.15]">
+                    Browse{" "}
                     <span className="bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
-                      industry
+                      stories
                     </span>
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-500 md:text-base">
-                    Filter to match your sector—each card includes context,
+                  <p className="mt-4 text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
+                    Filter by industry—each card includes context, measurable
                     outcomes, and a full write-up.
                   </p>
                 </div>
-                <p className="hidden text-right text-sm text-gray-600 md:block">
+                <p className="text-sm text-gray-500 md:text-right">
                   <span className="font-medium tabular-nums text-[#f59e0b]/90">
                     {filteredCaseStudies.length}
                   </span>{" "}
@@ -341,44 +345,72 @@ export default function CaseStudiesPage() {
                   shown
                 </p>
               </div>
+            </motion.div>
 
-              <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-transparent p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] backdrop-blur-sm md:p-4">
-                <div className="mb-3 flex items-center justify-center gap-2 text-gray-500 md:justify-start">
-                  <Filter className="h-4 w-4 text-[#f59e0b]/70" aria-hidden />
-                  <span className="text-xs font-medium uppercase tracking-wider">
-                    Industry
-                  </span>
-                </div>
-                <div className="flex flex-wrap justify-center gap-2 md:justify-start">
-                  {industries.map((industry) => {
-                    const active = selectedIndustry === industry;
-                    return (
-                      <button
-                        key={industry}
-                        type="button"
-                        onClick={() => setSelectedIndustry(industry)}
-                        className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
-                          active
-                            ? "bg-gradient-to-r from-[#f59e0b] to-[#d97706] font-semibold text-black shadow-[0_0_28px_-6px_rgba(245,158,11,0.45)] ring-2 ring-[#f59e0b]/30"
-                            : "border border-white/[0.08] bg-black/30 text-gray-400 hover:border-[#f59e0b]/30 hover:bg-white/[0.03] hover:text-[#fde68a]"
-                        }`}
-                      >
-                        {industry}
-                      </button>
-                    );
-                  })}
-                </div>
+            <div className="relative mb-10 md:mb-12">
+              <div
+                className="pointer-events-none absolute -inset-4 rounded-[1.75rem] opacity-[0.35]"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(245,158,11,0.14) 0%, transparent 55%)",
+                  filter: "blur(20px)",
+                }}
+                aria-hidden
+              />
+              <div className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#141414] to-[#0c0c0c] p-4 shadow-[0_24px_64px_-40px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.04)] md:p-5">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.35]"
+                  style={{
+                    backgroundImage: `
+                      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "48px 48px",
+                    maskImage:
+                      "radial-gradient(ellipse 90% 80% at 50% 0%, black, transparent)",
+                  }}
+                  aria-hidden
+                />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/25 to-transparent" />
+
+                <motion.div
+                  className="relative flex flex-col gap-4"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08, duration: 0.45 }}
+                >
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <Filter className="h-4 w-4 shrink-0" aria-hidden />
+                    <span className="text-sm font-medium">Industry</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {industries.map((industry) => {
+                      const active = selectedIndustry === industry;
+                      return (
+                        <button
+                          key={industry}
+                          type="button"
+                          onClick={() => setSelectedIndustry(industry)}
+                          className={`rounded-full px-5 py-2.5 text-xs font-medium transition-all duration-300 sm:px-6 sm:py-3 sm:text-sm ${
+                            active
+                              ? "scale-[1.02] bg-[#f59e0b] font-semibold text-black shadow-[0_0_20px_rgba(245,158,11,0.35)]"
+                              : "border border-white/[0.08] bg-black/40 text-gray-400 backdrop-blur-sm hover:border-[#f59e0b]/40 hover:text-[#fde68a]"
+                          }`}
+                        >
+                          {industry}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </motion.div>
               </div>
             </div>
 
-            <p className="mb-8 text-center text-sm text-gray-600 md:hidden">
-              <span className="font-medium tabular-nums text-[#f59e0b]/90">
-                {filteredCaseStudies.length}
-              </span>{" "}
-              {filteredCaseStudies.length === 1 ? "story" : "stories"} shown
-            </p>
-
-            <div className="grid gap-6 sm:gap-7 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+            <motion.div
+              layout
+              className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-8"
+            >
               {filteredCaseStudies.map((caseStudy) => (
                 <Link
                   key={caseStudy.id}
@@ -396,7 +428,7 @@ export default function CaseStudiesPage() {
                   />
                 </Link>
               ))}
-            </div>
+            </motion.div>
           </div>
         </SectionAmbient>
 
