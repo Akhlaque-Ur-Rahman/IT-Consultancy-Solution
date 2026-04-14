@@ -136,7 +136,7 @@ const COMPLIANCE_TRUST_PILLARS = [
     title: "End-to-End Handling",
     kicker: "Setup through renewals",
     description:
-      "From first registration to monthly GST and license renewals — one team owns the thread.",
+      "From first registration to monthly GST and license renewals - one team owns the thread.",
   },
   {
     num: "03",
@@ -197,13 +197,13 @@ export default function CompliancePage() {
                   Compliance &amp; registrations · Patna
                 </div>
                 <h1 className="mb-6 text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
-                  Focus on growth —{" "}
+                  Focus on growth  - {" "}
                   <span className="bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] bg-clip-text text-transparent">
                     we handle the paperwork
                   </span>
                 </h1>
                 <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-400 lg:text-xl">
-                  GST, FSSAI, trade licenses, company setup, and tax filings — we
+                  GST, FSSAI, trade licenses, company setup, and tax filings - we
                   keep Bihar SMEs audit-ready without the usual government-office
                   runaround.
                 </p>
@@ -298,7 +298,7 @@ export default function CompliancePage() {
                     ))}
                   </ul>
                   <p className="mt-6 border-t border-[#262626] pt-5 text-center text-xs text-neutral-500">
-                    Same team as our billing &amp; ERP clients — one partner for
+                    Same team as our billing &amp; ERP clients - one partner for
                     software + filings.
                   </p>
                 </div>
@@ -352,7 +352,7 @@ export default function CompliancePage() {
                   business
                 </h3>
                 <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500 md:text-base">
-                  Simple, 100% online process — no government-office queues.
+                  Simple, 100% online process - no government-office queues.
                   Track every stage with our Patna team.
                 </p>
               </div>
@@ -448,7 +448,7 @@ export default function CompliancePage() {
               </div>
 
               <p className="relative z-[1] mt-10 text-center text-xs text-neutral-600 md:mt-12">
-                Average timelines vary by department queues — we keep you
+                Average timelines vary by department queues - we keep you
                 updated at every milestone.
               </p>
             </motion.div>
@@ -478,7 +478,7 @@ export default function CompliancePage() {
                 </span>
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">
-                Pick the lane that matches your shop or company — each package
+                Pick the lane that matches your shop or company - each package
                 includes clear timelines, transparent pricing, and a single
                 Patna team you can call when a notice lands.
               </p>
@@ -676,7 +676,7 @@ export default function CompliancePage() {
                   </h2>
                   <p className="mb-8 max-w-xl text-sm leading-relaxed text-neutral-500 md:text-base">
                     Small misses on filings or licenses compound into fines,
-                    downtime, and bank friction—here is what we help you avoid
+                    downtime, and bank friction - here is what we help you avoid
                     before it hits your balance sheet.
                   </p>
                   <div className="space-y-3">
@@ -734,7 +734,7 @@ export default function CompliancePage() {
                     </h3>
                     <p className="mb-8 text-sm leading-relaxed text-neutral-500 md:text-[15px]">
                       Not sure what licenses your exact type of shop needs in
-                      Patna? Tell us your trade—we&apos;ll send a tailored list
+                      Patna? Tell us your trade - we&apos;ll send a tailored list
                       you can act on.
                     </p>
                     <Link href="/contact" className="block">
@@ -793,7 +793,7 @@ export default function CompliancePage() {
                   </span>
                 </h3>
                 <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-neutral-500 md:text-lg">
-                  Local expertise and CA-vetted processes — so your licenses
+                  Local expertise and CA-vetted processes - so your licenses
                   and returns stay aligned without the stress.
                 </p>
               </motion.div>
@@ -897,7 +897,7 @@ export default function CompliancePage() {
                 <div className="space-y-5 text-base leading-relaxed text-gray-400 md:text-lg">
                   <p>
                     Statutory compliance in India is not a one-time form
-                    fill—it is an ongoing relationship between your business,
+                    fill - it is an ongoing relationship between your business,
                     government portals, and the professionals who represent you.
                     At EDUNEX in Patna, we treat every GST, FSSAI, or municipal
                     license matter as a documented workflow: we confirm which
@@ -913,8 +913,8 @@ export default function CompliancePage() {
                     PAN, bank, and trade licenses, and how your invoices and
                     licenses should match for GST and food-safety inspections.
                     For GST, we coordinate monthly or quarterly returns with your
-                    actual sales data—whether that comes from our billing
-                    software or your existing system—so figures filed with the
+                    actual sales data - whether that comes from our billing
+                    software or your existing system - so figures filed with the
                     government match what you show customers and lenders.
                   </p>
                   <p>
@@ -938,7 +938,7 @@ export default function CompliancePage() {
                   <p>
                     We do not claim third-party certifications we have not
                     earned; our strength is practical execution for Bihar
-                    SMEs—fewer surprises, fewer missed deadlines, and a single
+                    SMEs - fewer surprises, fewer missed deadlines, and a single
                     Patna team you can call when a notice or a new rule affects
                     your shop, clinic, or warehouse.
                   </p>

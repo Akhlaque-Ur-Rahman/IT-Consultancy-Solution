@@ -42,7 +42,7 @@ type SolutionItem = {
   outcomes: string[];
   price: string;
   priceContext: string;
-  /** Static marketing preview — not live data. */
+  /** Static marketing preview - not live data. */
   previewSrc: string;
   previewAlt: string;
   localTrust: string;
@@ -467,7 +467,7 @@ export default function SolutionShowcase() {
                     </div>
                   </div>
 
-                  {/* Outcomes + invest — floating ribbon */}
+                  {/* Outcomes + invest - floating ribbon */}
                   <div className="relative mt-10 overflow-hidden rounded-[1.75rem] border border-white/[0.07] bg-gradient-to-b from-[#0d0d0d] via-[#060606] to-[#020202] shadow-[0_40px_100px_-56px_rgba(0,0,0,0.95)] md:mt-12">
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(245,158,11,0.12),transparent_55%)]" />
                     <div className="relative grid grid-cols-1 md:grid-cols-2">
@@ -477,7 +477,7 @@ export default function SolutionShowcase() {
                           Outcomes we design for
                         </p>
                         <p className="mt-2 text-xs italic text-neutral-600 md:text-[13px]">
-                          Directional goals for scoping—not a guarantee of
+                          Directional goals for scoping - not a guarantee of
                           results.
                         </p>
                         <ul className="mt-7 space-y-4">

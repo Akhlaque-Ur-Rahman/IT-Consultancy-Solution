@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Send, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
+import { FormThemeSelect } from "./FormThemeSelect";
 import { CONTACT_FORM_SERVICES } from "@/lib/contactFormOptions";
 
 interface ContactFormProps {
@@ -202,24 +203,22 @@ export function ContactForm({
                           >
                             Service Interest *
                           </label>
-                          <select
+                          <FormThemeSelect
                             id="service"
+                            aria-label="Service interest"
                             value={formData.service}
-                            onChange={(e) =>
-                              setFormData({
-                                ...formData,
-                                service: e.target.value,
-                              })
+                            onValueChange={(service) =>
+                              setFormData((prev) => ({
+                                ...prev,
+                                service,
+                              }))
                             }
-                            required
-                            className="w-full px-3 py-2 rounded-md bg-[#0a0a0a] border border-[#262626] text-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent transition-all"
-                          >
-                            {CONTACT_FORM_SERVICES.map((s) => (
-                              <option key={s.slug} value={s.slug} className="bg-[#121212]">
-                                {s.label}
-                              </option>
-                            ))}
-                          </select>
+                            options={CONTACT_FORM_SERVICES.map((s) => ({
+                              value: s.slug,
+                              label: s.label,
+                            }))}
+                            className="h-11 min-h-11 rounded-md border border-[#262626] bg-[#0a0a0a] py-2 text-sm focus:border-transparent focus:ring-2 focus:ring-[#f59e0b]"
+                          />
                         </div>
 
                         <Button

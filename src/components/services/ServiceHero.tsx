@@ -218,7 +218,7 @@ export const ServiceHero = ({
           </div>
         </div>
 
-        {/* Full-width outcome strip — icon + metric, matches home/trust rhythm */}
+        {/* Full-width outcome strip - icon + metric, matches home/trust rhythm */}
         <motion.div
           initial="initial"
           animate="animate"

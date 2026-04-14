@@ -30,9 +30,9 @@ interface EngagementModelsProps {
   title?: string;
   subtitle?: string;
   models?: EngagementModel[];
-  /** Service slug — must match `CONTACT_FORM_SERVICES` slugs for form prefill */
+  /** Service slug - must match `CONTACT_FORM_SERVICES` slugs for form prefill */
   serviceTitle?: string;
-  /** e.g. `/services/custom-software-bihar` — stored as `ref` for contact prefill */
+  /** e.g. `/services/custom-software-bihar` - stored as `ref` for contact prefill */
   sourcePath?: string;
 }
 
@@ -118,7 +118,7 @@ function ModelCard({
             : "border-white/[0.06] from-[#101010] to-[#060606] shadow-[0_12px_48px_-36px_rgba(0,0,0,0.85)] ring-1 ring-white/[0.03]",
         )}
       >
-        {/* Ambient sheen — featured only */}
+        {/* Ambient sheen - featured only */}
         {model.highlight && (
           <div
             className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-40 blur-3xl"

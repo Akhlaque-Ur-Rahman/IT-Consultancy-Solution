@@ -141,7 +141,7 @@ export default async function ServicePage({ params }: Props) {
         />
       )}
 
-      {/* 7. FAQ Accordion — matches homepage FAQ styling */}
+      {/* 7. FAQ Accordion - matches homepage FAQ styling */}
       <SectionAmbient preset="surface" className="border-t border-[#262626]">
         <ServiceFAQs
           items={service.faqs || []}

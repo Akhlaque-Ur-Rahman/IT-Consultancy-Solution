@@ -1,4 +1,4 @@
-/** Canonical origin (HTTPS, non-www). No trailing slash — append paths as `/path`. */
+/** Canonical origin (HTTPS, non-www). No trailing slash - append paths as `/path`. */
 export const SITE_URL = "https://edunexservices.in";
 
 /** Homepage canonical URL per Search Console preference (root uses trailing slash). */
@@ -15,7 +15,7 @@ export function truncateMeta(s: string, max: number): string {
   return lastSpace > max * 0.6 ? trimmed.slice(0, lastSpace) + "…" : trimmed + "…";
 }
 
-/** High-volume keywords for Patna/Bihar — used in metadata and content */
+/** High-volume keywords for Patna/Bihar - used in metadata and content */
 export const SEO_KEYWORDS = {
   primary: [
     "Software Development Patna",

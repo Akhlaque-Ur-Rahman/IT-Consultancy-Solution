@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { SITE_URL, SITE_URL_HOME } from "@/config/company";
 
-/** WebSite only — no SearchAction until a real /search exists */
+/** WebSite only - no SearchAction until a real /search exists */
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",

@@ -16,7 +16,7 @@ const inter = Inter({
 
 const baseMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "EDUNEX — Simple IT Solutions for Patna Businesses",
+  title: "EDUNEX - Simple IT Solutions for Patna Businesses",
   description:
     "We help business owners in Patna grow with simple websites, custom apps, and expert tax advice. Reliable, honest, and local since 2018.",
   keywords: [
@@ -33,7 +33,7 @@ const baseMetadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    title: "EDUNEX — Simple IT Solutions for Patna Businesses",
+    title: "EDUNEX - Simple IT Solutions for Patna Businesses",
     description:
       "Reliable websites, custom apps, and business growth tools for Patna's smart business owners.",
     siteName: "EDUNEX",
@@ -41,7 +41,7 @@ const baseMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EDUNEX — Simple IT Solutions for Patna Businesses",
+    title: "EDUNEX - Simple IT Solutions for Patna Businesses",
     description:
       "Helping Patna businesses grow with honest technology since 2018.",
     images: ["/logo.jpg"],

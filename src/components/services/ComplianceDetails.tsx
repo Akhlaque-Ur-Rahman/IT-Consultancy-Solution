@@ -26,7 +26,7 @@ export const ComplianceDetails = ({ data }: ComplianceProps) => {
               <SectionHeading
                 eyebrow="Compliance"
                 align="left"
-                subtitle="Navigating the complex landscape of corporate law and taxation requires more than just advice—it requires a partner who ensures you're always one step ahead."
+                subtitle="Navigating the complex landscape of corporate law and taxation requires more than just advice - it requires a partner who ensures you're always one step ahead."
                 subtitleClassName="text-gray-400 leading-relaxed"
                 className="mb-8"
               >

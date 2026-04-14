@@ -11,7 +11,7 @@ const STATS = [
     value: "Sprint-led",
     label: "Delivery rhythm",
     description:
-      "Roadmaps with visible milestones—no opaque black-box builds.",
+      "Roadmaps with visible milestones - no opaque black-box builds.",
   },
   {
     icon: Users,
@@ -25,7 +25,7 @@ const STATS = [
     value: "SME-first",
     label: "Right-sized scope",
     description:
-      "Systems matched to your ops—not oversized enterprise bloat.",
+      "Systems matched to your ops - not oversized enterprise bloat.",
   },
   {
     icon: BadgeCheck,
@@ -169,7 +169,7 @@ export default function SocialProofBlock() {
               className="mx-auto mt-4 max-w-xl text-sm font-medium leading-relaxed text-neutral-500 md:text-base"
             >
               Sample marks show the kinds of retail, logistics, and services
-              orgs we design for—we lead with outcomes, not logo volume. Hover
+              orgs we design for - we lead with outcomes, not logo volume. Hover
               to restore color.
             </motion.p>
           </div>

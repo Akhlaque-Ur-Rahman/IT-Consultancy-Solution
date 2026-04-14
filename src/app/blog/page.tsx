@@ -132,7 +132,7 @@ export default function BlogPage() {
 
                 <p className="mb-10 max-w-xl text-left text-base leading-relaxed text-gray-400 md:text-lg [text-wrap:balance]">
                   Articles on digital transformation, GST and compliance,
-                  billing and ERP, and local SEO—written for regional SMEs who
+                  billing and ERP, and local SEO - written for regional SMEs who
                   want clarity, not jargon.
                 </p>
 
@@ -187,7 +187,7 @@ export default function BlogPage() {
                     <p className="text-sm text-gray-500">Years publishing</p>
                   </div>
                   <div className="max-w-[200px] text-sm leading-snug text-gray-500">
-                    Regional focus—Patna, Bihar SMEs, real workflows.
+                    Regional focus - Patna, Bihar SMEs, real workflows.
                   </div>
                 </div>
               </motion.div>
@@ -246,7 +246,7 @@ export default function BlogPage() {
                       ))}
                     </div>
                     <div className="rounded-2xl border border-dashed border-[#f59e0b]/25 bg-[#f59e0b]/[0.04] px-4 py-3 text-center text-xs text-[#fde68a]/90">
-                      Same voice as our services &amp; solutions pages—no
+                      Same voice as our services &amp; solutions pages - no
                       generic filler.
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export default function BlogPage() {
                 </span>
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
-                Filter by topic or search—every piece is written for Bihar SMEs
+                Filter by topic or search - every piece is written for Bihar SMEs
                 and regional operators, not generic enterprise noise.
               </p>
             </motion.div>
@@ -418,7 +418,7 @@ export default function BlogPage() {
               </span>
             </>
           }
-          description="Our experts can help you navigate digital transformation with structured solutions and scalable results—same team that ships your software, SEO, and compliance."
+          description="Our experts can help you navigate digital transformation with structured solutions and scalable results - same team that ships your software, SEO, and compliance."
           primaryHref={buildContactUrl({
             serviceSlug: "consulting",
             ref: "/blog",

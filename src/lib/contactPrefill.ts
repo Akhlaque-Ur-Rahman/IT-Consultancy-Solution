@@ -2,9 +2,9 @@ import { CONTACT_FORM_SERVICES } from "@/lib/contactFormOptions";
 
 /** Map URL `engagement=` slugs to readable labels (engagement model cards). */
 const ENGAGEMENT_LABELS: Record<string, string> = {
-  "project-based": "Project-Based — Fixed Quote",
-  "dedicated-team": "Dedicated Team — Monthly Retainer",
-  consulting: "Consulting — Hourly / Weekly",
+  "project-based": "Project-Based - Fixed Quote",
+  "dedicated-team": "Dedicated Team - Monthly Retainer",
+  consulting: "Consulting - Hourly / Weekly",
 };
 
 /**

@@ -20,7 +20,7 @@ export default function IndustryVerticals() {
       icon: ShoppingCart,
       title: "Retail & E-commerce",
       description:
-        "Stronger stock turns with omnichannel inventory and automated logistics—right-sized for your scale.",
+        "Stronger stock turns with omnichannel inventory and automated logistics - right-sized for your scale.",
     },
     {
       icon: Stethoscope,

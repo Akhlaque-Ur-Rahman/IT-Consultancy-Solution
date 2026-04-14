@@ -70,7 +70,7 @@ export const EngineeringDetails = ({ data }: EngineeringProps) => {
             <SectionHeading
               eyebrow="Engineering"
               align="left"
-              subtitle="Our engineering philosophy centers on clean code, elastic architecture, and deep automation. We don't just build software—we build systems that endure."
+              subtitle="Our engineering philosophy centers on clean code, elastic architecture, and deep automation. We don't just build software - we build systems that endure."
               subtitleClassName="max-w-xl text-lg text-gray-400 md:text-[1.05rem]"
               className="mb-10"
             >
@@ -186,7 +186,7 @@ export const EngineeringDetails = ({ data }: EngineeringProps) => {
               </div>
 
               <p className="relative mt-8 border-t border-white/[0.06] pt-6 text-sm leading-relaxed text-gray-500">
-                Stacks are chosen for your workload—fast on patchy networks,
+                Stacks are chosen for your workload - fast on patchy networks,
                 safe for your data, and easy for your team to adopt.
               </p>
             </div>

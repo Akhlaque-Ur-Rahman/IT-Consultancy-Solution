@@ -30,7 +30,7 @@ import { COMPANY_INFO } from "@/config/company";
 const ABOUT_HERO_SNAPSHOT = [
   {
     Icon: MapPin,
-    label: "Founded in Bihar — visits to your shop, godown, or clinic",
+    label: "Founded in Bihar - visits to your shop, godown, or clinic",
   },
   {
     Icon: Handshake,
@@ -38,11 +38,11 @@ const ABOUT_HERO_SNAPSHOT = [
   },
   {
     Icon: Sparkles,
-    label: "Staff training in Hindi or English — we stay until it works",
+    label: "Staff training in Hindi or English - we stay until it works",
   },
   {
     Icon: Users,
-    label: "Honest scope & pricing — no surprise vendor lock-in",
+    label: "Honest scope & pricing - no surprise vendor lock-in",
   },
 ] as const;
 
@@ -68,7 +68,7 @@ const HOW_WE_WORK_STEPS = [
     step: 1,
     title: "On-site business review",
     body:
-      "Before any money changes hands, we sit down with you at your shop, clinic, or factory. We watch exactly how you do things today—how you write invoices, track stock, and manage customers. We then suggest the simplest, lowest-cost digital way to automate that work.",
+      "Before any money changes hands, we sit down with you at your shop, clinic, or factory. We watch exactly how you do things today - how you write invoices, track stock, and manage customers. We then suggest the simplest, lowest-cost digital way to automate that work.",
     Icon: ClipboardList,
   },
   {
@@ -170,7 +170,7 @@ export default function AboutClient() {
                 </h1>
                 <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-400 lg:text-xl">
                   Since 2018 we&apos;ve helped regional SMEs grow with simple
-                  software, local SEO, and filings — the same partner for your
+                  software, local SEO, and filings - the same partner for your
                   shop floor and your paperwork.
                 </p>
 
@@ -264,7 +264,7 @@ export default function AboutClient() {
                     ))}
                   </ul>
                   <p className="mt-6 border-t border-[#262626] pt-5 text-center text-xs text-neutral-500">
-                    Same culture as our services &amp; compliance pages — clarity
+                    Same culture as our services &amp; compliance pages - clarity
                     first, jargon never.
                   </p>
                 </div>
@@ -314,7 +314,7 @@ export default function AboutClient() {
                   </span>
                 </h2>
                 <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500 md:text-base">
-                  Bihar-first delivery — we meet you where the work happens, not
+                  Bihar-first delivery - we meet you where the work happens, not
                   only on email threads.
                 </p>
               </div>
@@ -398,7 +398,7 @@ export default function AboutClient() {
                     </span>
                   </h2>
                   <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500 md:mx-0 md:text-base">
-                    A simple three-stage rhythm — scoped on-site, shipped with
+                    A simple three-stage rhythm - scoped on-site, shipped with
                     checkpoints, supported where your team actually works.
                   </p>
                 </div>
@@ -480,7 +480,7 @@ export default function AboutClient() {
                 </span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500 md:text-base">
-                What we optimize for every day — and where we&apos;re headed with
+                What we optimize for every day - and where we&apos;re headed with
                 clients in Patna and across Bihar.
               </p>
             </motion.div>
@@ -598,7 +598,7 @@ export default function AboutClient() {
                 </span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-500 md:text-base">
-                Non-negotiables on every project — from first quote to years of
+                Non-negotiables on every project - from first quote to years of
                 support.
               </p>
             </motion.div>
@@ -709,7 +709,7 @@ export default function AboutClient() {
                         {leadershipInitials(member.name)}
                       </div>
                       <span className="sr-only">
-                        Portrait for {member.name} — photo not yet added
+                        Portrait for {member.name} - photo not yet added
                       </span>
                     </div>
                   </div>
@@ -784,7 +784,7 @@ export default function AboutClient() {
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-500 md:text-base">
                   When we post roles, they&apos;ll appear here. You can still share
-                  your profile for future openings — we&apos;re based in Patna
+                  your profile for future openings - we&apos;re based in Patna
                   with remote-friendly collaboration.
                 </p>
               </div>
@@ -804,7 +804,7 @@ export default function AboutClient() {
                 </h3>
                 <p className="text-sm leading-relaxed text-neutral-500 md:text-[15px]">
                   Our recent intern postings are closed. Thank you to everyone
-                  who applied — we&apos;ll announce new opportunities here when
+                  who applied - we&apos;ll announce new opportunities here when
                   they open.
                 </p>
               </motion.div>

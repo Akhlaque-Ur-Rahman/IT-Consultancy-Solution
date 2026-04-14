@@ -45,7 +45,7 @@ export function ServiceCard({
       <div
         className="relative h-full cursor-pointer overflow-hidden rounded-2xl border border-white/[0.09] bg-gradient-to-b from-[#171717] via-[#121212] to-[#0c0c0c] p-6 shadow-[0_1px_0_0_rgba(255,255,255,0.06)_inset,0_12px_40px_-18px_rgba(0,0,0,0.85),0_0_0_1px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-[#f59e0b]/35 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset,0_24px_56px_-20px_rgba(0,0,0,0.75),0_0_48px_-16px_rgba(245,158,11,0.14)]"
       >
-        {/* Ambient glow — visible at rest so cards feel less flat */}
+        {/* Ambient glow - visible at rest so cards feel less flat */}
         <div
           className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-[#f59e0b]/[0.07] blur-3xl transition-opacity duration-500 group-hover:bg-[#f59e0b]/[0.11]"
           aria-hidden

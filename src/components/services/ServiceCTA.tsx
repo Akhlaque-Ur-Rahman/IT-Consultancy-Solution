@@ -52,7 +52,7 @@ export const ServiceCTA = ({
           <div className="pointer-events-none absolute inset-0 opacity-[0.35] bg-[linear-gradient(135deg,rgba(245,158,11,0.06)_0%,transparent_42%,transparent_58%,rgba(245,158,11,0.04)_100%)]" />
 
           <div className="relative grid min-h-0 lg:grid-cols-12 lg:min-h-[380px]">
-            {/* Copy + actions — left, editorial */}
+            {/* Copy + actions - left, editorial */}
             <div className="flex flex-col justify-center border-b border-white/[0.06] p-8 md:p-10 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-12 lg:pr-10">
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
@@ -101,7 +101,7 @@ export const ServiceCTA = ({
                 </Link>
               </div>
 
-              {/* Trust — single quiet row */}
+              {/* Trust - single quiet row */}
               <div className="flex flex-col gap-4 border-t border-white/[0.06] pt-8 sm:flex-row sm:items-center sm:gap-6">
                 <div className="flex -space-x-2">
                   {AVATARS.map((src, i) => (
@@ -140,7 +140,7 @@ export const ServiceCTA = ({
               </div>
             </div>
 
-            {/* Visual panel — right, abstract depth */}
+            {/* Visual panel - right, abstract depth */}
             <div className="relative flex flex-col items-center justify-center overflow-hidden bg-black/20 p-10 lg:col-span-5 lg:p-8">
               <div
                 className="pointer-events-none absolute inset-0 opacity-[0.07]"

@@ -125,7 +125,7 @@ export default function ServicesClient() {
 
                 <p className="mb-10 max-w-xl text-left text-base leading-relaxed text-gray-400 md:text-lg [text-wrap:balance]">
                   Custom software, automated billing, local SEO, and statutory
-                  compliance—unified for regional SMEs who need clarity, not
+                  compliance - unified for regional SMEs who need clarity, not
                   chaos.
                 </p>
 
@@ -239,7 +239,7 @@ export default function ServicesClient() {
                       ))}
                     </div>
                     <div className="rounded-2xl border border-dashed border-[#f59e0b]/25 bg-[#f59e0b]/[0.04] px-4 py-3 text-center text-xs text-[#fde68a]/90">
-                      Unified delivery — no Delhi freelancer + random CA
+                      Unified delivery - no Delhi freelancer + random CA
                       triangle.
                     </div>
                   </div>
@@ -424,7 +424,7 @@ export default function ServicesClient() {
                 </span>
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
-                Filter by category—billing, ERP, SEO, design, and compliance.
+                Filter by category - billing, ERP, SEO, design, and compliance.
                 One partner for how Bihar SMEs actually operate.
               </p>
             </motion.div>

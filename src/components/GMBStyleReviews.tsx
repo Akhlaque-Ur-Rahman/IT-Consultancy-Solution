@@ -104,7 +104,7 @@ export function GMBStyleReviews({
             </div>
             <p className="text-sm leading-relaxed text-neutral-500 [text-wrap:balance]">
               Verified feedback from regional businesses (Google &amp; direct).
-              Highlights below—focused on clarity, not volume claims.
+              Highlights below - focused on clarity, not volume claims.
             </p>
           </div>
         </motion.div>
@@ -168,7 +168,7 @@ export function GMBStyleReviews({
           ))}
         </div>
 
-        {/* Trust row — muted icons + neutral copy; gold only where it reads as “premium” */}
+        {/* Trust row - muted icons + neutral copy; gold only where it reads as “premium” */}
         <motion.div
           className="mt-14 flex flex-wrap items-center justify-center gap-3 md:gap-4"
           initial={{ opacity: 0 }}

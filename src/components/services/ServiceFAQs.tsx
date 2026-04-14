@@ -19,7 +19,7 @@ type ServiceFAQsProps = {
 };
 
 /**
- * Service detail FAQs — same accordion UI as the homepage {@link FAQSection}.
+ * Service detail FAQs - same accordion UI as the homepage {@link FAQSection}.
  */
 export const ServiceFAQs = ({
   items,

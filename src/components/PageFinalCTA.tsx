@@ -32,7 +32,7 @@ type PageFinalCTAProps = {
 };
 
 /**
- * Final CTA band — same shell as solutions {@link PremiumFinalCTA}
+ * Final CTA band - same shell as solutions {@link PremiumFinalCTA}
  * (edge glows, gradient frame, Fraunces headline, dual actions, trust strip).
  */
 export function PageFinalCTA({

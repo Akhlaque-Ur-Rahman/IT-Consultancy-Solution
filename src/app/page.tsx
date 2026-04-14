@@ -22,7 +22,9 @@ import Link from "next/link";
 import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
-import { COMPANY_INFO, SITE_URL_HOME, SEO_KEYWORDS } from "@/config/company";
+import { SITE_URL_HOME, SEO_KEYWORDS } from "@/config/company";
+import { PageFinalCTA } from "@/components/PageFinalCTA";
+import { buildContactUrl } from "@/lib/contactPrefill";
 
 export const metadata: Metadata = {
   title:
@@ -43,8 +45,11 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const trustProjectsLabel =
-    "Hands-on delivery · growing portfolio of regional brands";
+  const homeContactBase = buildContactUrl({
+    serviceSlug: "consulting",
+    ref: "/",
+  });
+  const homeConsultHref = `${homeContactBase}&intent=consultation`;
 
   // SEO-optimized service categories
   const primaryServices = services.filter((s) =>
@@ -110,7 +115,7 @@ export default function HomePage() {
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               From building custom billing software for your godown to managing
-              your GST returns and ranking your clinic on Google—we provide
+              your GST returns and ranking your clinic on Google - we provide
               practical, affordable IT solutions for local SMEs.
             </p>
           </div>
@@ -192,9 +197,9 @@ export default function HomePage() {
                     The Problem: Losing Money to Manual Work and Mistakes
                   </h3>
                   <p className="mb-4">
-                    If you run a business in Bihar—whether it&apos;s a wholesale
+                    If you run a business in Bihar - whether it&apos;s a wholesale
                     godown in Patna, a clinic in Gaya, or a factory in
-                    Muzaffarpur—you face the exact same problems. Staff making
+                    Muzaffarpur - you face the exact same problems. Staff making
                     mistakes in handwritten bills, ledgers constantly not
                     matching up, marketing budgets wasted on newspaper ads that
                     don&apos;t bring customers, and the constant headache of filing
@@ -385,63 +390,27 @@ export default function HomePage() {
           />
         </SectionAmbient>
 
-        <SectionAmbient
-          preset="surfaceRaised"
-          className="relative border-t border-[#262626] py-16 md:py-24"
-        >
-        <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.06]">
-          <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white blur-3xl" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center">
-          <div>
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Start Your{" "}
-              <span className="text-[#f59e0b]">Success Story</span>?
-            </h2>
-            <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Discuss your project with us today. No complicated jargon, no
-              hidden fees — just honest advice and a plan to help your business
-              grow.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] text-black font-semibold px-10 py-7 text-lg transition-all duration-200">
-                  Schedule Free Consultation in Bihar
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button
-                  variant="outline"
-                  className="border border-white/20 text-white hover:bg-white/10 px-10 py-7 text-lg transition-all duration-200"
-                >
-                  Learn More About Us
-                </Button>
-              </Link>
-              <Link href="/blog">
-                <Button
-                  variant="outline"
-                  className="border border-[#262626] text-gray-300 hover:bg-[#262626] hover:text-white px-10 py-7 text-lg transition-all duration-200"
-                >
-                  Read Our Blog
-                </Button>
-              </Link>
-            </div>
-
-            {/* Trust Signals */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
-              <span>✓ {trustProjectsLabel}</span>
-              <span>•</span>
-              <span>✓ {COMPANY_INFO.yearsOfExperience}+ Years Experience</span>
-              <span>•</span>
-              <span>✓ Reliable Infrastructure</span>
-              <span>•</span>
-              <span>✓ Performance Monitoring</span>
-            </div>
-          </div>
-        </div>
-        </SectionAmbient>
+        <PageFinalCTA
+          id="home-final-cta"
+          title={
+            <>
+              Ready to Solidify Your Digital{" "}
+              <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
+                Foundation?
+              </span>
+            </>
+          }
+          description="Same delivery model as our Solutions hub: senior engineers, honest scoping, and one Patna team for software, growth, and compliance. Start with a call or jump to how we structure engagements."
+          primaryHref={homeConsultHref}
+          primaryLabel="Get a Free Consultation"
+          secondaryHref="/solutions#final-cta"
+          secondaryLabel="Explore solutions"
+          trustItems={[
+            "Secure infrastructure",
+            "Direct OEM support",
+            "Zero hidden fees",
+          ]}
+        />
       </div>
     </div>
   );

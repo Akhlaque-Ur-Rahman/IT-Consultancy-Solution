@@ -53,7 +53,7 @@ export function LocalSEOSection({ sectionClassName }: LocalSEOSectionProps) {
     {
       icon: LineChart,
       title: "Grow locally",
-      text: "SEO and ads aimed at Patna and Bihar customers—not generic traffic.",
+      text: "SEO and ads aimed at Patna and Bihar customers - not generic traffic.",
     },
     {
       icon: ShieldCheck,

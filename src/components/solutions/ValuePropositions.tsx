@@ -43,7 +43,7 @@ export default function ValuePropositions() {
       icon: Layers,
       title: "Uncompromising Ownership",
       description:
-        "You own 100% of the custom IP. No vendor lock-in, no seat-based pricing—just total control over your digital core.",
+        "You own 100% of the custom IP. No vendor lock-in, no seat-based pricing - just total control over your digital core.",
     },
     {
       icon: Headphones,

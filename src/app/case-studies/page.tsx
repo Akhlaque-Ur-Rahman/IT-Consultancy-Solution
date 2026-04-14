@@ -243,7 +243,7 @@ export default function CaseStudiesPage() {
                         </span>
                       </div>
                       <p className="text-lg font-medium leading-snug text-white/95">
-                        Evidence-backed narratives—not slide-deck promises.
+                        Evidence-backed narratives - not slide-deck promises.
                       </p>
                     </div>
                     <div className="space-y-3">
@@ -291,7 +291,7 @@ export default function CaseStudiesPage() {
                       })}
                     </div>
                     <div className="rounded-2xl border border-dashed border-[#f59e0b]/25 bg-[#f59e0b]/[0.04] px-4 py-3 text-center text-xs text-[#fde68a]/90">
-                      Filter by industry below—retail, healthcare, logistics, and
+                      Filter by industry below - retail, healthcare, logistics, and
                       more.
                     </div>
                   </div>
@@ -333,7 +333,7 @@ export default function CaseStudiesPage() {
                     </span>
                   </h2>
                   <p className="mt-4 text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
-                    Filter by industry—each card includes context, measurable
+                    Filter by industry - each card includes context, measurable
                     outcomes, and a full write-up.
                   </p>
                 </div>
@@ -486,7 +486,7 @@ export default function CaseStudiesPage() {
 
                   <div className="border-t border-white/[0.06] p-8 lg:p-10 xl:p-12">
                     <div className="grid gap-10 lg:grid-cols-2 lg:gap-10 xl:gap-12 lg:items-start">
-                      {/* Row 2 — column A: narrative */}
+                      {/* Row 2 - column A: narrative */}
                       <div className="min-w-0">
                         <div className="mb-8">
                           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-500">
@@ -561,7 +561,7 @@ export default function CaseStudiesPage() {
                         </div>
                       </div>
 
-                      {/* Row 2 — column B: outcomes & actions */}
+                      {/* Row 2 - column B: outcomes & actions */}
                       <div className="flex min-w-0 flex-col lg:border-l lg:border-white/[0.06] lg:pl-10 xl:pl-12">
                         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-500 lg:mt-0">
                           Outcomes
@@ -685,8 +685,8 @@ export default function CaseStudiesPage() {
                       We don&apos;t guess what you need. Before we quote a price,
                       we visit your godown, talk to your billing counter staff,
                       and look at the ledgers and registers you currently use. We
-                      find out exactly where the mistakes happen—whether it&apos;s
-                      skipped GST entries or misplaced inventory—and we design a
+                      find out exactly where the mistakes happen - whether it&apos;s
+                      skipped GST entries or misplaced inventory - and we design a
                       digital solution that solves that specific headache.
                     </p>
                     <p className="text-gray-500">
@@ -764,9 +764,9 @@ export default function CaseStudiesPage() {
                   </span>
                 </h3>
                 <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-400 [text-wrap:pretty] md:text-lg">
-                  If your shop or godown faces similar challenges — messy paper
+                  If your shop or godown faces similar challenges - messy paper
                   trails, billing mistakes, or trouble getting local customers to
-                  find you — we can fix it quickly and affordably.
+                  find you - we can fix it quickly and affordably.
                 </p>
               </div>
             </motion.div>
@@ -967,7 +967,7 @@ export default function CaseStudiesPage() {
                         </Button>
                       </Link>
                       <p className="text-center text-xs leading-relaxed text-gray-600 lg:text-left">
-                        No obligations—just an honest conversation about your tech
+                        No obligations - just an honest conversation about your tech
                         roadmap.
                       </p>
                     </div>

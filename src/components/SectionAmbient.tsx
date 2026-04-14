@@ -1,10 +1,10 @@
 "use client";
 
 /**
- * Section depth presets (home page rhythm — Phase 1):
- * - surface: #000 — top-center gold radial + bottom vignette
- * - surfaceRaised: #0a0a0a — corner amber glows only
- * - ribbon: #050505 — narrow gold wash at top (trust strip)
+ * Section depth presets (home page rhythm - Phase 1):
+ * - surface: #000 - top-center gold radial + bottom vignette
+ * - surfaceRaised: #0a0a0a - corner amber glows only
+ * - ribbon: #050505 - narrow gold wash at top (trust strip)
  *
  * Pick one preset per band; do not combine ad-hoc extra full-bleed glows.
  */

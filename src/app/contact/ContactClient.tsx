@@ -22,6 +22,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FormThemeSelect } from "@/components/FormThemeSelect";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { SectionAmbient } from "@/components/SectionAmbient";
@@ -218,7 +219,7 @@ function ContactFormContent() {
 
                 <p className="mb-10 max-w-xl text-left text-base leading-relaxed text-gray-400 md:text-lg [text-wrap:pretty]">
                   Ready to upgrade your shop&apos;s software, win more local
-                  customers, or stay on top of GST? Send a message—our Patna team
+                  customers, or stay on top of GST? Send a message - our Patna team
                   will get back to you quickly.
                 </p>
 
@@ -269,13 +270,13 @@ function ContactFormContent() {
                         Why message us
                       </p>
                       <p className="text-lg font-medium leading-snug text-white/95">
-                        One partner for apps, marketing, and filings—no Delhi
+                        One partner for apps, marketing, and filings - no Delhi
                         freelancer + random CA triangle.
                       </p>
                     </div>
                     <ul className="space-y-3">
                       {[
-                        "We reply in plain language—Hindi or English.",
+                        "We reply in plain language - Hindi or English.",
                         "Scope and pricing upfront; no surprise invoices.",
                         "On-site visits when your shop or godown needs it.",
                       ].map((line) => (
@@ -471,23 +472,23 @@ function ContactFormContent() {
                                 Service Interest
                               </label>
                               <div className="relative group">
-                                <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-[#f59e0b] transition-colors" />
-                                <select
-                                  className="w-full cursor-pointer appearance-none rounded-xl border border-white/[0.1] bg-black/50 py-3.5 pl-12 pr-4 text-[15px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm transition-all focus:border-[#f59e0b]/45 focus:outline-none focus:ring-2 focus:ring-[#f59e0b]/20"
+                                <Briefcase className="pointer-events-none absolute left-4 top-1/2 z-[1] h-5 w-5 -translate-y-1/2 text-gray-500 transition-colors group-focus-within:text-[#f59e0b]" />
+                                <FormThemeSelect
+                                  id="contact-service-interest"
+                                  aria-label="Service interest"
                                   value={formData.service}
-                                  onChange={(e) =>
-                                    setFormData({
-                                      ...formData,
-                                      service: e.target.value,
-                                    })
+                                  onValueChange={(service) =>
+                                    setFormData((prev) => ({
+                                      ...prev,
+                                      service,
+                                    }))
                                   }
-                                >
-                                  {CONTACT_FORM_SERVICES.map((s) => (
-                                    <option key={s.slug} value={s.slug}>
-                                      {s.label}
-                                    </option>
-                                  ))}
-                                </select>
+                                  options={CONTACT_FORM_SERVICES.map((s) => ({
+                                    value: s.slug,
+                                    label: s.label,
+                                  }))}
+                                  className="cursor-pointer pl-12"
+                                />
                               </div>
                             </div>
 
@@ -731,7 +732,7 @@ function ContactFormContent() {
                 </span>
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
-                We&apos;re based in Bihar—plan a visit when you want to walk
+                We&apos;re based in Bihar - plan a visit when you want to walk
                 through billing, stock, or compliance on-site. Parking is
                 limited; call ahead and we&apos;ll guide you in.
               </p>

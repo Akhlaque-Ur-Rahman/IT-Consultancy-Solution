@@ -206,7 +206,7 @@ export const ProcessFlow = ({ steps }: { steps: Step[] }) => {
           <SectionHeading
             eyebrow="Our process"
             align="center"
-            subtitle="Four clear phases—from first conversation to confident users on the ground in Bihar."
+            subtitle="Four clear phases - from first conversation to confident users on the ground in Bihar."
             className="mb-10 md:mb-14"
           >
             <>

@@ -234,6 +234,43 @@
     background-repeat: repeat;
     background-size: 128px 128px;
   }
+
+  /**
+   * FormThemeSelect / dark UI lists — matches black-gold theme (Firefox + WebKit).
+   */
+  .theme-form-select-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(245, 158, 11, 0.55) rgba(255, 255, 255, 0.06);
+  }
+
+  .theme-form-select-scroll::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .theme-form-select-scroll::-webkit-scrollbar-track {
+    margin-block: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+  }
+
+  .theme-form-select-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      rgba(251, 191, 36, 0.75) 0%,
+      rgba(217, 119, 6, 0.7) 100%
+    );
+    border-radius: 9999px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .theme-form-select-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(253, 230, 138, 0.9) 0%,
+      rgba(245, 158, 11, 0.85) 100%
+    );
+  }
 }
 
 @layer base {
