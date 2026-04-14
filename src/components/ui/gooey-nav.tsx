@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export interface NavItem {
   label: string;
@@ -28,9 +29,7 @@ export function GooeyNav({
 
   return (
     <nav
-      className={["relative flex items-center gap-1", className]
-        .filter(Boolean)
-        .join(" ")}
+      className={cn("relative flex items-center gap-0.5", className)}
     >
       {items.map((item) => {
         const isActive =
@@ -43,7 +42,7 @@ export function GooeyNav({
         return (
           <div
             key={item.href}
-            className="relative group"
+            className="group relative"
             onMouseEnter={() => {
               setHoveredPath(item.href);
               if (item.hasDropdown) setActiveDropdown(item.href);
@@ -53,29 +52,40 @@ export function GooeyNav({
               setActiveDropdown(null);
             }}
           >
-            <motion.div whileTap={{ scale: 0.95 }} className="relative">
+            <motion.div whileTap={{ scale: 0.97 }} className="relative">
               <Link
                 href={item.href}
-                className={[
-                  "relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 flex items-center gap-1",
+                className={cn(
+                  "relative z-10 flex items-center gap-1 rounded-full px-3.5 py-2 text-[13px] font-medium tracking-tight transition-colors duration-300 md:px-4",
                   isActive
-                    ? "text-[#f59e0b]"
-                    : "text-gray-300 group-hover:text-[#f59e0b]",
-                ].join(" ")}
+                    ? "text-[#fde68a]"
+                    : "text-neutral-300 group-hover:text-[#fbbf24]",
+                )}
               >
-                {/* The "Gooey" / Floating Pill Background */}
                 {isHovered && (
                   <motion.div
                     layoutId="gooey-nav-pill"
-                    className="absolute inset-0 z-0 rounded-md bg-[#1a1a1a]"
+                    className={cn(
+                      "absolute inset-0 z-0 rounded-full",
+                      isActive
+                        ? "bg-gradient-to-r from-[#f59e0b]/20 to-[#f59e0b]/08 ring-1 ring-[#f59e0b]/35"
+                        : "bg-white/[0.06] ring-1 ring-white/[0.08]",
+                    )}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{
                       type: "spring",
-                      stiffness: 300,
-                      damping: 30,
+                      stiffness: 380,
+                      damping: 32,
                     }}
+                  />
+                )}
+
+                {isActive && !isHovered && (
+                  <span
+                    className="absolute inset-0 z-0 rounded-full bg-gradient-to-r from-[#f59e0b]/12 to-transparent ring-1 ring-[#f59e0b]/20"
+                    aria-hidden
                   />
                 )}
 
@@ -83,38 +93,44 @@ export function GooeyNav({
                   {item.label}
                   {item.hasDropdown && (
                     <ChevronDown
-                      className={[
-                        "w-4 h-4 transition-transform duration-200",
-                        isDropdownActive ? "rotate-180" : "",
-                      ].join(" ")}
+                      className={cn(
+                        "h-3.5 w-3.5 opacity-80 transition-transform duration-200",
+                        isDropdownActive && "rotate-180",
+                      )}
                     />
                   )}
                 </span>
               </Link>
             </motion.div>
 
-            {/* Dropdown Menu */}
             <AnimatePresence>
               {item.hasDropdown && isDropdownActive && (
                 <motion.div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-[#0a0a0a]/95 backdrop-blur-xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5 py-2 overflow-hidden z-20"
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute left-1/2 top-full z-20 mt-3 w-[17rem] -translate-x-1/2 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#080808]/95 py-2 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.85),0_0_48px_-20px_rgba(245,158,11,0.18)] backdrop-blur-xl"
+                  initial={{ opacity: 0, y: 8, scale: 0.97 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                  transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
                 >
+                  <div
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/50 to-transparent"
+                    aria-hidden
+                  />
                   {item.dropdownItems?.map((dropdownItem, idx) => (
                     <motion.div
                       key={idx}
-                      whileHover={{ x: 4 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ x: 3 }}
+                      whileTap={{ scale: 0.99 }}
                     >
                       <Link
                         href={dropdownItem.href}
                         onClick={() => setActiveDropdown(null)}
-                        className="block w-full px-4 py-2.5 text-left text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all"
+                        className="group/row relative block w-full px-4 py-2.5 text-left text-[13px] text-neutral-400 transition-colors hover:bg-white/[0.04] hover:text-white"
                       >
-                        {dropdownItem.label}
+                        <span className="absolute left-0 top-1/2 h-0 w-0.5 -translate-y-1/2 rounded-full bg-[#f59e0b] opacity-0 transition-all group-hover/row:h-[60%] group-hover/row:opacity-100" />
+                        <span className="pl-0 transition-[padding] duration-200 group-hover/row:pl-2">
+                          {dropdownItem.label}
+                        </span>
                       </Link>
                     </motion.div>
                   ))}
