@@ -55,123 +55,118 @@ const solutions: SolutionItem[] = [
   {
     id: "crm",
     icon: Users,
-    name: "Custom CRM",
-    target: "Sales & Marketing Teams",
-    tagline: "Stop Lead Leakage & Increase Sales Velocity",
-    icp: "Growing agencies and sales teams managing 50+ monthly enquiries.",
+    name: "Enquiry follow-up",
+    target: "Shops with steady calls and walk ins",
+    tagline: "Catch every lead before it goes cold",
+    icp: "Owners who lose names between WhatsApp, diary, and three staff phones.",
     description:
-      "Transform your chaotic sales process into a structured revenue engine. Our CRM eliminates manual tracking, ensuring no lead is ever forgotten while providing real-time visibility into your pipeline.",
+      "One simple list for new calls and visits. Your team sees who to ring back first. Fewer slips between the counter and the owner.",
     capabilities: [
       {
-        name: "Predictive Lead Scoring",
-        definition: "Focus your team on the deals most likely to close today.",
+        name: "Clear lead list",
+        definition: "Names, source, and next step in one screen.",
       },
       {
-        name: "Automated Workflows",
-        definition: "Eliminate repetitive tasks and manual data entry.",
+        name: "Quick reminders",
+        definition: "Ping the right staff when a hot enquiry lands.",
       },
       {
-        name: "WhatsApp Ecosystem",
-        definition: "Meet your customers where they are, natively integrated.",
+        name: "WhatsApp friendly",
+        definition: "First reply goes out without copy paste chaos.",
       },
       {
-        name: "Executive Dashboards",
-        definition:
-          "Instant visibility into team performance and revenue forecasts.",
+        name: "Owner view",
+        definition: "See follow ups done and missed each week.",
       },
     ],
     outcomes: [
-      "Tighter sales cycles in typical engagements",
-      "Less time lost to manual follow-ups and admin",
-      "Senior engineer assigned to your implementation",
+      "Fewer buyers who never hear back",
+      "Less time hunting old chats",
+      "Training until the list feels normal",
     ],
     price: "₹1,49,999+",
-    priceContext: "Starts from. Depends on scale.",
-    previewSrc: "/dashboard-design.webp",
-    previewAlt: "Illustrative desktop CRM dashboard (wide layout)",
-    localTrust: "Built for fast-moving sales teams",
-    previewBadge: "CRM",
+    priceContext: "From. Depends on size and links.",
+    previewSrc: "/Services/CRM.webp",
+    previewAlt: "Sample desktop dashboard layout for enquiry tracking",
+    localTrust: "Built for busy counters in Bihar",
+    previewBadge: "Follow up",
   },
   {
     id: "erp",
     icon: BarChart3,
-    name: "Enterprise ERP",
-    target: "Operations & Finance",
-    tagline: "Complete Operational Control & Real-Time Accuracy",
-    icp: "Multi-branch distribution and complex manufacturing units.",
+    name: "Godown and branch control",
+    target: "Distributors and multi point shops",
+    tagline: "One truth for stock and bills",
+    icp: "Godowns with more than one gate, branch, or shift.",
     description:
-      "Run your entire operation from a single source of truth. From warehouse inventory to financial reporting, our ERP provides the data consistency needed for high-stakes decision making.",
+      "Stock, sales, and dues stay tied together. Owners see what moved today without waiting for night tally.",
     capabilities: [
       {
-        name: "Omnichannel Inventory",
-        definition:
-          "Live stock tracking across all physical and digital branches.",
+        name: "Godown wise stock",
+        definition: "See ins and outs per rack or branch.",
       },
       {
-        name: "Automated Reconciliation",
-        definition: "Reduce financial audit time from weeks to minutes.",
+        name: "Party ledger",
+        definition: "Dues and rates stay clear for each buyer.",
       },
       {
-        name: "Unified Human Capital",
-        definition: "Manage performance, payroll, and compliance in one click.",
+        name: "Staff roles",
+        definition: "Cashier, godown, and owner see what they need.",
       },
       {
-        name: "Strategic Insights",
-        definition:
-          "Predictive analytics to reduce waste and optimize procurement.",
+        name: "Simple reports",
+        definition: "Day end that matches your gut feel.",
       },
     ],
     outcomes: [
-      "Leaner day-to-day operations across branches",
-      "More trustworthy billing & inventory views",
-      "Onboarding, training, and handover included",
+      "Fewer stock shocks at month end",
+      "Faster billing during rush hour",
+      "On site help when you go live",
     ],
     price: "₹2,99,999+",
-    priceContext: "Custom pricing for scale.",
-    previewSrc: "/hero-finlo-dashboard.webp",
-    previewAlt: "Illustrative desktop ERP analytics view (wide layout)",
-    localTrust: "Ops & finance control rooms",
-    previewBadge: "Enterprise",
+    priceContext: "Custom quote after we see flow.",
+    previewSrc: "/Services/ERP.webp",
+    previewAlt: "Sample desktop view for stock and sales",
+    localTrust: "Patna team that visits your godown",
+    previewBadge: "Stock",
   },
   {
     id: "billing",
     icon: Zap,
-    name: "Automated Billing & Invoicing",
-    target: "Service Providers & Retailers",
-    tagline: "Accelerate Cash Flow & Automate Collections",
-    icp: "Recurring service models and high-volume billing operations.",
+    name: "Fast billing and GST bills",
+    target: "Retail, services, and field teams",
+    tagline: "Clean bills. Faster pay. Less chasing.",
+    icp: "High volume counters and repeat buyers on credit.",
     description:
-      "Move beyond manual invoicing. Our systems automate the entire payment lifecycle, from GST-compliant generation to smart follow-ups, ensuring you get paid faster and more reliably.",
+      "GST ready bills from the same screen your staff uses daily. UPI and credit notes without a second register.",
     capabilities: [
       {
-        name: "Smart Rev-Ops",
-        definition:
-          "Automated reminders that reduce DSOs (Days Sales Outstanding).",
+        name: "GST lines that match filing",
+        definition: "Tax rows stay aligned with your CA pack.",
       },
       {
-        name: "Seamless Compliance",
-        definition: "Always-ready GST filing and audit-ready reports.",
+        name: "Payment nudges",
+        definition: "Remind parties before dues drift too far.",
       },
       {
-        name: "Global Payment Fabric",
-        definition:
-          "Integrated QR, UPI, and Credit support for instant settlements.",
+        name: "UPI and QR ready",
+        definition: "Take money at the counter without fuss.",
       },
       {
-        name: "Multi-Store Control",
-        definition: "Centralized financial oversight for all your locations.",
+        name: "Multi point view",
+        definition: "Head office sees all shops in one panel.",
       },
     ],
     outcomes: [
-      "Healthier cash-flow rhythm for recurring revenue",
-      "Fewer manual mistakes in payment entry",
-      "Dedicated specialist through go-live",
+      "Shorter queues at peak hour",
+      "Fewer wrong tax lines",
+      "Support through the first busy week",
     ],
     price: "₹49,999+",
-    priceContext: "Starting price for basic tier.",
-    previewSrc: "/Services/Billing.png",
-    previewAlt: "Illustrative billing and invoicing dashboard preview",
-    localTrust: "Retail & field billing workflows",
+    priceContext: "Starter scope. We confirm after visit.",
+    previewSrc: "/Services/Billing.webp",
+    previewAlt: "Sample billing screen layout",
+    localTrust: "Retail and field teams across Bihar",
     previewBadge: "Billing",
     trustIcon: "map",
   },
@@ -247,6 +242,7 @@ function SolutionVisual({
                 alt={solution.previewAlt}
                 fill
                 priority={imagePriority}
+                loading={imagePriority ? undefined : "lazy"}
                 className="object-contain object-top"
                 sizes="(max-width: 1024px) 100vw, min(900px, 58vw)"
               />
@@ -272,7 +268,7 @@ function SolutionVisual({
               </div>
             </div>
             <p className="text-center text-[10px] font-medium uppercase tracking-[0.22em] text-neutral-500 md:text-[11px]">
-              Desktop-style preview · illustrative · not live data
+              Sample screen layout · not live data
             </p>
           </div>
         </div>
@@ -425,7 +421,7 @@ export default function SolutionShowcase() {
                           <div className="mb-7 flex items-center gap-3">
                             <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                             <p className="shrink-0 text-[11px] font-bold uppercase tracking-[0.28em] text-neutral-500">
-                              Capabilities
+                              What you get
                             </p>
                             <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                           </div>
@@ -477,8 +473,8 @@ export default function SolutionShowcase() {
                           Outcomes we design for
                         </p>
                         <p className="mt-2 text-xs italic text-neutral-600 md:text-[13px]">
-                          Directional goals for scoping - not a guarantee of
-                          results.
+                          Goals we plan toward. Your results depend on use and
+                          discipline.
                         </p>
                         <ul className="mt-7 space-y-4">
                           {solution.outcomes.map((outcome) => (
@@ -508,7 +504,7 @@ export default function SolutionShowcase() {
                         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                           <Link href={demoHref} className="sm:shrink-0">
                             <Button className="group/btn h-12 w-full rounded-full border-2 border-[#f59e0b] bg-[#f59e0b] px-8 font-semibold text-black shadow-[0_0_40px_-12px_rgba(245,158,11,0.55)] transition-all hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-[0_0_48px_-8px_rgba(245,158,11,0.45)] sm:w-auto">
-                              Request demo
+                              Book a short demo
                               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
                             </Button>
                           </Link>
@@ -517,7 +513,7 @@ export default function SolutionShowcase() {
                               variant="outline"
                               className="h-12 w-full rounded-full border-white/25 bg-white/[0.03] px-8 text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-[0_12px_40px_-20px_rgba(255,255,255,0.12)] sm:w-auto"
                             >
-                              Architecture call
+                              Plan my setup
                             </Button>
                           </Link>
                         </div>

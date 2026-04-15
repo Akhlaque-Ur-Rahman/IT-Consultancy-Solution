@@ -16,35 +16,35 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { buildContactUrl } from "@/lib/contactPrefill";
 
-/** Hero dashboard preview - swap file here when the asset changes. */
-const DASHBOARD_PREVIEW_SRC = "/dashboard-design.webp";
+/** Hero preview image (public/Services/Home_Hero.webp) */
+const DASHBOARD_PREVIEW_SRC = "/Services/Home_Hero.webp";
 
 const HERO_STATS = [
   {
-    value: "8+",
-    label: "Years on ground",
+    value: "2018",
+    label: "Serving since",
     icon: Sparkles,
   },
   {
-    value: "4.9/5",
-    label: "Avg. rating",
+    value: "90+",
+    label: "Local clients",
     icon: Star,
   },
   {
-    value: "<24h",
-    label: "Typical reply",
+    value: "98%",
+    label: "Clients who stay",
     icon: Zap,
   },
   {
-    value: "24/7",
-    label: "Help line",
+    value: "Patna",
+    label: "Face to face help",
     icon: Headphones,
   },
 ] as const;
 
 const MICRO_TRUST = [
-  { icon: Star, text: "4.9/5" },
-  { icon: BadgeCheck, text: "Upfront quotes" },
+  { icon: Star, text: "98% stay with us" },
+  { icon: BadgeCheck, text: "Plain pricing talk" },
   { icon: MapPin, text: "Patna & Bihar" },
 ] as const;
 
@@ -109,7 +109,7 @@ export function HeroModernAnimated() {
                 aria-hidden
               />
               <span className="text-[13px] font-medium text-gray-300 md:text-sm">
-                Problem? We fix it · Patna
+                End-to-End Digital Solutions · Patna
               </span>
             </motion.div>
 
@@ -121,11 +121,11 @@ export function HeroModernAnimated() {
               className="mb-5 max-w-[20ch] text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-white sm:max-w-[24ch] sm:text-5xl sm:leading-[1.06] lg:max-w-[18ch] lg:text-[2.75rem] xl:max-w-[20ch] xl:text-[3.1rem] mx-auto lg:mx-0"
             >
               <span className="bg-gradient-to-b from-[#fff8e6] via-[#ffe7a8] to-[#c9a227] bg-clip-text text-transparent">
-                Freelancer + CA + broken software?
+                Simple systems built for real business work
               </span>
               <br />
               <span className="text-white">
-                One Patna team - apps, GST &amp; growth.
+                Less mistakes. Faster days. More control.
               </span>
             </motion.h1>
 
@@ -136,8 +136,8 @@ export function HeroModernAnimated() {
               transition={{ duration: 0.5, delay: 0.16 }}
               className="mx-auto mb-6 max-w-md text-base leading-snug text-gray-400 sm:text-lg lg:mx-0 [text-wrap:pretty]"
             >
-              Stop stitching vendors. We build what you use - and file what you
-              owe.
+              We help your shop run smoother. Easy billing, clear stock, and
+              local support from one Patna team.
             </motion.p>
 
             <motion.div
@@ -176,13 +176,13 @@ export function HeroModernAnimated() {
                 <Link
                   href={contactHref}
                   className="relative inline-flex w-full items-center justify-center sm:w-auto"
-                  aria-label="Request a free callback from EDUNEX"
+                  aria-label="Request a call back from EDUNEX"
                 >
                   <span className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-[#f59e0b]/15 to-transparent" />
                   </span>
                   <span className="relative inline-flex items-center">
-                    Free callback
+                    Request a call back
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </span>
                 </Link>
@@ -237,10 +237,11 @@ export function HeroModernAnimated() {
               <div className="absolute inset-x-0 top-0 z-[1] h-px bg-gradient-to-r from-transparent via-[#f59e0b]/50 to-transparent" />
               <Image
                 src={DASHBOARD_PREVIEW_SRC}
-                alt="EDUNEX product preview: software dashboard and business tools"
+                alt="EDUNEX digital solutions preview for Bihar businesses"
                 width={1600}
                 height={1000}
                 priority
+                fetchPriority="high"
                 className="h-auto w-full object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 520px"
               />

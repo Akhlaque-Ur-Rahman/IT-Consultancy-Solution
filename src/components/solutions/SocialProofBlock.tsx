@@ -8,31 +8,31 @@ import { clientLogos } from "@/data/mockData";
 const STATS = [
   {
     icon: Timer,
-    value: "Sprint-led",
-    label: "Delivery rhythm",
+    value: "Step by step",
+    label: "Clear weeks",
     description:
-      "Roadmaps with visible milestones - no opaque black-box builds.",
+      "You see what ships each week. No black box and no surprise scope.",
   },
   {
     icon: Users,
-    value: "Engineer-led",
-    label: "Direct access",
+    value: "Same faces",
+    label: "Local team",
     description:
-      "You collaborate with builders, not an endless ticket queue.",
+      "You talk to builders who can visit your godown, not a far away desk.",
   },
   {
     icon: TrendingUp,
-    value: "SME-first",
-    label: "Right-sized scope",
+    value: "Right size",
+    label: "Shop scale",
     description:
-      "Systems matched to your ops - not oversized enterprise bloat.",
+      "Features match your lane. We skip bloat your staff will not use.",
   },
   {
     icon: BadgeCheck,
-    value: "GST-aware",
-    label: "India-ready stacks",
+    value: "GST ready",
+    label: "India forms",
     description:
-      "Security-minded builds with compliance-friendly exports.",
+      "Exports your CA can file from. Bills that match the rules you follow.",
   },
 ] as const;
 
@@ -146,7 +146,7 @@ export default function SocialProofBlock() {
               className="mb-3 flex justify-center"
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
-                Sector marks (illustrative)
+                Sample sectors
               </span>
             </motion.div>
             <motion.h3
@@ -168,9 +168,8 @@ export default function SocialProofBlock() {
               transition={{ duration: 0.45, delay: 0.1 }}
               className="mx-auto mt-4 max-w-xl text-sm font-medium leading-relaxed text-neutral-500 md:text-base"
             >
-              Sample marks show the kinds of retail, logistics, and services
-              orgs we design for - we lead with outcomes, not logo volume. Hover
-              to restore color.
+              Retail, health, and transport style marks for layout only. Real
+              work beats logo walls. Hover to see color.
             </motion.p>
           </div>
 

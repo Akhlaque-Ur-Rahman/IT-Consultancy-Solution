@@ -16,7 +16,7 @@ import {
 import Link from "next/link";
 import { buildContactUrl } from "@/lib/contactPrefill";
 
-const DEFAULT_HERO_IMAGE = "/dashboard-design.webp";
+const DEFAULT_HERO_IMAGE = "/Services/web-app.webp";
 
 /** Single proof strip below hero (rating, scale, support, certification) */
 const HERO_STATS = [
@@ -32,9 +32,11 @@ interface ServiceHeroProps {
   description: string;
   benefits: string[];
   serviceTitle?: string;
-  /** Optional preview image; defaults to home hero asset for visual consistency */
+  /** Optional preview image; defaults to web app style asset */
   heroImageSrc?: string;
   heroImageAlt?: string;
+  /** LCP for this route: keep true so the hero image loads immediately */
+  heroImagePriority?: boolean;
 }
 
 export const ServiceHero = ({
@@ -45,6 +47,7 @@ export const ServiceHero = ({
   serviceTitle = "Consulting",
   heroImageSrc = DEFAULT_HERO_IMAGE,
   heroImageAlt = "EDUNEX software and workflow preview",
+  heroImagePriority = true,
 }: ServiceHeroProps) => {
   const serviceSlug = serviceTitle.toLowerCase().replace(/\s+/g, "-");
   const contactHref = buildContactUrl({
@@ -209,7 +212,8 @@ export const ServiceHero = ({
                   alt={heroImageAlt}
                   width={1600}
                   height={1000}
-                  priority
+                  priority={heroImagePriority}
+                  loading={heroImagePriority ? undefined : "lazy"}
                   className="h-auto w-full object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 520px"
                 />

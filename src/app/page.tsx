@@ -28,18 +28,18 @@ import { buildContactUrl } from "@/lib/contactPrefill";
 
 export const metadata: Metadata = {
   title:
-    "Software Development Patna | Billing Software & GST Bihar | EDUNEX",
+    "EDUNEX Patna | End-to-End Digital Solutions for Shops & Bihar",
   description:
-    "Patna IT company for billing software, ERP, GST, web & digital marketing for Bihar SMEs. Hands-on delivery since 2018.",
+    "Simple billing, stock control, and growth help for Bihar shops and clinics. Local Patna team since 2018. 90+ clients. 98% stay with us.",
   keywords: SEO_KEYWORDS.primary.concat(SEO_KEYWORDS.secondary),
   alternates: {
     canonical: SITE_URL_HOME,
   },
   openGraph: {
     url: SITE_URL_HOME,
-    title: "Software Development Patna | Billing & GST Bihar | EDUNEX",
+    title: "EDUNEX Patna | Digital Solutions for Real Business Work",
     description:
-      "Patna IT company for billing, ERP, GST, web & digital marketing for Bihar SMEs. Hands-on delivery since 2018.",
+      "End-to-End Digital Solutions Provider in Patna. Easy systems for billing, stock, and daily work across Bihar.",
     type: "website",
   },
 };
@@ -60,35 +60,35 @@ export default function HomePage() {
 
   const serviceCategories = [
     {
-      id: "it-consulting",
+      id: "custom-software",
       icon: Code,
-      title: "Custom Software",
+      title: "Simple business software",
       description:
-        "Affordable web and mobile apps built to automate your local business workflows",
+        "Web and phone tools shaped around how your shop or godown runs each day",
       href: "/services?category=development",
     },
     {
-      id: "software-dev",
+      id: "billing-stock",
       icon: Database,
-      title: "ERP & Billing Systems",
+      title: "Billing and stock control",
       description:
-        "Easy-to-use billing, inventory, and staff management systems for distributors",
+        "Clear bills, stock counts, and handovers your staff can learn without stress",
       href: "/services?category=solutions",
     },
     {
       id: "digital-marketing",
       icon: TrendingUp,
-      title: "Local Digital Marketing",
+      title: "More customers nearby",
       description:
-        "Google Maps ranking and local Facebook ads to bring walk-in customers to your shop",
+        "Help people find your shop on maps and reach you without big city ad waste",
       href: "/services?category=marketing",
     },
     {
       id: "compliance",
       icon: Shield,
-      title: "GST & Compliance",
+      title: "Rules and filings",
       description:
-        "Headache-free firm registration, FSSAI, trade licenses, and monthly GST filing in Bihar",
+        "Firm setup, FSSAI, trade license, and GST filing with plain guidance in Bihar",
       href: "/compliance",
     },
   ];
@@ -108,15 +108,17 @@ export default function HomePage() {
           <div className="mx-auto max-w-[1400px] px-6">
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-16">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.12em] text-[#fbbf24]/90">
+              End-to-End Digital Solutions Provider
+            </p>
             <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
-              Everything You Need to{" "}
-              <span className="text-[#f59e0b]">{"Automate & Grow"}</span> Your
-              Business in Bihar
+              Grow your business with{" "}
+              <span className="text-[#f59e0b]">simple digital tools</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              From building custom billing software for your godown to managing
-              your GST returns and ranking your clinic on Google - we provide
-              practical, affordable IT solutions for local SMEs.
+              Pick what you need. We speak plain language. We fix billing
+              mistakes, stock confusion, and slow days with systems your team
+              can actually use.
             </p>
           </div>
 
@@ -187,89 +189,71 @@ export default function HomePage() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/45 to-transparent" />
               <div className="relative z-[1] max-w-4xl mx-auto prose prose-invert prose-lg md:prose-xl">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 border-b border-[#262626] pb-6">
-                Why Bihar Businesses Choose Us as Their Technology Partner
+                Why owners in Bihar pick EDUNEX
               </h2>
 
               <ExpandableAuthorityContent>
               <div className="space-y-8 text-gray-400 leading-relaxed">
                 <div>
                   <h3 className="text-2xl font-semibold text-white border-l-2 border-[#f59e0b] pl-4 mb-4">
-                    The Problem: Losing Money to Manual Work and Mistakes
+                    Does this sound like your day?
                   </h3>
                   <p className="mb-4">
-                    If you run a business in Bihar - whether it&apos;s a wholesale
-                    godown in Patna, a clinic in Gaya, or a factory in
-                    Muzaffarpur - you face the exact same problems. Staff making
-                    mistakes in handwritten bills, ledgers constantly not
-                    matching up, marketing budgets wasted on newspaper ads that
-                    don&apos;t bring customers, and the constant headache of filing
-                    proper GST to avoid heavy government fines.
+                    Wrong bills cost money. Stock counts rarely match. One person
+                    holds all the know how. Paperwork steals your evening. Sales
+                    feel slow and new buyers struggle to find you online.
                   </p>
                   <p className="mb-4">
-                    Most small businesses try to fix this by hiring expensive
-                    agencies from Delhi or Bangalore. These agencies speak in
-                    confusing tech jargon, sell complicated software that your
-                    staff cannot understand, and charge massive corporate fees.
-                    When you actually need emergency support, they are thousands
-                    of kilometers away.
+                    Far away teams talk in circles. They sell heavy packages your
+                    staff cannot run. When the counter is busy, you need answers
+                    in Patna, not in another city.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold text-white border-l-2 border-[#f59e0b] pl-4 mb-4">
-                    The Solution: Simple Software Built for Local Workflows
+                    Simple systems built for real business work
                   </h3>
                   <p className="mb-4">
-                    At EDUNEX, we do not sell oversized corporate software. We
-                    build simple, extremely fast, and highly secure digital
-                    systems strictly tailored to how regional SMEs operate. We
-                    design interfaces so simple that even staff with zero
-                    computer experience can learn to generate a GST bill or
-                    track inventory in one afternoon.
+                    We are an End-to-End Digital Solutions Provider. We build
+                    plain tools for counters, godowns, and clinics. Your team can
+                    learn a clean billing flow or stock check in one sitting.
                   </p>
                   <p className="mb-4">
-                    Our software works even when the internet drops, keeping
-                    your billing counter moving, and syncs safely to the cloud
-                    the second your connection returns. Everything is backed up,
-                    safe from theft or hard drive crashes.
+                    Work keeps moving when the net drops. Data syncs when it
+                    returns. Backups sit safely off site so one PC crash does
+                    not erase your year.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold text-white border-l-2 border-[#f59e0b] pl-4 mb-4">
-                    More Than Just Code: End-to-End Compliance & Support
+                    Rules, filings, and growth in one place
                   </h3>
                   <p className="mb-4">
-                    We know that pure software isn&apos;t enough. That is why we
-                    provide end-to-end business support right here in Bihar. We
-                    will register your new firm, secure your FSSAI or trade
-                    licenses, and handle your monthly GST return filings.
+                    Software alone is not enough. We help register your firm,
+                    sort FSSAI or trade papers, and file GST on time. You stay
+                    calm while forms stay current.
                   </p>
                   <p className="mb-4">
-                    When you want to grow, we optimize your Google Maps profile
-                    so local families can find your shop instantly, and run
-                    targeted Facebook ads that bring real foot traffic to your
-                    location. You get an honest, practical strategy built on
-                    local market understanding, not empty promises.
+                    When you want more footfall, we tune maps and simple local
+                    ads so families nearby can find your shop. Plans stay honest
+                    and sized for Bihar markets.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-semibold text-white border-l-2 border-[#f59e0b] pl-4 mb-4">
-                    A Partner You Can Meet Face-to-Face
+                    Meet us in Patna when it matters
                   </h3>
                   <p className="mb-4">
-                    The biggest advantage we offer is our physical presence. We
-                    don&apos;t just email you a zip file and disappear. We sit in
-                    your godown, watch how your staff works, and train them
-                    perfectly. If a system goes down or if you face a critical
-                    accounting error, our technical team is a quick drive away.
+                    We sit with you on site. We watch how your staff moves. We
+                    train hands on until bills flow smoothly. If something
+                    breaks, our local team is a short drive away.
                   </p>
                   <p>
-                    Partnering with EDUNEX means getting a complete IT
-                    department working exactly on your budget, fully dedicated
-                    to making your local business more organized, profitable,
-                    and stress-free.
+                    Since 2018 we have served 90+ clients with 98% retention. You
+                    get steady help on a clear budget without big brand noise.
                   </p>
                 </div>
               </div>
@@ -313,15 +297,14 @@ export default function HomePage() {
                 </span>
               </div>
               <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-5xl md:leading-tight">
-                How We Help{" "}
+                Real shops.{" "}
                 <span className="bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] bg-clip-text text-transparent">
-                  Founders &amp; Teams
-                </span>{" "}
-                Succeed
+                  Real fixes.
+                </span>
               </h2>
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl [text-wrap:balance]">
-                See how our simple, reliable solutions solved real problems for
-                local businesses and large companies alike.
+                Short stories from local owners who cut mistakes, saved time, and
+                grew with simple systems.
               </p>
             </div>
           </div>
@@ -380,13 +363,13 @@ export default function HomePage() {
             sectionClassName="border-transparent bg-transparent"
             title={
               <>
-                Common Questions{" "}
+                Questions we hear{" "}
                 <span className="bg-gradient-to-r from-neutral-400 via-neutral-500 to-neutral-600 bg-clip-text font-normal text-transparent">
-                  Answered Simply
+                  often
                 </span>
               </>
             }
-            description="Everything you need to know about our services, pricing, and how we work with you."
+            description="Clear answers about price, time lines, training, and how we support your shop."
           />
         </SectionAmbient>
 
@@ -394,21 +377,21 @@ export default function HomePage() {
           id="home-final-cta"
           title={
             <>
-              Ready to Solidify Your Digital{" "}
+              Call us. Tell us what slows{" "}
               <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-                Foundation?
+                you down.
               </span>
             </>
           }
-          description="Same delivery model as our Solutions hub: senior engineers, honest scoping, and one Patna team for software, growth, and compliance. Start with a call or jump to how we structure engagements."
+          description="Share billing pain, stock pain, or slow sales. We suggest a simple next step. Local team in Patna since 2018. Honest scope. Fair price talk up front."
           primaryHref={homeConsultHref}
-          primaryLabel="Get a Free Consultation"
+          primaryLabel="Call or message us"
           secondaryHref="/solutions#final-cta"
-          secondaryLabel="Explore solutions"
+          secondaryLabel="See how we work"
           trustItems={[
-            "Secure infrastructure",
-            "Direct OEM support",
-            "Zero hidden fees",
+            "90+ clients across Bihar",
+            "98% client retention",
+            "Local support in Patna",
           ]}
         />
       </div>

@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { COMPANY_INFO } from "@/config/company";
 import {
   SectionHeading,
   SectionHeadingAccent,
@@ -25,10 +24,10 @@ const fadeInUp = {
 
 export default function ProblemSolutionHero() {
   const challenges = [
-    "Fragmented business data and siloed operations",
-    "High operational costs due to manual processes",
-    "Inability to scale without significant overhead",
-    "Lack of real-time insights for decision making",
+    "Billing mistakes and stock that never matches the godown",
+    "Too much daily work on paper or scattered Excel files",
+    "One person holds all the know how when staff change",
+    "Slow sales because nearby buyers never find you online",
   ];
 
   const contactHref = buildContactUrl({
@@ -85,18 +84,16 @@ export default function ProblemSolutionHero() {
             transition={{ duration: 0.55 }}
           >
             <SectionHeading
-              eyebrow="Enterprise-grade architecture"
+              eyebrow="End-to-End Digital Solutions Provider"
               align="left"
               titleAs="h1"
               className="mb-6 md:mb-8"
               titleClassName="text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl [text-wrap:balance]"
-              subtitle="We solve tool fragmentation and high operational costs for founders and executive teams. Our integrated ecosystem is designed for decision-makers who demand scalability, security, and proven ROI."
+              subtitle="We help Patna and Bihar owners replace daily chaos with simple systems. Billing, stock, follow up, and reach in one calm plan you can actually run."
               subtitleClassName="mt-5 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg"
             >
-              Scale Your Enterprise with{" "}
-              <SectionHeadingAccent>
-                High-Performance Infrastructure
-              </SectionHeadingAccent>
+              Simple systems for{" "}
+              <SectionHeadingAccent>real business work</SectionHeadingAccent>
             </SectionHeading>
 
             <motion.div
@@ -108,12 +105,9 @@ export default function ProblemSolutionHero() {
               aria-label="Company highlights"
             >
               {[
-                {
-                  k: `${COMPANY_INFO.yearsOfExperience}+`,
-                  v: "Years experience",
-                },
-                { k: "4+", v: "Practice areas" },
-                { k: "24/7", v: "Support coverage" },
+                { k: "2018", v: "Serving since" },
+                { k: "90+", v: "Local clients" },
+                { k: "98%", v: "Who stay with us" },
               ].map((stat) => (
                 <div
                   key={stat.v}
@@ -142,7 +136,7 @@ export default function ProblemSolutionHero() {
             >
               <Link href={contactHref} className="sm:shrink-0">
                 <Button className="group h-auto w-full rounded-full border-2 border-[#f59e0b] bg-black/70 px-7 py-5 text-base font-semibold text-white shadow-[0_0_40px_-8px_rgba(245,158,11,0.55),0_12px_40px_-18px_rgba(0,0,0,0.9)] transition-all duration-200 hover:bg-black/85 hover:shadow-[0_0_48px_-6px_rgba(245,158,11,0.65)] sm:w-auto">
-                  Book implementation consultation
+                  Request a call back
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -164,7 +158,7 @@ export default function ProblemSolutionHero() {
               transition={{ duration: 0.55, delay: 0.2 }}
               className="mt-5 text-sm text-neutral-500"
             >
-              Strategy session · Roadmap in weeks · No lock-in on discovery
+              Local team in Patna · Plain scope · Fair price talk
             </motion.p>
           </motion.div>
 
@@ -203,7 +197,7 @@ export default function ProblemSolutionHero() {
                         strokeWidth={2}
                         aria-hidden
                       />
-                      Diagnostic
+                      Quick check
                     </div>
                     <h2 className="flex items-center gap-2 text-xl font-bold tracking-tight text-white md:text-2xl">
                       <Sparkles
@@ -211,11 +205,11 @@ export default function ProblemSolutionHero() {
                         strokeWidth={2}
                         aria-hidden
                       />
-                      The cost of status quo
+                      Sound familiar?
                     </h2>
                   </div>
                   <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-400/95">
-                    Live signal
+                    Common pain
                     <span
                       className="relative flex h-2 w-2"
                       aria-hidden
@@ -226,7 +220,7 @@ export default function ProblemSolutionHero() {
                   </span>
                 </div>
 
-                <ul className="space-y-3.5" aria-label="Operational risks">
+                <ul className="space-y-3.5" aria-label="Common business pains">
                   {challenges.map((challenge, index) => (
                     <motion.li
                       key={challenge}
@@ -271,6 +265,7 @@ export default function ProblemSolutionHero() {
                               alt=""
                               fill
                               sizes="44px"
+                              loading="lazy"
                               className="object-cover"
                             />
                           </div>
@@ -278,10 +273,10 @@ export default function ProblemSolutionHero() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-white">
-                          Select regional brands
+                          Shops, clinics, godowns
                         </p>
                         <p className="text-xs text-neutral-500">
-                          Hands-on delivery across Bihar &amp; beyond
+                          Face to face help from Patna
                         </p>
                       </div>
                     </div>

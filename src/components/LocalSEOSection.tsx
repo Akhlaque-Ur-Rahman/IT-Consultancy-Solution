@@ -34,31 +34,31 @@ export function LocalSEOSection({ sectionClassName }: LocalSEOSectionProps) {
   ];
 
   const localTrust = [
-    { icon: Building2, value: "SME", label: "Focused delivery" },
+    { icon: Building2, value: "90+", label: "Clients across Bihar" },
     {
       icon: Users,
       value: `${COMPANY_INFO.yearsOfExperience}+`,
-      label: "Years experience",
+      label: "Years on the ground",
     },
-    { icon: Award, value: "ISO", label: "9001:2015" },
-    { icon: MapPin, value: "Patna+", label: "Service radius" },
+    { icon: Award, value: "98%", label: "Clients who stay" },
+    { icon: MapPin, value: "Patna", label: "Local support hub" },
   ];
 
   const highlights = [
     {
       icon: Code2,
-      title: "Build & integrate",
-      text: "Web, mobile, billing, and CRM tailored to how you work.",
+      title: "Build what you use",
+      text: "Billing, stock, and simple apps matched to your counter and godown flow.",
     },
     {
       icon: LineChart,
-      title: "Grow locally",
-      text: "SEO and ads aimed at Patna and Bihar customers - not generic traffic.",
+      title: "Grow nearby",
+      text: "Maps and ads aimed at families and buyers in Patna and Bihar.",
     },
     {
       icon: ShieldCheck,
-      title: "Stay compliant",
-      text: "GST, registration, and paperwork handled alongside your systems.",
+      title: "Stay on the right side of rules",
+      text: "GST, registration, and forms handled next to your daily systems.",
     },
   ];
 
@@ -89,14 +89,14 @@ export function LocalSEOSection({ sectionClassName }: LocalSEOSectionProps) {
           <SectionHeading
             eyebrow="Local presence"
             align="center"
-            subtitle="Helping businesses across Patna and Bihar succeed with reliable websites, custom apps, and expert advice since 2018."
+            subtitle="End-to-End Digital Solutions Provider helping shops, clinics, and small firms in Patna and Bihar since 2018."
             subtitleClassName="text-lg text-neutral-400 [text-wrap:balance]"
             className="mb-12 md:mb-14"
             titleClassName="md:text-4xl"
           >
             <>
-              Your trusted{" "}
-              <SectionHeadingAccent>local partner</SectionHeadingAccent> in Patna
+              Your{" "}
+              <SectionHeadingAccent>local team</SectionHeadingAccent> in Patna
             </>
           </SectionHeading>
         </motion.div>
@@ -199,7 +199,7 @@ export function LocalSEOSection({ sectionClassName }: LocalSEOSectionProps) {
                 About EDUNEX
               </p>
               <h3 className="mb-6 text-2xl font-bold leading-tight tracking-tight text-white md:text-3xl">
-                Leading IT consulting in{" "}
+                Simple tools for real shops in{" "}
                 <span className="text-neutral-300">Patna, Bihar</span>
               </h3>
               <ul className="space-y-4">
@@ -225,23 +225,21 @@ export function LocalSEOSection({ sectionClassName }: LocalSEOSectionProps) {
             <div className="lg:col-span-7">
               <div className="space-y-5 border-l-2 border-amber-500/20 pl-5 md:pl-6">
                 <p className="text-[15px] leading-relaxed text-neutral-300 md:text-base [text-wrap:pretty]">
-                  <span className="font-semibold text-white">EDUNEX</span> is a
-                  premier IT consulting and software development company serving
-                  businesses across Patna. With over{" "}
-                  {COMPANY_INFO.yearsOfExperience} years of experience, we
-                  specialize in enterprise-grade web and mobile applications,
-                  CRM/ERP implementation, digital marketing, UI/UX design,
-                  e-commerce, and business compliance.
+                  <span className="font-semibold text-white">EDUNEX</span> is an
+                  End-to-End Digital Solutions Provider based in Patna. Since 2018
+                  we have helped 90+ local clients with billing, stock, simple
+                  apps, maps, ads, and filings. About{" "}
+                  {COMPANY_INFO.yearsOfExperience} years on the ground means we
+                  know how counters and godowns run here.
                 </p>
                 <p className="text-sm leading-relaxed text-neutral-400 md:text-[15px] [text-wrap:pretty]">
-                  Our team works with organizations in Phulwari Sharif, Danapur,
-                  Kankarbagh, and other major areas of Patna to modernize digital
-                  infrastructure and drive growth through practical technology.
+                  We work with owners in Phulwari Sharif, Danapur, Kankarbagh, and
+                  nearby areas. You get plain talk, fair scope, and help when the
+                  day gets busy.
                 </p>
                 <p className="text-sm leading-relaxed text-neutral-400 md:text-[15px] [text-wrap:pretty]">
-                  Whether you need custom software, cloud migration, digital
-                  transformation, or ongoing IT support, we deliver solutions
-                  aligned with your objectives and budget.
+                  Tell us what wastes time or loses money. We suggest a simple
+                  next step that fits your budget and your staff.
                 </p>
               </div>
             </div>

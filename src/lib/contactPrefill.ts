@@ -5,6 +5,9 @@ const ENGAGEMENT_LABELS: Record<string, string> = {
   "project-based": "Project-Based - Fixed Quote",
   "dedicated-team": "Dedicated Team - Monthly Retainer",
   consulting: "Consulting - Hourly / Weekly",
+  "fixed-project": "Fixed project - Fixed quote",
+  "monthly-partner": "Monthly partner - Monthly retainer",
+  "advice-blocks": "Advice blocks - Hourly or weekly",
 };
 
 /**

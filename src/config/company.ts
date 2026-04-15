@@ -19,7 +19,7 @@ export function truncateMeta(s: string, max: number): string {
 export const SEO_KEYWORDS = {
   primary: [
     "Software Development Patna",
-    "IT Company Patna",
+    "Business Software Patna",
     "Billing Software Patna",
     "GST Registration Patna",
     "Custom Software Bihar",
@@ -27,7 +27,7 @@ export const SEO_KEYWORDS = {
     "Web Development Patna",
     "Digital Marketing Patna",
     "Local SEO Patna",
-    "IT Consulting Bihar",
+    "Digital Solutions Bihar",
   ],
   secondary: [
     "Mobile App Development Patna",
@@ -45,7 +45,7 @@ export const SEO_KEYWORDS = {
   serviceKeywords: {
     "custom-software-bihar": [
       "Custom Software Development Patna",
-      "Software Company Patna",
+      "Business Software Patna",
       "Web App Development Bihar",
       "Mobile App Development Patna",
     ],

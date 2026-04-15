@@ -16,7 +16,7 @@ import {
 } from "@/lib/contactPrefill";
 
 const DEFAULT_ENGAGEMENT_TITLE =
-  "Flexible Structures for Every Business Need";
+  "Ways we can work with you";
 
 interface EngagementModel {
   title: string;
@@ -38,38 +38,38 @@ interface EngagementModelsProps {
 
 const defaultModels: EngagementModel[] = [
   {
-    title: "Project-Based",
-    desc: "Best for clearly defined scopes and fixed timelines.",
-    price: "Fixed Quote",
+    title: "Fixed project",
+    desc: "Best when the work has a clear start and finish.",
+    price: "Fixed quote",
     features: [
-      "Dedicated project manager",
-      "Defined milestones & deliverables",
-      "Post-launch support period",
-      "Rigorous quality assurance",
+      "One owner for delivery",
+      "Milestones you can see",
+      "Support window after launch",
+      "Checks before handover",
     ],
     highlight: false,
   },
   {
-    title: "Dedicated Team",
-    desc: "Ideal for long-term product development and scaling.",
-    price: "Monthly Retainer",
+    title: "Monthly partner",
+    desc: "Best when you keep improving the same system.",
+    price: "Monthly retainer",
     features: [
-      "Full-time dedicated engineers",
-      "Direct communication & integration",
-      "Flexible scope adjustments",
-      "Priority roadmap execution",
+      "Same team each month",
+      "Quick calls when something breaks",
+      "Room to shift priorities",
+      "Roadmap that matches sales seasons",
     ],
     highlight: true,
   },
   {
-    title: "Consulting",
-    desc: "Expert guidance for architecture and strategy.",
-    price: "Hourly / Weekly",
+    title: "Advice blocks",
+    desc: "Short help when you only need direction.",
+    price: "Hourly or weekly",
     features: [
-      "Architecture audit & review",
-      "Tech stack modernization",
-      "Security & compliance advisory",
-      "CTO-as-a-Service model",
+      "Review of your current setup",
+      "Simple upgrade plan",
+      "Safety checks on data",
+      "On call for big decisions",
     ],
     highlight: false,
   },

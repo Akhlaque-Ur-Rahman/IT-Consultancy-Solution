@@ -18,39 +18,39 @@ export default function IndustryVerticals() {
   const industries = [
     {
       icon: ShoppingCart,
-      title: "Retail & E-commerce",
+      title: "Shops and online sales",
       description:
-        "Stronger stock turns with omnichannel inventory and automated logistics - right-sized for your scale.",
+        "Clear billing, stock counts, and handovers your counter staff can repeat every day.",
     },
     {
       icon: Stethoscope,
-      title: "Healthcare",
+      title: "Clinics and chemists",
       description:
-        "Reduces admin overhead by 40% with HIPAA-compliant patient management and telehealth.",
+        "Calmer queues, simple patient notes, and bills that match your day end.",
     },
     {
       icon: Factory,
-      title: "Manufacturing",
+      title: "Factories and workshops",
       description:
-        "Enable 99.9% uptime with smart factory monitoring and predictive maintenance systems.",
+        "Attendance, stock moves, and shift wise numbers without paper fights.",
     },
     {
       icon: Truck,
-      title: "Logistics",
+      title: "Transport and fleet",
       description:
-        "Cut operational costs by 22% with real-time fleet tracking and last-mile optimization.",
+        "Dispatch sheets, party dues, and driver updates in one simple flow.",
     },
     {
       icon: GraduationCap,
-      title: "Education",
+      title: "Schools and coaching",
       description:
-        "Increase student retention by 25% with automated performance analytics and LMS platforms.",
+        "Fees, reminders, and parent updates without losing track mid term.",
     },
     {
       icon: Briefcase,
-      title: "Professional Services",
+      title: "Offices and CA firms",
       description:
-        "Recover 15+ billable hours per month with automated tracking and outcome-based reporting.",
+        "Client files, billing blocks, and GST papers that stay in one lane.",
     },
   ];
 
@@ -84,14 +84,15 @@ export default function IndustryVerticals() {
           transition={{ duration: 0.5 }}
         >
           <SectionHeading
-            eyebrow="Vertical expertise"
+            eyebrow="Who we build for"
             align="center"
             className="mb-12 md:mb-16"
             titleClassName="text-3xl font-bold leading-[1.15] tracking-tight text-white md:text-4xl lg:text-5xl"
-            subtitle="We don't believe in one-size-fits-all. Our solutions are engineered with industry-specific requirements and compliance in mind."
+            subtitle="Every lane runs different. We shape billing, stock, and daily work to match your shop, clinic, or godown."
             subtitleClassName="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 md:mx-auto md:text-lg"
           >
-            Built for Your <SectionHeadingAccent>Industry</SectionHeadingAccent>
+            Built for your{" "}
+            <SectionHeadingAccent>type of business</SectionHeadingAccent>
           </SectionHeading>
         </motion.div>
 

@@ -24,34 +24,34 @@ const scenarios = [
   {
     id: "legacy",
     icon: Calculator,
-    title: "Replacing Legacy Software",
+    title: "Old software feels stuck",
     description:
-      "Your current systems are slow, manual, or no longer scaling with your business volume.",
-    cta: "Migration Audit",
+      "Your current tool is slow, or staff work around it with extra Excel sheets.",
+    cta: "Plan a switch",
   },
   {
     id: "siloed",
     icon: Link2,
-    title: "Connecting Siloed Tools",
+    title: "Tools do not talk",
     description:
-      "Departments are using different tools that don't talk to each other, leading to data errors.",
-    cta: "Ecosystem Strategy",
+      "Billing lives in one place, stock in another. Numbers rarely match.",
+    cta: "Tie flows together",
   },
   {
     id: "scale",
     icon: TrendingUp,
-    title: "Preparing for Rapid Scale",
+    title: "Busy season ahead",
     description:
-      "You're expecting 10x growth and need an architecture that won't break under pressure.",
-    cta: "Scalability Roadmap",
+      "You expect more orders and fear the counter or godown will break.",
+    cta: "Size the build",
   },
   {
     id: "custom",
     icon: Sparkles,
-    title: "Custom Specific Need",
+    title: "Odd lane, odd rule",
     description:
-      "You have a unique business logic that off-the-shelf SaaS simply cannot handle.",
-    cta: "Engineering Consult",
+      "Box software never matched your discount rule or godown layout.",
+    cta: "Shape a custom fit",
   },
 ] as const;
 
@@ -135,9 +135,8 @@ export default function DecisionHelper() {
             transition={{ duration: 0.45, delay: 0.1 }}
             className="mt-5 text-pretty text-base leading-relaxed text-neutral-400 md:mt-6 md:text-lg md:leading-relaxed"
           >
-            B2B software transitions are high-stakes. We provide the technical
-            clarity needed to make the right investment. Select your current
-            challenge below.
+            Pick the pain that sounds closest. We reply with plain next steps
+            and a fair range before deep work starts.
           </motion.p>
         </div>
 
@@ -216,19 +215,18 @@ export default function DecisionHelper() {
 
             <div className="relative flex flex-col items-center gap-8 px-6 py-10 text-center md:flex-row md:items-center md:justify-between md:gap-12 md:px-12 md:py-12 lg:px-16">
               <p className="max-w-xl text-pretty text-base leading-relaxed text-neutral-400 md:text-left md:text-lg md:leading-relaxed">
-                Regardless of your current state, we start every engagement with
-                a{" "}
+                Wherever you start, we open with a{" "}
                 <span className="font-semibold text-neutral-100">
-                  Complimentary Strategic Audit
+                  short free review
                 </span>{" "}
-                to ensure the best technical fit.
+                so the next step fits your shop or godown.
               </p>
               <Link href={auditHref} className="shrink-0">
                 <Button
                   size="lg"
                   className="group/audit h-14 rounded-full border-2 border-[#f59e0b] bg-[#f59e0b] px-8 font-bold text-black shadow-[0_0_48px_-12px_rgba(245,158,11,0.5)] transition-all hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-[0_0_56px_-8px_rgba(245,158,11,0.45)] md:px-10"
                 >
-                  Request Architecture Audit
+                  Book a free review
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/audit:translate-x-0.5" />
                 </Button>
               </Link>

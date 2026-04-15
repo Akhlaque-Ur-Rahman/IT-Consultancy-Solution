@@ -21,38 +21,38 @@ export default function ImplementationProcess() {
   const steps = [
     {
       icon: Search,
-      title: "Discovery & Planning",
-      duration: "1 Week",
+      title: "Visit and plan",
+      duration: "About 1 week",
       description:
-        "We study your business needs and create a clear roadmap for your project.",
+        "We sit at your shop or godown. We map pain, flow, and a clear week by week plan.",
     },
     {
       icon: Settings2,
-      title: "Custom Development",
-      duration: "4–6 Weeks",
+      title: "Build and connect",
+      duration: "4 to 6 weeks",
       description:
-        "Our experts build your system and connect it with the tools you already use.",
+        "We ship working slices early. We tie pay, tally export, or WhatsApp when you need it.",
     },
     {
       icon: ClipboardCheck,
-      title: "Testing & Review",
-      duration: "2 Weeks",
+      title: "Test with real staff",
+      duration: "About 2 weeks",
       description:
-        "We test everything thoroughly to make sure it works perfectly for your team.",
+        "Your team runs real bills and stock moves. We fix gaps before go wide.",
     },
     {
       icon: Rocket,
-      title: "Launch & Training",
-      duration: "1 Week",
+      title: "Go live and train",
+      duration: "About 1 week",
       description:
-        "We move your data and help your team get started with the new system.",
+        "We stand next to the counter until the new flow feels normal.",
     },
     {
       icon: LifeBuoy,
-      title: "Ongoing Support",
+      title: "Help after launch",
       duration: "Ongoing",
       description:
-        "We provide 24/7 help and maintenance to keep your system running smoothly.",
+        "Phone and visit support from Patna when something breaks or season spikes.",
     },
   ];
 
@@ -83,9 +83,9 @@ export default function ImplementationProcess() {
               "text-balance text-[2rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.65rem]",
             )}
           >
-            The Roadmap to{" "}
+            How we roll{" "}
             <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-              Success
+              it out
             </span>
           </motion.h2>
           <motion.p
@@ -95,8 +95,8 @@ export default function ImplementationProcess() {
             transition={{ duration: 0.45, delay: 0.06 }}
             className="mt-5 text-pretty text-base leading-relaxed text-neutral-400 md:mt-6 md:text-lg"
           >
-            A simple, step-by-step approach to building your enterprise systems.
-            We don&apos;t just deliver software; we help your business grow.
+            No mystery phases. You always know what happens next and who owns
+            it on your side.
           </motion.p>
         </div>
 

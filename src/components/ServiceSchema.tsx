@@ -23,7 +23,7 @@ export function ServiceSchema({ name, description, url }: ServiceSchemaProps) {
       name: "India",
     },
     url: url,
-    serviceType: "IT Consulting & Business Services",
+    serviceType: "Digital Business Solutions",
   };
 
   return (

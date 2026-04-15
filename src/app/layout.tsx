@@ -16,16 +16,16 @@ const inter = Inter({
 
 const baseMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "EDUNEX - Simple IT Solutions for Patna Businesses",
+  title: "EDUNEX | End-to-End Digital Solutions for Patna & Bihar",
   description:
-    "We help business owners in Patna grow with simple websites, custom apps, and expert tax advice. Reliable, honest, and local since 2018.",
+    "Simple billing, stock control, and growth tools for shops and clinics in Bihar. Local team in Patna since 2018.",
   keywords: [
-    "IT Consulting Patna",
-    "Software Development Bihar",
-    "Web Development Patna",
-    "Mobile Apps Patna",
+    "Digital Solutions Patna",
+    "Business Software Bihar",
+    "Billing Software Patna",
+    "Stock Management Bihar",
     "GST Registration Bihar",
-    "Business Consulting Patna",
+    "Local Business Software Patna",
   ],
   authors: [{ name: "EDUNEX Team" }],
   creator: "EDUNEX",
@@ -33,17 +33,17 @@ const baseMetadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    title: "EDUNEX - Simple IT Solutions for Patna Businesses",
+    title: "EDUNEX | End-to-End Digital Solutions for Patna & Bihar",
     description:
-      "Reliable websites, custom apps, and business growth tools for Patna's smart business owners.",
+      "Simple systems for real business work. Billing, stock, and growth help from a Patna team since 2018.",
     siteName: "EDUNEX",
     images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "EDUNEX" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EDUNEX - Simple IT Solutions for Patna Businesses",
+    title: "EDUNEX | End-to-End Digital Solutions for Patna & Bihar",
     description:
-      "Helping Patna businesses grow with honest technology since 2018.",
+      "Simple digital tools for shops and clinics in Bihar. Local support in Patna since 2018.",
     images: ["/logo.jpg"],
   },
   icons: {
@@ -73,7 +73,7 @@ const organizationJsonLd = {
   "@id": `${SITE_URL}/#organization`,
   name: "EDUNEX Services",
   description:
-    "Enterprise digital transformation and business compliance consulting based in Patna, Bihar.",
+    "End-to-End Digital Solutions Provider for shops, clinics, and small firms in Patna, Bihar.",
   image: `${SITE_URL}/logo.jpg`,
   logo: `${SITE_URL}/logo.jpg`,
   url: SITE_URL,

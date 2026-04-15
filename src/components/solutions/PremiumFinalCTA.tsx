@@ -15,9 +15,9 @@ const display = Fraunces({
 });
 
 const trustItems = [
-  "Secure infrastructure",
-  "Direct OEM support",
-  "Zero hidden fees",
+  "90+ clients across Bihar",
+  "98% who stay year on year",
+  "Local support in Patna",
 ] as const;
 
 export default function PremiumFinalCTA() {
@@ -81,16 +81,15 @@ export default function PremiumFinalCTA() {
                   "mx-auto max-w-4xl text-balance text-[1.85rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.75rem] lg:leading-[1.08]",
                 )}
               >
-                Ready to Solidify Your Digital{" "}
+                Call us. Tell us what slows{" "}
                 <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-                  Foundation?
+                  you down.
                 </span>
               </h2>
 
               <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-neutral-400 md:mt-8 md:text-lg md:leading-relaxed">
-                Don&apos;t settle for generic software. Partner with senior
-                engineers to build a core system that drives measurable business
-                outcomes. Let&apos;s discuss your implementation roadmap today.
+                Share billing pain, stock pain, or slow sales. We suggest a
+                simple next step. Honest scope from Patna since 2018.
               </p>
 
               <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:mt-12 sm:flex-row sm:items-center sm:justify-center sm:gap-5">
@@ -99,7 +98,7 @@ export default function PremiumFinalCTA() {
                     size="lg"
                     className="group/cal h-14 w-full rounded-full border-2 border-[#f59e0b] bg-[#f59e0b] px-8 font-bold text-black shadow-[0_0_44px_-12px_rgba(245,158,11,0.55)] transition-all hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-[0_0_56px_-8px_rgba(245,158,11,0.5)] md:min-w-[260px] md:px-10"
                   >
-                    Get a Free Consultation
+                    Call or message us
                     <Calendar className="ml-2 h-5 w-5 transition-transform group-hover/cal:rotate-[-8deg]" />
                   </Button>
                 </Link>
@@ -109,7 +108,7 @@ export default function PremiumFinalCTA() {
                     size="lg"
                     className="group/plan h-14 w-full rounded-full border-white/25 bg-white/[0.04] px-8 font-semibold text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-[0_16px_48px_-24px_rgba(255,255,255,0.12)] md:min-w-[280px] md:px-10"
                   >
-                    Request Implementation Plan
+                    Ask for a rollout plan
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover/plan:translate-x-0.5" />
                   </Button>
                 </Link>

@@ -15,16 +15,16 @@ export default function DeploymentOptions() {
   const models = [
     {
       icon: Cloud,
-      title: "Cloud-Hosted",
+      title: "Cloud on our care",
       description:
-        "Fully managed, highly available SaaS deployment on our secure global infrastructure.",
+        "We host and update for you. You log in from shop, home, or phone.",
       features: [
-        "Auto-scaling",
-        "99.99% Uptime SLA",
-        "Instant Updates",
-        "Zero Infrastructure Overhead",
+        "Backups on schedule",
+        "Updates without a server room at your site",
+        "Room to grow busy seasons",
+        "Less box clutter in back office",
       ],
-      tag: "Most Popular",
+      tag: "Most picked",
       ring: "from-sky-500/35 via-sky-500/10 to-sky-500/35",
       glow: "rgba(56, 189, 248, 0.12)",
       borderAccent: "border-sky-500/35",
@@ -32,16 +32,16 @@ export default function DeploymentOptions() {
     },
     {
       icon: Database,
-      title: "On-Premise",
+      title: "On your own machines",
       description:
-        "Complete control with deployment on your own internal servers or private cloud.",
+        "Runs inside your office LAN when you must keep data in the building.",
       features: [
-        "Full Data Sovereignty",
-        "Firewall-Isolated",
-        "Custom Resource Allocation",
-        "Direct DB Access",
+        "Data stays on your drives",
+        "Works when outside net is weak",
+        "You control who plugs in",
+        "We still help patch and backup",
       ],
-      tag: "Maximum Control",
+      tag: "Full control",
       ring: "from-amber-500/40 via-amber-500/12 to-amber-500/40",
       glow: "rgba(245, 158, 11, 0.14)",
       borderAccent: "border-amber-500/40",
@@ -49,16 +49,16 @@ export default function DeploymentOptions() {
     },
     {
       icon: Server,
-      title: "Hybrid Mesh",
+      title: "Mix of both",
       description:
-        "The best of both. Seamlessly sync between cloud processing and on-premise storage.",
+        "Counter stays local. Reports and backup sync when the line is good.",
       features: [
-        "Edge Computing",
-        "Compliance Syncing",
-        "Failover Resilience",
-        "Burst Capability",
+        "Billing works offline in rush",
+        "Night sync to safe cloud copy",
+        "Fallback if one side fails",
+        "We tune for your line quality",
       ],
-      tag: "Adaptive",
+      tag: "Balanced",
       ring: "from-emerald-500/35 via-emerald-500/10 to-emerald-500/35",
       glow: "rgba(52, 211, 153, 0.12)",
       borderAccent: "border-emerald-500/35",
@@ -93,11 +93,11 @@ export default function DeploymentOptions() {
               "text-balance text-[2rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.65rem]",
             )}
           >
-            Flexible{" "}
+            Where should your{" "}
             <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-              Deployment
+              system
             </span>{" "}
-            for Security &amp; Compliance
+            live?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -106,9 +106,8 @@ export default function DeploymentOptions() {
             transition={{ duration: 0.45, delay: 0.08 }}
             className="mt-5 text-pretty text-base leading-relaxed text-neutral-400 md:mt-6 md:text-lg"
           >
-            Choose the model that aligns with your data sovereignty requirements
-            and long-term TCO strategy. All options are SOC2-ready and
-            enterprise-grade.
+            Pick what fits your risk and your net speed. We explain pros in
+            plain words before you sign.
           </motion.p>
         </div>
 

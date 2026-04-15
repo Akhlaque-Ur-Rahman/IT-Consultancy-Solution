@@ -19,33 +19,29 @@ import { clientLogos, metrics } from "@/data/mockData";
 
 const solutionsFaqs = [
   {
-    question:
-      "How do your enterprise solutions integrate with legacy hardware or databases?",
+    question: "Can new software talk to our old billing PC or Tally export?",
     answer:
-      "Our integration methodology relies on creating secure middleware layers. We construct RESTful or GraphQL APIs that communicate safely with legacy on-premise databases (like older SQL Server or Oracle instances) while exposing a modern, fast Next.js frontend to your users or staff. This prevents the need for a risky 'rip-and-replace' while instantly modernizing the user experience.",
+      "Yes. We connect step by step. Often we sync Excel or Tally data first, then move daily work to the new screen. You avoid a risky big bang switch.",
   },
   {
-    question:
-      "Do you offer localized cloud deployment or enterprise cloud migration within India to comply with data residency laws?",
+    question: "Where is our data stored? Can it stay in India?",
     answer:
-      "Absolutely. We routinely architect secure enterprise cloud migrations on AWS Asia Pacific (Mumbai) or localized data centers. For compliance-heavy industries like healthcare or finance in India, we ensure a strict cybersecurity posture and complete data sovereignty, meaning your sensitive customer data never crosses international borders.",
+      "We use trusted Indian region cloud hosts when you want data close to home. Backups run on schedule. We explain every choice in plain words before we start.",
   },
   {
-    question:
-      "What is your typical implementation timeline for a custom CRM/ERP ecosystem?",
+    question: "How long does a full billing or godown build take?",
     answer:
-      "A complete custom CRM or ERP implementation generally scales between 3 to 6 months. However, we deploy using Agile sprints. This means your team will receive usable, core modules (like lead tracking or basic invoicing) within the first 4-6 weeks, allowing you to recognize ROI while we continue building secondary features.",
+      "Most shop or godown systems go live in three to six weeks for core use. Bigger plants can take longer. You still get usable billing or stock modules early so the counter does not wait for every extra feature.",
   },
   {
-    question:
-      "How do you handle user adoption training for non-technical staff?",
+    question: "What if my staff are not strong on computers?",
     answer:
-      "Software is useless if your team refuses to use it. Our 'Implementation Process' includes dedicated user-acceptance testing (UAT) and guided onboarding sessions. We design our UX specifically for the least technical user in your office, minimizing friction and flattening the learning curve.",
+      "We train on site in Hindi or English until the flow feels normal. Screens stay simple. We watch real rush hour before we freeze the layout.",
   },
   {
-    question: "Who owns the codebase after the solution is deployed?",
+    question: "Who owns the work after we pay?",
     answer:
-      "You do. Upon final payment and successful deployment, EDUNEX Services transfers full intellectual property (IP) rights and the complete source code repository to your organization. We offer ongoing SLA support, but you are never held hostage by vendor lock-in.",
+      "You own what we build for you. We hand files and access. You can stay on our support plan, but your data and code are not locked away.",
   },
 ];
 
@@ -92,15 +88,16 @@ export default function SolutionsPage() {
         {/* 8. Unified Ecosystem Message */}
         <UnifiedEcosystem />
 
-        {/* 8.5 Enterprise FAQs */}
+        {/* FAQs */}
         <FAQSection
           faqs={solutionsFaqs}
           title={
             <>
-              Enterprise Solutions <span className="text-[#f59e0b]">FAQ</span>
+              Questions about{" "}
+              <span className="text-[#f59e0b]">our solutions</span>
             </>
           }
-          description="Technical and operational answers for IT directors, founders, and executive decision-makers."
+          description="Straight answers for owners who run shops, clinics, and godowns in Bihar."
           sectionClassName="border-t border-[#262626] bg-black"
         />
 

@@ -15,7 +15,7 @@ const display = Fraunces({
 const orbitNodes = [
   {
     icon: Zap,
-    label: "Billing",
+    label: "Bills",
     angle: 0,
     inset: "28%",
     duration: 28,
@@ -23,7 +23,7 @@ const orbitNodes = [
   },
   {
     icon: Shield,
-    label: "Security",
+    label: "Safe",
     angle: 90,
     inset: "0%",
     duration: 38,
@@ -31,7 +31,7 @@ const orbitNodes = [
   },
   {
     icon: BarChart,
-    label: "ERP",
+    label: "Stock",
     angle: 180,
     inset: "28%",
     duration: 28,
@@ -39,7 +39,7 @@ const orbitNodes = [
   },
   {
     icon: Network,
-    label: "CRM",
+    label: "Reach",
     angle: 270,
     inset: "0%",
     duration: 38,
@@ -48,10 +48,10 @@ const orbitNodes = [
 ] as const;
 
 const bullets = [
-  "Eliminate tool fragmentation and data duplication",
-  "Unified cross-department visibility (Full Spectrum)",
-  "Absolute data consistency for rapid decision-making",
-  "Single platform control for reduced operational risk",
+  "One plan for billing, stock, follow up, and local ads",
+  "Fewer double entries between diary, Excel, and WhatsApp",
+  "Owners see the same numbers as the godown incharge",
+  "Local team in Patna when wires cross",
 ] as const;
 
 export default function UnifiedEcosystem() {
@@ -99,7 +99,7 @@ export default function UnifiedEcosystem() {
                     strokeWidth={2}
                   />
                   <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#fcd34d]">
-                    Single source of truth
+                    One calm loop
                   </span>
                 </motion.div>
 
@@ -113,9 +113,9 @@ export default function UnifiedEcosystem() {
                     "text-[2rem] font-semibold leading-[1.08] tracking-[-0.02em] md:text-4xl lg:text-[2.75rem] lg:leading-[1.06]",
                   )}
                 >
-                  <span className="text-white">One Platform.</span>
+                  <span className="text-white">One partner.</span>
                   <br />
-                  <span className="text-neutral-500">Zero Fragmentation.</span>
+                  <span className="text-neutral-500">Less juggling.</span>
                 </motion.h2>
 
                 <motion.p
@@ -125,10 +125,9 @@ export default function UnifiedEcosystem() {
                   transition={{ duration: 0.45, delay: 0.1 }}
                   className="mt-6 max-w-xl text-base leading-relaxed text-neutral-400 md:mt-7 md:text-lg"
                 >
-                  Eliminate the hidden costs of bridge connectors and data
-                  silos. Our ecosystem provides absolute consistency across
-                  department lines, giving you a single source of truth for every
-                  decision.
+                  EDUNEX is an End-to-End Digital Solutions Provider. Billing,
+                  stock, reach, and filings stay in one lane so your team stops
+                  retyping the same facts in three places.
                 </motion.p>
 
                 <ul className="mt-9 space-y-5 md:mt-10 md:space-y-6">
@@ -192,6 +191,7 @@ export default function UnifiedEcosystem() {
                           alt="EDUNEX Services Logo"
                           fill
                           sizes="(max-width: 768px) 96px, 128px"
+                          loading="lazy"
                           className="object-contain p-2 transition-transform duration-700 group-hover:scale-105"
                         />
                       </div>

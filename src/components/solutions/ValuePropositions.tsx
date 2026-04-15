@@ -23,39 +23,39 @@ export default function ValuePropositions() {
   const values = [
     {
       icon: Cpu,
-      title: "Outcome-Based Engineering",
+      title: "Built around your margin",
       description:
-        "We don't just write code; we solve business bottlenecks. Every architectural decision is weighed against its impact on your bottom line.",
+        "We pick features that cut mistakes and save hours. Fancy extras wait until core bills and stock feel solid.",
     },
     {
       icon: Scaling,
-      title: "Scale-Ready Architectures",
+      title: "Room to grow busy seasons",
       description:
-        "Built for future-state performance. Our systems handle millions of requests natively, ensuring your growth is never capped by technical debt.",
+        "Systems sized for festival rush and tax week. We avoid bloated packs your staff will never open.",
     },
     {
       icon: ShieldCheck,
-      title: "Compliance-First Security",
+      title: "Data treated with care",
       description:
-        "Data sovereignty is our priority. Sophisticated encryption and SOC2-ready protocols safeguard your most valuable intellectual property.",
+        "Backups, access rules, and clear handovers. We explain what sits where before you go live.",
     },
     {
       icon: Layers,
-      title: "Uncompromising Ownership",
+      title: "You own the work",
       description:
-        "You own 100% of the custom IP. No vendor lock-in, no seat-based pricing - just total control over your digital core.",
+        "Custom build means your files and rights stay with you. Support is optional, not forced.",
     },
     {
       icon: Headphones,
-      title: "SLA-Backed Expert Support",
+      title: "Patna team on call",
       description:
-        "Direct access to our senior engineering cell. We provide 24/7 proactive monitoring and guaranteed response times for critical systems.",
+        "Real people who can visit the godown when the counter jams. Not a far away ticket queue.",
     },
     {
       icon: Key,
-      title: "Seamless Ecosystem Integration",
+      title: "Fits what you already use",
       description:
-        "Native tool compatibility ensures your existing stack works in harmony with our solutions, reducing tool fragmentation from day one.",
+        "Tally handoff, UPI, WhatsApp pings. Fewer double entries between old tools and new screens.",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function ValuePropositions() {
           >
             <Sparkles className="h-3.5 w-3.5 text-[#fbbf24]" strokeWidth={2} />
             <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#fcd34d]">
-              Why enterprises choose us
+              Why owners pick EDUNEX
             </span>
           </motion.div>
 
@@ -109,11 +109,10 @@ export default function ValuePropositions() {
               "text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.65rem]",
             )}
           >
-            The{" "}
+            What you get with{" "}
             <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
               EDUNEX
-            </span>{" "}
-            Advantage
+            </span>
           </motion.h2>
 
           <motion.p
@@ -123,8 +122,7 @@ export default function ValuePropositions() {
             transition={{ duration: 0.45, delay: 0.1 }}
             className="mt-5 text-pretty text-base leading-relaxed text-neutral-400 md:mt-6 md:text-lg"
           >
-            Why forward-thinking enterprises choose us to power their digital
-            core.
+            Simple systems built for real business work. Local proof since 2018.
           </motion.p>
         </div>
 

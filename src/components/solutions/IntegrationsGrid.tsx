@@ -87,35 +87,35 @@ export default function IntegrationsGrid() {
                 "text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.65rem]",
               )}
             >
-              A Unified{" "}
+              Plays nice with{" "}
               <span className="bg-gradient-to-r from-[#fde68a] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-                Ecosystem
+                tools you use
               </span>
             </h2>
 
             <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-neutral-400 md:text-lg md:leading-relaxed">
-              Our platform doesn&apos;t live in a silo. We provide native
-              integrations with the tools your business already depends on, plus
-              a robust API for custom connectivity.
+              We connect pay gates, books, WhatsApp, and cloud hosts you
+              already trust. If you need a custom link, we build it once and
+              test it with your staff.
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-5 sm:gap-8">
               <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm md:p-6">
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#f59e0b]/[0.12] blur-2xl" />
                 <p className="bg-gradient-to-br from-white to-neutral-400 bg-clip-text font-mono text-3xl font-bold tabular-nums tracking-tight text-transparent md:text-4xl">
-                  50+
+                  Many
                 </p>
                 <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.22em] text-neutral-500">
-                  Native Connectors
+                  Common links
                 </p>
               </div>
               <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm md:p-6">
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#f59e0b]/[0.1] blur-2xl" />
                 <p className="bg-gradient-to-br from-white to-neutral-400 bg-clip-text font-mono text-3xl font-bold tabular-nums tracking-tight text-transparent md:text-4xl">
-                  100%
+                  One
                 </p>
                 <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.22em] text-neutral-500">
-                  API Coverage
+                  Team to wire it
                 </p>
               </div>
             </div>

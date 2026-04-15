@@ -9,7 +9,6 @@ import { DeliverablesGrid } from "@/components/services/DeliverablesGrid";
 import { ProcessFlow } from "@/components/services/ProcessFlow";
 import { ServiceFAQs } from "@/components/services/ServiceFAQs";
 import { ServiceCTA } from "@/components/services/ServiceCTA";
-import { TechnicalExcellence } from "@/components/services/TechnicalExcellence";
 import { ServiceResults } from "@/components/services/ServiceResults";
 import { EngagementModels } from "@/components/services/EngagementModels";
 
@@ -38,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     baseDesc.length >= META_DESC_MAX
       ? truncateMeta(baseDesc, META_DESC_MAX)
       : baseDesc.length < 120
-        ? `${baseDesc} Hands-on delivery for Patna & Bihar teams.`
+        ? `${baseDesc} Local help in Patna for shop and godown owners.`
         : baseDesc;
   const fullDesc = truncateMeta(metaDesc, META_DESC_MAX);
   const fullTitle = truncateMeta(
@@ -97,6 +96,8 @@ export default async function ServicePage({ params }: Props) {
         description={service.description}
         benefits={service.keyBenefits}
         serviceTitle={service.slug}
+        heroImageSrc={(service as { heroImage?: string }).heroImage}
+        heroImageAlt={(service as { heroImageAlt?: string }).heroImageAlt}
       />
 
       {/* 2. Capability Cards (What We Deliver) */}

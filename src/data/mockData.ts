@@ -1,579 +1,609 @@
 import { COMPANY_INFO } from "@/config/company";
 
-// Mock data for IT Consulting Website
+// Website service catalog (list + detail slugs)
 
 export const services = [
   {
     id: 'web-app-dev',
     slug: 'custom-software-bihar',
+    heroImage: '/Services/web-app.webp',
+    heroImageAlt: 'Custom apps and websites for Bihar shops and clinics',
     type: 'engineering',
     icon: 'Code',
-    title: 'Custom Software & Applications',
-    description: 'Custom software, websites, and mobile apps built specifically for SMEs in Patna and across Bihar to automate your manual work.',
+    title: 'Custom apps & websites',
+    description: 'Websites and phone apps built for shops, clinics, and small firms in Patna and Bihar. Less manual work at the counter.',
     category: 'development',
-    features: ['Custom Web Portals', 'Mobile Apps for Staff', 'Inventory Systems', 'Local Business Solutions'],
-    outcomeHeadline: 'Build <span class="text-[#f59e0b]">Custom Software</span> That Eliminates Your Daily Headaches',
-    keyBenefits: ['Affordable for SMEs', 'Easy to Use for Staff', 'Full On-Site Training'],
+    features: ['Sites that load fast', 'Staff apps', 'Stock friendly tools', 'Plain training'],
+    outcomeHeadline: 'Get <span class="text-[#f59e0b]">simple software</span> that fits your real daily work',
+    keyBenefits: ['Priced for local owners', 'Easy screens for staff', 'We train at your place'],
     deliverables: [
-      { title: 'Business Software', desc: 'Custom apps for your shop or factory', icon: 'Globe' },
-      { title: 'Mobile Apps', desc: 'Connect with customers and staff', icon: 'Smartphone' },
-      { title: 'Retail Systems', desc: 'Tools that automate your billing', icon: 'Server' }
+      { title: 'Business apps', desc: 'Tools shaped around your shop or line', icon: 'Globe' },
+      { title: 'Phone apps', desc: 'Staff and buyers stay connected', icon: 'Smartphone' },
+      { title: 'Retail flow', desc: 'Billing steps that match your rush hours', icon: 'Server' }
     ],
     processSteps: [
-      { title: 'Local Meeting', desc: 'We meet you in Patna or nearby to discuss' },
-      { title: 'Designing', desc: 'Creating simple screens your staff can use' },
-      { title: 'Building', desc: 'Developing the system step-by-step' },
-      { title: 'Training', desc: 'We train your team on-site' }
+      { title: 'Visit', desc: 'We meet in Patna or nearby and watch your flow' },
+      { title: 'Sketch', desc: 'We draw simple screens your team approves' },
+      { title: 'Build', desc: 'We ship features in steady weekly chunks' },
+      { title: 'Train', desc: 'We stay on site until bills feel normal' }
     ],
     faqs: [
-      { q: 'How much does custom software cost in Bihar?', a: 'It costs much less than metro-city agencies. We build affordable solutions crafted explicitly for the SME budget.' },
-      { q: 'Do you provide on-site consultation in Patna?', a: 'Yes! We prefer to visit your office, shop, or factory to see exactly how your business works.' },
-      { q: 'Will my staff be able to use it?', a: 'Absolutely. We design interfaces so intuitively that anyone can use them, removing technical barriers.' },
-      { q: 'How long does deployment take?', a: 'Most SME projects in Bihar are deployed within 3 to 6 weeks, depending on the complexity of your manual processes.' }
+      { q: 'What does custom work cost in Bihar?', a: 'Less than big city shops charge. We quote upfront after we see your flow. No surprise line items.' },
+      { q: 'Will you come to my godown or shop?', a: 'Yes. We prefer to sit where you work so we do not guess your pain.' },
+      { q: 'Can my staff run it?', a: 'Yes. We keep layouts clean and repeat training until the counter feels calm.' },
+      { q: 'How long before we go live?', a: 'Most builds land in three to six weeks. Simple sites can be faster.' }
     ],
     typeSpecificData: {
-      performance: 'Works on Slow Internet',
-      security: 'Data Kept Safe & Private',
-      stack: ['Scalable Tech', 'Easy-to-use interfaces', 'Mobile Optimized']
+      performance: 'Works when the net is slow',
+      security: 'Your data backed up and private',
+      stack: ['Room to grow', 'Clear screens', 'Phones covered']
     },
     results: [
       {
         label: "Manual Work",
         value: "-60%",
-        suffix: "Time Saved",
-        desc: "Helped a local Patna manufacturer save 4 hours a day on data entry."
+        suffix: "Time saved",
+        desc: "A Patna maker cut four hours of daily entry after one build."
       },
       {
-        label: "Faster Process",
+        label: "Rollout",
         value: "3x",
-        suffix: "Speed Boost",
-        desc: "Got a Muzaffarpur distributor's entire inventory online in 3 weeks."
+        suffix: "Faster setup",
+        desc: "A Muzaffarpur distributor moved stock online inside three weeks."
       }
     ],
     testimonial: {
-      quote: "The EDUNEX team actually came to our godown in Patna to understand our pain. The software they built is exactly what we needed to stop losing stock.",
+      quote: "EDUNEX sat in our godown until they understood our mess. The tool fits our lane. Stock finally matches.",
       author: "Owner, Patna Wholesale Distributor"
     },
-    resultsTitle: "Real Bihar Businesses We've Helped",
-    ctaBadge: "Automate Your Work",
-    ctaTitle: "Ready to Automate Your Shop or Factory?",
-    ctaDescription: "Let's chat. We are based right here in Bihar and ready to help you grow without confusing tech jargon."
+    resultsTitle: "Owners who gained calmer days",
+    ctaBadge: "Start simple",
+    ctaTitle: "Want software that matches your shop?",
+    ctaDescription: "Call us. Tell us what breaks each week. We answer in plain words from Patna."
   },
   {
     id: 'crm-erp',
     slug: 'erp-billing-software',
+    heroImage: '/Services/ERP.webp',
+    heroImageAlt: 'Billing and stock system preview for godowns and shops',
     type: 'engineering',
     icon: 'Database',
-    title: 'ERP & Billing Systems',
-    description: 'Stop losing money to manual billing errors. Get a custom ERP system to manage inventory, staff, and GST billing effortlessly.',
+    title: 'Billing & stock systems',
+    description: 'Fewer bill mistakes. Clear stock. GST ready invoices from the same screen your staff uses every day.',
     category: 'solutions',
-    features: ['GST Billing Automation', 'Inventory Tracking', 'Staff Management', 'Tally Integration'],
-    outcomeHeadline: 'Manage Your Entire Business from <span class="text-[#f59e0b]">Your Phone or PC</span>',
-    keyBenefits: ['Everything in One Place', 'No More Calculation Errors', 'Save Hours Every Day'],
+    features: ['GST ready bills', 'Godown counts', 'Staff roles', 'Tally friendly handoff'],
+    outcomeHeadline: 'Run the shop from <span class="text-[#f59e0b]">your phone or desk</span> without the chaos',
+    keyBenefits: ['One place for numbers', 'Fewer math slips', 'Hours back each week'],
     deliverables: [
-      { title: 'GST Billing', desc: 'Create accurate invoices in seconds', icon: 'Receipt' },
-      { title: 'Godown Management', desc: 'Track exactly what comes in and out', icon: 'Database' },
-      { title: 'Customer Records', desc: 'Never lose a lead or payment due again', icon: 'Users' }
+      { title: 'Fast billing', desc: 'Print or WhatsApp a clean bill in seconds', icon: 'Receipt' },
+      { title: 'Godown view', desc: 'See what moved in and out today', icon: 'Database' },
+      { title: 'Party ledger', desc: 'Track dues without lost chits', icon: 'Users' }
     ],
     processSteps: [
-      { title: 'Audit', desc: 'We visit your office or shop in Bihar' },
-      { title: 'Blueprint', desc: 'Designing a simpler system for you' },
-      { title: 'Build', desc: 'Building your billing software securely' },
-      { title: 'Training', desc: 'We teach your staff how to use it' }
+      { title: 'Walkthrough', desc: 'We visit your shop or office in Bihar' },
+      { title: 'Plan', desc: 'We map a lighter flow than today' },
+      { title: 'Build', desc: 'We ship billing that matches your lanes' },
+      { title: 'Coach', desc: 'We stand with staff until it feels normal' }
     ],
     faqs: [
-      { q: 'Can small businesses afford ERP systems?', a: 'Yes. We do not charge massive enterprise fees. We built our systems specifically for the SME budgets of Bihar.' },
-      { q: 'Can we use our old data from Tally or Excel?', a: 'Yes, we safely move all your old files and Excel sheets into the new digital system.' },
-      { q: 'Can I check it from home?', a: 'Yes, the owner can manage the shop, check sales, and see inventory from their mobile phone anywhere.' },
-      { q: 'Does it create GST-ready invoices?', a: 'Yes, it automatically calculates GST and creates compliant PDF invoices you can send via WhatsApp.' }
+      { q: 'Can a small shop afford this?', a: 'Yes. We price for counters and godowns, not corporate towers. You see the number before we build.' },
+      { q: 'Can we bring old Tally or Excel data?', a: 'Yes. We move sheets and masters safely so you do not start from zero.' },
+      { q: 'Can the owner check from home?', a: 'Yes. Sales and stock show on your phone when you allow it.' },
+      { q: 'Are bills GST ready?', a: 'Yes. Tax lines match what you file. PDF goes straight to WhatsApp.' }
     ],
     typeSpecificData: {
-      stack: ['Secure Cloud Database', 'Easy Mobile Interface'],
-      performance: 'Fast even with thousands of stock items',
-      security: 'End-to-end Data Privacy',
+      stack: ['Safe cloud copy', 'Simple phone view'],
+      performance: 'Quick even with deep stock lists',
+      security: 'Your books stay private',
       integrations: ['Tally', 'WhatsApp', 'Email']
     },
     results: [
       {
-        label: "Time Saved",
+        label: "Counter time",
         value: "35%",
-        suffix: "Faster Billing",
-        desc: "Helped a local transporter handle dispatch billing in minutes instead of hours."
+        suffix: "Faster bills",
+        desc: "A transporter cut dispatch billing from hours to minutes."
       },
       {
-        label: "Accuracy",
+        label: "Clean filing",
         value: "100%",
-        suffix: "GST Compliant",
-        desc: "Upgraded an old retail shop from hand-written bills to secure GST digital billing."
+        suffix: "GST match",
+        desc: "A retail shop left handwritten bills for steady digital lines."
       }
     ],
     testimonial: {
-      quote: "The software they built for us is so easy. My staff learned it in a day, and we finally stopped making mistakes with our taxation and stock counting.",
+      quote: "My team learned it in one day. Stock finally matches the register. GST feels under control.",
       author: "Manager, Local Hardware Store"
     },
-    resultsTitle: "Local Success Stories",
-    ctaBadge: "Simplify Your Shop",
-    ctaTitle: "Tired of Messy Excel Sheets?",
-    ctaDescription: "Let's build a simpler system for your office. Tell us how you work, and we'll handle the rest."
+    resultsTitle: "Shops that stopped bleeding margin",
+    ctaBadge: "Fix the counter",
+    ctaTitle: "Still fighting Excel and loose sheets?",
+    ctaDescription: "Tell us how bills flow today. We map a calmer setup you can afford."
   },
   {
     id: 'digital-marketing',
     slug: 'local-seo-marketing',
+    heroImage: '/Services/DigitalMarketing.webp',
+    heroImageAlt: 'Local reach and digital marketing for Patna and Bihar',
     type: 'marketing',
     icon: 'TrendingUp',
-    title: 'Local SEO & Digital Marketing',
-    description: 'Get more phone calls and foot traffic from local customers in Patna and across Bihar.',
+    title: 'Local reach & ads',
+    description: 'More calls and visits from people near Patna and across Bihar. Maps, simple ads, and clear numbers each month.',
     category: 'marketing',
-    features: ['Google Maps SEO', 'Local Facebook Ads', 'WhatsApp Marketing', 'Business Registration'],
-    outcomeHeadline: 'Get More Local Customers to <span class="text-[#f59e0b]">Call Your Business</span>',
-    keyBenefits: ['More Phone Calls', 'Top Ranking in Your City', 'Clear Monthly Reports'],
+    features: ['Maps that show your shop', 'Facebook ads nearby', 'WhatsApp offers', 'Starter listing help'],
+    outcomeHeadline: 'Help nearby buyers <span class="text-[#f59e0b]">find and call you</span>',
+    keyBenefits: ['More real calls', 'Stronger map presence', 'Reports you can read'],
     deliverables: [
-      { title: 'Google Ranking', desc: 'Be the first shop people see nearby', icon: 'Search' },
-      { title: 'Facebook Ads', desc: 'Reach local families instantly', icon: 'Target' },
-      { title: 'WhatsApp Push', desc: 'Send offers directly to older customers', icon: 'MessageSquare' }
+      { title: 'Map presence', desc: 'Show up when locals search your trade', icon: 'Search' },
+      { title: 'Nearby ads', desc: 'Spend toward families close to you', icon: 'Target' },
+      { title: 'WhatsApp nudges', desc: 'Share offers without spamming everyone', icon: 'MessageSquare' }
     ],
     processSteps: [
-      { title: 'Research', desc: 'Seeing what other local shops do' },
-      { title: 'Plan', desc: 'Choosing where to spend your budget' },
-      { title: 'Action', desc: 'Running local ads and posting content' },
-      { title: 'Check', desc: 'Bringing you more leads every week' }
+      { title: 'Look around', desc: 'We study what nearby rivals show online' },
+      { title: 'Pick channels', desc: 'We agree budget and focus streets' },
+      { title: 'Run', desc: 'We launch maps fixes and small ad sets' },
+      { title: 'Review', desc: 'We share calls and leads each month' }
     ],
     faqs: [
-      { q: 'How do I know if it is working?', a: 'We send you a simple report every month showing exactly how many new calls and leads you got.' },
-      { q: 'Can it help a small shop or clinic?', a: 'Yes, we specialize in helping local Bihar businesses get noticed by people in their immediate neighborhood.' },
-      { q: 'Is it expensive?', a: 'We work with your exact budget and focus on getting you the best value for every rupee spent, unlike expensive national agencies.' },
-      { q: 'Do you manage my Google Maps listing?', a: 'Yes, we optimize your Google My Business profile so you show up first when people search nearby.' }
+      { q: 'How do I know it works?', a: 'You get a short monthly note with calls, clicks, and spend. No fluff charts.' },
+      { q: 'Will this help a small clinic or shop?', a: 'Yes. We focus on people who live and work near you.' },
+      { q: 'Is it costly?', a: 'We size spend to your comfort. We cut waste before we scale.' },
+      { q: 'Do you fix my map listing?', a: 'Yes. Hours, photos, and categories get tuned so Google shows the right face.' }
     ],
     typeSpecificData: {
-      channels: ['Facebook Ads', 'Google Maps', 'WhatsApp'],
-      reporting: 'Easy-to-Read ROI Reports'
+      channels: ['Facebook', 'Google Maps', 'WhatsApp'],
+      reporting: 'Plain monthly scorecard'
     },
     results: [
       {
-        label: "New Leads",
+        label: "Calls",
         value: "4x",
-        suffix: "More Enquiries",
-        desc: "Helped a local clinic get 4 times more calls from their Google Maps profile."
+        suffix: "More enquiries",
+        desc: "A clinic saw four times the calls after map fixes."
       },
       {
-        label: "Cost Saved",
+        label: "Spend",
         value: "-22%",
-        suffix: "Ad Efficiency",
-        desc: "Stopped a small local service from wasting money on ads that weren't bringing admissions."
+        suffix: "Less waste",
+        desc: "We turned off ads that never brought walk ins."
       }
     ],
     testimonial: {
-      quote: "We used to waste so much money giving ads in the newspaper. Now, we get regular enquiries from people finding us on their phones.",
+      quote: "Newspaper ads burned cash. Now families find us on the phone map. Calls feel steady.",
       author: "Owner, Patna Retail Shop"
     },
-    resultsTitle: "Real Traffic Growth",
-    ctaBadge: "Grow Your Sales",
-    ctaTitle: "Ready to Get More Walk-In Customers?",
-    ctaDescription: "Stop guessing and start growing with a simple marketing plan that works specifically for your city."
+    resultsTitle: "Stores that filled the lane",
+    ctaBadge: "Bring footfall",
+    ctaTitle: "Want more walk ins this month?",
+    ctaDescription: "Share your trade and your area. We draft a simple plan you can afford."
   },
   {
     id: 'ui-ux',
     slug: 'ui-ux-design',
+    heroImage: '/Services/UI_UX.webp',
+    heroImageAlt: 'Screen design and easy layouts for staff and customers',
     type: 'design',
     icon: 'Palette',
-    title: 'UI/UX Design',
-    description: 'Professional designs that make your business look premium and trust-worthy.',
+    title: 'Screen design that feels easy',
+    description: 'Layouts and flows that look clean and feel simple for buyers and staff. Less confusion at every tap.',
     category: 'design',
-    features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    outcomeHeadline: 'Design That Makes Your Customers Say <span class="text-[#f59e0b]">"Wow"</span>',
-    keyBenefits: ['Easy to Use', 'Looks Premium', 'Keeps People Coming Back'],
+    features: ['Talks with your users', 'Clear wire frames', 'Clickable previews', 'Matching brand colors'],
+    outcomeHeadline: 'Screens that feel <span class="text-[#f59e0b]">clear and calm</span> for your buyers',
+    keyBenefits: ['Fewer wrong taps', 'Trust at first glance', 'Staff learn faster'],
     deliverables: [
-      { title: 'Research', desc: 'Understanding what your customers like', icon: 'Users' },
-      { title: 'App Design', desc: 'Beautiful screens that work perfectly', icon: 'Layout' },
-      { title: 'Prototypes', desc: 'See how it works before we build it', icon: 'Play' }
+      { title: 'Discovery', desc: 'We learn what buyers and staff need', icon: 'Users' },
+      { title: 'Layouts', desc: 'Big buttons and short paths', icon: 'Layout' },
+      { title: 'Preview', desc: 'Try flows before code starts', icon: 'Play' }
     ],
     processSteps: [
-      { title: 'Listening', desc: 'Learning about your brand' },
-      { title: 'Sketching', desc: 'Drawing the first ideas' },
-      { title: 'Designing', desc: 'Adding colors and style' },
-      { title: 'Testing', desc: 'Making sure it is easy for everyone' }
+      { title: 'Listen', desc: 'We capture your brand voice' },
+      { title: 'Sketch', desc: 'We draft quick paper style ideas' },
+      { title: 'Polish', desc: 'We add color and type you approve' },
+      { title: 'Check', desc: 'We test with real staff where possible' }
     ],
     faqs: [
-      { q: 'Which tools do you use?', a: 'We use professional tools like Figma and Adobe to create world-class designs.' },
-      { q: 'Can you redesign my old app?', a: 'Yes, we can take your existing app and give it a modern, premium look.' },
-      { q: 'How long does design take?', a: 'A full design usually takes 2-4 weeks depending on how many screens you need.' },
-      { q: 'Do you help with logos?', a: 'Yes, we also design logos and brand styles to match your new look.' }
+      { q: 'Which tools do you use?', a: 'We design in Figma style tools so you can click through before build.' },
+      { q: 'Can you refresh an old app?', a: 'Yes. We tidy screens without breaking what already works.' },
+      { q: 'How long is design work?', a: 'Two to four weeks for most apps. More screens add a little time.' },
+      { q: 'Do you handle logos?', a: 'Yes. We can pair a fresh mark with your new screens.' }
     ],
     typeSpecificData: {
-      gallery: ['Modern Designs', 'Clean Layouts', 'Bold Colors'],
-      philosophy: 'Simple & User-First'
+      gallery: ['Clean layouts', 'Readable type', 'Warm color'],
+      philosophy: 'Plain paths first'
     },
-    resultsTitle: "Designs That Got People Talking",
+    resultsTitle: "Teams who felt the difference",
     results: [
       {
-        label: "Easy to Use",
+        label: "Ease",
         value: "+40%",
-        suffix: "Happier Users",
-        desc: "Redesigned a local app, making it much simpler for people to use every day."
+        suffix: "Happier users",
+        desc: "A local app cut support calls after we simplified the home path."
       },
       {
-        label: "Sales",
+        label: "Orders",
         value: "+25%",
-        suffix: "More Orders",
-        desc: "Simplified a checkout screen to help more people finish their purchase."
+        suffix: "More checkout wins",
+        desc: "We shortened checkout so more buyers finished payment."
       }
     ],
-    ctaTitle: "Want a Beautiful App?",
-    ctaDescription: "Let's create a design that your customers will love using every day."
+    ctaBadge: "Refresh screens",
+    ctaTitle: "Want an app people actually use?",
+    ctaDescription: "Share your screens today. We show a cleaner path without fancy talk."
   },
   {
     id: 'ecommerce',
     slug: 'ecommerce-solutions',
+    heroImage: '/Services/E-Commerce.webp',
+    heroImageAlt: 'Online store and checkout preview for Bihar retailers',
     type: 'engineering',
     icon: 'ShoppingCart',
-    title: 'E-commerce Solutions',
-    description: 'Full-featured online stores to sell your products across India easily.',
+    title: 'Online store setup',
+    description: 'Sell beyond your lane with a store that loads fast on phones. Safe pay and simple order tracking.',
     category: 'development',
-    features: ['Multi-vendor', 'Payment Gateway', 'Inventory Management', 'Analytics'],
-    outcomeHeadline: 'Sell More Online with a <span class="text-[#f59e0b]">Powerful e-Commerce Store</span>',
-    keyBenefits: ['Sell 24/7', 'Safe Payments', 'Easy to Manage Orders'],
+    features: ['Multi seller ready', 'UPI and cards', 'Stock ties to godown', 'Sales snapshot'],
+    outcomeHeadline: 'Sell online with a <span class="text-[#f59e0b]">store buyers trust</span>',
+    keyBenefits: ['Open all day', 'Payments you can explain', 'Orders in one panel'],
     deliverables: [
-      { title: 'Custom Stores', desc: 'Your own online shop', icon: 'ShoppingBag' },
-      { title: 'Marketplaces', desc: 'Let others sell on your site', icon: 'Layout' },
-      { title: 'Payments', desc: 'Safe & secure checkout', icon: 'CreditCard' }
+      { title: 'Your storefront', desc: 'Catalog, cart, and brand feel', icon: 'ShoppingBag' },
+      { title: 'Seller ready', desc: 'Invite more brands when you grow', icon: 'Layout' },
+      { title: 'Checkout', desc: 'UPI, cards, and cash on delivery', icon: 'CreditCard' }
     ],
     processSteps: [
-      { title: 'Planning', desc: 'Organizing your products' },
-      { title: 'Setup', desc: 'Building the cart and payments' },
-      { title: 'Testing', desc: 'Checking taxes and shipping' },
-      { title: 'Live', desc: 'Launching your store' }
+      { title: 'List', desc: 'We sort products, photos, and tax slabs' },
+      { title: 'Wire', desc: 'We connect cart, tax, and pay gates' },
+      { title: 'Test', desc: 'We run fake orders across devices' },
+      { title: 'Go live', desc: 'We stay close for the first busy week' }
     ],
     faqs: [
-      { q: 'Can I move from Shopify?', a: 'Yes, we can move all your products and customers to a new, faster store.' },
-      { q: 'Will it work on phones?', a: 'Yes, most people shop on phones, so we make sure it works perfectly there.' },
-      { q: 'Which payments do you support?', a: 'We add Razorpay, Stripe, and even Cash on Delivery for your customers.' },
-      { q: 'Can I manage it myself?', a: 'Yes, we give you a simple dashboard to add products and see your sales.' }
+      { q: 'Can we leave another platform?', a: 'Yes. We move products and buyers when the data allows.' },
+      { q: 'Will phones work smoothly?', a: 'Yes. Most buyers tap on mobile first. We design for that.' },
+      { q: 'Which pay modes?', a: 'Razorpay class tools plus cash on delivery when you need it.' },
+      { q: 'Can I update stock myself?', a: 'Yes. We hand a simple panel for items and orders.' }
     ],
     typeSpecificData: {
-      stack: ['Fast Storefront', 'Secure Payments'],
-      performance: 'Handles thousands of shoppers',
-      security: 'PCI-DSS Safe'
+      stack: ['Quick storefront', 'Trusted pay rails'],
+      performance: 'Handles busy sale days',
+      security: 'Checkout meets card rules'
     },
-    resultsTitle: "Selling Success Stories",
+    resultsTitle: "Shops that opened new lanes",
     results: [
       {
-        label: "Online Sales",
+        label: "Online sales",
         value: "+60%",
-        suffix: "Sales Growth",
-        desc: "Helped a local retail shop start selling across India successfully."
+        suffix: "Lift",
+        desc: "A Patna retailer added steady out of town orders."
       },
       {
-        label: "Payments",
+        label: "Trust",
         value: "Safe",
-        suffix: "100% Secure",
-        desc: "Simplified the payment process so customers feel safe buying online."
+        suffix: "Checkout",
+        desc: "Buyers stopped dropping off at pay thanks to clear steps."
       }
     ],
-    ctaTitle: "Ready to Start Selling?",
-    ctaDescription: "Launch your own online store and reach customers across the country."
+    ctaBadge: "Sell wider",
+    ctaTitle: "Ready to take orders online?",
+    ctaDescription: "Tell us what you sell today. We map store scope and train your team."
   },
   {
     id: 'lead-management',
     slug: 'lead-management-systems',
+    heroImage: '/Services/LMS.webp',
+    heroImageAlt: 'Enquiry and lead tracking for sales teams',
     type: 'engineering',
     icon: 'Users',
-    title: 'Lead Management',
-    description: 'Smart systems to track your customers and never miss a single new enquiry.',
+    title: 'Enquiry tracking',
+    description: 'See every call and form in one list. Know who to ring back first. Fewer slips between teams.',
     category: 'solutions',
-    features: ['Lead Tracking', 'Automation', 'CRM Integration', 'Reporting'],
-    outcomeHeadline: 'Never Lose a Customer Again with <span class="text-[#f59e0b]">Smart Lead Tracking</span>',
-    keyBenefits: ['Instant Alerts', 'Automatic Follow-ups', 'Know Where Leads Come From'],
+    features: ['One inbox for leads', 'Quick WhatsApp ping', 'Works with your ads', 'Weekly score sheet'],
+    outcomeHeadline: 'Stop losing enquiries in <span class="text-[#f59e0b]">chat threads</span>',
+    keyBenefits: ['Fast alerts', 'Simple follow up lists', 'See which ad worked'],
     deliverables: [
-      { title: 'Lead Scoring', desc: 'Know which customers are ready to buy', icon: 'Target' },
-      { title: 'Capture Hubs', desc: 'Get leads from FB, Google, and Web', icon: 'Inbound' },
-      { title: 'Auto-Bots', desc: 'Reply to customers in seconds', icon: 'MessageSquare' }
+      { title: 'Hot list', desc: 'Spot buyers who are ready now', icon: 'Target' },
+      { title: 'Capture', desc: 'Pull forms from web and ads', icon: 'Inbound' },
+      { title: 'Auto hello', desc: 'Send first reply in seconds', icon: 'MessageSquare' }
     ],
     processSteps: [
-      { title: 'Audit', desc: 'Finding where you lose customers today' },
-      { title: 'Logic', desc: 'Setting up automatic replies' },
-      { title: 'Sync', desc: 'Connecting to your phone & computer' },
-      { title: 'Monitor', desc: 'Checking results every week' }
+      { title: 'Spot leaks', desc: 'We find where enquiries die today' },
+      { title: 'Rules', desc: 'We set who gets pinged first' },
+      { title: 'Connect', desc: 'We tie phone, web, and desk' },
+      { title: 'Review', desc: 'We check weekly close rates' }
     ],
     faqs: [
-      { q: 'Can it work with WhatsApp?', a: 'Yes, your team gets an instant WhatsApp alert whenever a new lead comes in.' },
-      { q: 'Is it hard to use?', a: 'No, you get a simple list of people to call, and the app handles the rest.' },
-      { q: 'Can I see reports?', a: 'Yes, you can see which ads are bringing you the most customers.' },
-      { q: 'Does it send emails?', a: 'Yes, it can send automatic "Thank You" emails and follow-ups for you.' }
+      { q: 'Can WhatsApp alert my team?', a: 'Yes. New leads can ping the right phone instantly.' },
+      { q: 'Is the list hard to read?', a: 'No. It looks like a clean call sheet with status tags.' },
+      { q: 'Can we see which ad worked?', a: 'Yes. Tags show the source for each name.' },
+      { q: 'Do you send email too?', a: 'Yes. Thank you notes can go out without manual copy paste.' }
     ],
     typeSpecificData: {
-      stack: ['Modern Tracking Tech'],
-      performance: 'Leads delivered in < 5 mins',
-      security: 'Safe & Private Data'
+      stack: ['Light tracking kit'],
+      performance: 'New names land in minutes',
+      security: 'Private customer data'
     },
-    resultsTitle: "Winning More Customers",
+    resultsTitle: "Teams who closed the loop",
     results: [
       {
-        label: "Response Time",
+        label: "Reply speed",
         value: "-90%",
-        suffix: "Faster Replies",
-        desc: "Helped a business reply to customers in seconds instead of hours."
+        suffix: "Faster",
+        desc: "Owners moved from hours late to minutes sharp."
       },
       {
-        label: "Conversions",
+        label: "Sales",
         value: "+50%",
-        suffix: "More Sales",
-        desc: "Ensured every single lead was followed up on, increasing total sales."
+        suffix: "More closes",
+        desc: "Follow ups stopped slipping through cracks."
       }
     ],
-    ctaTitle: "Stop Losing Good Leads.",
-    ctaDescription: "Get a simple system to track and close more customers today."
+    ctaBadge: "Catch every lead",
+    ctaTitle: "Tired of lost enquiries?",
+    ctaDescription: "We wire a simple list so your team knows who to call next."
   },
   {
     id: 'ivr',
     slug: 'ivr-calling-solutions',
+    heroImage: '/Services/IVR.webp',
+    heroImageAlt: 'Business phone menu and call routing preview',
     type: 'engineering',
     icon: 'Phone',
-    title: 'IVR Solutions',
-    description: 'Automatic business phone system that answers your customers 24/7.',
+    title: 'Business phone menus',
+    description: 'Greet every caller with a clear menu. Route calls to the right desk. Record when you need proof.',
     category: 'solutions',
-    features: ['Multi-language', 'Call Routing', 'Analytics', 'Integration'],
-    outcomeHeadline: 'Professional <span class="text-[#f59e0b]">24/7 Phone Answering</span> for Your Business',
-    keyBenefits: ['No Missed Calls', 'Professional Welcome', 'Hindi & English Support'],
+    features: ['Hindi and English', 'Smart routing', 'Call logs', 'Works on mobiles'],
+    outcomeHeadline: 'Answer like a <span class="text-[#f59e0b]">serious firm</span> even after hours',
+    keyBenefits: ['Fewer dropped calls', 'Polite first voice', 'Staff know who called'],
     deliverables: [
-      { title: 'Cloud Phone', desc: 'No hardware needed', icon: 'Cloud' },
-      { title: 'Smart Menus', desc: "Press 1 for Sales, 2 for Support", icon: 'CallFlow' },
-      { title: 'Recordings', desc: 'Listen to every call later', icon: 'Mic' }
+      { title: 'Cloud line', desc: 'No big box on the wall', icon: 'Cloud' },
+      { title: 'Menu tree', desc: 'Press one for sales, two for help', icon: 'CallFlow' },
+      { title: 'Call log', desc: 'Replay when a deal needs proof', icon: 'Mic' }
     ],
     processSteps: [
-      { title: 'Setup', desc: 'Choosing your new business number' },
-      { title: 'Script', desc: 'Recording your welcome message' },
-      { title: 'Test', desc: 'Making sure calls go to the right person' },
-      { title: 'Live', desc: 'Your phone system is ready' }
+      { title: 'Number', desc: 'We pick a line that fits your brand' },
+      { title: 'Voice', desc: 'We record welcome lines you approve' },
+      { title: 'Route', desc: 'We send calls to the right mobile' },
+      { title: 'Go live', desc: 'We test peak hour load together' }
     ],
     faqs: [
-      { q: 'Do I need special phones?', a: 'No, everything works on your existing mobile phones using the cloud.' },
-      { q: 'Can we have Hindi menus?', a: 'Yes, we can record messages in Hindi, English, and local languages.' },
-      { q: 'Is it expensive?', a: 'No, it is very affordable and costs much less than a traditional office phone system.' },
-      { q: 'Can I record calls?', a: 'Yes, all incoming and outgoing calls are recorded for you to check later.' }
+      { q: 'Do I need new handsets?', a: 'No. Cloud routes to the phones you already carry.' },
+      { q: 'Can menus be Hindi?', a: 'Yes. Hindi, English, or both in one tree.' },
+      { q: 'Is monthly cost high?', a: 'No. It beats old PBX boxes on price and fuss.' },
+      { q: 'Are calls stored?', a: 'Yes. You can replay key talks when needed.' }
     ],
     typeSpecificData: {
-      stack: ['Reliable Cloud Calling'],
-      performance: 'Handles 100+ calls at once',
-      security: 'Safe Cloud Recording'
+      stack: ['Stable cloud voice'],
+      performance: 'Handles busy lunch rush',
+      security: 'Recordings stay private'
     },
-    resultsTitle: "Professional Calling Results",
+    resultsTitle: "Lines that felt calmer",
     results: [
       {
-        label: "Missed Calls",
+        label: "Missed calls",
         value: "0",
-        suffix: "Zero Lost Calls",
-        desc: "Ensured no customer call was ever missed, day or night."
+        suffix: "Target",
+        desc: "Night shift enquiries finally reached a live person."
       },
       {
-        label: "Brand Image",
-        value: "Top",
-        suffix: "Highly Professional",
-        desc: "Gave a small office the professional phone system of a big company."
+        label: "Image",
+        value: "Pro",
+        suffix: "First touch",
+        desc: "Small offices sounded like large brands on ring one."
       }
     ],
-    ctaTitle: "Want a Professional Number?",
-    ctaDescription: "Get a business phone system that works 24/7 for you."
+    ctaBadge: "Sound pro",
+    ctaTitle: "Want a clean business greeting?",
+    ctaDescription: "Share call volume and languages. We script a menu that fits."
   },
   {
     id: 'hyperlocal',
     slug: 'hyperlocal-platform-dev',
+    heroImage: '/Services/web-app.webp',
+    heroImageAlt: 'Local delivery and rider app preview',
     type: 'engineering',
     icon: 'MapPin',
-    title: 'Hyperlocal Platforms',
-    description: 'Apps to manage local deliveries and track your riders in real-time.',
+    title: 'Local delivery apps',
+    description: 'Track riders on the map. Accept nearby orders. Give buyers a clear ETA without phone chaos.',
     category: 'development',
-    features: ['Geolocation', 'Real-time Tracking', 'Multi-vendor', 'Mobile Apps'],
-    outcomeHeadline: 'Connect Your Business with <span class="text-[#f59e0b]">Local Customers</span> Instantly',
-    keyBenefits: ['Real-time Tracking', 'Accept Orders Nearby', 'Easy for Delivery Boys'],
+    features: ['Live rider map', 'Zone control', 'Multi outlet ready', 'Rider friendly app'],
+    outcomeHeadline: 'Serve nearby buyers with <span class="text-[#f59e0b]">clear ETAs</span>',
+    keyBenefits: ['See riders live', 'Set street limits', 'Boys get simple tasks'],
     deliverables: [
-      { title: 'Driver App', desc: 'Real-time GPS for your team', icon: 'Navigation' },
-      { title: 'Shop Panel', desc: 'Manage local orders easily', icon: 'Store' },
-      { title: 'Heatmaps', desc: 'See where your orders come from', icon: 'Map' }
+      { title: 'Rider app', desc: 'Tasks and map in one pocket view', icon: 'Navigation' },
+      { title: 'Shop board', desc: 'Accept or pause orders fast', icon: 'Store' },
+      { title: 'Heat view', desc: 'Learn which blocks order most', icon: 'Map' }
     ],
     processSteps: [
-      { title: 'Mapping', desc: 'Defining your delivery zones' },
-      { title: 'Building', desc: 'Creating the apps for you and your staff' },
-      { title: 'Testing', desc: 'Field tests on real roads' },
-      { title: 'Scale', desc: 'Expanding to more areas' }
+      { title: 'Zones', desc: 'We draw streets you can serve well' },
+      { title: 'Build', desc: 'We ship rider and buyer apps' },
+      { title: 'Road test', desc: 'We ride along for real loads' },
+      { title: 'Grow', desc: 'We add areas when you are ready' }
     ],
     faqs: [
-      { q: 'Can we use Google Maps?', a: 'Yes, we integrate with Google Maps so you can see exactly where your riders are.' },
-      { q: 'Is there an app for riders?', a: 'Yes, we build a special app for your delivery team to see their tasks.' },
-      { q: 'Can I set delivery areas?', a: 'Yes, you can choose exactly which neighborhoods you want to serve.' },
-      { q: 'Do you support live tracking?', a: 'Yes, both you and your customers can see the live location of orders.' }
+      { q: 'Do maps show live riders?', a: 'Yes. You see movement like the big apps, sized for you.' },
+      { q: 'Is there a rider phone app?', a: 'Yes. Tasks, map, and proof of drop stay in one place.' },
+      { q: 'Can we limit areas?', a: 'Yes. Draw zones so bikes do not wander too far.' },
+      { q: 'Can buyers track orders?', a: 'Yes. They see status without calling your desk.' }
     ],
     typeSpecificData: {
-      stack: ['Real-time Maps Tech'],
-      performance: 'Smooth Live Tracking',
-      security: 'Private Location Data'
+      stack: ['Live map hooks'],
+      performance: 'Smooth during peak dinner rush',
+      security: 'Location data stays yours'
     },
-    resultsTitle: "Local Success Stories",
+    resultsTitle: "Neighborhood wins",
     results: [
       {
-        label: "Delivery Speed",
+        label: "Trip time",
         value: "-25%",
-        suffix: "Faster Service",
-        desc: "Optimized routes to help a local shop deliver items faster."
+        suffix: "Faster drops",
+        desc: "Routes tightened so meals arrived hotter."
       },
       {
-        label: "New Area",
+        label: "Reach",
         value: "3",
-        suffix: "City Expansions",
-        desc: "Helped a pharmacy expand its delivery to 3 new neighborhoods."
+        suffix: "New blocks",
+        desc: "A pharmacy opened three fresh lanes when ops felt steady."
       }
     ],
-    ctaTitle: "Want to Serve Your Neighborhood?",
-    ctaDescription: "Build your own local delivery platform and reach more customers nearby."
+    ctaBadge: "Own your zone",
+    ctaTitle: "Delivering nearby without the mess?",
+    ctaDescription: "Tell us your radius and order style. We shape apps that fit."
   },
   {
     id: 'seo',
     slug: 'seo-optimization-expert',
+    heroImage: '/Services/SEO.webp',
+    heroImageAlt: 'Search and website tuning for local visibility',
     type: 'marketing',
     icon: 'Search',
-    title: 'SEO & Website Optimization',
-    description: 'Help people in your city find your business first when they search on Google.',
+    title: 'Search tuning for your site',
+    description: 'Help buyers in your city find you on Google without only burning ad money. Faster pages and clearer topics.',
     category: 'marketing',
-    features: ['On-page SEO', 'Technical SEO', 'Link Building', 'Performance'],
-    outcomeHeadline: 'Be the <span class="text-[#f59e0b]">First Result</span> People See on Google',
-    keyBenefits: ['More Free Traffic', 'Better Local Ranking', 'Stay Ahead of Competitors'],
+    features: ['Page clean up', 'Speed fixes', 'Trusted links', 'Monthly rank note'],
+    outcomeHeadline: 'Show up when locals <span class="text-[#f59e0b]">type what you sell</span>',
+    keyBenefits: ['More free visits', 'Stronger city rank', 'Stay ahead of lazy rivals'],
     deliverables: [
-      { title: 'Technical SEO', desc: 'Making your site super fast', icon: 'Tools' },
-      { title: 'Content Engine', desc: 'Articles that attract customers', icon: 'FileText' },
-      { title: 'Link Building', desc: 'Getting other sites to talk about you', icon: 'Link' }
+      { title: 'Site health', desc: 'Fix hidden errors that hide you', icon: 'Tools' },
+      { title: 'Useful pages', desc: 'Write topics buyers actually search', icon: 'FileText' },
+      { title: 'Trust links', desc: 'Earn mentions from real local sites', icon: 'Link' }
     ],
     processSteps: [
-      { title: 'Audit', desc: 'Checking why your site is hidden today' },
-      { title: 'Keywords', desc: 'Finding what your customers search for' },
-      { title: 'Update', desc: 'Making your pages Google-friendly' },
-      { title: 'Report', desc: 'Monthly rankings and progress' }
+      { title: 'Check', desc: 'We see why Google ignores you now' },
+      { title: 'Words', desc: 'We list phrases buyers use here' },
+      { title: 'Fix', desc: 'We tune tags, text, and speed' },
+      { title: 'Note', desc: 'We share rank shifts each month' }
     ],
     faqs: [
-      { q: 'How long to rank #1?', a: 'SEO is a slow process, but you will usually start seeing growth in 3-6 months.' },
-      { q: 'Do you handle technical stuff?', a: 'Yes, we fix all the behind-the-scenes errors that stop Google from showing your site.' },
-      { q: 'Will it help local sales?', a: 'Yes, we focus on Local SEO to make sure people in your city find you first.' },
-      { q: 'Do you provide reports?', a: 'Yes, we send a simple monthly report showing your new positions on Google.' }
+      { q: 'How fast is the lift?', a: 'Search gains need months. Most teams see early moves in three to six months.' },
+      { q: 'Do you repair site errors?', a: 'Yes. Broken tags and slow loads get cleared so Google can read you.' },
+      { q: 'Will shops nearby notice?', a: 'Yes. We aim city and neighborhood phrases you actually win.' },
+      { q: 'Do I get a report?', a: 'Yes. A short note shows rank changes without jargon walls.' }
     ],
     typeSpecificData: {
-      channels: ['Google', 'Bing', 'Local Maps'],
-      reporting: 'Monthly Ranking Checks'
+      channels: ['Google search', 'Maps tie ins'],
+      reporting: 'Monthly rank snapshot'
     },
-    resultsTitle: "SEO Growth Stories",
+    resultsTitle: "Sites that climbed step by step",
     results: [
       {
-        label: "Free Traffic",
+        label: "Visitors",
         value: "+150%",
-        suffix: "Organic Growth",
-        desc: "Helped a business get double the visitors without spending on ads."
+        suffix: "Organic lift",
+        desc: "A firm doubled unpaid visits after fixes."
       },
       {
-        label: "Keywords",
+        label: "Rank",
         value: "Top 3",
-        suffix: "Google Ranking",
-        desc: "Got a local service provider to the first page for their primary keywords."
+        suffix: "Key terms",
+        desc: "A service desk reached page one for its main offer."
       }
     ],
-    ctaTitle: "Want to Rank Higher?",
-    ctaDescription: "Get more free customers with a professional SEO plan for your business."
+    ctaBadge: "Grow free traffic",
+    ctaTitle: "Want Google to notice you?",
+    ctaDescription: "Send your site link. We audit gaps and set a steady monthly rhythm."
   },
   {
     id: 'animation',
     slug: 'animation-graphics-design',
+    heroImage: '/Services/Animation_Graphics.webp',
+    heroImageAlt: 'Video and motion graphics for your business story',
     type: 'design',
     icon: 'Sparkles',
-    title: 'Animation & Graphics',
-    description: 'Cool videos and animations that explain your business in 60 seconds.',
+    title: 'Video and motion art',
+    description: 'Short clips that explain what you sell before the buyer gets bored. Social ready and easy to share.',
     category: 'design',
-    features: ['Motion Graphics', '2D/3D Animation', 'Explainer Videos', 'Brand Assets'],
-    outcomeHeadline: 'Tell Your Story with <span class="text-[#f59e0b]">Amazing Video & Animation</span>',
-    keyBenefits: ['Grab Attention', 'Explain Ideas Easily', 'Premium Look'],
+    features: ['Motion slides', '2D stories', 'Sixty second explainers', 'Brand bumpers'],
+    outcomeHeadline: 'Show your offer in <span class="text-[#f59e0b]">one minute</span>',
+    keyBenefits: ['Stops the scroll', 'Makes hard ideas simple', 'Looks sharp on phones'],
     deliverables: [
-      { title: 'Explainers', desc: 'Videos that show how your product works', icon: 'Video' },
-      { title: 'Animated Logos', desc: 'Make your brand feel alive', icon: 'Layers' },
-      { title: 'Social Ads', desc: 'Eye-catching videos for Instagram', icon: 'Instagram' }
+      { title: 'Explainer', desc: 'Walk through your product with calm voice', icon: 'Video' },
+      { title: 'Logo motion', desc: 'Give your mark a living intro', icon: 'Layers' },
+      { title: 'Social cut', desc: 'Square clips tuned for feeds', icon: 'Instagram' }
     ],
     processSteps: [
-      { title: 'Script', desc: 'Writing the story' },
-      { title: 'Style', desc: 'Choosing colors and characters' },
-      { title: 'Animate', desc: 'Making the drawings move' },
-      { title: 'Audio', desc: 'Adding music and voiceover' }
+      { title: 'Script', desc: 'We agree one clear story arc' },
+      { title: 'Look', desc: 'We lock colors and characters' },
+      { title: 'Move', desc: 'We animate and sync sound' },
+      { title: 'Handoff', desc: 'You get files ready to post' }
     ],
     faqs: [
-      { q: 'Do you include voiceovers?', a: 'Yes, we provide professional voices in Hindi, English, and other languages.' },
-      { q: 'How long does it take?', a: 'A simple video usually takes 2 weeks from start to finish.' },
-      { q: 'Do I own the video?', a: 'Yes, you get full ownership and the original files for your business.' },
-      { q: 'Can you animate my logo?', a: 'Yes, we can turn your static logo into a smooth, professional animation.' }
+      { q: 'Do you supply voice?', a: 'Yes. Hindi, English, or both with clean studio sound.' },
+      { q: 'How long is production?', a: 'About two weeks for a simple explainer.' },
+      { q: 'Who owns the file?', a: 'You do. We send masters you can reuse.' },
+      { q: 'Can my logo move?', a: 'Yes. We can add a short intro sting for reels.' }
     ],
     typeSpecificData: {
-      gallery: ['Latest Reels', 'Product Demos', 'Social Ads'],
-      philosophy: 'Clear & Engaging Visuals'
+      gallery: ['Reels', 'Product demos', 'Festive promos'],
+      philosophy: 'Clear beats flashy'
     },
-    resultsTitle: "Visual Success",
+    resultsTitle: "Clips that carried the pitch",
     results: [
       {
         label: "Views",
         value: "5x",
-        suffix: "Engagement Boost",
-        desc: "Helped a client get 5 times more views on their social media ads."
+        suffix: "More plays",
+        desc: "A retail brand saw five times the plays on paid posts."
       },
       {
         label: "Clarity",
         value: "100%",
-        suffix: "Better Understanding",
-        desc: "Simplified a complex service so customers could understand it in 60 seconds."
+        suffix: "Understood",
+        desc: "Buyers finally grasped a tricky service in one watch."
       }
     ],
-    ctaTitle: "Need a Video?",
-    ctaDescription: "Let's create an animation that explains your business perfectly."
+    ctaBadge: "Show your story",
+    ctaTitle: "Need a short video that sells?",
+    ctaDescription: "Tell us the one point buyers miss. We script a clip around it."
   },
   {
     id: 'compliance',
     slug: 'gst-business-registration',
+    heroImage: '/Services/GST.webp',
+    heroImageAlt: 'GST registration and business paperwork support',
     type: 'compliance',
     icon: 'FileText',
-    title: 'GST & Business Registration',
-    description: 'Handling your firm registration, GST returns, and legal paperwork correctly so you can focus on running your business in Bihar.',
+    title: 'GST and business registration',
+    description: 'Open right, file on time, and keep licenses current. We handle forms so you stay on the shop floor.',
     category: 'compliance',
-    features: ['Company Registration', 'Monthly GST Filing', 'Food License (FSSAI)', 'Trade License'],
-    outcomeHeadline: 'We Handle Your <span class="text-[#f59e0b]">Taxes & Registration</span> So You Don&apos;t Have To',
-    keyBenefits: ['100% Legal & Safe', 'No Late Fees or Penalties', 'Honest Local Advice'],
+    features: ['New firm setup', 'Monthly GST cycle', 'FSSAI help', 'Trade papers'],
+    outcomeHeadline: 'Keep filings and licenses <span class="text-[#f59e0b]">on track</span> without stress',
+    keyBenefits: ['Stay within rules', 'Skip late fees', 'Plain advice from Patna'],
     deliverables: [
-      { title: 'New Firm Setup', desc: 'Proprietor, LLP, or Pvt Ltd in Patna', icon: 'Briefcase' },
-      { title: 'GST Filing', desc: 'Monthly taxes handled for your shop', icon: 'FileText' },
-      { title: 'Local Licenses', desc: 'FSSAI, Trade, and Shop Establishment', icon: 'Shield' }
+      { title: 'Firm start', desc: 'Proprietor, LLP, or Pvt Ltd setup', icon: 'Briefcase' },
+      { title: 'GST cycle', desc: 'Monthly returns filed on schedule', icon: 'FileText' },
+      { title: 'Local permits', desc: 'FSSAI, trade, shop papers', icon: 'Shield' }
     ],
     processSteps: [
-      { title: 'Documents', desc: 'We tell you exactly what papers are needed' },
-      { title: 'Filing', desc: 'We submit everything to the Bihar government' },
-      { title: 'Progress', desc: 'We handle all questions and follow-ups' },
-      { title: 'Handover', desc: 'You get your certificates directly on WhatsApp' }
+      { title: 'Papers', desc: 'We list exactly what to bring' },
+      { title: 'Submit', desc: 'We file with Bihar portals for you' },
+      { title: 'Follow up', desc: 'We answer officer queries' },
+      { title: 'Proof', desc: 'You receive certs on WhatsApp' }
     ],
     faqs: [
-      { q: 'How long does it take to register a shop in Patna?', a: 'Firm registration usually takes 7-15 days depending on the type of business.' },
-      { q: 'Can you handle my monthly GST?', a: 'Yes! We file your monthly GST returns on time so you never pay a single rupee in late fees.' },
-      { q: 'I want to open a restaurant. Can you help?', a: 'Yes, we help with Food Licenses (FSSAI) and local municipal trade licenses in Bihar.' },
-      { q: 'Do you help with ITR?', a: 'Yes, we file Income Tax Returns for business owners, shopkeepers, and employees.' }
+      { q: 'How long for a new shop registration?', a: 'Most setups finish in seven to fifteen days once papers are ready.' },
+      { q: 'Will you run monthly GST?', a: 'Yes. Timely filing so fines do not stack.' },
+      { q: 'Opening a restaurant?', a: 'Yes. FSSAI plus local trade steps handled together.' },
+      { q: 'Do you file income tax too?', a: 'Yes. Owners and staff returns stay in one lane.' }
     ],
     typeSpecificData: {
-      renewal: 'Automatic Reminders via WhatsApp',
-      consultancy: 'Free Advice on Local Laws'
+      renewal: 'WhatsApp reminders before due dates',
+      consultancy: 'Straight talk on local rules'
     },
-    resultsTitle: "Local Businesses Protected",
+    resultsTitle: "Owners who slept better",
     results: [
       {
-        label: "Businesses Setup",
+        label: "New firms",
         value: "200+",
-        suffix: "New Firms",
-        desc: "Successfully registered over 200 new small businesses across Bihar last year."
+        suffix: "Opened",
+        desc: "Fresh registrations across Bihar with clear handovers."
       },
       {
-        label: "Penalties",
+        label: "Late fees",
         value: "₹0",
-        suffix: "Zero Lates",
-        desc: "Ensured our monthly clients never paid a single late fee for GST filing."
+        suffix: "GST goal",
+        desc: "Monthly filers avoided penalty stacks."
       }
     ],
-    ctaTitle: "Need Help Starting Your Business?",
-    ctaDescription: "Let's get your shop or company registered correctly without the runaround."
+    ctaBadge: "Stay compliant",
+    ctaTitle: "Starting a shop or switching CA?",
+    ctaDescription: "Share your trade type. We list forms, costs, and dates in plain words."
   },
 ];
 
@@ -699,16 +729,26 @@ export const caseStudies = [
   },
 ];
 
-/** Homepage / solutions counters - operational facts, not inflated client volumes. */
+/** Homepage / solutions counters - trust facts for local owners. */
 export const metrics = [
   {
-    label: "Years in operation",
-    value: COMPANY_INFO.yearsOfExperience,
+    label: "Serving Bihar since",
+    emphasis: "2018",
+  },
+  {
+    label: "Local businesses served",
+    value: 90,
     suffix: "+",
   },
-  { label: "Support coverage", value: 24, suffix: "/7" },
-  { label: "Core practice areas", value: 4, suffix: "+" },
-  { label: "Where we ship", emphasis: "Patna · Bihar · India" },
+  {
+    label: "Clients who stay with us",
+    value: 98,
+    suffix: "%",
+  },
+  {
+    label: "Face to face help in",
+    emphasis: "Patna",
+  },
 ];
 
 export const testimonials = [
@@ -950,7 +990,7 @@ export const blogPosts = [
     image: 'technology-abstract-digital-network-dark',
     author: COMPANY_INFO.team.ceo.name,
     authorRole: 'CEO',
-    tags: ['Software Development Patna', 'Digital Marketing Patna', 'Local SEO Bihar', 'IT Company Patna'],
+    tags: ['Software Development Patna', 'Digital Marketing Patna', 'Local SEO Bihar', 'Business Software Patna'],
     content: `
       <h2>The Shift in Bihar's Business Market</h2>
       <p>In 2026, every successful business in Patna - from retail shops on Boring Road to agencies in Kankarbagh - is using technology to find more customers. As a leading <strong>Software Development Company in Patna</strong>, we've seen local shops transform with the right IT tools.</p>
@@ -1054,28 +1094,34 @@ export const teamMembers = [
 
 export const faqs = [
   {
-    question: 'How much does custom software cost in Bihar?',
-    answer: 'Our pricing is built specifically for local SMEs. A basic billing system or website starts very affordably, while complete factory ERPs are priced based on the exact features you need. We do not charge massive corporate agency fees.',
+    question: "How much does a simple billing or stock system cost?",
+    answer:
+      "We price for small shops and clinics, not big brand budgets. A basic billing setup or site starts low. Bigger godown or factory work follows a clear list of features. You get an upfront quote before we start.",
   },
   {
-    question: 'How long does it take to build and deploy?',
-    answer: 'Most local business software is deployed within 3 to 6 weeks. Simple websites and GST setups take just 5-7 days. We give you a clear, fixed timeline before we start.',
+    question: "How long before we can use it every day?",
+    answer:
+      "Most shop systems go live in three to six weeks. Simple sites or GST setup often take five to seven days. We give one timeline in writing before work begins.",
   },
   {
-    question: 'Do you provide local support in Patna and Bihar?',
-    answer: 'Yes! Unlike agencies in Delhi or Bangalore, we are based right here. If your system goes down or your team needs training, we can send someone directly to your shop, clinic, or godown.',
+    question: "Can you visit my shop or godown in Patna?",
+    answer:
+      "Yes. We sit in Patna and work across Bihar. If the counter breaks or staff need training, we can come to your shop, clinic, or godown.",
   },
   {
-    question: 'Is my business data safe with you?',
-    answer: 'Absolutely. We use secure cloud servers (like AWS or Google) to ensure your customer data, billing history, and inventory are backed up daily and protected from local hardware failures or theft.',
+    question: "Is my billing and customer data safe?",
+    answer:
+      "Yes. We store backups on trusted cloud hosts. Your bills, stock, and customer list stay off one fragile PC. Daily backup means a stolen PC does not erase your year.",
   },
   {
-    question: 'Can you handle both GST and our Billing Software?',
-    answer: 'Yes, this is our specialty. We provide end-to-end service - giving you the software to generate GST-compliant bills and handling the actual filing of your monthly returns.',
+    question: "Do you handle GST filing and the billing tool together?",
+    answer:
+      "Yes. We connect the bill flow with filing so you are not stuck between two vendors. One team owns the full loop.",
   },
   {
-    question: "What if my staff doesn't know how to use computers?",
-    answer: "We design our software to be as simple as using WhatsApp. Plus, we provide detailed on-site training for your staff in Hindi or English until they are completely comfortable.",
+    question: "What if my staff are not strong on computers?",
+    answer:
+      "We keep screens clean and train on site in Hindi or English until your team runs daily work with confidence.",
   },
 ];
 
@@ -1087,7 +1133,7 @@ export const gmbReviews = [
     rating: 5,
     avatar: 'portrait-man-business',
     date: '3 weeks ago',
-    text: 'EDUNEX automated our godown billing. Now my staff makes zero mistakes with GST. Best IT support in Patna.',
+    text: 'EDUNEX automated our godown billing. Now my staff makes zero mistakes with GST. Best local support in Patna.',
   },
   {
     id: 'r2',

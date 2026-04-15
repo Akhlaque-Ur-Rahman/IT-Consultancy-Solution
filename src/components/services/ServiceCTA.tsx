@@ -17,10 +17,10 @@ interface ServiceCTAProps {
 const AVATARS = ["/avatars/129416.jpg", "/avatars/21597.jpg", "/avatars/2827.jpg"];
 
 export const ServiceCTA = ({
-  badge = "Start Your Transformation",
-  title = "Ready to Accelerate Your Digital Growth?",
-  description = "Join the forward-thinking organizations scaling with EDUNEX. We combine engineering excellence with strategic marketing to deliver true business impact.",
-  serviceTitle = "Consulting",
+  badge = "Talk to Patna",
+  title = "Ready to fix the next bottleneck?",
+  description = "Tell us what wastes time at your shop or godown. We answer in plain words and scope work you can afford.",
+  serviceTitle = "consulting",
 }: ServiceCTAProps) => {
   const serviceSlug = serviceTitle.toLowerCase().replace(/\s+/g, "-");
   const contactHref = buildContactUrl({
@@ -115,6 +115,7 @@ export const ServiceCTA = ({
                         alt=""
                         fill
                         sizes="40px"
+                        loading="lazy"
                         className="object-cover"
                       />
                     </div>
@@ -134,7 +135,7 @@ export const ServiceCTA = ({
                   </div>
                   <span className="hidden h-3 w-px bg-white/15 sm:block" />
                   <p className="text-xs text-neutral-500 md:text-[13px]">
-                    Trusted by SME &amp; enterprise teams across Bihar
+                    Trusted by shop, clinic, and godown teams across Bihar
                   </p>
                 </div>
               </div>

@@ -25,12 +25,12 @@ export default function ServicesClient() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { id: "all", label: "All Services" },
-    { id: "development", label: "Development" },
-    { id: "solutions", label: "Solutions" },
-    { id: "marketing", label: "Marketing" },
+    { id: "all", label: "All services" },
+    { id: "development", label: "Apps & sites" },
+    { id: "solutions", label: "Billing & stock" },
+    { id: "marketing", label: "Local reach" },
     { id: "design", label: "Design" },
-    { id: "compliance", label: "Compliance" },
+    { id: "compliance", label: "Licenses & GST" },
   ];
 
   const filteredServices =
@@ -101,7 +101,7 @@ export default function ServicesClient() {
                     aria-hidden
                   />
                   <span className="text-[13px] font-medium tracking-wide text-[#fde68a]/90">
-                    Local Bihar IT Services
+                    End-to-End Digital Solutions · Bihar
                   </span>
                   <span className="hidden h-3 w-px bg-white/15 sm:inline" />
                   <span className="hidden text-[13px] text-gray-500 sm:inline">
@@ -110,30 +110,29 @@ export default function ServicesClient() {
                 </div>
 
                 <h1 className="mb-6 max-w-[22ch] text-left text-4xl font-semibold tracking-[-0.03em] text-white sm:text-5xl sm:leading-[1.08] lg:max-w-none lg:text-[3.25rem] xl:text-[3.5rem]">
-                  Everything you need to{" "}
+                  Simple systems to{" "}
                   <span className="relative inline">
                     <span className="relative z-[1] bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
-                      run &amp; grow
+                      run and grow
                     </span>
                     <span
                       className="absolute -bottom-1 left-0 right-0 h-[0.35em] rounded-sm bg-gradient-to-r from-[#f59e0b]/25 via-[#fbbf24]/20 to-transparent opacity-90"
                       aria-hidden
                     />
                   </span>{" "}
-                  your business
+                  your shop or firm
                 </h1>
 
                 <p className="mb-10 max-w-xl text-left text-base leading-relaxed text-gray-400 md:text-lg [text-wrap:balance]">
-                  Custom software, automated billing, local SEO, and statutory
-                  compliance - unified for regional SMEs who need clarity, not
-                  chaos.
+                  Billing, stock, apps, maps, ads, and filings in one place. We
+                  speak plain language. We sit in Patna when you need us.
                 </p>
 
                 <div className="mb-10 flex flex-wrap gap-2">
                   {[
-                    { label: "Engineering", icon: Cpu },
-                    { label: "Billing & ERP", icon: TrendingUp },
-                    { label: "Compliance", icon: ShieldCheck },
+                    { label: "Apps & sites", icon: Cpu },
+                    { label: "Billing & stock", icon: TrendingUp },
+                    { label: "Licenses & GST", icon: ShieldCheck },
                   ].map(({ label, icon: Icon }) => (
                     <span
                       key={label}
@@ -180,7 +179,7 @@ export default function ServicesClient() {
                     <p className="text-sm text-gray-500">Years in Bihar</p>
                   </div>
                   <div className="max-w-[200px] text-sm leading-snug text-gray-500">
-                    One partner for software, growth, and compliance.
+                    One partner for daily work, growth, and filings.
                   </div>
                 </div>
               </motion.div>
@@ -203,25 +202,25 @@ export default function ServicesClient() {
                   <div className="relative flex h-full flex-col justify-between p-7 sm:p-9">
                     <div>
                       <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f59e0b]/80">
-                        Capability stack
+                        What we cover
                       </p>
                       <p className="text-lg font-medium text-white/95">
-                        Built for how Bihar businesses actually operate
+                        Built for counters, godowns, and clinics here
                       </p>
                     </div>
                     <div className="space-y-3">
                       {[
                         {
-                          t: "Workflow-fit software",
-                          s: "Offline-first, staff-friendly interfaces",
+                          t: "Software that fits your flow",
+                          s: "Screens your staff can learn without stress",
                         },
                         {
-                          t: "Revenue & visibility",
-                          s: "Local SEO and measurable campaigns",
+                          t: "More calls and visits",
+                          s: "Maps and ads aimed at nearby buyers",
                         },
                         {
-                          t: "Statutory peace of mind",
-                          s: "GST and registrations aligned with your ops",
+                          t: "Rules handled on time",
+                          s: "GST and papers lined up with your daily work",
                         },
                       ].map((row, i) => (
                         <div
@@ -239,8 +238,8 @@ export default function ServicesClient() {
                       ))}
                     </div>
                     <div className="rounded-2xl border border-dashed border-[#f59e0b]/25 bg-[#f59e0b]/[0.04] px-4 py-3 text-center text-xs text-[#fde68a]/90">
-                      Unified delivery - no Delhi freelancer + random CA
-                      triangle.
+                      One Patna team. No juggling a far away builder and a
+                      separate CA who never saw your counter.
                     </div>
                   </div>
                 </div>
@@ -303,27 +302,21 @@ export default function ServicesClient() {
                         <span className="bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
                           different
                         </span>{" "}
-                        from other IT agencies
+                        from far away teams
                       </h2>
                       <div className="mt-8 space-y-5 text-base leading-[1.75] text-gray-400 [text-wrap:pretty]">
                         <p>
-                          The biggest problem small and medium businesses face in
-                          Bihar today is hiring completely disconnected people.
-                          You might hire a freelancer in Delhi to build a simple
-                          website, buy an off-the-shelf billing software that
-                          doesn&apos;t match how your godown works, and have a
-                          local CA handle your GST who doesn&apos;t know how your
-                          software calculates taxes.
+                          Many owners juggle a distant website builder, boxed
+                          billing that does not fit the godown, and a CA who never
+                          saw the screen behind the tax numbers. Pieces do not
+                          talk. Mistakes creep in. Time gets lost.
                         </p>
                         <p>
-                          At EDUNEX, we eliminate this confusion because we handle
-                          everything under one roof, right here in your home
-                          state. We don&apos;t view your software, your digital
-                          marketing, and your business registration as different
-                          things. Our unified approach means your billing
-                          software automatically prepares your exact GST numbers,
-                          while our digital marketing brings new customers
-                          directly to your digital storefront or WhatsApp.
+                          EDUNEX is an End-to-End Digital Solutions Provider. We
+                          keep billing, reach, and filings under one roof in
+                          Bihar. Your shop data can feed clean GST work. Your maps
+                          and ads can point people to the same phone you answer.
+                          Less chaos. More control.
                         </p>
                       </div>
                     </div>
@@ -333,20 +326,20 @@ export default function ServicesClient() {
                         [
                           {
                             step: "01",
-                            title: "Local Billing & Workflow Automation",
-                            body: "We don't sell massive corporate systems that your staff cannot learn. Our local engineering team visits your shop, godown, or clinic, understands exactly how you work with paper today, and builds simple, fast, lightning-quick digital systems. Whether you need a local inventory tracker that works offline or an app to manage your delivery boys, we build it to be reliable and easy.",
+                            title: "Billing and daily work on your terms",
+                            body: "We do not sell heavy systems your counter cannot learn. We visit your shop, godown, or clinic. We watch paper flow today. Then we build fast, simple tools. Offline when the net fails. Clear stock and bills when it returns.",
                             icon: Zap,
                           },
                           {
                             step: "02",
-                            title: "Local SEO & Digital Growth",
-                            body: "Having a website means nothing if local people can't find your shop. We specialize in Local Search Engine Optimization (SEO). When a family in Patna searches for your type of business, we make sure your shop shows up first on Google Maps. We run targeted, affordable local Facebook ads that actually result in foot traffic or direct WhatsApp enquiries to your phone, proving real return on every rupee spent.",
+                            title: "Nearby customers find you",
+                            body: "A site alone does not fill the store. We tune maps and simple local ads so families near Patna see your name first. We aim calls and WhatsApp pings you can measure. Less waste. More footfall.",
                             icon: MapPinned,
                           },
                           {
                             step: "03",
-                            title: "Headache-Free Business Registration",
-                            body: "Running a business in India means heavy paperwork. We do it for you. Our compliance team handles the complicated process of registering your firm (Private Limited, MSME, or Proprietorship), securing local Trade Licenses or FSSAI certificates, and filing your monthly GST returns on time to ensure you never pay a single late fee or penalty. Technical excellence, fully protected by legal safety.",
+                            title: "Registration and GST without the runaround",
+                            body: "Paperwork piles up fast. We register firms, sort FSSAI or trade papers, and file GST on time. You skip late fees. You keep focus on sales, not forms.",
                             icon: BadgeCheck,
                           },
                         ] as const
@@ -424,8 +417,8 @@ export default function ServicesClient() {
                 </span>
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 [text-wrap:pretty]">
-                Filter by category - billing, ERP, SEO, design, and compliance.
-                One partner for how Bihar SMEs actually operate.
+                Filter by type. Billing, apps, local reach, design, and filings.
+                One Patna partner for real daily work.
               </p>
             </motion.div>
 
@@ -578,8 +571,8 @@ export default function ServicesClient() {
                         </span>
                       </h2>
                       <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-400 [text-wrap:pretty] md:text-lg">
-                        We offer custom solutions tailored to your unique
-                        requirements. Let&apos;s discuss your project.
+                        Tell us what hurts: stock, bills, slow sales, or forms.
+                        We sketch a simple path and a fair price range.
                       </p>
                     </div>
 
@@ -600,7 +593,7 @@ export default function ServicesClient() {
                         </Button>
                       </Link>
                       <p className="text-center text-xs leading-relaxed text-gray-600 lg:text-left">
-                        Explore outcomes from regional teams before you commit.
+                        Read local stories before you say yes.
                       </p>
                     </div>
                   </div>
