@@ -4,6 +4,14 @@ export const SITE_URL = "https://edunexservices.in";
 /** Homepage canonical URL per Search Console preference (root uses trailing slash). */
 export const SITE_URL_HOME = `${SITE_URL}/`;
 
+/** Default Open Graph / Twitter share image (public path). Keep alt text human-readable for accessibility in social previews. */
+export const OG_SHARE_IMAGE_PATH = "/Services/Home_Hero.webp";
+export const OG_SHARE_IMAGE_ALT =
+  "EDUNEX digital solutions preview for shops and clinics in Bihar";
+/** Declared dimensions match next/image hero asset to avoid CLS hints in metadata. */
+export const OG_SHARE_IMAGE_WIDTH = 1600;
+export const OG_SHARE_IMAGE_HEIGHT = 1000;
+
 /** SEO limits: Google typically truncates at ~60 title / ~160 description chars */
 export const META_TITLE_MAX = 65;
 export const META_DESC_MAX = 165;

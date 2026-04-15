@@ -5,7 +5,13 @@ import { AppLayout } from "@/components/AppLayout";
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 import { Preloader } from "@/components/Preloader";
 import Script from "next/script";
-import { SITE_URL } from "@/config/company";
+import {
+  SITE_URL,
+  OG_SHARE_IMAGE_PATH,
+  OG_SHARE_IMAGE_ALT,
+  OG_SHARE_IMAGE_WIDTH,
+  OG_SHARE_IMAGE_HEIGHT,
+} from "@/config/company";
 import { WebSiteSchema } from "@/components/WebSiteSchema";
 
 const inter = Inter({
@@ -37,14 +43,27 @@ const baseMetadata: Metadata = {
     description:
       "Simple systems for real business work. Billing, stock, and growth help from a Patna team since 2018.",
     siteName: "EDUNEX",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "EDUNEX" }],
+    images: [
+      {
+        url: OG_SHARE_IMAGE_PATH,
+        width: OG_SHARE_IMAGE_WIDTH,
+        height: OG_SHARE_IMAGE_HEIGHT,
+        alt: OG_SHARE_IMAGE_ALT,
+      },
+      { url: "/logo.jpg", width: 512, height: 512, alt: "EDUNEX logo" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "EDUNEX | End-to-End Digital Solutions for Patna & Bihar",
     description:
       "Simple digital tools for shops and clinics in Bihar. Local support in Patna since 2018.",
-    images: ["/logo.jpg"],
+    images: [
+      {
+        url: OG_SHARE_IMAGE_PATH,
+        alt: OG_SHARE_IMAGE_ALT,
+      },
+    ],
   },
   icons: {
     icon: [

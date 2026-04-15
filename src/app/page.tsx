@@ -22,7 +22,14 @@ import Link from "next/link";
 import { ArrowRight, Code, Database, TrendingUp, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
-import { SITE_URL_HOME, SEO_KEYWORDS } from "@/config/company";
+import {
+  SITE_URL_HOME,
+  SEO_KEYWORDS,
+  OG_SHARE_IMAGE_PATH,
+  OG_SHARE_IMAGE_ALT,
+  OG_SHARE_IMAGE_WIDTH,
+  OG_SHARE_IMAGE_HEIGHT,
+} from "@/config/company";
 import { PageFinalCTA } from "@/components/PageFinalCTA";
 import { buildContactUrl } from "@/lib/contactPrefill";
 
@@ -41,6 +48,21 @@ export const metadata: Metadata = {
     description:
       "End-to-End Digital Solutions Provider in Patna. Easy systems for billing, stock, and daily work across Bihar.",
     type: "website",
+    images: [
+      {
+        url: OG_SHARE_IMAGE_PATH,
+        width: OG_SHARE_IMAGE_WIDTH,
+        height: OG_SHARE_IMAGE_HEIGHT,
+        alt: OG_SHARE_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EDUNEX Patna | Digital Solutions for Real Business Work",
+    description:
+      "End-to-End Digital Solutions Provider in Patna. Easy systems for billing, stock, and daily work across Bihar.",
+    images: [{ url: OG_SHARE_IMAGE_PATH, alt: OG_SHARE_IMAGE_ALT }],
   },
 };
 

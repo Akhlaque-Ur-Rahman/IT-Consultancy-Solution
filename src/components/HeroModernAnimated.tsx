@@ -242,6 +242,7 @@ export function HeroModernAnimated() {
                 height={1000}
                 priority
                 fetchPriority="high"
+                decoding="async"
                 className="h-auto w-full object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 520px"
               />

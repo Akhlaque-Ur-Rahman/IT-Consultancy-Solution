@@ -45,6 +45,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     META_TITLE_MAX
   );
 
+  const s = service as {
+    heroImage?: string;
+    heroImageAlt?: string;
+  };
+  const ogImagePath = s.heroImage ?? "/Services/web-app.webp";
+  const ogImageAlt =
+    s.heroImageAlt ??
+    `${service.title} — EDUNEX Patna`;
+
   return {
     title: fullTitle,
     description: fullDesc,
@@ -56,6 +65,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: fullTitle,
       description: fullDesc,
       type: "website",
+      images: [
+        {
+          url: ogImagePath,
+          width: 1600,
+          height: 1000,
+          alt: ogImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description: fullDesc,
+      images: [{ url: ogImagePath, alt: ogImageAlt }],
     },
   };
 }
@@ -72,6 +95,10 @@ export default async function ServicePage({ params }: Props) {
 
   if (!service) notFound();
 
+  const heroPath = (service as { heroImage?: string }).heroImage;
+  const serviceOgImage =
+    heroPath != null ? `${SITE_URL}${heroPath}` : undefined;
+
   return (
     <main className="page-depth-grain min-h-screen bg-black">
       <div className="relative z-[1]">
@@ -79,6 +106,7 @@ export default async function ServicePage({ params }: Props) {
         name={service.title}
         description={service.description}
         url={`${SITE_URL}/services/${service.slug}`}
+        image={serviceOgImage}
       />
       <BreadcrumbSchema
         items={[

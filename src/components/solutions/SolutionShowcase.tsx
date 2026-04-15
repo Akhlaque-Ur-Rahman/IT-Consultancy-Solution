@@ -243,6 +243,7 @@ function SolutionVisual({
                 fill
                 priority={imagePriority}
                 loading={imagePriority ? undefined : "lazy"}
+                decoding="async"
                 className="object-contain object-top"
                 sizes="(max-width: 1024px) 100vw, min(900px, 58vw)"
               />

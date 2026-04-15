@@ -5,14 +5,17 @@ interface ServiceSchemaProps {
   name: string;
   description: string;
   url: string;
+  /** Absolute image URL for rich results (matches page hero asset). */
+  image?: string;
 }
 
-export function ServiceSchema({ name, description, url }: ServiceSchemaProps) {
+export function ServiceSchema({ name, description, url, image }: ServiceSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: name,
     description: description,
+    ...(image ? { image } : {}),
     provider: {
       "@type": "Organization",
       name: "EDUNEX Services",
